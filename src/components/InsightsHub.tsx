@@ -31,7 +31,7 @@ const items = [
   {
     type: "Whitepaper",
     image: "/images/team-sept-2.jpg",
-    title: "Business Control Framework — Het complete handboek",
+    title: "Business Control Framework: Het complete handboek",
     excerpt: "Download ons whitepaper over integrale beheersing van strategie, processen en compliance.",
     date: "Jan 2026",
     readTime: "20 min",
@@ -63,7 +63,7 @@ const items = [
   {
     type: "Whitepaper",
     image: "/images/team-collab.jpg",
-    title: "Target Operating Model — Uw blauwdruk voor transformatie",
+    title: "Target Operating Model: Uw blauwdruk voor transformatie",
     excerpt: "Stap-voor-stap handleiding voor het ontwerpen en implementeren van een TOM.",
     date: "Nov 2025",
     readTime: "15 min",

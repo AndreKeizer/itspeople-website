@@ -1,35 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLocale } from "next-intl";
 
-const testimonials = [
-  {
-    quote: "ITsPeople heeft ons geholpen om grip te krijgen op een complex transformatieprogramma. Hun combinatie van strategisch inzicht en hands-on mentaliteit is uniek.",
-    name: "Director Digital Transformation",
-    org: "Grote financiële instelling",
-    initials: "JB",
+const data = {
+  nl: {
+    eyebrow: "Wat klanten zeggen",
+    titleA: "Vertrouwen door ",
+    titleB: "resultaat",
+    items: [
+      { quote: "ITsPeople heeft ons geholpen om grip te krijgen op een complex transformatieprogramma. Hun combinatie van strategisch inzicht en hands-on mentaliteit is uniek.", name: "Director Digital Transformation", org: "Grote financiële instelling", initials: "JB" },
+      { quote: "De NIS2-implementatie leek een onmogelijke opgave. Het team van ITsPeople maakte het werkbaar, begrijpelijk en, het allerbelangrijkste, geborgd in onze organisatie.", name: "CISO", org: "Uitvoeringsorganisatie overheid", initials: "MV" },
+      { quote: "Wat ITsPeople onderscheidt is hun focus op de mens. Technisch waren we al ver, maar de adoptie bleef achter. Zij hebben dat opgelost.", name: "CIO", org: "Universitair Medisch Centrum", initials: "RK" },
+      { quote: "Het Business Control Framework dat ITsPeople heeft opgeleverd geeft ons bestuur voor het eerst écht grip op de transformatie.", name: "CFO", org: "Verzekeringsmaatschappij", initials: "SL" },
+    ],
   },
-  {
-    quote: "De NIS2-implementatie leek een onmogelijke opgave. Het team van ITsPeople maakte het werkbaar, begrijpelijk en — het allerbelangrijkste — geborgd in onze organisatie.",
-    name: "CISO",
-    org: "Uitvoeringsorganisatie overheid",
-    initials: "MV",
+  en: {
+    eyebrow: "What clients say",
+    titleA: "Trust through ",
+    titleB: "results",
+    items: [
+      { quote: "ITsPeople helped us regain control of a complex transformation programme. Their combination of strategic insight and hands-on mentality is unique.", name: "Director Digital Transformation", org: "Large financial institution", initials: "JB" },
+      { quote: "The NIS2 implementation seemed impossible. The ITsPeople team made it workable, understandable and, most importantly, embedded in our organisation.", name: "CISO", org: "Government executive agency", initials: "MV" },
+      { quote: "What sets ITsPeople apart is their focus on people. Technically we were already advanced, but adoption lagged. They solved that for us.", name: "CIO", org: "University Medical Center", initials: "RK" },
+      { quote: "The Business Control Framework ITsPeople delivered finally gives our board real grip on the transformation.", name: "CFO", org: "Insurance company", initials: "SL" },
+    ],
   },
-  {
-    quote: "Wat ITsPeople onderscheidt is hun focus op de mens. Technisch waren we al ver, maar de adoptie bleef achter. Zij hebben dat opgelost.",
-    name: "CIO",
-    org: "Universitair Medisch Centrum",
-    initials: "RK",
-  },
-  {
-    quote: "Het Business Control Framework dat ITsPeople heeft opgeleverd geeft ons bestuur voor het eerst écht grip op de transformatie.",
-    name: "CFO",
-    org: "Verzekeringsmaatschappij",
-    initials: "SL",
-  },
-];
+};
 
 export default function Testimonials() {
+  const locale = useLocale() as "nl" | "en";
+  const d = data[locale];
+  const testimonials = d.items;
   return (
     <section className="relative py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -41,10 +43,10 @@ export default function Testimonials() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-its-green text-sm font-semibold tracking-wider uppercase">
-            Wat klanten zeggen
+            {d.eyebrow}
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-4 tracking-tight text-its-charcoal">
-            Vertrouwen door <span className="gradient-text">resultaat</span>
+            {d.titleA}<span className="gradient-text">{d.titleB}</span>
           </h2>
         </motion.div>
 

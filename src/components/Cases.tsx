@@ -1,39 +1,94 @@
 "use client";
 
+import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const cases = [
-  {
-    sector: "Financiële Sector",
-    title: "Digitale transformatie bij een grote verzekeraar",
-    challenge: "Versnipperde processen en gebrek aan grip op een €20M transformatieprogramma.",
-    approach: "Target Operating Model, Business Control Framework, en Transition Support Office ingericht.",
-    results: ["40% snellere doorlooptijd", "98% compliance score", "€3.2M besparing gerealiseerd"],
-    image: "/images/team-discussion.jpg",
-    color: "its-green-dark",
+const data = {
+  nl: {
+    tag: "Case Studies",
+    heading1: "Bewezen",
+    heading2: "resultaat",
+    description: "Van strategie tot realisatie: bekijk hoe wij organisaties hebben geholpen bij hun complexe transformaties.",
+    cases: [
+      {
+        sector: "Financiële Sector",
+        title: "Digitale transformatie bij een grote verzekeraar",
+        challenge: "Versnipperde processen en gebrek aan grip op een €20M transformatieprogramma.",
+        approach: "Target Operating Model, Business Control Framework, en Transition Support Office ingericht.",
+        results: ["40% snellere doorlooptijd", "98% compliance score", "€3.2M besparing gerealiseerd"],
+        image: "/images/team-discussion.jpg",
+        color: "its-green-dark",
+      },
+      {
+        sector: "Overheid",
+        title: "NIS2-implementatie bij een uitvoeringsorganisatie",
+        challenge: "Complexe regelgeving vertalen naar werkbare processen binnen strikte deadlines.",
+        approach: "Integrale compliance-aanpak: gap-analyse, procesherontwerp, governance en training.",
+        results: ["100% NIS2 compliant", "Audit-ready in 4 maanden", "Bestuurlijke borging gerealiseerd"],
+        image: "/images/team-office.jpg",
+        color: "its-green",
+      },
+      {
+        sector: "Zorg",
+        title: "Security governance voor een universitair medisch centrum",
+        challenge: "Informatiebeveiligingsbeleid dat niet aansloot bij de dagelijkse praktijk van zorgprofessionals.",
+        approach: "BIO/NEN 7510 compliance gecombineerd met security awareness programma.",
+        results: ["90% awareness score", "ISO 27001 certificering", "Cultuurverandering gerealiseerd"],
+        image: "/images/team-sept-1.jpg",
+        color: "its-lime",
+      },
+    ],
+    labels: {
+      challenge: "Uitdaging",
+      approach: "Aanpak",
+    },
   },
-  {
-    sector: "Overheid",
-    title: "NIS2-implementatie bij een uitvoeringsorganisatie",
-    challenge: "Complexe regelgeving vertalen naar werkbare processen binnen strikte deadlines.",
-    approach: "Integrale compliance-aanpak: gap-analyse, procesherontwerp, governance en training.",
-    results: ["100% NIS2 compliant", "Audit-ready in 4 maanden", "Bestuurlijke borging gerealiseerd"],
-    image: "/images/team-office.jpg",
-    color: "its-green",
+  en: {
+    tag: "Case Studies",
+    heading1: "Proven",
+    heading2: "results",
+    description: "From strategy to delivery: see how we have supported organisations through complex transformations.",
+    cases: [
+      {
+        sector: "Financial Services",
+        title: "Digital transformation at a major insurance company",
+        challenge: "Fragmented processes and lack of control over a €20M transformation programme.",
+        approach: "Designed Target Operating Model, Business Control Framework, and Transition Support Office.",
+        results: ["40% faster turnaround", "98% compliance score", "€3.2M savings realised"],
+        image: "/images/team-discussion.jpg",
+        color: "its-green-dark",
+      },
+      {
+        sector: "Government",
+        title: "NIS2 implementation at a public sector organisation",
+        challenge: "Translating complex regulation into workable processes within strict deadlines.",
+        approach: "Integrated compliance approach: gap analysis, process redesign, governance and training.",
+        results: ["100% NIS2 compliant", "Audit-ready in 4 months", "Board-level assurance established"],
+        image: "/images/team-office.jpg",
+        color: "its-green",
+      },
+      {
+        sector: "Healthcare",
+        title: "Security governance at an academic medical centre",
+        challenge: "Information security policy misaligned with healthcare professionals' daily practice.",
+        approach: "BIO/NEN 7510 compliance combined with security awareness programme.",
+        results: ["90% awareness score", "ISO 27001 certification", "Cultural transformation achieved"],
+        image: "/images/team-sept-1.jpg",
+        color: "its-lime",
+      },
+    ],
+    labels: {
+      challenge: "Challenge",
+      approach: "Approach",
+    },
   },
-  {
-    sector: "Zorg",
-    title: "Security governance voor een universitair medisch centrum",
-    challenge: "Informatiebeveiligingsbeleid dat niet aansloot bij de dagelijkse praktijk van zorgprofessionals.",
-    approach: "BIO/NEN 7510 compliance gecombineerd met security awareness programma.",
-    results: ["90% awareness score", "ISO 27001 certificering", "Cultuurverandering gerealiseerd"],
-    image: "/images/team-sept-1.jpg",
-    color: "its-lime",
-  },
-];
+};
 
 export default function Cases() {
+  const locale = useLocale() as "nl" | "en";
+  const d = data[locale];
+
   return (
     <section id="cases" className="relative py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -45,20 +100,19 @@ export default function Cases() {
           className="max-w-2xl mb-16"
         >
           <span className="text-its-green text-sm font-semibold tracking-wider uppercase">
-            Case Studies
+            {d.tag}
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight text-its-charcoal">
-            Bewezen <span className="gradient-text">resultaat</span>
+            {d.heading1} <span className="gradient-text">{d.heading2}</span>
           </h2>
           <p className="text-its-gray-mid text-lg leading-relaxed">
-            Van strategie tot realisatie — bekijk hoe wij organisaties hebben
-            geholpen bij hun complexe transformaties.
+            {d.description}
           </p>
         </motion.div>
 
         {/* Cases */}
         <div className="space-y-12">
-          {cases.map((c, i) => (
+          {d.cases.map((c, i) => (
             <motion.div
               key={c.title}
               initial={{ opacity: 0, y: 40 }}
@@ -85,11 +139,11 @@ export default function Cases() {
 
                 <div className="space-y-4 mb-6">
                   <div>
-                    <p className="text-sm font-bold text-its-green-dark uppercase tracking-wider mb-1">Uitdaging</p>
+                    <p className="text-sm font-bold text-its-green-dark uppercase tracking-wider mb-1">{d.labels.challenge}</p>
                     <p className="text-its-gray-mid text-sm leading-relaxed">{c.challenge}</p>
                   </div>
                   <div>
-                    <p className="text-sm font-bold text-its-green uppercase tracking-wider mb-1">Aanpak</p>
+                    <p className="text-sm font-bold text-its-green uppercase tracking-wider mb-1">{d.labels.approach}</p>
                     <p className="text-its-gray-mid text-sm leading-relaxed">{c.approach}</p>
                   </div>
                 </div>

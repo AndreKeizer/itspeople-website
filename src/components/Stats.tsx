@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { useLocale } from "next-intl";
 
 function AnimatedNumber({ value, suffix = "" }: { value: number; suffix?: string }) {
   const ref = useRef(null);
@@ -26,14 +27,24 @@ function AnimatedNumber({ value, suffix = "" }: { value: number; suffix?: string
   return <span ref={ref}>{count}{suffix}</span>;
 }
 
-const stats = [
-  { value: 50, suffix: "+", label: "Transformaties begeleid" },
-  { value: 98, suffix: "%", label: "Klanttevredenheid" },
-  { value: 15, suffix: "+", label: "Jaar ervaring" },
-  { value: 4, suffix: "", label: "Sectoren" },
-];
+const statsByLocale = {
+  nl: [
+    { value: 50, suffix: "+", label: "Transformaties begeleid" },
+    { value: 98, suffix: "%", label: "Klanttevredenheid" },
+    { value: 15, suffix: "+", label: "Jaar ervaring" },
+    { value: 4, suffix: "", label: "Sectoren" },
+  ],
+  en: [
+    { value: 50, suffix: "+", label: "Transformations delivered" },
+    { value: 98, suffix: "%", label: "Client satisfaction" },
+    { value: 15, suffix: "+", label: "Years of experience" },
+    { value: 4, suffix: "", label: "Sectors" },
+  ],
+};
 
 export default function Stats() {
+  const locale = useLocale() as "nl" | "en";
+  const stats = statsByLocale[locale];
   return (
     <section className="relative py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">

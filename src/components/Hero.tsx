@@ -3,8 +3,22 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useLocale } from "next-intl";
+
+const t = {
+  badge: { nl: "Make the Difference", en: "Make the Difference" },
+  h1a: { nl: "Transformaties die ", en: "Transformations that " },
+  h1b: { nl: "mensen bewegen", en: "move people" },
+  sub: {
+    nl: "Wij begeleiden organisaties bij het realiseren van complexe digitale transformaties. Gecentreerd rondom mensen, gedreven door data en technologie.",
+    en: "We guide organisations through complex digital transformations. Centred around people, driven by data and technology.",
+  },
+  cta1: { nl: "Laten we praten", en: "Let's talk" },
+  cta2: { nl: "Onze diensten", en: "Our services" },
+};
 
 export default function Hero() {
+  const locale = useLocale() as "nl" | "en";
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background image with overlay */}
@@ -38,7 +52,7 @@ export default function Hero() {
           >
             <span className="w-2 h-2 rounded-full bg-its-green animate-pulse" />
             <span className="text-sm text-its-green font-medium">
-              Make the Difference
+              {t.badge[locale]}
             </span>
           </motion.div>
 
@@ -49,8 +63,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-8 text-white"
           >
-            Transformaties die{" "}
-            <span className="gradient-text">mensen bewegen</span>
+            {t.h1a[locale]}
+            <span className="gradient-text">{t.h1b[locale]}</span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -60,9 +74,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg sm:text-xl text-white/70 max-w-2xl mb-12 leading-relaxed"
           >
-            Wij begeleiden organisaties bij het realiseren van complexe digitale
-            transformaties. Gecentreerd rondom mensen — gedreven door data en
-            technologie.
+            {t.sub[locale]}
           </motion.p>
 
           {/* CTA */}
@@ -73,19 +85,19 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-start gap-4"
           >
             <Link
-              href="/contact"
+              href={`/${locale}/contact`}
               className="group px-8 py-4 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-its-green/25 flex items-center gap-2"
             >
-              Laten we praten
+              {t.cta1[locale]}
               <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
             <Link
-              href="/diensten"
+              href={`/${locale}/diensten`}
               className="px-8 py-4 rounded-lg border border-white/20 hover:border-white/40 text-white font-semibold transition-all duration-300 hover:bg-white/5"
             >
-              Onze diensten
+              {t.cta2[locale]}
             </Link>
           </motion.div>
         </div>

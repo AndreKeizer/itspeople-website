@@ -1,38 +1,85 @@
 "use client";
 
+import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 
-const tools = [
-  {
-    icon: "💡",
-    title: "Innovation Readiness Scan",
-    description: "Ontdek hoe innovatie-ready uw organisatie is. Onze scan analyseert 6 dimensies: cultuur, leiderschap, processen, technologie, mensen en strategie.",
-    duration: "10 minuten",
-    output: "Persoonlijk rapport met aanbevelingen",
-    cta: "Start de scan",
-    color: "from-its-green to-its-lime",
+const data = {
+  nl: {
+    tag: "Interactieve Tools",
+    heading1: "Ontdek waar uw organisatie",
+    heading2: "staat",
+    description: "Onze gratis self-assessment tools geven u direct inzicht in de volwassenheid van uw organisatie op cruciale gebieden.",
+    tools: [
+      {
+        icon: "💡",
+        title: "Innovation Readiness Scan",
+        description: "Ontdek hoe innovatie-ready uw organisatie is. Onze scan analyseert 6 dimensies: cultuur, leiderschap, processen, technologie, mensen en strategie.",
+        duration: "10 minuten",
+        output: "Persoonlijk rapport met aanbevelingen",
+        cta: "Start de scan",
+        color: "from-its-green to-its-lime",
+      },
+      {
+        icon: "⚙️",
+        title: "IT-Governance Scan",
+        description: "Beoordeel de volwassenheid van uw IT-governance. Van besluitvorming tot risicomanagement: krijg inzicht in uw sterke punten en verbeterkansen.",
+        duration: "15 minuten",
+        output: "Volwassenheidsrapport met benchmark",
+        cta: "Start de scan",
+        color: "from-its-green-dark to-its-green",
+      },
+      {
+        icon: "🛡️",
+        title: "NIS2 Readiness Check",
+        description: "Voldoet uw organisatie al aan de NIS2-richtlijn? Deze quick check geeft u in 5 minuten inzicht in uw compliance-status.",
+        duration: "5 minuten",
+        output: "Compliance scorecard met actieplan",
+        cta: "Check nu",
+        color: "from-its-charcoal to-its-green-dark",
+      },
+    ],
   },
-  {
-    icon: "⚙️",
-    title: "IT-Governance Scan",
-    description: "Beoordeel de volwassenheid van uw IT-governance. Van besluitvorming tot risicomanagement — krijg inzicht in uw sterke punten en verbeterkansen.",
-    duration: "15 minuten",
-    output: "Volwassenheidsrapport met benchmark",
-    cta: "Start de scan",
-    color: "from-its-green-dark to-its-green",
+  en: {
+    tag: "Interactive Tools",
+    heading1: "Find out where your organisation",
+    heading2: "stands",
+    description: "Our free self-assessment tools give you immediate insight into your organisation's maturity in critical areas.",
+    tools: [
+      {
+        icon: "💡",
+        title: "Innovation Readiness Scan",
+        description: "Discover how innovation-ready your organisation is. Our scan analyses 6 dimensions: culture, leadership, processes, technology, people and strategy.",
+        duration: "10 minutes",
+        output: "Personal report with recommendations",
+        cta: "Start scan",
+        color: "from-its-green to-its-lime",
+      },
+      {
+        icon: "⚙️",
+        title: "IT-Governance Scan",
+        description: "Assess the maturity of your IT governance. From decision-making to risk management: gain insight into your strengths and improvement opportunities.",
+        duration: "15 minutes",
+        output: "Maturity report with benchmark",
+        cta: "Start scan",
+        color: "from-its-green-dark to-its-green",
+      },
+      {
+        icon: "🛡️",
+        title: "NIS2 Readiness Check",
+        description: "Does your organisation already comply with NIS2? This quick check gives you insight into your compliance status in just 5 minutes.",
+        duration: "5 minutes",
+        output: "Compliance scorecard with action plan",
+        cta: "Check now",
+        color: "from-its-charcoal to-its-green-dark",
+      },
+    ],
   },
-  {
-    icon: "🛡️",
-    title: "NIS2 Readiness Check",
-    description: "Voldoet uw organisatie al aan de NIS2-richtlijn? Deze quick check geeft u in 5 minuten inzicht in uw compliance-status.",
-    duration: "5 minuten",
-    output: "Compliance scorecard met actieplan",
-    cta: "Check nu",
-    color: "from-its-charcoal to-its-green-dark",
-  },
-];
+};
 
 export default function Tools() {
+  const locale = useLocale() as "nl" | "en";
+  const d = data[locale];
+
   return (
     <section id="tools" className="relative py-28">
       <div className="absolute inset-0 bg-gradient-to-br from-its-dark via-its-deep to-its-dark" />
@@ -46,21 +93,20 @@ export default function Tools() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-its-green text-sm font-semibold tracking-wider uppercase">
-            Interactieve Tools
+            {d.tag}
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight text-white">
-            Ontdek waar uw organisatie{" "}
-            <span className="gradient-text">staat</span>
+            {d.heading1}{" "}
+            <span className="gradient-text">{d.heading2}</span>
           </h2>
           <p className="text-white/60 text-lg leading-relaxed">
-            Onze gratis self-assessment tools geven u direct inzicht in de
-            volwassenheid van uw organisatie op cruciale gebieden.
+            {d.description}
           </p>
         </motion.div>
 
         {/* Tools grid */}
         <div className="grid md:grid-cols-3 gap-6">
-          {tools.map((tool, i) => (
+          {d.tools.map((tool, i) => (
             <motion.div
               key={tool.title}
               initial={{ opacity: 0, y: 30 }}

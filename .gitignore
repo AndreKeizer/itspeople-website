@@ -34,3 +34,12 @@ logs/
 
 # typescript
 *.tsbuildinfo
+
+# Temp office lock files
+~$*
+
+# Root-level uploads that belong under public/
+/ASML logo.png
+/Logo SVB.png
+/Klant logos.pptx
+/ITsPeople-TQA-F-Whitepaper.docx

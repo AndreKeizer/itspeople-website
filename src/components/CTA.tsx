@@ -2,8 +2,19 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useLocale } from "next-intl";
+
+const t = {
+  h1a: { nl: "Klaar voor de ", en: "Ready for the " },
+  h1b: { nl: "volgende stap?", en: "next step?" },
+  sub: {
+    nl: "Wilt u meer weten over wat ITsPeople voor uw organisatie kan betekenen? Neem contact op, wij vertellen u er graag over.",
+    en: "Curious what ITsPeople can mean for your organisation? Reach out, we'd love to tell you more.",
+  },
+};
 
 export default function CTA() {
+  const locale = useLocale() as "nl" | "en";
   return (
     <section id="contact" className="relative py-28 overflow-hidden">
       {/* Background image */}
@@ -25,12 +36,11 @@ export default function CTA() {
           transition={{ duration: 0.7 }}
         >
           <h2 className="text-4xl sm:text-6xl font-bold tracking-tight mb-6 text-white">
-            Klaar voor de{" "}
-            <span className="gradient-text">volgende stap?</span>
+            {t.h1a[locale]}
+            <span className="gradient-text">{t.h1b[locale]}</span>
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-            Wilt u meer weten over wat ITsPeople voor uw organisatie kan
-            betekenen? Neem contact op — wij vertellen u er graag over.
+            {t.sub[locale]}
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

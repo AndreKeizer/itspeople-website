@@ -1,8 +1,34 @@
 "use client";
 
 import Link from "next/link";
+import { useLocale } from "next-intl";
+
+const t = {
+  tagline: {
+    nl: "Complexe transformaties, gecentreerd rondom mensen.",
+    en: "Complex transformations, centred around people.",
+  },
+  services: { nl: "Diensten", en: "Services" },
+  company: { nl: "Bedrijf", en: "Company" },
+  contact: { nl: "Contact", en: "Contact" },
+  about: { nl: "Over ons", en: "About us" },
+  cases: { nl: "Cases", en: "Cases" },
+  insights: { nl: "Insights", en: "Insights" },
+  academy: { nl: "Academy", en: "Academy" },
+  careers: { nl: "Werken bij", en: "Careers" },
+  rights: { nl: "Alle rechten voorbehouden.", en: "All rights reserved." },
+  privacy: { nl: "Privacyverklaring", en: "Privacy policy" },
+  svcBusiness: { nl: "Business Consultancy", en: "Business Consultancy" },
+  svcProject: { nl: "Project Management", en: "Project Management" },
+  svcProcess: { nl: "Proces Management", en: "Process Management" },
+  svcData: { nl: "Data Management", en: "Data Management" },
+  svcTest: { nl: "Testen & QA", en: "Testing & QA" },
+};
 
 export default function Footer() {
+  const locale = useLocale() as "nl" | "en";
+  const L = `/${locale}`;
+
   return (
     <footer className="bg-its-dark text-white py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -15,36 +41,33 @@ export default function Footer() {
             <p className="text-its-gray-mid text-sm leading-relaxed mb-2">
               Make the Difference
             </p>
-            <p className="text-its-gray-mid text-sm leading-relaxed">
-              Complexe transformaties, gecentreerd rondom mensen.
-            </p>
+            <p className="text-its-gray-mid text-sm leading-relaxed">{t.tagline[locale]}</p>
           </div>
 
           <div>
-            <h4 className="text-sm font-bold text-white mb-4">Diensten</h4>
+            <h4 className="text-sm font-bold text-white mb-4">{t.services[locale]}</h4>
             <ul className="space-y-3 text-sm text-its-gray-mid">
-              <li><Link href="/diensten" className="hover:text-its-green transition-colors">Business Consultancy</Link></li>
-              <li><Link href="/diensten" className="hover:text-its-green transition-colors">Project Management</Link></li>
-              <li><Link href="/diensten" className="hover:text-its-green transition-colors">Proces Management</Link></li>
-              <li><Link href="/diensten" className="hover:text-its-green transition-colors">Data Management</Link></li>
-              <li><Link href="/diensten" className="hover:text-its-green transition-colors">Testen &amp; QA</Link></li>
+              <li><Link href={`${L}/diensten`} className="hover:text-its-green transition-colors">{t.svcBusiness[locale]}</Link></li>
+              <li><Link href={`${L}/diensten`} className="hover:text-its-green transition-colors">{t.svcProject[locale]}</Link></li>
+              <li><Link href={`${L}/diensten`} className="hover:text-its-green transition-colors">{t.svcProcess[locale]}</Link></li>
+              <li><Link href={`${L}/diensten`} className="hover:text-its-green transition-colors">{t.svcData[locale]}</Link></li>
+              <li><Link href={`${L}/diensten`} className="hover:text-its-green transition-colors">{t.svcTest[locale]}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-bold text-white mb-4">Bedrijf</h4>
+            <h4 className="text-sm font-bold text-white mb-4">{t.company[locale]}</h4>
             <ul className="space-y-3 text-sm text-its-gray-mid">
-              <li><Link href="/over-ons" className="hover:text-its-green transition-colors">Over ons</Link></li>
-              <li><Link href="/cases" className="hover:text-its-green transition-colors">Cases</Link></li>
-              <li><Link href="/insights" className="hover:text-its-green transition-colors">Insights</Link></li>
-              <li><Link href="/academy" className="hover:text-its-green transition-colors">Academy</Link></li>
-              <li><Link href="/tools" className="hover:text-its-green transition-colors">Tools</Link></li>
-              <li><Link href="/werken-bij" className="hover:text-its-green transition-colors">Werken bij</Link></li>
+              <li><Link href={`${L}/over-ons`} className="hover:text-its-green transition-colors">{t.about[locale]}</Link></li>
+              <li><Link href={`${L}/cases`} className="hover:text-its-green transition-colors">{t.cases[locale]}</Link></li>
+              <li><Link href={`${L}/insights`} className="hover:text-its-green transition-colors">{t.insights[locale]}</Link></li>
+              <li><Link href={`${L}/academy`} className="hover:text-its-green transition-colors">{t.academy[locale]}</Link></li>
+              <li><Link href={`${L}/werken-bij`} className="hover:text-its-green transition-colors">{t.careers[locale]}</Link></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-bold text-white mb-4">Contact</h4>
+            <h4 className="text-sm font-bold text-white mb-4">{t.contact[locale]}</h4>
             <ul className="space-y-3 text-sm text-its-gray-mid">
               <li>Hogeweg 105</li>
               <li>5301 LL Zaltbommel</li>
@@ -66,10 +89,10 @@ export default function Footer() {
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-its-gray-mid">
-          <p>&copy; 2026 ITsPeople. Alle rechten voorbehouden.</p>
+          <p>&copy; 2026 ITsPeople. {t.rights[locale]}</p>
           <div className="flex gap-6">
-            <Link href="/contact" className="hover:text-its-green transition-colors">Contact</Link>
-            <a href="#" className="hover:text-its-green transition-colors">Privacyverklaring</a>
+            <Link href={`${L}/contact`} className="hover:text-its-green transition-colors">{t.contact[locale]}</Link>
+            <a href="#" className="hover:text-its-green transition-colors">{t.privacy[locale]}</a>
           </div>
         </div>
       </div>

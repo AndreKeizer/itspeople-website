@@ -1,40 +1,103 @@
 "use client";
 
+import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 
-const tracks = [
-  {
-    level: "Senior Consultant Advanced",
-    color: "from-its-green-dark to-its-green-mid",
-    modules: ["Strategisch Advies", "Trusted Advisor", "Business Case Development", "Change Management Advanced", "Stakeholder Management Senior"],
+const data = {
+  nl: {
+    tag: "ITs Academy",
+    heading1: "Groei · Ontwikkeling ·",
+    heading2: "Excellentie",
+    description: "De ITs Academy investeert continu in de ontwikkeling van onze consultants. Van onboarding tot senior level: gestructureerde learning tracks die professionals naar het volgende niveau brengen.",
+    tracks: [
+      {
+        level: "Senior Consultant Advanced",
+        color: "from-its-green-dark to-its-green-mid",
+        modules: ["Strategisch Advies", "Trusted Advisor", "Business Case Development", "Change Management Advanced", "Stakeholder Management Senior"],
+      },
+      {
+        level: "Programma Management",
+        color: "from-its-green-mid to-its-green",
+        modules: ["IPMA & Prince2", "Programma Governance", "Finance & Budgettering", "Risk Management Advanced", "Benefits Realization"],
+      },
+      {
+        level: "Medior Consultant",
+        color: "from-its-green to-its-lime",
+        modules: ["AI & Data Strategie", "Klantwaarde Creëren", "Stakeholder Management", "Risk Management", "Data Governance Basics"],
+      },
+      {
+        level: "ERP & Cloud Specialist",
+        color: "from-its-lime to-its-green",
+        modules: ["Cloud Foundations", "Requirements Analyse", "ERP Implementatie", "Stakeholder Management", "Risk Management"],
+      },
+    ],
+    baseline: {
+      title: "🎓 Onboarding Baseline",
+      description: "Elke nieuwe consultant start met onze baseline: Welkom & Collega's, Kennis Delen, Communicatie & Insights, Feedback & Speak Up, Deliver as Promised, Presenteren, Klantbegrip en Match Your Message.",
+      tags: ["Welkom", "Kennis Delen", "Feedback", "Presenteren", "Klantbegrip"],
+    },
+    events: {
+      title: "Samen Events",
+      events: [
+        { month: "Jan", icon: "🥂", name: "Nieuwjaarsreceptie" },
+        { month: "Apr", icon: "🌷", name: "SpringSamen" },
+        { month: "Jun", icon: "☀️", name: "SummerSamen" },
+        { month: "Sep", icon: "👨‍👩‍👧‍👦", name: "FamilyDay" },
+        { month: "Okt", icon: "🍂", name: "AutumnSamen" },
+        { month: "Dec", icon: "🎄", name: "XmasSamen" },
+      ],
+    },
   },
-  {
-    level: "Programma Management",
-    color: "from-its-green-mid to-its-green",
-    modules: ["IPMA & Prince2", "Programma Governance", "Finance & Budgettering", "Risk Management Advanced", "Benefits Realization"],
+  en: {
+    tag: "ITs Academy",
+    heading1: "Growth · Development ·",
+    heading2: "Excellence",
+    description: "The ITs Academy continuously invests in consultant development. From onboarding to senior level: structured learning tracks that take professionals to the next level.",
+    tracks: [
+      {
+        level: "Senior Consultant Advanced",
+        color: "from-its-green-dark to-its-green-mid",
+        modules: ["Strategic Advisory", "Trusted Advisor", "Business Case Development", "Change Management Advanced", "Senior Stakeholder Management"],
+      },
+      {
+        level: "Programme Management",
+        color: "from-its-green-mid to-its-green",
+        modules: ["IPMA & Prince2", "Programme Governance", "Finance & Budgeting", "Risk Management Advanced", "Benefits Realisation"],
+      },
+      {
+        level: "Mid-level Consultant",
+        color: "from-its-green to-its-lime",
+        modules: ["AI & Data Strategy", "Customer Value Creation", "Stakeholder Management", "Risk Management", "Data Governance Basics"],
+      },
+      {
+        level: "ERP & Cloud Specialist",
+        color: "from-its-lime to-its-green",
+        modules: ["Cloud Foundations", "Requirements Analysis", "ERP Implementation", "Stakeholder Management", "Risk Management"],
+      },
+    ],
+    baseline: {
+      title: "🎓 Onboarding Baseline",
+      description: "Every new consultant starts with our baseline: Welcome & Colleagues, Knowledge Sharing, Communication & Insights, Feedback & Speak Up, Deliver as Promised, Presenting, Customer Understanding and Match Your Message.",
+      tags: ["Welcome", "Knowledge Sharing", "Feedback", "Presenting", "Customer Understanding"],
+    },
+    events: {
+      title: "Samen Events",
+      events: [
+        { month: "Jan", icon: "🥂", name: "New Year Reception" },
+        { month: "Apr", icon: "🌷", name: "SpringTogether" },
+        { month: "Jun", icon: "☀️", name: "SummerTogether" },
+        { month: "Sep", icon: "👨‍👩‍👧‍👦", name: "Family Day" },
+        { month: "Oct", icon: "🍂", name: "AutumnTogether" },
+        { month: "Dec", icon: "🎄", name: "XmasTogether" },
+      ],
+    },
   },
-  {
-    level: "Medior Consultant",
-    color: "from-its-green to-its-lime",
-    modules: ["AI & Data Strategie", "Klantwaarde Creëren", "Stakeholder Management", "Risk Management", "Data Governance Basics"],
-  },
-  {
-    level: "ERP & Cloud Specialist",
-    color: "from-its-lime to-its-green",
-    modules: ["Cloud Foundations", "Requirements Analyse", "ERP Implementatie", "Stakeholder Management", "Risk Management"],
-  },
-];
-
-const events = [
-  { month: "Jan", icon: "🥂", name: "Nieuwjaarsreceptie" },
-  { month: "Apr", icon: "🌷", name: "SpringSamen" },
-  { month: "Jun", icon: "☀️", name: "SummerSamen" },
-  { month: "Sep", icon: "👨‍👩‍👧‍👦", name: "FamilyDay" },
-  { month: "Okt", icon: "🍂", name: "AutumnSamen" },
-  { month: "Dec", icon: "🎄", name: "XmasSamen" },
-];
+};
 
 export default function Academy() {
+  const locale = useLocale() as "nl" | "en";
+  const d = data[locale];
+
   return (
     <section id="academy" className="relative py-28 bg-its-warm overflow-hidden">
       {/* Subtle background accent */}
@@ -49,22 +112,20 @@ export default function Academy() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-its-green text-sm font-semibold tracking-wider uppercase">
-            ITs Academy
+            {d.tag}
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight text-its-charcoal">
-            Groei · Ontwikkeling ·{" "}
-            <span className="gradient-text">Excellentie</span>
+            {d.heading1}{" "}
+            <span className="gradient-text">{d.heading2}</span>
           </h2>
           <p className="text-its-gray-mid text-lg leading-relaxed">
-            De ITs Academy investeert continu in de ontwikkeling van onze
-            consultants. Van onboarding tot senior level — gestructureerde
-            learning tracks die professionals naar het volgende niveau brengen.
+            {d.description}
           </p>
         </motion.div>
 
         {/* Training Tracks */}
         <div className="grid md:grid-cols-2 gap-6 mb-16">
-          {tracks.map((track, i) => (
+          {d.tracks.map((track, i) => (
             <motion.div
               key={track.level}
               initial={{ opacity: 0, y: 30 }}
@@ -105,17 +166,14 @@ export default function Academy() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h3 className="text-white font-bold text-xl mb-2">
-                🎓 Onboarding Baseline
+                {d.baseline.title}
               </h3>
               <p className="text-white/60 text-sm leading-relaxed max-w-xl">
-                Elke nieuwe consultant start met onze baseline: Welkom &
-                Collega's, Kennis Delen, Communicatie & Insights, Feedback &
-                Speak Up, Deliver as Promised, Presenteren, Klantbegrip en Match
-                Your Message.
+                {d.baseline.description}
               </p>
             </div>
             <div className="flex flex-wrap gap-2">
-              {["Welkom", "Kennis Delen", "Feedback", "Presenteren", "Klantbegrip"].map((tag) => (
+              {d.baseline.tags.map((tag) => (
                 <span
                   key={tag}
                   className="px-3 py-1 rounded-full text-xs font-medium bg-its-green/10 text-its-green border border-its-green/20"
@@ -134,10 +192,10 @@ export default function Academy() {
           viewport={{ once: true }}
         >
           <h3 className="text-center font-bold text-2xl text-its-charcoal mb-8">
-            Samen Events
+            {d.events.title}
           </h3>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
-            {events.map((event, i) => (
+            {d.events.events.map((event, i) => (
               <motion.div
                 key={event.name}
                 initial={{ opacity: 0, scale: 0.9 }}

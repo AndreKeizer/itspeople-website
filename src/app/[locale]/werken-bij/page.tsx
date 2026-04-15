@@ -1,0 +1,184 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { useLocale } from "next-intl";
+
+const data = {
+  nl: {
+    vacatures: [
+      { title: "Senior Business Consultant", type: "Fulltime", location: "Zaltbommel / Hybride", description: "Als Senior Business Consultant bij ITsPeople werk je aan complexe transformatieprojecten bij toonaangevende organisaties. Je adviseert op strategisch niveau, ontwerpt Target Operating Models en begeleidt verandertrajecten van begin tot eind.", requirements: ["Minimaal 7 jaar ervaring in consultancy", "Ervaring met transformatieprogramma's", "Sterke stakeholder management vaardigheden", "HBO/WO werk- en denkniveau"] },
+      { title: "Projectmanager", type: "Fulltime", location: "Zaltbommel / Hybride", description: "Als Projectmanager bij ITsPeople leid je complexe IT- en organisatietransformaties. Je zorgt voor structuur, voortgang en resultaat in uitdagende omgevingen. Van Agile tot Waterval, je bent thuis in verschillende methodieken.", requirements: ["Minimaal 5 jaar ervaring als projectmanager", "IPMA of Prince2 certificering", "Ervaring in de financiële sector, overheid of zorg", "Sterk in risicomanagement"] },
+      { title: "Data Consultant", type: "Fulltime", location: "Zaltbommel / Hybride", description: "Als Data Consultant help je organisaties om data-gedreven te werken. Van data governance tot visualisatie, van kwaliteitsverbetering tot AI-toepassingen. Je combineert technische kennis met organisatorisch inzicht.", requirements: ["Minimaal 3 jaar ervaring in data management", "Kennis van data governance frameworks", "Ervaring met BI-tools en dashboarding", "Analytisch en communicatief sterk"] },
+      { title: "NIS2 Compliance Specialist", type: "Fulltime", location: "Zaltbommel / Hybride", description: "Als NIS2 Compliance Specialist help je organisaties om te voldoen aan de NIS2-richtlijn. Je voert gap-analyses uit, ontwerpt compliance frameworks en begeleidt implementatietrajecten.", requirements: ["Ervaring met compliance en informatiebeveiliging", "Kennis van NIS2, BIO of ISO 27001", "In staat om complexe materie toegankelijk te maken", "Ervaring met governance en risicomanagement"] },
+    ],
+    benefits: [
+      { icon: "📚", title: "ITs Academy", description: "Structurele investering in jouw ontwikkeling via onze eigen academy." },
+      { icon: "🏠", title: "Hybride werken", description: "Flexibiliteit in waar en wanneer je werkt, afgestemd op het project." },
+      { icon: "🚗", title: "Mobiliteit", description: "Leaseauto of mobiliteitsbudget naar keuze." },
+      { icon: "💰", title: "Competitief salaris", description: "Marktconform salaris met bonus en pensioenregeling." },
+      { icon: "🎉", title: "Samen Events", description: "Zes keer per jaar samen vieren, van nieuwjaar tot kerst." },
+      { icon: "⭐", title: "Make-A-Wish", description: "Samen het verschil maken, ook buiten projecten." },
+    ],
+    heroLabel: "Werken bij ITsPeople",
+    heroTitle: "Maak het",
+    heroTitleHighlight: "verschil",
+    heroDesc: "Bij ITsPeople werk je aan uitdagende transformatieprojecten bij toonaangevende organisaties. Met een team van experts die gedreven worden door één gemeenschappelijk doel: duurzame verandering realiseren.",
+    whyTitle: "Waarom ITsPeople?",
+    whyP1: "Bij ITsPeople ben je geen nummer. Je bent een professional die het verschil maakt. Wij investeren in jouw ontwikkeling, geven je de ruimte om te groeien en bieden uitdagende projecten waar je echt impact hebt.",
+    whyP2: "Onze consultants werken bij organisaties als Rabobank, Rijksoverheid, UMC Utrecht en Aegon. Projecten waarbij complexiteit, menselijkheid en resultaat hand in hand gaan.",
+    whyP3: "En tussendoor vieren we samen. Zes keer per jaar komen we bij elkaar voor onze Samen Events. Omdat het verschil maken ook samen mag zijn.",
+    benefitsTitle: "Wat wij bieden",
+    vacanciesTitle: "Openstaande vacatures",
+    vacanciesDesc: "Staat jouw droombaan er niet bij? Stuur een open sollicitatie naar hr@itspeople.nl.",
+    apply: "Solliciteer →",
+    openTitle: "Jouw functie staat er niet bij?",
+    openDesc: "Wij zijn altijd op zoek naar talent. Stuur je CV en motivatie naar hr@itspeople.nl en wie weet maken wij binnenkort samen het verschil.",
+    openButton: "Stuur een open sollicitatie →",
+  },
+  en: {
+    vacatures: [
+      { title: "Senior Business Consultant", type: "Fulltime", location: "Zaltbommel / Hybrid", description: "As a Senior Business Consultant at ITsPeople, you work on complex transformation projects at leading organisations. You advise at a strategic level, design Target Operating Models and guide change programmes from start to finish.", requirements: ["Minimum 7 years consulting experience", "Experience with transformation programmes", "Strong stakeholder management skills", "Bachelor's degree or equivalent"] },
+      { title: "Project Manager", type: "Fulltime", location: "Zaltbommel / Hybrid", description: "As a Project Manager at ITsPeople, you lead complex IT and organisational transformations. You ensure structure, progress and results in challenging environments. From Agile to Waterfall, you're at home in different methodologies.", requirements: ["Minimum 5 years experience as project manager", "IPMA or Prince2 certification", "Experience in financial sector, government or healthcare", "Strong in risk management"] },
+      { title: "Data Consultant", type: "Fulltime", location: "Zaltbommel / Hybrid", description: "As a Data Consultant, you help organisations work data-driven. From data governance to visualisation, from quality improvement to AI applications. You combine technical knowledge with organisational insight.", requirements: ["Minimum 3 years data management experience", "Knowledge of data governance frameworks", "Experience with BI tools and dashboarding", "Analytically and communicatively strong"] },
+      { title: "NIS2 Compliance Specialist", type: "Fulltime", location: "Zaltbommel / Hybrid", description: "As a NIS2 Compliance Specialist, you help organisations comply with the NIS2 Directive. You conduct gap analyses, design compliance frameworks and guide implementation programmes.", requirements: ["Experience with compliance and information security", "Knowledge of NIS2, BIO or ISO 27001", "Able to make complex matters accessible", "Experience with governance and risk management"] },
+    ],
+    benefits: [
+      { icon: "📚", title: "ITs Academy", description: "Structural investment in your development through our own academy." },
+      { icon: "🏠", title: "Hybrid working", description: "Flexibility in where and when you work, tailored to the project." },
+      { icon: "🚗", title: "Mobility", description: "Company car or mobility budget of your choice." },
+      { icon: "💰", title: "Competitive salary", description: "Market-competitive salary with bonus and pension scheme." },
+      { icon: "🎉", title: "Together Events", description: "Celebrate together six times a year, from New Year to Christmas." },
+      { icon: "⭐", title: "Make-A-Wish", description: "Making a difference together, also beyond projects." },
+    ],
+    heroLabel: "Work at ITsPeople",
+    heroTitle: "Make the",
+    heroTitleHighlight: "difference",
+    heroDesc: "At ITsPeople, you work on challenging transformation projects at leading organisations. With a team of experts driven by one common goal: creating sustainable change.",
+    whyTitle: "Why ITsPeople?",
+    whyP1: "At ITsPeople, you're not a number. You're a professional who makes a difference. We invest in your development, give you room to grow and offer challenging projects where you have real impact.",
+    whyP2: "Our consultants work for organisations like Rabobank, Government, UMC Utrecht and Aegon. Projects where complexity, humanity and results go hand in hand.",
+    whyP3: "And along the way we celebrate together. Six times a year we get together for our Together Events. Because making a difference can also be together.",
+    benefitsTitle: "What we offer",
+    vacanciesTitle: "Open vacancies",
+    vacanciesDesc: "Not seeing your dream job? Send an open application to hr@itspeople.nl.",
+    apply: "Apply →",
+    openTitle: "Your position isn't listed?",
+    openDesc: "We're always looking for talent. Send your CV and motivation to hr@itspeople.nl and who knows, we'll soon make a difference together.",
+    openButton: "Send an open application →",
+  },
+};
+
+export default function WerkenBijPage() {
+  const locale = useLocale() as "nl" | "en";
+  const d = data[locale];
+
+  return (
+    <>
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-its-dark via-its-deep to-its-dark">
+        <div className="absolute inset-0 grid-pattern opacity-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <span className="text-its-green text-sm font-semibold tracking-wider uppercase">{d.heroLabel}</span>
+            <h1 className="text-4xl sm:text-6xl font-bold mt-4 mb-6 tracking-tight text-white">
+              {d.heroTitle} <span className="gradient-text">{d.heroTitleHighlight}</span>
+            </h1>
+            <p className="text-white/60 text-lg leading-relaxed max-w-2xl">
+              {d.heroDesc}
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why ITsPeople */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <h2 className="text-3xl font-bold text-its-charcoal mb-6">{d.whyTitle}</h2>
+              <p className="text-its-gray-mid text-lg leading-relaxed mb-6">
+                {d.whyP1}
+              </p>
+              <p className="text-its-gray-mid leading-relaxed mb-6">
+                {d.whyP2}
+              </p>
+              <p className="text-its-gray-mid leading-relaxed">
+                {d.whyP3}
+              </p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <Image src="/images/team-collab.jpg" alt={locale === "nl" ? "Werken bij ITsPeople" : "Working at ITsPeople"} fill className="object-cover" />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits */}
+      <section className="py-16 bg-its-warm">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-its-charcoal text-center mb-12">{d.benefitsTitle}</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {d.benefits.map((b, i) => (
+              <motion.div key={b.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="p-6 rounded-2xl bg-white border border-its-gray-light/30 text-center">
+                <span className="text-3xl block mb-3">{b.icon}</span>
+                <h3 className="font-bold text-its-charcoal mb-2">{b.title}</h3>
+                <p className="text-its-gray-mid text-sm">{b.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Vacatures */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-its-charcoal">{d.vacanciesTitle}</h2>
+            <p className="text-its-gray-mid mt-4">{d.vacanciesDesc}</p>
+          </motion.div>
+
+          <div className="space-y-6">
+            {d.vacatures.map((v, i) => (
+              <motion.div key={v.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="bg-its-warm rounded-2xl p-8 border border-its-gray-light/30 hover:shadow-lg transition-all duration-500">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                  <div className="flex-grow">
+                    <div className="flex items-center gap-3 mb-3">
+                      <h3 className="text-xl font-bold text-its-charcoal">{v.title}</h3>
+                      <span className="px-3 py-1 rounded-full text-xs font-medium bg-its-green/10 text-its-green-dark">{v.type}</span>
+                      <span className="px-3 py-1 rounded-full text-xs font-medium bg-its-charcoal/5 text-its-gray-mid">{v.location}</span>
+                    </div>
+                    <p className="text-its-gray-mid leading-relaxed mb-4">{v.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {v.requirements.map((r) => (
+                        <span key={r} className="px-3 py-1 rounded-full text-xs bg-white border border-its-gray-light/30 text-its-gray-mid">{r}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <Link href={locale === "nl" ? "/contact" : "/en/contact"} className="flex-shrink-0 px-6 py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all whitespace-nowrap">
+                    {d.apply}
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Open sollicitatie */}
+      <section className="py-20 bg-its-warm text-center">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-its-charcoal mb-6">{d.openTitle}</h2>
+          <p className="text-its-gray-mid text-lg mb-8">
+            {d.openDesc}
+          </p>
+          <a href="mailto:hr@itspeople.nl" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-its-charcoal hover:bg-its-dark text-white font-semibold transition-all duration-300">
+            {d.openButton}
+          </a>
+        </div>
+      </section>
+    </>
+  );
+}

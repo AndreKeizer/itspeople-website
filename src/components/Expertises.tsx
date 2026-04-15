@@ -2,41 +2,42 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useLocale } from "next-intl";
 
-const expertises = [
-  {
-    title: "Digitale Strategie",
-    description: "Van visie naar executie. Wij helpen organisaties hun digitale strategie te vertalen naar concrete roadmaps en meetbare resultaten.",
-    icon: "🎯",
+const data = {
+  nl: {
+    eyebrow: "Expertises",
+    titleA: "Specialisaties die het ",
+    titleB: "verschil maken",
+    intro: "Naast onze kerndiensten bieden wij diepgaande expertise op specifieke gebieden waar organisaties vandaag de grootste uitdagingen ervaren.",
+    items: [
+      { title: "Digitale Strategie", description: "Van visie naar executie. Wij helpen organisaties hun digitale strategie te vertalen naar concrete roadmaps en meetbare resultaten.", icon: "🎯" },
+      { title: "NIS2 & Compliance", description: "Integrale compliance-aanpak die wetgeving vertaalt naar werkbare processen, rollen en beheersingskaders.", icon: "🛡️" },
+      { title: "Innovatief Werkgedrag", description: "Organisaties helpen een cultuur van innovatie te creëren door middel van gedragsverandering en leiderschap.", icon: "💡" },
+      { title: "Datakwaliteit & Governance", description: "Structuur, kwaliteit en governance van data als fundament voor data-gedreven besluitvorming.", icon: "📊" },
+      { title: "IT-Governance", description: "De juiste governance-structuren inrichten voor effectieve IT-besturing en waardecreatie.", icon: "⚙️" },
+      { title: "AI & Transformatie", description: "AI Act classificatie, risicobeoordeling en governance van AI-toepassingen binnen uw organisatie.", icon: "🤖" },
+    ],
   },
-  {
-    title: "NIS2 & Compliance",
-    description: "Integrale compliance-aanpak die wetgeving vertaalt naar werkbare processen, rollen en beheersingskaders.",
-    icon: "🛡️",
+  en: {
+    eyebrow: "Expertises",
+    titleA: "Specialisations that make the ",
+    titleB: "difference",
+    intro: "Beyond our core services, we offer deep expertise in specific areas where organisations face today's biggest challenges.",
+    items: [
+      { title: "Digital Strategy", description: "From vision to execution. We help organisations translate their digital strategy into concrete roadmaps and measurable results.", icon: "🎯" },
+      { title: "NIS2 & Compliance", description: "An integral compliance approach that translates legislation into workable processes, roles and control frameworks.", icon: "🛡️" },
+      { title: "Innovative Work Behaviour", description: "Helping organisations build a culture of innovation through behavioural change and leadership.", icon: "💡" },
+      { title: "Data Quality & Governance", description: "Structure, quality and governance of data as the foundation for data-driven decision making.", icon: "📊" },
+      { title: "IT Governance", description: "Setting up the right governance structures for effective IT steering and value creation.", icon: "⚙️" },
+      { title: "AI & Transformation", description: "AI Act classification, risk assessment and governance of AI applications within your organisation.", icon: "🤖" },
+    ],
   },
-  {
-    title: "Innovatief Werkgedrag",
-    description: "Organisaties helpen een cultuur van innovatie te creëren door middel van gedragsverandering en leiderschap.",
-    icon: "💡",
-  },
-  {
-    title: "Datakwaliteit & Governance",
-    description: "Structuur, kwaliteit en governance van data als fundament voor data-gedreven besluitvorming.",
-    icon: "📊",
-  },
-  {
-    title: "IT-Governance",
-    description: "De juiste governance-structuren inrichten voor effectieve IT-besturing en waardecreatie.",
-    icon: "⚙️",
-  },
-  {
-    title: "AI & Transformatie",
-    description: "AI Act classificatie, risicobeoordeling en governance van AI-toepassingen binnen uw organisatie.",
-    icon: "🤖",
-  },
-];
+};
 
 export default function Expertises() {
+  const locale = useLocale() as "nl" | "en";
+  const d = data[locale];
   return (
     <section id="expertises" className="relative py-28">
       {/* Split background */}
@@ -52,16 +53,13 @@ export default function Expertises() {
             transition={{ duration: 0.7 }}
           >
             <span className="text-its-green text-sm font-semibold tracking-wider uppercase">
-              Expertises
+              {d.eyebrow}
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mt-4 mb-6 tracking-tight text-white">
-              Specialisaties die het{" "}
-              <span className="gradient-text">verschil maken</span>
+              {d.titleA}<span className="gradient-text">{d.titleB}</span>
             </h2>
             <p className="text-white/60 text-lg leading-relaxed mb-8">
-              Naast onze kerndiensten bieden wij diepgaande expertise op
-              specifieke gebieden waar organisaties vandaag de grootste
-              uitdagingen ervaren.
+              {d.intro}
             </p>
 
             {/* Image */}
@@ -78,7 +76,7 @@ export default function Expertises() {
 
           {/* Right: Expertise cards */}
           <div className="grid gap-4">
-            {expertises.map((exp, i) => (
+            {d.items.map((exp, i) => (
               <motion.div
                 key={exp.title}
                 initial={{ opacity: 0, x: 30 }}

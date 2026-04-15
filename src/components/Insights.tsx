@@ -1,36 +1,78 @@
 "use client";
 
+import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const articles = [
-  {
-    image: "/images/team-sept-1.jpg",
-    tag: "Compliance",
-    title: "NIS2 compliance: wat betekent het voor uw organisatie?",
-    excerpt: "Van bestuurlijke aansprakelijkheid tot integrale compliance-aanpak — een praktische gids.",
-    date: "Februari 2026",
-    readTime: "8 min",
+const data = {
+  nl: {
+    tag: "Insights",
+    heading: "Kennis &amp; Inzichten",
+    viewAll: "Alle artikelen →",
+    articles: [
+      {
+        image: "/images/team-sept-1.jpg",
+        tag: "Compliance",
+        title: "NIS2 compliance: wat betekent het voor uw organisatie?",
+        excerpt: "Van bestuurlijke aansprakelijkheid tot integrale compliance-aanpak: een praktische gids.",
+        date: "Februari 2026",
+        readTime: "8 min",
+      },
+      {
+        image: "/images/team-sept-2.jpg",
+        tag: "Digitale Strategie",
+        title: "De 5 pijlers van een succesvolle digitale transformatie",
+        excerpt: "Hoe organisaties hun transformatie versnellen met een mensgerichte aanpak.",
+        date: "Februari 2026",
+        readTime: "5 min",
+      },
+      {
+        image: "/images/team-sept-3.jpg",
+        tag: "Data Management",
+        title: "Data-gedreven werken: van buzzword naar resultaat",
+        excerpt: "Het ITs Productivity Center als motor voor data-gedreven inzichten.",
+        date: "Januari 2026",
+        readTime: "6 min",
+      },
+    ],
   },
-  {
-    image: "/images/team-sept-2.jpg",
-    tag: "Digitale Strategie",
-    title: "De 5 pijlers van een succesvolle digitale transformatie",
-    excerpt: "Hoe organisaties hun transformatie versnellen met een mensgerichte aanpak.",
-    date: "Februari 2026",
-    readTime: "5 min",
+  en: {
+    tag: "Insights",
+    heading: "Knowledge &amp; Insights",
+    viewAll: "View all articles →",
+    articles: [
+      {
+        image: "/images/team-sept-1.jpg",
+        tag: "Compliance",
+        title: "NIS2 compliance: what it means for your organisation",
+        excerpt: "From board-level accountability to integrated compliance approach: a practical guide.",
+        date: "February 2026",
+        readTime: "8 min",
+      },
+      {
+        image: "/images/team-sept-2.jpg",
+        tag: "Digital Strategy",
+        title: "The 5 pillars of successful digital transformation",
+        excerpt: "How organisations accelerate transformation with a human-centred approach.",
+        date: "February 2026",
+        readTime: "5 min",
+      },
+      {
+        image: "/images/team-sept-3.jpg",
+        tag: "Data Management",
+        title: "Data-driven working: from buzzword to results",
+        excerpt: "The ITs Productivity Center as engine for data-driven insights.",
+        date: "January 2026",
+        readTime: "6 min",
+      },
+    ],
   },
-  {
-    image: "/images/team-sept-3.jpg",
-    tag: "Data Management",
-    title: "Data-gedreven werken: van buzzword naar resultaat",
-    excerpt: "Het ITs Productivity Center als motor voor data-gedreven inzichten.",
-    date: "Januari 2026",
-    readTime: "6 min",
-  },
-];
+};
 
 export default function Insights() {
+  const locale = useLocale() as "nl" | "en";
+  const d = data[locale];
+
   return (
     <section id="insights" className="relative py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -42,22 +84,22 @@ export default function Insights() {
         >
           <div>
             <span className="text-its-green text-sm font-semibold tracking-wider uppercase">
-              Insights
+              {d.tag}
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold mt-4 tracking-tight text-its-charcoal">
-              Kennis &amp; Inzichten
+              {d.heading}
             </h2>
           </div>
           <a
             href="#"
             className="text-its-green-dark font-semibold hover:text-its-green transition-colors flex items-center gap-2"
           >
-            Alle artikelen →
+            {d.viewAll}
           </a>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {articles.map((article, i) => (
+          {d.articles.map((article, i) => (
             <motion.article
               key={article.title}
               initial={{ opacity: 0, y: 30 }}
