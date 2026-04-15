@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 100" width="350" height="100">
+  <!-- UMC Utrecht official colors -->
+  <rect width="350" height="100" fill="white"/>
+  <g transform="translate(15, 20)">
+    <!-- Medical cross element -->
+    <rect x="15" y="5" width="20" height="40" fill="#C41E3A" rx="2"/>
+    <rect x="5" y="15" width="40" height="20" fill="#C41E3A" rx="2"/>
+    <text x="60" y="25" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#C41E3A">UMC Utrecht</text>
+    <text x="60" y="40" font-family="Arial, sans-serif" font-size="11" fill="#C41E3A">Universitair Medisch Centrum</text>
+  </g>
+</svg>

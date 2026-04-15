@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  /* ITsPeople Brand Colors — Official Pantone-based */
+  --color-its-green: #78BE20;
+  --color-its-green-dark: #4A7729;
+  --color-its-green-mid: #5A8A1A;
+  --color-its-lime: #8DC63F;
+  --color-its-charcoal: #3E3E35;
+  --color-its-dark: #1A1E1A;
+  --color-its-deep: #222622;
+  --color-its-gray-light: #C1C6C8;
+  --color-its-gray-mid: #707372;
+  --color-its-warm: #f4f5f0;
+  --color-its-offwhite: #fafafa;
+  --color-its-white: #ffffff;
+
+  /* Typography */
+  --font-sans: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-its-warm);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-its-gray-light);
+  border-radius: 3px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-its-green-dark) 0%, var(--color-its-green) 50%, var(--color-its-lime) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-dark {
+  background: rgba(26, 30, 26, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(120, 190, 32, 0.12);
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(120,190,32,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120,190,32,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}

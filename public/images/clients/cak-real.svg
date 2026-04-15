@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 80" width="250" height="80">
+  <!-- CAK official blue colors -->
+  <rect width="250" height="80" fill="white"/>
+  <g transform="translate(15, 15)">
+    <!-- Blue square element -->
+    <rect x="0" y="0" width="40" height="40" fill="#0066CC" rx="3"/>
+    <text x="50" y="30" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0066CC">Het CAK</text>
+  </g>
+</svg>

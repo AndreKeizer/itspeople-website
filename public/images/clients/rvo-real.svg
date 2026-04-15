@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <!-- RVO official government blue -->
+  <rect width="300" height="100" fill="white"/>
+  <g transform="translate(15, 25)">
+    <!-- Government crest style element -->
+    <rect x="0" y="0" width="50" height="50" fill="#154273" rx="5"/>
+    <text x="65" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#154273">RVO</text>
+    <text x="65" y="50" font-family="Arial, sans-serif" font-size="10" fill="#154273">Rijksdienst voor Ondernemend Nederland</text>
+  </g>
+</svg>

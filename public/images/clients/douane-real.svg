@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 90" width="320" height="90">
+  <!-- Douane official government colors -->
+  <rect width="320" height="90" fill="white"/>
+  <g transform="translate(15, 18)">
+    <!-- Customs/border element -->
+    <rect x="0" y="0" width="40" height="40" fill="#154273" rx="5"/>
+    <rect x="8" y="12" width="24" height="16" fill="white" rx="2"/>
+    <rect x="12" y="8" width="16" height="8" fill="white" rx="1"/>
+    <text x="55" y="25" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#154273">Douane</text>
+    <text x="55" y="40" font-family="Arial, sans-serif" font-size="11" fill="#154273">Belastingdienst</text>
+  </g>
+</svg>

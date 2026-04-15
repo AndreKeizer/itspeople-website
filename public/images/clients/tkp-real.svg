@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80">
+  <!-- TKP Pensioen official colors -->
+  <rect width="300" height="80" fill="white"/>
+  <g transform="translate(15, 15)">
+    <!-- Modern geometric element -->
+    <rect x="0" y="0" width="35" height="35" fill="#0066CC" rx="8"/>
+    <rect x="8" y="8" width="19" height="19" fill="white" rx="4"/>
+    <text x="50" y="28" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#0066CC">TKP Pensioen</text>
+  </g>
+</svg>

@@ -1,0 +1,439 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+
+/* ───────── Training Data ───────── */
+
+type Training = {
+  name: string;
+  price: string;
+  duration: string;
+  level: "Basis" | "Gevorderd" | "Expert";
+  description: string;
+  badge?: "Info-Tech" | "Asana" | "think-cell";
+};
+
+type Segment = {
+  id: string;
+  label: string;
+  icon: string;
+  trainings: Training[];
+};
+
+const segments: Segment[] = [
+  {
+    id: "project-management",
+    label: "Project Management",
+    icon: "📋",
+    trainings: [
+      { name: "PRINCE2 Foundation & Practitioner", price: "€1.495", duration: "3 dagen", level: "Gevorderd", description: "Behaal je PRINCE2 Foundation én Practitioner certificering in één intensieve training." },
+      { name: "Agile / Scrum Master Certificering", price: "€1.295", duration: "2 dagen", level: "Gevorderd", description: "Word gecertificeerd Scrum Master en leer agile teams effectief begeleiden." },
+      { name: "IPMA-D Projectmanagement", price: "€1.695", duration: "3 dagen", level: "Gevorderd", description: "De internationaal erkende IPMA-D certificering voor projectmanagers." },
+      { name: "Asana Foundations — werkstroom optimalisatie", price: "€495", duration: "1 dag", level: "Basis", description: "Leer Asana inzetten om werkstromen te structureren en teamproductiviteit te verhogen.", badge: "Asana" },
+      { name: "Asana Team Leader — rollout & best practices", price: "€595", duration: "1 dag", level: "Gevorderd", description: "Begeleid een succesvolle Asana-rollout binnen je team met bewezen best practices.", badge: "Asana" },
+      { name: "Asana AI & Automation — AI-powered workflows", price: "€695", duration: "1 dag", level: "Gevorderd", description: "Automatiseer repetitieve taken en zet AI in binnen Asana voor slimmere workflows.", badge: "Asana" },
+      { name: "Microsoft Project Professional", price: "€895", duration: "2 dagen", level: "Gevorderd", description: "Beheers Microsoft Project voor professionele projectplanning en -monitoring." },
+      { name: "Risicomanagement in Projecten", price: "€695", duration: "1 dag", level: "Gevorderd", description: "Identificeer, analyseer en beheers risico's in complexe projectomgevingen." },
+    ],
+  },
+  {
+    id: "it-consultancy",
+    label: "IT Consultancy & Strategie",
+    icon: "💡",
+    trainings: [
+      { name: "IT Strategy & Business Alignment", price: "€1.895", duration: "3 dagen", level: "Expert", description: "Ontwikkel een IT-strategie die naadloos aansluit bij bedrijfsdoelstellingen. Info-Tech methodologie.", badge: "Info-Tech" },
+      { name: "AI Strategy & Roadmap Development", price: "€1.695", duration: "2 dagen", level: "Expert", description: "Ontwerp een pragmatische AI-strategie en implementatie-roadmap voor organisaties." },
+      { name: "IT Operating Model Design", price: "€1.495", duration: "2 dagen", level: "Expert", description: "Ontwerp een effectief IT-operating model dat waarde levert aan de business.", badge: "Info-Tech" },
+      { name: "IT Governance & Decision-Making", price: "€1.295", duration: "2 dagen", level: "Gevorderd", description: "Implementeer governance-frameworks die betere IT-besluitvorming mogelijk maken." },
+      { name: "Trusted Advisor — strategisch klantadvies", price: "€995", duration: "2 dagen", level: "Gevorderd", description: "Ontwikkel de vaardigheden om een strategisch vertrouwde adviseur te worden voor je klanten." },
+      { name: "Business Case Development", price: "€895", duration: "1 dag", level: "Gevorderd", description: "Leer overtuigende business cases bouwen die investeringsbeslissingen onderbouwen." },
+      { name: "Change Management Professional", price: "€1.295", duration: "2 dagen", level: "Gevorderd", description: "Begeleid organisatieveranderingen succesvol met bewezen change management methoden." },
+      { name: "Digital Transformation Leadership", price: "€1.495", duration: "2 dagen", level: "Expert", description: "Leid digitale transformatieprogramma's van strategie tot succesvolle implementatie." },
+    ],
+  },
+  {
+    id: "security-compliance",
+    label: "Security & Compliance",
+    icon: "🔒",
+    trainings: [
+      { name: "EU AI Act Compliance & Governance", price: "€1.295", duration: "2 dagen", level: "Gevorderd", description: "Begrijp de EU AI Act en implementeer compliant AI-governance binnen je organisatie." },
+      { name: "NIS2 Implementation & Readiness", price: "€1.295", duration: "2 dagen", level: "Gevorderd", description: "Bereid je organisatie voor op NIS2-compliance met praktische implementatiestappen." },
+      { name: "DORA Compliance voor Financiële Sector", price: "€1.495", duration: "2 dagen", level: "Expert", description: "Implementeer DORA-vereisten voor digitale operationele weerbaarheid in de financiële sector." },
+      { name: "IT Risk Management Program", price: "€1.695", duration: "3 dagen", level: "Expert", description: "Bouw een compleet IT-risicomanagementprogramma op basis van het Info-Tech framework.", badge: "Info-Tech" },
+      { name: "ISO 27001 Lead Implementer", price: "€2.295", duration: "3 dagen", level: "Expert", description: "Word Lead Implementer voor ISO 27001 informatiebeveiliging managementsystemen." },
+      { name: "AVG/GDPR Privacy Officer", price: "€1.495", duration: "2 dagen", level: "Gevorderd", description: "Alle kennis en vaardigheden om als Privacy Officer AVG/GDPR-compliance te waarborgen." },
+      { name: "Cybersecurity Awareness Training", price: "€495", duration: "1 dag", level: "Basis", description: "Verhoog het cybersecurity-bewustzijn binnen teams met praktische scenario's en best practices." },
+      { name: "AI Risk Management Framework", price: "€1.295", duration: "2 dagen", level: "Gevorderd", description: "Ontwikkel en implementeer een framework voor het beheersen van AI-gerelateerde risico's." },
+    ],
+  },
+  {
+    id: "data-ai",
+    label: "Data & AI",
+    icon: "🤖",
+    trainings: [
+      { name: "AI Readiness Assessment Workshop", price: "€1.495", duration: "2 dagen", level: "Gevorderd", description: "Beoordeel de AI-gereedheid van je organisatie en definieer concrete vervolgstappen." },
+      { name: "Generative AI voor Professionals", price: "€895", duration: "1 dag", level: "Basis", description: "Leer generatieve AI effectief inzetten in je dagelijkse werk voor meer productiviteit." },
+      { name: "Agentic AI Design & Implementation", price: "€1.695", duration: "2 dagen", level: "Expert", description: "Ontwerp en implementeer autonome AI-agents die complexe taken zelfstandig uitvoeren." },
+      { name: "Data Governance & Quality Management", price: "€1.295", duration: "2 dagen", level: "Gevorderd", description: "Implementeer data governance en zorg voor betrouwbare, kwalitatieve data in je organisatie." },
+      { name: "Power BI Advanced Analytics", price: "€995", duration: "2 dagen", level: "Gevorderd", description: "Bouw geavanceerde dashboards en analytics-oplossingen met Power BI." },
+      { name: "AI Compliance Strategy Development", price: "€1.495", duration: "2 dagen", level: "Expert", description: "Ontwikkel een strategie die AI-innovatie combineert met volledige compliance." },
+      { name: "Responsible AI Governance", price: "€1.095", duration: "2 dagen", level: "Gevorderd", description: "Implementeer verantwoord AI-gebruik met ethische kaders en governance-structuren." },
+      { name: "Data-Driven Decision Making", price: "€795", duration: "1 dag", level: "Basis", description: "Neem betere beslissingen door data effectief te analyseren en te interpreteren." },
+    ],
+  },
+  {
+    id: "presenteren-communicatie",
+    label: "Presenteren & Communicatie",
+    icon: "🎤",
+    trainings: [
+      { name: "think-cell Foundations — professionele PowerPoint charts", price: "€695", duration: "1 dag", level: "Basis", description: "Maak professionele charts en grafieken in PowerPoint met think-cell.", badge: "think-cell" },
+      { name: "think-cell Advanced — complexe visualisaties & templates", price: "€895", duration: "1 dag", level: "Gevorderd", description: "Beheers complexe datavisualisaties en bouw herbruikbare templates in think-cell.", badge: "think-cell" },
+      { name: "think-cell + AI Assistant — AI-powered presentaties", price: "€795", duration: "1 dag", level: "Gevorderd", description: "Combineer think-cell met AI voor het automatisch genereren van presentaties.", badge: "think-cell" },
+      { name: "Storytelling met Data", price: "€695", duration: "1 dag", level: "Basis", description: "Vertaal complexe data naar overtuigende verhalen die je publiek in beweging brengen." },
+      { name: "Executive Presenting & Board Communication", price: "€995", duration: "2 dagen", level: "Expert", description: "Presenteer met impact op C-level en in bestuurskamers." },
+      { name: "Klantcommunicatie & Stakeholder Management", price: "€795", duration: "1 dag", level: "Gevorderd", description: "Verbeter je klantcommunicatie en manage stakeholders effectief." },
+    ],
+  },
+  {
+    id: "tools-productiviteit",
+    label: "Tools & Productiviteit",
+    icon: "⚡",
+    trainings: [
+      { name: "Asana Foundations Skill Badge", price: "€495", duration: "1 dag", level: "Basis", description: "Behaal je Asana Foundations Skill Badge en bewijs je Asana-expertise.", badge: "Asana" },
+      { name: "Asana Resource Management", price: "€595", duration: "1 dag", level: "Gevorderd", description: "Optimaliseer resourceplanning en capaciteitsmanagement met Asana.", badge: "Asana" },
+      { name: "Asana Campaign Management", price: "€695", duration: "1 dag", level: "Gevorderd", description: "Manage complexe campagnes en cross-functionele projecten in Asana.", badge: "Asana" },
+      { name: "think-cell Suite Masterclass", price: "€895", duration: "2 dagen", level: "Expert", description: "Beheers de volledige think-cell suite voor maximale presentatie-impact.", badge: "think-cell" },
+      { name: "Microsoft 365 Copilot voor Professionals", price: "€795", duration: "1 dag", level: "Gevorderd", description: "Zet Microsoft 365 Copilot in om je productiviteit drastisch te verhogen." },
+      { name: "Microsoft Teams & Collaboration Advanced", price: "€495", duration: "1 dag", level: "Basis", description: "Haal het maximale uit Microsoft Teams voor samenwerking en communicatie." },
+    ],
+  },
+];
+
+const badgeColors: Record<string, { bg: string; text: string }> = {
+  "Info-Tech": { bg: "bg-blue-100", text: "text-blue-700" },
+  "Asana": { bg: "bg-rose-100", text: "text-rose-700" },
+  "think-cell": { bg: "bg-amber-100", text: "text-amber-700" },
+};
+
+const badgeLabels: Record<string, string> = {
+  "Info-Tech": "Info-Tech Partner",
+  "Asana": "Asana Certified",
+  "think-cell": "think-cell Partner",
+};
+
+const levelColors: Record<string, string> = {
+  "Basis": "bg-green-100 text-green-700",
+  "Gevorderd": "bg-blue-100 text-blue-700",
+  "Expert": "bg-purple-100 text-purple-700",
+};
+
+/* ───────── Existing Data ───────── */
+
+const tracks = [
+  {
+    level: "Senior Consultant Advanced",
+    color: "from-its-green-dark to-its-green-mid",
+    modules: ["Strategisch Advies", "Trusted Advisor", "Business Case Development", "Change Management Advanced", "Stakeholder Management Senior"],
+    description: "Voor ervaren consultants die hun strategische adviesvaardigheden naar het hoogste niveau willen brengen.",
+  },
+  {
+    level: "Programma Management",
+    color: "from-its-green-mid to-its-green",
+    modules: ["IPMA & Prince2", "Programma Governance", "Finance & Budgettering", "Risk Management Advanced", "Benefits Realization"],
+    description: "De complete leerroute voor het managen van complexe programma's en portfolio's.",
+  },
+  {
+    level: "Medior Consultant",
+    color: "from-its-green to-its-lime",
+    modules: ["AI & Data Strategie", "Klantwaarde Creëren", "Stakeholder Management", "Risk Management", "Data Governance Basics"],
+    description: "Verdieping en verbreding voor consultants die klaar zijn voor de volgende stap.",
+  },
+  {
+    level: "ERP & Cloud Specialist",
+    color: "from-its-lime to-its-green",
+    modules: ["Cloud Foundations", "Requirements Analyse", "ERP Implementatie", "Stakeholder Management", "Risk Management"],
+    description: "Specialisatie in cloud-migraties en ERP-implementaties voor technisch georiënteerde consultants.",
+  },
+];
+
+const events = [
+  { month: "Jan", icon: "🥂", name: "Nieuwjaarsreceptie" },
+  { month: "Apr", icon: "🌷", name: "SpringSamen" },
+  { month: "Jun", icon: "☀️", name: "SummerSamen" },
+  { month: "Sep", icon: "👨‍👩‍👧‍👦", name: "FamilyDay" },
+  { month: "Okt", icon: "🍂", name: "AutumnSamen" },
+  { month: "Dec", icon: "🎄", name: "XmasSamen" },
+];
+
+const baselineModules = [
+  "Welkom & Collega's", "Kennis Delen", "Communicatie & Insights",
+  "Feedback & Speak Up", "Deliver as Promised", "Presenteren",
+  "Klantbegrip", "Match Your Message",
+];
+
+/* ───────── Component ───────── */
+
+export default function AcademyPage() {
+  const [activeSegment, setActiveSegment] = useState(segments[0].id);
+  const active = segments.find((s) => s.id === activeSegment) ?? segments[0];
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-its-dark via-its-deep to-its-dark">
+        <div className="absolute inset-0 grid-pattern opacity-20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+            <span className="text-its-green text-sm font-semibold tracking-wider uppercase">ITs Academy</span>
+            <h1 className="text-4xl sm:text-6xl font-bold mt-4 mb-6 tracking-tight text-white">
+              Groei · Ontwikkeling · <span className="gradient-text">Excellentie</span>
+            </h1>
+            <p className="text-white/60 text-lg leading-relaxed max-w-2xl">
+              De ITs Academy investeert continu in de ontwikkeling van onze consultants. Van onboarding tot senior level, gestructureerde learning tracks die professionals naar het volgende niveau brengen.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Philosophy */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <h2 className="text-3xl font-bold text-its-charcoal mb-6">Onze filosofie</h2>
+              <p className="text-its-gray-mid text-lg leading-relaxed mb-6">
+                Bij ITsPeople geloven wij dat de beste consultants nooit uitgeleerd zijn. Daarom investeren wij structureel in de ontwikkeling van onze mensen. De ITs Academy biedt een compleet programma van trainingen, coaching en praktijkervaring.
+              </p>
+              <p className="text-its-gray-mid leading-relaxed mb-6">
+                Elke consultant volgt een persoonlijk ontwikkelpad dat aansluit bij hun ervaring, ambities en de behoeften van onze klanten. Van soft skills tot vakinhoudelijke verdieping, van individuele coaching tot groepstrainingen.
+              </p>
+              <p className="text-its-gray-mid leading-relaxed">
+                Het resultaat: professionals die niet alleen excellent zijn in hun vak, maar ook in staat zijn om het verschil te maken voor onze klanten.
+              </p>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <Image src="/images/team-work.jpg" alt="ITs Academy training" fill className="object-cover" />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════ TRAININGSAANBOD ═══════════ */}
+      <section className="py-20 bg-white" id="trainingen">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+            <span className="text-[#78BE20] text-sm font-semibold tracking-wider uppercase">Trainingsaanbod</span>
+            <h2 className="text-3xl font-bold text-[#3E3E35] mt-2">Professionele Trainingen &amp; Certificeringen</h2>
+            <p className="text-its-gray-mid mt-4 max-w-2xl mx-auto">
+              Van projectmanagement tot AI, van security tot presentatievaardigheden — ontdek ons complete aanbod van {segments.reduce((sum, s) => sum + s.trainings.length, 0)} trainingen.
+            </p>
+          </motion.div>
+
+          {/* Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            {segments.map((seg) => (
+              <button
+                key={seg.id}
+                onClick={() => setActiveSegment(seg.id)}
+                className={`px-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 ${
+                  activeSegment === seg.id
+                    ? "bg-[#4A7729] text-white shadow-lg shadow-[#4A7729]/25"
+                    : "bg-its-warm text-[#3E3E35] hover:bg-[#78BE20]/20"
+                }`}
+              >
+                <span className="mr-1.5">{seg.icon}</span>
+                {seg.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Training Cards Grid */}
+          <motion.div
+            key={active.id}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+            className="grid md:grid-cols-2 xl:grid-cols-3 gap-6"
+          >
+            {active.trainings.map((t) => (
+              <div
+                key={t.name}
+                className="relative bg-white rounded-2xl border border-its-gray-light/30 p-6 hover:shadow-lg hover:border-[#78BE20]/40 transition-all duration-300 flex flex-col"
+              >
+                {/* Top row: badge + level */}
+                <div className="flex items-center gap-2 mb-3 flex-wrap">
+                  {t.badge && (
+                    <span className={`px-2.5 py-0.5 rounded-full text-xs font-bold ${badgeColors[t.badge].bg} ${badgeColors[t.badge].text}`}>
+                      {badgeLabels[t.badge]}
+                    </span>
+                  )}
+                  <span className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${levelColors[t.level]}`}>
+                    {t.level}
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-600">
+                    {t.duration}
+                  </span>
+                </div>
+
+                {/* Name */}
+                <h3 className="font-bold text-[#3E3E35] text-lg mb-2 leading-snug">{t.name}</h3>
+
+                {/* Description */}
+                <p className="text-its-gray-mid text-sm leading-relaxed mb-4 flex-1">{t.description}</p>
+
+                {/* Price + CTA */}
+                <div className="flex items-center justify-between mt-auto pt-4 border-t border-its-gray-light/30">
+                  <span className="text-2xl font-bold text-[#4A7729]">{t.price}</span>
+                  <Link
+                    href={`/contact?training=${encodeURIComponent(t.name)}`}
+                    className="px-5 py-2.5 rounded-lg bg-[#4A7729] hover:bg-[#3d6422] text-white text-sm font-semibold transition-colors duration-300"
+                  >
+                    Inschrijven
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════ IN-COMPANY ═══════════ */}
+      <section className="py-16 bg-gradient-to-br from-[#4A7729] to-[#3d6422]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <span className="text-[#78BE20] text-sm font-semibold tracking-wider uppercase">In-Company</span>
+              <h2 className="text-3xl font-bold text-white mt-2 mb-4">Alle trainingen ook op maat, bij u op locatie</h2>
+              <p className="text-white/80 leading-relaxed mb-6">
+                Elke training uit ons aanbod is ook beschikbaar als in-company variant. Wij passen het programma aan op uw organisatie, uw uitdagingen en uw team. Training op locatie, op het moment dat het u uitkomt.
+              </p>
+              <ul className="space-y-3 text-white/80 text-sm mb-8">
+                <li className="flex items-center gap-2"><span className="text-[#78BE20]">✓</span> Maatwerk inhoud afgestemd op uw praktijk</li>
+                <li className="flex items-center gap-2"><span className="text-[#78BE20]">✓</span> Flexibele planning, bij u op locatie</li>
+                <li className="flex items-center gap-2"><span className="text-[#78BE20]">✓</span> Gecertificeerde trainers met praktijkervaring</li>
+                <li className="flex items-center gap-2"><span className="text-[#78BE20]">✓</span> Combineer met andere trainingen voor maximaal effect</li>
+              </ul>
+              <Link
+                href="/contact?type=incompany"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-white text-[#4A7729] font-semibold hover:bg-[#78BE20] hover:text-white transition-all duration-300"
+              >
+                Vraag offerte aan →
+              </Link>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 p-8">
+                <div className="text-center">
+                  <span className="text-5xl">🎯</span>
+                  <h3 className="text-xl font-bold text-white mt-4 mb-2">In-Company Pakket</h3>
+                  <p className="text-white/70 text-sm mb-6">Boek 5 of meer trainingen en ontvang</p>
+                  <div className="bg-[#78BE20] text-white text-4xl font-black py-4 rounded-xl mb-4">
+                    10% korting
+                  </div>
+                  <p className="text-white/60 text-sm">Op het totale pakket. Combineer trainingen uit verschillende segmenten voor een op maat samengesteld ontwikkelprogramma.</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Onboarding Baseline */}
+      <section className="py-16 bg-its-warm">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-gradient-to-r from-its-dark to-its-deep rounded-2xl p-8 lg:p-12">
+            <h2 className="text-2xl font-bold text-white mb-4">🎓 Onboarding Baseline</h2>
+            <p className="text-white/60 leading-relaxed mb-8 max-w-2xl">
+              Elke nieuwe consultant start met onze baseline. Dit fundament zorgt ervoor dat iedereen de ITsPeople-manier van werken beheerst, van kennisdeling tot klantcommunicatie.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {baselineModules.map((mod) => (
+                <div key={mod} className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white/80 text-sm text-center">
+                  {mod}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Training Tracks */}
+      <section className="py-20 bg-its-warm">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-its-charcoal">Learning Tracks</h2>
+            <p className="text-its-gray-mid mt-4 max-w-xl mx-auto">
+              Vier gespecialiseerde leerroutes voor verschillende carrièrepaden binnen ITsPeople.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {tracks.map((track, i) => (
+              <motion.div key={track.level} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="relative bg-white rounded-2xl p-8 border border-its-gray-light/30 hover:shadow-lg transition-all duration-500">
+                <div className={`absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-gradient-to-r ${track.color}`} />
+                <h3 className="font-bold text-its-charcoal text-xl mb-2">{track.level}</h3>
+                <p className="text-its-gray-mid text-sm mb-6">{track.description}</p>
+                <div className="space-y-2">
+                  {track.modules.map((mod) => (
+                    <div key={mod} className="flex items-center gap-3 text-sm text-its-gray-mid">
+                      <span className="w-1.5 h-1.5 rounded-full bg-its-green flex-shrink-0" />
+                      {mod}
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Samen Events */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-its-charcoal">Samen Events</h2>
+            <p className="text-its-gray-mid mt-4 max-w-xl mx-auto">
+              Het hele jaar door organiseren wij evenementen om onze mensen samen te brengen, te inspireren en te vieren.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-4 mb-12">
+            {events.map((event, i) => (
+              <motion.div key={event.name} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }} className="text-center p-4 rounded-xl bg-its-warm border border-its-gray-light/30 hover:border-its-green/30 hover:shadow-md transition-all duration-300">
+                <span className="text-2xl block mb-2">{event.icon}</span>
+                <p className="text-xs font-bold text-its-green uppercase tracking-wider mb-1">{event.month}</p>
+                <p className="text-sm font-semibold text-its-charcoal">{event.name}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-4">
+            {["/images/team-sept-1.jpg", "/images/team-sept-2.jpg", "/images/team-sept-3.jpg"].map((img, i) => (
+              <motion.div key={img} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
+                <Image src={img} alt="Samen Event" fill className="object-cover" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-20 bg-its-warm text-center">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-its-charcoal mb-6">Wil jij groeien bij ITsPeople?</h2>
+          <p className="text-its-gray-mid text-lg mb-8">
+            De ITs Academy staat klaar om jou te begeleiden in je professionele ontwikkeling. Bekijk onze vacatures en ontdek wat wij te bieden hebben.
+          </p>
+          <Link href="/werken-bij" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300">
+            Bekijk vacatures →
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
