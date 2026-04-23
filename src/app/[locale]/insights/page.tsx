@@ -60,7 +60,7 @@ const data = {
     items: [
       {
         type: "Whitepapers",
-        image: "/images/team-collab.jpg",
+        image: "/images/services/quality-assurance.jpg",
         title: "Transformation Quality Assurance Framework (TQA-F)",
         content: `Onafhankelijke kwaliteitsborging voor complexe transformatieprogramma's in het tijdperk van AI, cloud en versnelde digitalisering. Het TQA-F geeft besturen een objectief, kwantitatief en continu bijgewerkt beeld van programmagezondheid over acht dimensies.`,
         date: "2026",
@@ -74,7 +74,7 @@ const data = {
       },
       {
         type: "Artikelen",
-        image: "/images/team-sept-1.jpg",
+        image: "/images/insights/cybersecurity.jpg",
         title: "NIS2 compliance: wat betekent het voor uw organisatie?",
         content: `De NIS2-richtlijn is de opvolger van de oorspronkelijke NIS-richtlijn en breidt de scope aanzienlijk uit. Waar de eerste richtlijn vooral gericht was op essentiële diensten, raakt NIS2 een veel breder scala aan organisaties.`,
         date: "Feb 2026",
@@ -88,7 +88,7 @@ const data = {
       },
       {
         type: "Artikelen",
-        image: "/images/team-meeting.jpg",
+        image: "/images/services/business-consultancy.jpg",
         title: "De 5 pijlers van een succesvolle digitale transformatie",
         content: `Digitale transformatie is meer dan technologie implementeren. Het is een fundamentele verandering in hoe een organisatie waarde creëert, levert en vasthoudt.`,
         date: "Feb 2026",
@@ -104,7 +104,7 @@ const data = {
       },
       {
         type: "Artikelen",
-        image: "/images/team-work.jpg",
+        image: "/images/services/data-management.jpg",
         title: "Data-gedreven werken: van buzzword naar resultaat",
         content: `Vrijwel elke organisatie wil data-gedreven werken. Maar in de praktijk blijkt de weg van ambitie naar resultaat vaak langer dan verwacht.`,
         date: "Jan 2026",
@@ -119,7 +119,7 @@ const data = {
       },
       {
         type: "Whitepapers",
-        image: "/images/team-sept-2.jpg",
+        image: "/images/services/process-management.jpg",
         title: "Target Operating Model: uw blauwdruk voor transformatie",
         content: `Een Target Operating Model (TOM) is de blauwdruk die beschrijft hoe een organisatie haar strategie gaat realiseren.`,
         date: "Nov 2025",
@@ -136,7 +136,7 @@ const data = {
       },
       {
         type: "Whitepapers",
-        image: "/images/team-collab.jpg",
+        image: "/images/insights/business-control-framework.jpg",
         title: "Business Control Framework: het complete handboek",
         content: `Een Business Control Framework (BCF) biedt organisaties integraal inzicht in de voortgang, risico's en resultaten van hun transformatieprogramma's.`,
         date: "Jan 2026",
@@ -153,7 +153,7 @@ const data = {
       },
       {
         type: "Whitepapers",
-        image: "/images/team-meeting.jpg",
+        image: "/images/team-discussion.jpg",
         title: "Leiden van Bevlogen Transformaties",
         content: `70% van alle veranderprogramma's faalt. Niet door technologie, maar door mensen. Dit whitepaper onthult waarom medewerkersbetrokkenheid de cruciale succesfactor is die de meeste organisaties over het hoofd zien — en hoe transformationeel leiderschap het verschil maakt tussen een geslaagde transitie en een kostbare mislukking.`,
         date: "2024",
@@ -169,7 +169,7 @@ const data = {
       },
       {
         type: "Whitepapers",
-        image: "/images/team-sept-1.jpg",
+        image: "/images/insights/ai-technology.jpg",
         title: "De Toekomst van Ziekenhuisarchitectuur in Nederland",
         content: `Organisaties die IT en bedrijfsstrategie niet op één lijn brengen, verspillen gemiddeld 30% van hun IT-budget. Dit whitepaper laat zien hoe referentiearchitectuur zorginstellingen helpt om van strategische ambitie naar concrete, waardevolle IT-investeringen te komen — specifiek voor de Nederlandse context met DBC/DOT, het IZA en de vier zorgwaardestromen.`,
         date: "April 2026",
@@ -185,7 +185,7 @@ const data = {
       },
       {
         type: "Artikelen",
-        image: "/images/team-discussion.jpg",
+        image: "/images/team-collab.jpg",
         title: "Mensgerichte transformatie: waarom mensen het verschil maken",
         content: `Na meer dan 50 transformatieprojecten kunnen wij met zekerheid zeggen: het succes van een transformatie wordt bepaald door de mensen die ermee werken.`,
         date: "Dec 2025",
@@ -199,7 +199,7 @@ const data = {
       },
       {
         type: "Tools",
-        image: "/images/team-collab.jpg",
+        image: "/images/services/ai-governance.jpg",
         title: "IT Governance Quickscan",
         content: `Hoe volwassen is uw IT-organisatie? Beantwoord 15 gerichte vragen over strategie, projectmanagement, data, security en infrastructuur en ontvang direct uw eindscore met concrete verbeterkansen. Gebaseerd op COBIT en bewezen best practices.`,
         date: "2026",
@@ -290,7 +290,7 @@ const data = {
     items: [
       {
         type: "Whitepapers",
-        image: "/images/team-collab.jpg",
+        image: "/images/services/quality-assurance.jpg",
         title: "Transformation Quality Assurance Framework (TQA-F)",
         content: `Independent quality assurance for complex transformation programmes in the age of AI, cloud and accelerated digitalisation. The TQA-F gives executive boards an objective, quantitative and continuously updated view of programme health across eight dimensions.`,
         date: "2026",
@@ -304,7 +304,7 @@ const data = {
       },
       {
         type: "Articles",
-        image: "/images/team-sept-1.jpg",
+        image: "/images/insights/cybersecurity.jpg",
         title: "NIS2 compliance: what does it mean for your organisation?",
         content: `The NIS2 Directive is the successor to the original NIS Directive and significantly expands the scope. Where the first directive was mainly aimed at essential services, NIS2 affects a much broader range of organisations.`,
         date: "Feb 2026",
@@ -318,7 +318,7 @@ const data = {
       },
       {
         type: "Articles",
-        image: "/images/team-meeting.jpg",
+        image: "/images/services/business-consultancy.jpg",
         title: "The 5 pillars of successful digital transformation",
         content: `Digital transformation is more than implementing technology. It is a fundamental change in how an organisation creates, delivers and retains value.`,
         date: "Feb 2026",
@@ -334,7 +334,7 @@ const data = {
       },
       {
         type: "Articles",
-        image: "/images/team-work.jpg",
+        image: "/images/services/data-management.jpg",
         title: "Data-driven working: from buzzword to results",
         content: `Almost every organisation wants to work data-driven. But in practice, the path from ambition to results often takes longer than expected.`,
         date: "Jan 2026",
@@ -349,7 +349,7 @@ const data = {
       },
       {
         type: "Whitepapers",
-        image: "/images/team-sept-2.jpg",
+        image: "/images/services/process-management.jpg",
         title: "Target Operating Model: your transformation blueprint",
         content: `A Target Operating Model (TOM) is the blueprint that describes how an organisation will realise its strategy.`,
         date: "Nov 2025",
@@ -366,7 +366,7 @@ const data = {
       },
       {
         type: "Whitepapers",
-        image: "/images/team-collab.jpg",
+        image: "/images/insights/business-control-framework.jpg",
         title: "Business Control Framework: the complete handbook",
         content: `A Business Control Framework (BCF) provides organisations with integrated insight into the progress, risks and results of their transformation programmes.`,
         date: "Jan 2026",
@@ -383,7 +383,7 @@ const data = {
       },
       {
         type: "Whitepapers",
-        image: "/images/team-meeting.jpg",
+        image: "/images/team-discussion.jpg",
         title: "Leading Passionate Transformations",
         content: `70% of all change programmes fail. Not because of technology, but because of people. This whitepaper reveals why employee engagement is the critical success factor most organisations overlook — and how transformational leadership makes the difference between a successful transition and a costly failure.`,
         date: "2024",
@@ -399,7 +399,7 @@ const data = {
       },
       {
         type: "Whitepapers",
-        image: "/images/team-sept-1.jpg",
+        image: "/images/insights/ai-technology.jpg",
         title: "The Future of Hospital Architecture in the Netherlands",
         content: `Organisations that fail to align IT and business strategy waste an average of 30% of their IT budget. This whitepaper shows how reference architecture helps healthcare institutions move from strategic ambition to concrete, valuable IT investments — specifically for the Dutch context with DBC/DOT, the IZA and the four care value streams.`,
         date: "April 2026",
@@ -415,7 +415,7 @@ const data = {
       },
       {
         type: "Articles",
-        image: "/images/team-discussion.jpg",
+        image: "/images/team-collab.jpg",
         title: "Human-centred transformation: why people make the difference",
         content: `After more than 50 transformation projects, we can say with certainty: the success of a transformation is determined by the people who work with it.`,
         date: "Dec 2025",
@@ -429,7 +429,7 @@ const data = {
       },
       {
         type: "Tools",
-        image: "/images/team-collab.jpg",
+        image: "/images/services/ai-governance.jpg",
         title: "IT Governance Quickscan",
         content: `How mature is your IT organisation? Answer 15 targeted questions on strategy, project management, data, security and infrastructure and receive your final score instantly, with concrete improvement opportunities. Based on COBIT and proven best practices.`,
         date: "2026",

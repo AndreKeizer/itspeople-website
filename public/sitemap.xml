@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.itspeople.nl/nl</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.itspeople.nl/en</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Diensten / Services -->
+  <url>
+    <loc>https://www.itspeople.nl/nl/diensten</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/diensten" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/diensten" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.itspeople.nl/en/diensten</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/diensten" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/diensten" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Expertises -->
+  <url>
+    <loc>https://www.itspeople.nl/nl/expertises</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/expertises" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/expertises" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.itspeople.nl/en/expertises</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/expertises" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/expertises" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Kennis & Inzichten / Insights -->
+  <url>
+    <loc>https://www.itspeople.nl/nl/insights</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/insights" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/insights" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.itspeople.nl/en/insights</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/insights" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/insights" />
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Cases -->
+  <url>
+    <loc>https://www.itspeople.nl/nl/cases</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/cases" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/cases" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.itspeople.nl/en/cases</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/cases" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/cases" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Over Ons / About Us -->
+  <url>
+    <loc>https://www.itspeople.nl/nl/over-ons</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/over-ons" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/over-ons" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.itspeople.nl/en/over-ons</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/over-ons" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/over-ons" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Tools -->
+  <url>
+    <loc>https://www.itspeople.nl/nl/tools</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/tools" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/tools" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.itspeople.nl/en/tools</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/tools" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/tools" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Werken bij / Careers -->
+  <url>
+    <loc>https://www.itspeople.nl/nl/werken-bij</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/werken-bij" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/werken-bij" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.itspeople.nl/en/werken-bij</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/werken-bij" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/werken-bij" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://www.itspeople.nl/nl/contact</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/contact" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.itspeople.nl/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/contact" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Freelancers -->
+  <url>
+    <loc>https://www.itspeople.nl/nl/freelancers</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/freelancers" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/freelancers" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.itspeople.nl/en/freelancers</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/freelancers" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/freelancers" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Academy -->
+  <url>
+    <loc>https://www.itspeople.nl/nl/academy</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/academy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/academy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.itspeople.nl/en/academy</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/academy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/academy" />
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
