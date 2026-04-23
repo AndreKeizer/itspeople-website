@@ -292,27 +292,6 @@ export default function OverOnsPage() {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-16">
-            {d.founders.map((f, i) => (
-              <motion.div key={f.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}>
-                <div className="relative rounded-2xl overflow-hidden aspect-[3/4] mb-6">
-                  <Image src={f.image} alt={f.name} fill className="object-cover object-top" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-its-dark/70 via-transparent to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <p className="text-white/90 text-sm italic">&ldquo;{f.quote}&rdquo;</p>
-                  </div>
-                </div>
-                <h3 className="font-bold text-xl text-its-charcoal mb-1">{f.name}</h3>
-                <p className="text-its-green-dark font-medium text-sm mb-3">{f.role}</p>
-                <p className="text-its-gray-mid text-sm leading-relaxed mb-4">{f.bio}</p>
-                <div className="flex flex-wrap gap-2">
-                  {f.specialties.map((s) => (
-                    <span key={s} className="px-3 py-1 rounded-full text-xs font-medium bg-its-green/5 text-its-green-dark border border-its-green/10">{s}</span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
