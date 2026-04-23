@@ -137,7 +137,10 @@ export default function DienstenPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              {/* Top: image + features side-by-side, equal height */}
+              {/* Title above everything */}
+              <h2 className="text-3xl font-bold text-its-charcoal mb-6">{service.title}</h2>
+
+              {/* Image + features side-by-side */}
               <div className="grid lg:grid-cols-2 gap-8 items-stretch">
                 <div className={`relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-lg shadow-its-dark/10 ${i % 2 === 1 ? "lg:order-2" : ""}`}>
                   <Image
@@ -167,9 +170,8 @@ export default function DienstenPage() {
                 </div>
               </div>
 
-              {/* Bottom: full-width narrative */}
+              {/* Description below */}
               <div className="mt-8">
-                <h2 className="text-3xl font-bold text-its-charcoal mb-4">{service.title}</h2>
                 <p className="text-its-gray-mid text-lg leading-relaxed mb-4">{service.description}</p>
                 <p className="text-its-gray-mid leading-relaxed">{service.detail}</p>
               </div>

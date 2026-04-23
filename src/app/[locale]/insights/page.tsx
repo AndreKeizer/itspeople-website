@@ -15,18 +15,48 @@ type InsightItem = {
   sections?: { heading: string; body: string }[];
   gated?: boolean;
   whitepaperId?: string;
+  video?: string;
+  audio?: string;
+  link?: string;
+  stats?: { label: string; value: string }[];
 };
 
 const data = {
   nl: {
-    categories: ["Alle", "Artikelen", "Whitepapers", "Podcast", "Video's"],
-    featured: {
-      type: "Podcast",
-      title: "The Transformation Talk",
-      description: "Onze podcast over digitale transformatie, leiderschap en de menselijke factor. Elke twee weken een nieuw gesprek met experts en leiders uit het veld. Van NIS2-compliance tot innovatief werkgedrag, van data-gedreven werken tot de toekomst van AI in organisaties.",
-      episodes: "12 episodes",
-      button: "Beluister nu →",
-    },
+    categories: ["Alle", "Artikelen", "Whitepapers", "Podcast", "Tools", "Video's"],
+    podcasts: [
+      {
+        title: "The Transformation Talk",
+        description: "Onze podcast over digitale transformatie, leiderschap en de menselijke factor. Elke twee weken een nieuw gesprek met experts en leiders uit het veld. Van NIS2-compliance tot innovatief werkgedrag, van data-gedreven werken tot de toekomst van AI in organisaties.",
+        episodes: "12 afleveringen",
+        language: "Nederlands",
+        button: "Beluister nu →",
+      },
+      {
+        title: "The Transformation Quality Assurance Framework",
+        description: "\"Quality assurance in a transformation programme is only effective when the assuring party has no loyalty conflict with the delivery party. Independence is not optional — it is the precondition for a trustworthy quality verdict.\" — TQA-F Principle 1. Onafhankelijke kwaliteitsborging versus snelheid: wanneer is assurance een rem en wanneer juist de versneller?",
+        episodes: "1 aflevering",
+        language: "Nederlands",
+        button: "Beluister nu →",
+        audio: "/podcasts/tqa-f-onafhankelijke-kwaliteitsborging.m4a",
+      },
+      {
+        title: "Data Quality Score (DQS)",
+        description: "Het Data Quality Score (DQS) Framework biedt een gestructureerde methode om de kwaliteit van gegevens bij complexe datamigraties op een objectieve en meetbare wijze vast te stellen. Door subjectieve begrippen om te zetten in concrete, geautomatiseerde validatieregels, voorkomt het model discussies over de betrouwbaarheid van de overgezette informatie.",
+        episodes: "1 aflevering",
+        language: "Nederlands",
+        button: "Beluister nu →",
+        audio: "/podcasts/dqs-data-quality-score.m4a",
+      },
+      {
+        title: "Referentiearchitectuur Zorgsector",
+        description: "Nederlandse ziekenhuizen staan voor een kantelpunt: vergrijzing, personeelstekorten en het Integraal Zorgakkoord vragen om fundamentele veranderingen. Maar hoe vertaal je strategische ambities naar concrete IT-investeringen? Deze podcast verkent waarom 30% van het IT-budget verspild wordt en hoe referentiearchitectuur dat voorkomt.",
+        episodes: "1 aflevering",
+        language: "Nederlands",
+        button: "Beluister nu →",
+        audio: "/podcasts/referentiearchitectuur-zorgsector.m4a",
+      },
+    ],
     items: [
       {
         type: "Whitepapers",
@@ -122,6 +152,38 @@ const data = {
         ],
       },
       {
+        type: "Whitepapers",
+        image: "/images/team-meeting.jpg",
+        title: "Leiden van Bevlogen Transformaties",
+        content: `70% van alle veranderprogramma's faalt. Niet door technologie, maar door mensen. Dit whitepaper onthult waarom medewerkersbetrokkenheid de cruciale succesfactor is die de meeste organisaties over het hoofd zien — en hoe transformationeel leiderschap het verschil maakt tussen een geslaagde transitie en een kostbare mislukking.`,
+        date: "2024",
+        readTime: "Whitepaper",
+        gated: true,
+        whitepaperId: "leiden-van-bevlogen-transformaties",
+        sections: [
+          { heading: "Waarom dit whitepaper?", body: "Organisaties opereren in een steeds competitievere markt waarin driejarenplannen achterhaald zijn en de aandacht voor de mens meestal minimaal is. McKinsey & Company stelt dat ongeveer 70% van de veranderprogramma's niet hun doelen behaalt, vanwege weerstand en weinig support vanuit management. Dit whitepaper onderzoekt twee trends die het verschil maken: medewerkersbetrokkenheid als succesfactor en de opkomst van een nieuw type leiderschap." },
+          { heading: "De betrokkenheidscrisis", body: "Uit onderzoek van Gallup blijkt dat wereldwijd slechts 32% van de medewerkers betrokken is, terwijl 18% volledig mentaal is afgehaakt. Lage betrokkenheid leidt tot meer verloop, lagere productiviteit, slechtere kwaliteit en minder klanttevredenheid. Bevlogen medewerkers daarentegen presteren consequent beter en blijven langer in dienst. Het verschil in verloop kan oplopen tot 43%." },
+          { heading: "Transformationeel leiderschap", body: "Traditionele leiderschapsstijlen volstaan niet meer. De opkomst van hybride en empowered teams vraagt om leiderschap dat inspireert, richting geeft en ruimte biedt voor autonomie en ontwikkeling. Transformationeel leiderschap — waarbij de leider medewerkers motiveert om hun volledige potentieel te benutten — blijkt de meest effectieve stijl voor organisaties in transitie." },
+          { heading: "Wat u ontvangt", body: "Het volledige ITsPeople whitepaper met wetenschappelijk onderbouwde inzichten over bevlogenheid en betrokkenheid, de rol van de leiderschapsstijl, en concrete handvatten voor leiders: van het creëren van een heldere visie tot het vergroten van betrokkenheid en investeren in leiderschapsontwikkeling. Na het achterlaten van uw contactgegevens zenden wij u het whitepaper persoonlijk toe." },
+        ],
+      },
+      {
+        type: "Whitepapers",
+        image: "/images/team-sept-1.jpg",
+        title: "De Toekomst van Ziekenhuisarchitectuur in Nederland",
+        content: `Organisaties die IT en bedrijfsstrategie niet op één lijn brengen, verspillen gemiddeld 30% van hun IT-budget. Dit whitepaper laat zien hoe referentiearchitectuur zorginstellingen helpt om van strategische ambitie naar concrete, waardevolle IT-investeringen te komen — specifiek voor de Nederlandse context met DBC/DOT, het IZA en de vier zorgwaardestromen.`,
+        date: "April 2026",
+        readTime: "Whitepaper",
+        gated: true,
+        whitepaperId: "referentiearchitectuur-zorgsector",
+        sections: [
+          { heading: "Het probleem", body: "Nederlandse ziekenhuizen staan voor een kantelpunt. De vergrijzing versnelt, personeelstekorten groeien en het Integraal Zorgakkoord (IZA) vraagt om fundamentele veranderingen. Tegelijkertijd biedt technologie ongekende mogelijkheden — van AI tot slimme gegevensuitwisseling. Toch worstelen veel zorginstellingen met dezelfde vraag: hoe vertaal je strategische ambities naar concrete IT-investeringen die meetbaar waarde opleveren?" },
+          { heading: "De oplossing: referentiearchitectuur", body: "Een bewezen instrument dat drie fundamentele vragen beantwoordt: wat doet onze organisatie (business capabilities in kaart brengen), waar liggen de prioriteiten (strategische focus bepalen vanuit waardecreatie), en waar moeten we investeren (capability gaps vertalen naar een concrete roadmap). Door te vertrekken vanuit wat de organisatie doet in plaats van welke systemen er draaien, ontstaat een stabiel fundament dat niet verandert bij elke reorganisatie of systeemvervanging." },
+          { heading: "De vier waardestromen", body: "Nederlandse waardestromen lopen dwars door de muren van instellingen heen — van GGD tot ziekenhuis tot wijkverpleging. Het whitepaper beschrijft vier waardestromen (preventie, diagnostiek, behandeling en herstel & nazorg) en laat zien hoe referentiearchitectuur helpt om IT-investeringen te alignen met deze ketens. Drie technologiedomeinen staan centraal: AI, data-interoperabiliteit (MedMij, Mitz, Nuts) en cloud-modernisering." },
+          { heading: "Wat u ontvangt", body: "Het volledige ITsPeople whitepaper met de vierfasenaanpak voor zorginstellingen, de capability-mapping methodiek, vergelijking tussen internationaal en Nederlands zorgmodel, en een concrete investeringsagenda in de taal van de business. Na het achterlaten van uw contactgegevens zenden wij u het whitepaper persoonlijk toe." },
+        ],
+      },
+      {
         type: "Artikelen",
         image: "/images/team-discussion.jpg",
         title: "Mensgerichte transformatie: waarom mensen het verschil maken",
@@ -136,19 +198,35 @@ const data = {
         ],
       },
       {
+        type: "Tools",
+        image: "/images/team-collab.jpg",
+        title: "IT Governance Quickscan",
+        content: `Hoe volwassen is uw IT-organisatie? Beantwoord 15 gerichte vragen over strategie, projectmanagement, data, security en infrastructuur en ontvang direct uw eindscore met concrete verbeterkansen. Gebaseerd op COBIT en bewezen best practices.`,
+        date: "2026",
+        readTime: "~5 min",
+        link: "/tools/governance-quickscan.html",
+        stats: [
+          { label: "Vragen", value: "15" },
+          { label: "Domeinen", value: "5" },
+          { label: "Eindscore", value: "0–100" },
+        ],
+      },
+      {
         type: "Video's",
         image: "/images/team-sept-3.jpg",
-        title: "André Keizer over de toekomst van digitale transformatie",
-        content: `Keynote van André Keizer op het Transformation Summit 2025.`,
-        date: "Dec 2025",
-        readTime: "18 min",
+        title: "ITsPeople, wij maken het verschil",
+        content: `De officiële ITsPeople bedrijfsfilm. Ontdek in enkele minuten wie wij zijn, waar wij in geloven en hoe wij samen met onze klanten duurzame transformaties realiseren.`,
+        date: "2025",
+        readTime: "Bedrijfsfilm",
+        video: "/videos/itspeople-promo.mp4",
       },
-    ],
+    ] as InsightItem[],
     typeColors: {
       "Artikelen": "bg-its-green",
       "Whitepapers": "bg-its-green-dark",
       "Video's": "bg-its-charcoal",
       "Podcast": "bg-its-lime",
+      "Tools": "bg-its-deep",
     },
     heroLabel: "Insights Hub",
     heroTitle: "Kennis &",
@@ -175,14 +253,40 @@ const data = {
     },
   },
   en: {
-    categories: ["All", "Articles", "Whitepapers", "Podcast", "Videos"],
-    featured: {
-      type: "Podcast",
-      title: "The Transformation Talk",
-      description: "Our podcast on digital transformation, leadership and the human factor. A new conversation with experts and leaders from the field every two weeks. From NIS2 compliance to innovative work behaviour, from data-driven working to the future of AI in organisations.",
-      episodes: "12 episodes",
-      button: "Listen now →",
-    },
+    categories: ["All", "Articles", "Whitepapers", "Podcast", "Tools", "Videos"],
+    podcasts: [
+      {
+        title: "The Transformation Talk",
+        description: "Our podcast on digital transformation, leadership and the human factor. A new conversation with experts and leaders from the field every two weeks. From NIS2 compliance to innovative work behaviour, from data-driven working to the future of AI in organisations.",
+        episodes: "12 episodes",
+        language: "Dutch",
+        button: "Listen now →",
+      },
+      {
+        title: "The Transformation Quality Assurance Framework",
+        description: "\"Quality assurance in a transformation programme is only effective when the assuring party has no loyalty conflict with the delivery party. Independence is not optional — it is the precondition for a trustworthy quality verdict.\" — TQA-F Principle 1. Independent quality assurance versus speed: when is assurance a brake and when is it the accelerator?",
+        episodes: "1 episode",
+        language: "Dutch",
+        button: "Listen now →",
+        audio: "/podcasts/tqa-f-onafhankelijke-kwaliteitsborging.m4a",
+      },
+      {
+        title: "Data Quality Score (DQS)",
+        description: "The Data Quality Score (DQS) Framework provides a structured method to objectively and measurably determine data quality in complex data migrations. By converting subjective concepts into concrete, automated validation rules, the model prevents discussions about the reliability of migrated information.",
+        episodes: "1 episode",
+        language: "Dutch",
+        button: "Listen now →",
+        audio: "/podcasts/dqs-data-quality-score.m4a",
+      },
+      {
+        title: "Hospital Reference Architecture",
+        description: "Dutch hospitals are at a tipping point: an ageing population, staff shortages and the Integral Care Agreement demand fundamental changes. But how do you translate strategic ambitions into concrete IT investments? This podcast explores why 30% of IT budgets are wasted and how reference architecture prevents that.",
+        episodes: "1 episode",
+        language: "Dutch",
+        button: "Listen now →",
+        audio: "/podcasts/referentiearchitectuur-zorgsector.m4a",
+      },
+    ],
     items: [
       {
         type: "Whitepapers",
@@ -278,6 +382,38 @@ const data = {
         ],
       },
       {
+        type: "Whitepapers",
+        image: "/images/team-meeting.jpg",
+        title: "Leading Passionate Transformations",
+        content: `70% of all change programmes fail. Not because of technology, but because of people. This whitepaper reveals why employee engagement is the critical success factor most organisations overlook — and how transformational leadership makes the difference between a successful transition and a costly failure.`,
+        date: "2024",
+        readTime: "Whitepaper",
+        gated: true,
+        whitepaperId: "leiden-van-bevlogen-transformaties",
+        sections: [
+          { heading: "Why this whitepaper?", body: "Organisations operate in an increasingly competitive market where three-year plans are outdated and attention to people is usually minimal. McKinsey & Company states that approximately 70% of change programmes fail to achieve their goals, due to resistance and insufficient management support. This whitepaper explores two trends that make the difference: employee engagement as a success factor and the emergence of a new type of leadership." },
+          { heading: "The engagement crisis", body: "Research by Gallup shows that globally only 32% of employees are engaged, while 18% are completely mentally checked out. Low engagement leads to higher turnover, lower productivity, poorer quality and reduced customer satisfaction. Engaged employees, on the other hand, consistently perform better and stay longer. The difference in turnover can be as high as 43%." },
+          { heading: "Transformational leadership", body: "Traditional leadership styles are no longer sufficient. The rise of hybrid and empowered teams requires leadership that inspires, provides direction and offers space for autonomy and development. Transformational leadership — where the leader motivates employees to reach their full potential — proves to be the most effective style for organisations in transition." },
+          { heading: "What you receive", body: "The full ITsPeople whitepaper with scientifically substantiated insights on passion and engagement, the role of leadership style, and concrete guidelines for leaders: from creating a clear vision to increasing engagement and investing in leadership development. After leaving your contact details, we will send you the whitepaper personally." },
+        ],
+      },
+      {
+        type: "Whitepapers",
+        image: "/images/team-sept-1.jpg",
+        title: "The Future of Hospital Architecture in the Netherlands",
+        content: `Organisations that fail to align IT and business strategy waste an average of 30% of their IT budget. This whitepaper shows how reference architecture helps healthcare institutions move from strategic ambition to concrete, valuable IT investments — specifically for the Dutch context with DBC/DOT, the IZA and the four care value streams.`,
+        date: "April 2026",
+        readTime: "Whitepaper",
+        gated: true,
+        whitepaperId: "referentiearchitectuur-zorgsector",
+        sections: [
+          { heading: "The problem", body: "Dutch hospitals are at a tipping point. An ageing population, growing staff shortages and the Integral Care Agreement (IZA) demand fundamental changes. At the same time, technology offers unprecedented possibilities — from AI to smart data exchange. Yet many healthcare institutions struggle with the same question: how do you translate strategic ambitions into concrete IT investments that deliver measurable value?" },
+          { heading: "The solution: reference architecture", body: "A proven instrument that answers three fundamental questions: what does our organisation do (mapping business capabilities), where are the priorities (determining strategic focus from value creation), and where should we invest (translating capability gaps into a concrete roadmap). By starting from what the organisation does rather than which systems it runs, a stable foundation emerges that doesn't change with every reorganisation or system replacement." },
+          { heading: "The four value streams", body: "Dutch value streams cut across institutional boundaries — from public health to hospitals to community nursing. The whitepaper describes four value streams (prevention, diagnostics, treatment, and recovery & aftercare) and shows how reference architecture helps align IT investments with these chains. Three technology domains are central: AI, data interoperability (MedMij, Mitz, Nuts) and cloud modernisation." },
+          { heading: "What you receive", body: "The full ITsPeople whitepaper with the four-phase approach for healthcare institutions, the capability-mapping methodology, comparison between international and Dutch healthcare models, and a concrete investment agenda in business language. After leaving your contact details, we will send you the whitepaper personally." },
+        ],
+      },
+      {
         type: "Articles",
         image: "/images/team-discussion.jpg",
         title: "Human-centred transformation: why people make the difference",
@@ -292,19 +428,35 @@ const data = {
         ],
       },
       {
+        type: "Tools",
+        image: "/images/team-collab.jpg",
+        title: "IT Governance Quickscan",
+        content: `How mature is your IT organisation? Answer 15 targeted questions on strategy, project management, data, security and infrastructure and receive your final score instantly, with concrete improvement opportunities. Based on COBIT and proven best practices.`,
+        date: "2026",
+        readTime: "~5 min",
+        link: "/tools/governance-quickscan.html",
+        stats: [
+          { label: "Questions", value: "15" },
+          { label: "Domains", value: "5" },
+          { label: "Final score", value: "0–100" },
+        ],
+      },
+      {
         type: "Videos",
         image: "/images/team-sept-3.jpg",
-        title: "André Keizer on the future of digital transformation",
-        content: `Keynote by André Keizer at Transformation Summit 2025.`,
-        date: "Dec 2025",
-        readTime: "18 min",
+        title: "ITsPeople, making the difference",
+        content: `The official ITsPeople corporate film. In a few minutes, discover who we are, what we stand for and how we deliver sustainable transformations together with our clients.`,
+        date: "2025",
+        readTime: "Corporate film",
+        video: "/videos/itspeople-promo.mp4",
       },
-    ],
+    ] as InsightItem[],
     typeColors: {
       "Articles": "bg-its-green",
       "Whitepapers": "bg-its-green-dark",
       "Videos": "bg-its-charcoal",
       "Podcast": "bg-its-lime",
+      "Tools": "bg-its-deep",
     },
     heroLabel: "Insights Hub",
     heroTitle: "Knowledge &",
@@ -412,28 +564,42 @@ export default function InsightsPage() {
             ))}
           </div>
 
-          {/* Featured Podcast */}
+          {/* Podcasts */}
           {(activeCategory === (locale === "nl" ? "Alle" : "All") || activeCategory === "Podcast") && (
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12 p-8 rounded-2xl bg-gradient-to-r from-its-dark to-its-deep">
-              <div className="flex flex-col md:flex-row md:items-center gap-8">
-                <div className="flex-shrink-0 w-24 h-24 rounded-2xl bg-its-green/10 border border-its-green/20 flex items-center justify-center text-5xl">🎙️</div>
-                <div className="flex-grow">
-                  <span className="text-its-lime text-xs font-bold uppercase tracking-wider">{d.featured.type}</span>
-                  <h3 className="text-2xl font-bold text-white mt-1 mb-2">{d.featured.title}</h3>
-                  <p className="text-white/60 text-sm leading-relaxed max-w-xl">{d.featured.description}</p>
-                  <p className="text-its-green text-sm font-medium mt-2">{d.featured.episodes}</p>
-                </div>
-                <button className="flex-shrink-0 px-6 py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all">
-                  {d.featured.button}
-                </button>
-              </div>
-            </motion.div>
+            <div className="space-y-6 mb-12">
+              {d.podcasts.map((podcast, pi) => (
+                <motion.div key={podcast.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: pi * 0.1 }} className="p-8 rounded-2xl bg-gradient-to-r from-its-dark to-its-deep">
+                  <div className="flex flex-col md:flex-row md:items-center gap-8">
+                    <div className="flex-shrink-0 w-24 h-24 rounded-2xl bg-its-green/10 border border-its-green/20 flex items-center justify-center text-5xl">🎙️</div>
+                    <div className="flex-grow">
+                      <div className="flex items-center gap-3 mb-1">
+                        <span className="text-its-lime text-xs font-bold uppercase tracking-wider">Podcast</span>
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-semibold uppercase tracking-wider bg-white/10 text-white/70 border border-white/10">{podcast.language}</span>
+                      </div>
+                      <h3 className="text-2xl font-bold text-white mt-1 mb-2">{podcast.title}</h3>
+                      <p className="text-white/60 text-sm leading-relaxed max-w-xl">{podcast.description}</p>
+                      <p className="text-its-green text-sm font-medium mt-2">{podcast.episodes}</p>
+                      {podcast.audio && (
+                        <audio controls className="mt-4 w-full max-w-xl" preload="metadata">
+                          <source src={podcast.audio} type="audio/mp4" />
+                        </audio>
+                      )}
+                    </div>
+                    {!podcast.audio && (
+                      <button className="flex-shrink-0 px-6 py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all">
+                        {podcast.button}
+                      </button>
+                    )}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           )}
 
           {/* Content grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredItems.map((item, i) => {
-              const clickable = (locale === "nl" && (item.type === "Artikelen" || item.type === "Whitepapers")) || (locale === "en" && (item.type === "Articles" || item.type === "Whitepapers"));
+              const clickable = Boolean(item.video) || Boolean(item.audio) || Boolean(item.link) || (locale === "nl" && (item.type === "Artikelen" || item.type === "Whitepapers")) || (locale === "en" && (item.type === "Articles" || item.type === "Whitepapers"));
               const itemType = locale === "nl" ? item.type : item.type === "Artikelen" ? "Articles" : item.type === "Whitepapers" ? "Whitepapers" : item.type === "Video's" ? "Videos" : item.type;
               const typeColor = (d.typeColors as Record<string, string>)[itemType] || "bg-its-green";
 
@@ -444,11 +610,44 @@ export default function InsightsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  onClick={() => clickable && openItem(item)}
+                  onClick={() => {
+                    if (item.link) { window.open(item.link, "_blank", "noopener"); return; }
+                    if (clickable) openItem(item);
+                  }}
                   className={`group bg-white rounded-2xl overflow-hidden border border-its-gray-light/20 hover:shadow-lg hover:shadow-its-green/5 transition-all duration-500 ${clickable ? "cursor-pointer" : ""}`}
                 >
                   <div className="relative aspect-[16/9] overflow-hidden">
                     <Image src={item.image} alt={item.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                    {item.link && (
+                      <>
+                        <div className="absolute inset-0 bg-its-dark/40 group-hover:bg-its-dark/25 transition-colors duration-300" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-16 h-16 rounded-full bg-white/90 group-hover:bg-white flex items-center justify-center shadow-xl transition-all duration-300 group-hover:scale-110">
+                            <svg className="w-7 h-7 text-its-green-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                            </svg>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                    {(item.video || item.audio) && (
+                      <>
+                        <div className="absolute inset-0 bg-its-dark/40 group-hover:bg-its-dark/25 transition-colors duration-300" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="w-16 h-16 rounded-full bg-white/90 group-hover:bg-white flex items-center justify-center shadow-xl transition-all duration-300 group-hover:scale-110">
+                            {item.audio ? (
+                              <svg className="w-7 h-7 text-its-green-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M12 18.75a.75.75 0 01-.75-.75V6a.75.75 0 011.5 0v12a.75.75 0 01-.75.75zM8.25 15a.75.75 0 01-.75-.75v-4.5a.75.75 0 011.5 0v4.5a.75.75 0 01-.75.75zM4.5 13.5a.75.75 0 01-.75-.75v-1.5a.75.75 0 011.5 0v1.5a.75.75 0 01-.75.75z" />
+                              </svg>
+                            ) : (
+                              <svg className="w-6 h-6 text-its-green-dark ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                              </svg>
+                            )}
+                          </div>
+                        </div>
+                      </>
+                    )}
                     <div className="absolute top-3 left-3">
                       <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-wider ${typeColor}`}>
                         {itemType}
@@ -467,7 +666,22 @@ export default function InsightsPage() {
                     <p className="text-its-gray-mid text-sm leading-relaxed line-clamp-3">
                       {item.content}
                     </p>
-                    {clickable && (
+                    {item.stats && (
+                      <div className="flex gap-4 mt-4 pt-4 border-t border-its-gray-light/20">
+                        {item.stats.map((s) => (
+                          <div key={s.label} className="text-center flex-1">
+                            <div className="text-lg font-bold text-its-green-dark">{s.value}</div>
+                            <div className="text-[10px] uppercase tracking-wider text-its-gray-mid font-semibold">{s.label}</div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {item.link && (
+                      <p className="text-its-green-dark text-sm font-semibold mt-4 group-hover:translate-x-1 transition-transform">
+                        {locale === "nl" ? "Start de scan →" : "Start the scan →"}
+                      </p>
+                    )}
+                    {clickable && !item.link && (
                       <p className="text-its-green-dark text-sm font-semibold mt-4 group-hover:translate-x-1 transition-transform">
                         {item.gated ? d.requestWhitepaper : d.readMore}
                       </p>
@@ -632,9 +846,24 @@ export default function InsightsPage() {
               onClick={(e) => e.stopPropagation()}
               className="bg-white rounded-2xl max-w-3xl w-full my-10 overflow-hidden shadow-2xl"
             >
-              <div className="relative aspect-[21/9]">
-                <Image src={selected.image} alt={selected.title} fill className="object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-its-dark/70 to-transparent" />
+              <div className={`relative ${selected.audio ? "aspect-[21/9]" : "aspect-[16/9]"} bg-its-dark`}>
+                {selected.video ? (
+                  <video
+                    src={selected.video}
+                    controls
+                    autoPlay
+                    playsInline
+                    poster={selected.image}
+                    className="absolute inset-0 w-full h-full object-contain bg-black"
+                  >
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <>
+                    <Image src={selected.image} alt={selected.title} fill className="object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-its-dark/70 to-transparent" />
+                  </>
+                )}
                 <button
                   onClick={() => setSelected(null)}
                   className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 hover:bg-white text-its-charcoal font-bold flex items-center justify-center"
@@ -642,19 +871,48 @@ export default function InsightsPage() {
                 >
                   ✕
                 </button>
-                <div className="absolute bottom-5 left-6 right-6">
-                  <span className={`inline-block px-2.5 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-wider mb-2 ${(d.typeColors as Record<string, string>)[selected.type] || "bg-its-green"}`}>
-                    {selected.type}
-                  </span>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight">{selected.title}</h2>
-                  <div className="flex items-center gap-3 text-xs text-white/70 mt-2">
-                    <span>{selected.date}</span>
-                    <span className="w-1 h-1 rounded-full bg-white/70" />
-                    <span>{selected.readTime}</span>
+                {!selected.video && (
+                  <div className="absolute bottom-5 left-6 right-6">
+                    <span className={`inline-block px-2.5 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-wider mb-2 ${(d.typeColors as Record<string, string>)[selected.type] || "bg-its-green"}`}>
+                      {selected.type}
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white leading-tight">{selected.title}</h2>
+                    <div className="flex items-center gap-3 text-xs text-white/70 mt-2">
+                      <span>{selected.date}</span>
+                      <span className="w-1 h-1 rounded-full bg-white/70" />
+                      <span>{selected.readTime}</span>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
-              <div className="p-8 lg:p-10 space-y-6">
+              <div className="p-8 lg:p-10 space-y-5">
+                {selected.audio && (
+                  <div>
+                    <audio
+                      src={selected.audio}
+                      controls
+                      autoPlay
+                      className="w-full mb-4"
+                    >
+                      Your browser does not support the audio element.
+                    </audio>
+                    <p className="text-its-gray-mid leading-relaxed">{selected.content}</p>
+                  </div>
+                )}
+                {selected.video && (
+                  <div>
+                    <span className={`inline-block px-2.5 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-wider mb-3 ${(d.typeColors as Record<string, string>)[selected.type] || "bg-its-green"}`}>
+                      {selected.type}
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-its-charcoal leading-tight">{selected.title}</h2>
+                    <div className="flex items-center gap-3 text-xs text-its-gray-mid mt-2">
+                      <span>{selected.date}</span>
+                      <span className="w-1 h-1 rounded-full bg-its-gray-mid" />
+                      <span>{selected.readTime}</span>
+                    </div>
+                    <p className="text-its-gray-mid leading-relaxed mt-4">{selected.content}</p>
+                  </div>
+                )}
                 {selected.sections?.map((s) => (
                   <div key={s.heading}>
                     <h3 className="text-sm font-bold text-its-green-dark uppercase tracking-wider mb-2">{s.heading}</h3>

@@ -43,3 +43,6 @@ logs/
 /Logo SVB.png
 /Klant logos.pptx
 /ITsPeople-TQA-F-Whitepaper.docx
+
+# Large binary assets (host separately, e.g. on Vimeo / CDN)
+public/videos/

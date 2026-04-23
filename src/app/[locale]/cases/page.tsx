@@ -13,6 +13,55 @@ const data = {
     intro: "Van strategie tot realisatie, bekijk hoe wij organisaties hebben geholpen bij hun complexe transformaties.",
     caseItems: [
       {
+        slug: "rvo-nglb-implementatie",
+        sector: "Overheid / Landbouw",
+        title: "RVO: implementatie van het nieuwe Gemeenschappelijk Landbouwbeleid (nGLB)",
+        challenge: "Met het nieuwe Gemeenschappelijk Landbouwbeleid (GLB) van de Europese Unie is Nederland verplicht om een fundamenteel vernieuwde uitvoering van landbouwsubsidies, vergroening en plattelandsontwikkeling neer te zetten. Voor de Rijksdienst voor Ondernemend Nederland (RVO) betekent dit een meerjarige transformatie waarin juridische verplichtingen, nieuwe regelingen, verduurzaming van de sector en een volledige digitale uitvoering samen moeten komen. De complexiteit is aanzienlijk: het programma nGLB raakt een brede keten van partijen, waaronder het ministerie van Landbouw, Natuur en Voedselkwaliteit (LNV), de twaalf provincies, de waterschappen en de NVWA. Elke partij heeft eigen verantwoordelijkheden, eigen systemen en eigen belangen. Tegelijkertijd moeten tienduizenden agrarische ondernemers op tijd, uitlegbaar en rechtmatig worden bediend, binnen strikte Europese deadlines en onder toezicht van de Europese Commissie en nationale auditinstanties. Een kleine fout in de uitvoering of een gemiste ketenafhankelijkheid kan direct leiden tot vertraging van uitbetalingen, financiële correcties vanuit Brussel of juridische procedures van aanvragers.",
+        approach: "ITsPeople ondersteunt RVO bij de sturing en oplevering van het programma nGLB. Vanuit het pyramide-principe hebben wij samen met de opdrachtgever de kernboodschap scherp geformuleerd: een tijdige, uitlegbare en controleerbare implementatie van het nieuwe GLB voor alle betrokken ketenpartners. Vanuit die kernboodschap hebben wij een gefaseerde aanpak opgezet waarin juridische verplichtingen, nieuwe regelingen, verduurzaming van de sector en de digitale uitvoering integraal samenkomen. Wij leverden programma- en projectmanagement, business analyse en control-expertise aan meerdere workstreams, bewaakten afhankelijkheden tussen RVO, LNV, de provincies, de waterschappen en de NVWA, en richtten een besturingsritme in waarin directie en stuurgroep op basis van feiten konden sturen op scope, planning, risico's en baten. Bijzondere aandacht ging uit naar ketenregie, datakwaliteit, auditbaarheid en de communicatie richting ketenpartners en eindbegunstigden. De eindpresentatie in het atrium van RVO markeerde een belangrijke mijlpaal in de oplevering van fase 2 (GLB 23-27) en bevestigde het beeld dat een complexe, multi-stakeholder transformatie daadwerkelijk tot resultaat kan worden gebracht.",
+        results: [
+          "Fase 2 GLB 23-27 succesvol opgeleverd en gepresenteerd",
+          "Integrale ketenaanpak met LNV, provincies, waterschappen en NVWA geborgd",
+          "Juridische verplichtingen, nieuwe regelingen en verduurzaming samengebracht in één uitvoering",
+          "Gefaseerde, controleerbare implementatie op koers gehouden binnen Europese kaders",
+          "Stuurgroep en directie in control op scope, planning, risico's en baten",
+        ],
+        image: "/images/cases/nglb-stage.jpg",
+        gallery: [
+          { src: "/images/cases/nglb-audience.jpg", alt: "Publiek tijdens de eindpresentatie van het programma nGLB in het RVO-atrium" },
+          { src: "/images/cases/nglb-speaker-field.jpg", alt: "Spreker licht gewasclassificatie en maaien/beweiden toe tijdens de nGLB-eindpresentatie" },
+          { src: "/images/cases/nglb-speaker-scope.jpg", alt: "Spreker presenteert doel en scope van fase 2 GLB 23-27" },
+        ],
+        testimonial: "De implementatie van het nieuwe GLB vraagt om strakke sturing, ketenregie en het vermogen om juridische, beleidsmatige en digitale sporen bij elkaar te houden. ITsPeople heeft daar wezenlijk aan bijgedragen.",
+        testimonialAuthor: "Programmamanager nGLB",
+        testimonialOrg: "Rijksdienst voor Ondernemend Nederland",
+      },
+      {
+        slug: "amc-hackathon-data-feedback-ok",
+        sector: "Zorg / Innovatie",
+        title: "Amsterdam UMC (AMC): Hackathon 'Code to make a difference' in het skills lab",
+        challenge: "In het opleidings- en skills lab van het Amsterdam UMC (AMC) komen chirurgen, opleiders en technologie samen om de kwaliteit van laparoscopische ingrepen verder te verbeteren. De vraag was concreet: kunnen we chirurgen tijdens het oefenen live en objectief feedback geven op basis van data uit de operatie, in plaats van achteraf op basis van subjectieve observaties? Een dergelijke oplossing moet in een medische setting vanaf de eerste seconde betrouwbaar, uitlegbaar en bruikbaar zijn: de informatie mag geen afleiding zijn voor de chirurg, moet passen in het klinische werkproces en moet aantoonbaar voldoende nauwkeurig zijn om op te kunnen sturen. Tegelijkertijd speelt een complex ecosysteem aan partijen: het ziekenhuis zelf, opleiders, medisch-technische leveranciers, dataplatformen en softwarepartners. Om dit soort innovaties snel te toetsen, zonder de reguliere zorg te verstoren, is een geconcentreerde, multidisciplinaire aanpak nodig, precies waar een hackathon zich voor leent.",
+        approach: "Samen met het Amsterdam UMC en onze partners FormsVision, SOA en Gelre ziekenhuizen organiseerde ITsPeople een hackathon onder het motto 'Code to make a difference' in het skills lab van het AMC. Vanuit het pyramide-principe stelden we vooraf de kernboodschap vast: bewijzen dat data uit de operatiekamer omgezet kan worden in real-time, betrouwbare feedback voor de chirurg tijdens het oefenen. Binnen een strak tijdsvenster werden multidisciplinaire teams gevormd van chirurgen, data scientists, software engineers en business analisten. Wij leverden de programma- en projectregie, de facilitatie van de teams, de koppeling met de klinische use case en de bewaking van scope, governance en uitlegbaarheid. Tijdens de hackathon zijn live data vanuit de laparoscopische opstellingen ontsloten, verwerkt en terug-geleid in een feedbackloop richting de chirurg. Resultaten werden iteratief getoetst tegen de beoordeling van de ervaren opleiders in het skills lab, zodat we konden vaststellen hoe goed de data-gedreven feedback aansloot bij het oordeel van de mens. De aanpak liet zien hoe strategische innovatie, ketensamenwerking en hands-on uitvoering elkaar in één sessie kunnen versterken.",
+        results: [
+          "90% betrouwbare real-time feedback op basis van data uit de operatiekamer",
+          "Chirurgen tijdens het oefenen live voorzien van objectieve feedback",
+          "Bewezen use case voor data-gedreven skills training in het opleidings-/skills lab",
+          "Succesvolle samenwerking tussen Amsterdam UMC, ITsPeople, FormsVision, SOA en Gelre ziekenhuizen",
+          "Fundament gelegd voor verdere opschaling van AI- en datatoepassingen in de OK-omgeving",
+        ],
+        image: "/images/cases/amc-hackathon-team.jpg",
+        video: "/videos/amc-hackathon-patient-safety.mp4",
+        videoPoster: "/images/cases/amc-hackathon-team.jpg",
+        videoLabel: "Bekijk de video: Patient Safety Hackathon Amsterdam UMC",
+        gallery: [
+          { src: "/images/cases/amc-hackathon-skillslab.jpg", alt: "Oefensessie in het skills lab van het Amsterdam UMC tijdens de hackathon" },
+          { src: "/images/cases/amc-hackathon-banners.jpg", alt: "Hackathon 'Code to make a difference' met banners van ITsPeople, Amsterdam UMC, FormsVision, SOA en Gelre ziekenhuizen" },
+          { src: "/images/cases/amc-hackathon-laparoscopy.jpg", alt: "Laparoscopische oefensessie met live beeld en data-feedback tijdens de hackathon" },
+        ],
+        testimonial: "Deze hackathon heeft laten zien dat data-gedreven, real-time feedback in de OK geen toekomstmuziek is. We konden chirurgen tijdens het oefenen al live voorzien van betrouwbare informatie.",
+        testimonialAuthor: "Chirurg-opleider",
+        testimonialOrg: "Amsterdam UMC",
+      },
+      {
         slug: "geldmaat-cash-infrastructuur",
         sector: "Financiële Sector",
         title: "Geldmaat: neerzetten van een landelijke cash-infrastructuur",
@@ -110,6 +159,55 @@ const data = {
     heading2: "results",
     intro: "From strategy to delivery, see how we have supported organisations through complex transformations.",
     caseItems: [
+      {
+        slug: "rvo-nglb-implementatie",
+        sector: "Government / Agriculture",
+        title: "RVO: implementing the new Common Agricultural Policy (nGLB)",
+        challenge: "With the new Common Agricultural Policy (CAP) of the European Union, the Netherlands is required to deliver a fundamentally renewed execution of agricultural subsidies, greening and rural development. For the Netherlands Enterprise Agency (RVO) this means a multi-year transformation in which legal obligations, new regulations, sustainability of the sector and a fully digital execution must come together. The complexity is considerable: the nGLB programme touches a broad chain of parties, including the Ministry of Agriculture, Nature and Food Quality (LNV), the twelve provinces, the water boards and the NVWA. Each party has its own responsibilities, systems and interests. At the same time, tens of thousands of agricultural entrepreneurs must be served on time, transparently and lawfully, within strict European deadlines and under scrutiny of the European Commission and national audit institutions. A small execution error or a missed chain dependency can directly lead to delayed payments, financial corrections from Brussels or legal proceedings from applicants.",
+        approach: "ITsPeople supports RVO in the governance and delivery of the nGLB programme. Following the pyramid principle, we crystallised the core message together with the client: a timely, transparent and controllable implementation of the new CAP for all chain partners involved. From this foundation we established a phased approach that integrates legal obligations, new regulations, sector sustainability and digital execution into one delivery. We provided programme and project management, business analysis and control expertise across multiple workstreams, monitored dependencies between RVO, LNV, the provinces, the water boards and the NVWA, and installed a governance rhythm enabling leadership and the steering committee to manage scope, schedule, risks and benefits based on facts. Particular attention went to chain orchestration, data quality, auditability and communication to chain partners and end beneficiaries. The final presentation in the RVO atrium marked an important milestone in the delivery of phase 2 (GLB 23-27) and confirmed that a complex, multi-stakeholder transformation can be turned into real results.",
+        results: [
+          "Phase 2 GLB 23-27 successfully delivered and presented",
+          "Integrated chain approach with LNV, provinces, water boards and NVWA secured",
+          "Legal obligations, new regulations and sustainability combined into one execution",
+          "Phased, controllable implementation kept on track within European frameworks",
+          "Steering committee and leadership in control of scope, schedule, risks and benefits",
+        ],
+        image: "/images/cases/nglb-stage.jpg",
+        gallery: [
+          { src: "/images/cases/nglb-audience.jpg", alt: "Audience during the final presentation of the nGLB programme in the RVO atrium" },
+          { src: "/images/cases/nglb-speaker-field.jpg", alt: "Speaker explains crop classification and mowing/grazing during the nGLB final presentation" },
+          { src: "/images/cases/nglb-speaker-scope.jpg", alt: "Speaker presents the objective and scope of phase 2 GLB 23-27" },
+        ],
+        testimonial: "Implementing the new CAP requires tight governance, chain orchestration and the ability to keep legal, policy and digital tracks aligned. ITsPeople has made a meaningful contribution to this.",
+        testimonialAuthor: "Programme Manager nGLB",
+        testimonialOrg: "Netherlands Enterprise Agency (RVO)",
+      },
+      {
+        slug: "amc-hackathon-data-feedback-ok",
+        sector: "Healthcare / Innovation",
+        title: "Amsterdam UMC (AMC): Hackathon 'Code to make a difference' in the skills lab",
+        challenge: "In the training and skills lab of Amsterdam UMC (AMC), surgeons, trainers and technology come together to further improve the quality of laparoscopic procedures. The question was concrete: can we give surgeons live and objective feedback during training based on data from the operation, instead of afterwards based on subjective observations? In a medical setting, any such solution must be reliable, explainable and usable from the very first second: the information must not distract the surgeon, must fit the clinical workflow and must be demonstrably accurate enough to act on. At the same time, a complex ecosystem of parties is involved: the hospital itself, trainers, medical-technical suppliers, data platforms and software partners. Validating this kind of innovation quickly, without disrupting regular care, requires a concentrated, multidisciplinary approach — exactly what a hackathon is designed for.",
+        approach: "Together with Amsterdam UMC and our partners FormsVision, SOA and Gelre ziekenhuizen, ITsPeople organised a hackathon under the motto 'Code to make a difference' in the AMC skills lab. Following the pyramid principle, we set the core message upfront: prove that data from the operating theatre can be converted into real-time, reliable feedback for the surgeon during training. Within a tight timeframe, multidisciplinary teams were formed consisting of surgeons, data scientists, software engineers and business analysts. We provided the programme and project management, team facilitation, alignment with the clinical use case and oversight on scope, governance and explainability. During the hackathon, live data from the laparoscopic setups was captured, processed and fed back in a feedback loop towards the surgeon. Results were iteratively validated against the judgement of the experienced trainers in the skills lab, allowing us to establish how well data-driven feedback aligned with human expert assessment. The approach showed how strategic innovation, ecosystem collaboration and hands-on delivery can reinforce each other within a single session.",
+        results: [
+          "90% reliable real-time feedback based on data from the operating theatre",
+          "Surgeons provided with objective live feedback during training",
+          "Proven use case for data-driven skills training in the training/skills lab",
+          "Successful collaboration between Amsterdam UMC, ITsPeople, FormsVision, SOA and Gelre ziekenhuizen",
+          "Foundation laid for further scaling of AI and data applications in the OR environment",
+        ],
+        image: "/images/cases/amc-hackathon-team.jpg",
+        video: "/videos/amc-hackathon-patient-safety.mp4",
+        videoPoster: "/images/cases/amc-hackathon-team.jpg",
+        videoLabel: "Watch the video: Patient Safety Hackathon Amsterdam UMC",
+        gallery: [
+          { src: "/images/cases/amc-hackathon-skillslab.jpg", alt: "Training session in the Amsterdam UMC skills lab during the hackathon" },
+          { src: "/images/cases/amc-hackathon-banners.jpg", alt: "Hackathon 'Code to make a difference' with banners from ITsPeople, Amsterdam UMC, FormsVision, SOA and Gelre ziekenhuizen" },
+          { src: "/images/cases/amc-hackathon-laparoscopy.jpg", alt: "Laparoscopic training session with live imaging and data feedback during the hackathon" },
+        ],
+        testimonial: "This hackathon has shown that data-driven, real-time feedback in the OR is no longer a future dream. We were already able to provide surgeons with reliable information live during training.",
+        testimonialAuthor: "Surgeon-trainer",
+        testimonialOrg: "Amsterdam UMC",
+      },
       {
         slug: "geldmaat-cash-infrastructuur",
         sector: "Financial Services",
@@ -246,6 +344,34 @@ export default function CasesPage() {
                   <h2 className="text-2xl sm:text-3xl font-bold text-white mt-3">{c.title}</h2>
                 </div>
               </div>
+
+              {"video" in c && typeof (c as { video?: string }).video === "string" && (
+                <div className="relative aspect-[16/9] bg-its-dark">
+                  <video
+                    src={(c as { video: string }).video}
+                    poster={(c as { videoPoster?: string }).videoPoster}
+                    controls
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-full object-contain bg-black"
+                  />
+                  {(c as { videoLabel?: string }).videoLabel && (
+                    <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-medium backdrop-blur-sm">
+                      {(c as { videoLabel: string }).videoLabel}
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {"gallery" in c && Array.isArray((c as { gallery?: { src: string; alt: string }[] }).gallery) && (
+                <div className="grid grid-cols-3 gap-1 bg-its-gray-light/20">
+                  {(c as { gallery: { src: string; alt: string }[] }).gallery.map((g) => (
+                    <div key={g.src} className="relative aspect-[4/3] bg-its-warm">
+                      <Image src={g.src} alt={g.alt} fill className="object-cover" />
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <div className="p-8 lg:p-12">
                 <div className="grid lg:grid-cols-3 gap-10">

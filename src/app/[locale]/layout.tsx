@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
@@ -11,17 +10,6 @@ import Chatbot from "@/components/Chatbot";
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
-
-export const metadata: Metadata = {
-  title: "ITsPeople | Premium IT Consultancy & Digital Transformation",
-  description:
-    "ITsPeople guides organisations through complex digital transformations. From strategy to implementation.",
-  authors: [{ name: "ITsPeople", url: "https://www.itspeople.nl" }],
-  creator: "ITsPeople",
-  publisher: "ITsPeople",
-  robots: { index: true, follow: true },
-  alternates: { canonical: "https://www.itspeople.nl" },
-};
 
 export default async function LocaleLayout({
   children,

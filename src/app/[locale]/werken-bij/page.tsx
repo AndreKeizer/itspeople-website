@@ -14,12 +14,12 @@ const data = {
       { title: "NIS2 Compliance Specialist", type: "Fulltime", location: "Zaltbommel / Hybride", description: "Als NIS2 Compliance Specialist help je organisaties om te voldoen aan de NIS2-richtlijn. Je voert gap-analyses uit, ontwerpt compliance frameworks en begeleidt implementatietrajecten.", requirements: ["Ervaring met compliance en informatiebeveiliging", "Kennis van NIS2, BIO of ISO 27001", "In staat om complexe materie toegankelijk te maken", "Ervaring met governance en risicomanagement"] },
     ],
     benefits: [
-      { icon: "📚", title: "ITs Academy", description: "Structurele investering in jouw ontwikkeling via onze eigen academy." },
-      { icon: "🏠", title: "Hybride werken", description: "Flexibiliteit in waar en wanneer je werkt, afgestemd op het project." },
-      { icon: "🚗", title: "Mobiliteit", description: "Leaseauto of mobiliteitsbudget naar keuze." },
-      { icon: "💰", title: "Competitief salaris", description: "Marktconform salaris met bonus en pensioenregeling." },
-      { icon: "🎉", title: "Samen Events", description: "Zes keer per jaar samen vieren, van nieuwjaar tot kerst." },
-      { icon: "⭐", title: "Make-A-Wish", description: "Samen het verschil maken, ook buiten projecten." },
+      { image: "/images/benefits/academy.jpg", title: "ITs Academy", description: "Structurele investering in jouw ontwikkeling via onze eigen academy." },
+      { image: "/images/benefits/hybrid.jpg", title: "Hybride werken", description: "Flexibiliteit in waar en wanneer je werkt, afgestemd op het project." },
+      { image: "/images/benefits/mobility.jpg", title: "Mobiliteit", description: "Leaseauto of mobiliteitsbudget naar keuze." },
+      { image: "/images/benefits/salary.jpg", title: "Competitief salaris", description: "Marktconform salaris met bonus en pensioenregeling." },
+      { image: "/images/benefits/events.jpg", title: "Samen Events", description: "Zes keer per jaar samen vieren, van nieuwjaar tot kerst." },
+      { image: "/images/benefits/make-a-wish-logo.jpg", title: "Make-A-Wish", description: "Samen het verschil maken, ook buiten projecten." },
     ],
     heroLabel: "Werken bij ITsPeople",
     heroTitle: "Maak het",
@@ -33,6 +33,9 @@ const data = {
     vacanciesTitle: "Openstaande vacatures",
     vacanciesDesc: "Staat jouw droombaan er niet bij? Stuur een open sollicitatie naar hr@itspeople.nl.",
     apply: "Solliciteer →",
+    careerSiteTitle: "Klaar om het verschil te maken?",
+    careerSiteDesc: "Op onze carrièresite vind je al onze actuele vacatures, verhalen van collega's en een kijkje achter de schermen bij ITsPeople. Of je nu een ervaren consultant bent of net aan het begin van je carrière staat, ontdek welke rol bij jou past en hoe jij kunt bijdragen aan duurzame verandering bij toonaangevende organisaties.",
+    careerSiteButton: "Bekijk alle vacatures op joinitspeople.nl →",
     openTitle: "Jouw functie staat er niet bij?",
     openDesc: "Wij zijn altijd op zoek naar talent. Stuur je CV en motivatie naar hr@itspeople.nl en wie weet maken wij binnenkort samen het verschil.",
     openButton: "Stuur een open sollicitatie →",
@@ -45,12 +48,12 @@ const data = {
       { title: "NIS2 Compliance Specialist", type: "Fulltime", location: "Zaltbommel / Hybrid", description: "As a NIS2 Compliance Specialist, you help organisations comply with the NIS2 Directive. You conduct gap analyses, design compliance frameworks and guide implementation programmes.", requirements: ["Experience with compliance and information security", "Knowledge of NIS2, BIO or ISO 27001", "Able to make complex matters accessible", "Experience with governance and risk management"] },
     ],
     benefits: [
-      { icon: "📚", title: "ITs Academy", description: "Structural investment in your development through our own academy." },
-      { icon: "🏠", title: "Hybrid working", description: "Flexibility in where and when you work, tailored to the project." },
-      { icon: "🚗", title: "Mobility", description: "Company car or mobility budget of your choice." },
-      { icon: "💰", title: "Competitive salary", description: "Market-competitive salary with bonus and pension scheme." },
-      { icon: "🎉", title: "Together Events", description: "Celebrate together six times a year, from New Year to Christmas." },
-      { icon: "⭐", title: "Make-A-Wish", description: "Making a difference together, also beyond projects." },
+      { image: "/images/benefits/academy.jpg", title: "ITs Academy", description: "Structural investment in your development through our own academy." },
+      { image: "/images/benefits/hybrid.jpg", title: "Hybrid working", description: "Flexibility in where and when you work, tailored to the project." },
+      { image: "/images/benefits/mobility.jpg", title: "Mobility", description: "Company car or mobility budget of your choice." },
+      { image: "/images/benefits/salary.jpg", title: "Competitive salary", description: "Market-competitive salary with bonus and pension scheme." },
+      { image: "/images/benefits/events.jpg", title: "Together Events", description: "Celebrate together six times a year, from New Year to Christmas." },
+      { image: "/images/benefits/make-a-wish-logo.jpg", title: "Make-A-Wish", description: "Making a difference together, also beyond projects." },
     ],
     heroLabel: "Work at ITsPeople",
     heroTitle: "Make the",
@@ -64,6 +67,9 @@ const data = {
     vacanciesTitle: "Open vacancies",
     vacanciesDesc: "Not seeing your dream job? Send an open application to hr@itspeople.nl.",
     apply: "Apply →",
+    careerSiteTitle: "Ready to make a difference?",
+    careerSiteDesc: "On our career site you'll find all our current vacancies, stories from colleagues and a behind-the-scenes look at ITsPeople. Whether you're a seasoned consultant or just starting your career, discover which role suits you and how you can contribute to sustainable change at leading organisations.",
+    careerSiteButton: "View all vacancies on joinitspeople.nl →",
     openTitle: "Your position isn't listed?",
     openDesc: "We're always looking for talent. Send your CV and motivation to hr@itspeople.nl and who knows, we'll soon make a difference together.",
     openButton: "Send an open application →",
@@ -122,10 +128,15 @@ export default function WerkenBijPage() {
           <h2 className="text-3xl font-bold text-its-charcoal text-center mb-12">{d.benefitsTitle}</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {d.benefits.map((b, i) => (
-              <motion.div key={b.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="p-6 rounded-2xl bg-white border border-its-gray-light/30 text-center">
-                <span className="text-3xl block mb-3">{b.icon}</span>
-                <h3 className="font-bold text-its-charcoal mb-2">{b.title}</h3>
-                <p className="text-its-gray-mid text-sm">{b.description}</p>
+              <motion.div key={b.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group rounded-2xl bg-white border border-its-gray-light/30 overflow-hidden hover:shadow-lg transition-all duration-300">
+                <div className="relative aspect-[16/10] overflow-hidden">
+                  <Image src={b.image} alt={b.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-its-dark/60 to-transparent" />
+                  <h3 className="absolute bottom-3 left-4 right-4 font-bold text-white text-lg">{b.title}</h3>
+                </div>
+                <div className="p-5">
+                  <p className="text-its-gray-mid text-sm leading-relaxed">{b.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -164,6 +175,30 @@ export default function WerkenBijPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Career site CTA */}
+      <section className="py-20 bg-gradient-to-br from-its-dark via-its-deep to-its-dark relative overflow-hidden">
+        <div className="absolute inset-0 grid-pattern opacity-10" />
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">{d.careerSiteTitle}</h2>
+            <p className="text-white/70 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+              {d.careerSiteDesc}
+            </p>
+            <a
+              href="https://www.joinitspeople.nl/#jobs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              {d.careerSiteButton}
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </motion.div>
         </div>
       </section>
 

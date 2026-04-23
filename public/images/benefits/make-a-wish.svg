@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" rx="24" fill="#009CDE" opacity=".08"/>
+  <polygon points="100,40 112,72 146,72 118,92 130,124 100,104 70,124 82,92 54,72 88,72" fill="#009CDE" opacity=".2" stroke="#009CDE" stroke-width="2.5" stroke-linejoin="round"/>
+  <text x="100" y="158" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="bold" fill="#009CDE">Make-A-Wish</text>
+</svg>
