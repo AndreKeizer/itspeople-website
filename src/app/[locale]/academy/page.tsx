@@ -502,11 +502,23 @@ export default function AcademyPage() {
               {d.baselineDesc}
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              {d.baselineModules.map((mod) => (
-                <div key={mod} className="px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white/80 text-sm text-center">
+              {d.baselineModules.map((mod, i) => {
+                const colors = [
+                  "from-its-green-dark to-its-green-mid",
+                  "from-its-green-mid to-its-green",
+                  "from-its-green to-its-lime",
+                  "from-its-lime to-its-green",
+                  "from-its-green-mid to-its-lime",
+                  "from-its-green-dark to-its-green",
+                  "from-its-lime to-its-green-mid",
+                  "from-its-green to-its-green-dark",
+                ];
+                return (
+                <div key={mod} className={`px-4 py-3 rounded-xl bg-gradient-to-br ${colors[i % colors.length]} text-white font-medium text-sm text-center shadow-lg hover:scale-105 transition-transform duration-300`}>
                   {mod}
                 </div>
-              ))}
+                );
+              })}
             </div>
           </motion.div>
         </div>
