@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useLocale } from "next-intl";
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 type InsightItem = {
   type: string;
   image: string;
@@ -38,7 +40,7 @@ const data = {
         episodes: "1 aflevering",
         language: "Nederlands",
         button: "Beluister nu →",
-        audio: "/podcasts/tqa-f-onafhankelijke-kwaliteitsborging.m4a",
+        audio: `${BASE}/podcasts/tqa-f-onafhankelijke-kwaliteitsborging.m4a`,
       },
       {
         title: "Data Quality Score (DQS)",
@@ -46,7 +48,7 @@ const data = {
         episodes: "1 aflevering",
         language: "Nederlands",
         button: "Beluister nu →",
-        audio: "/podcasts/dqs-data-quality-score.m4a",
+        audio: `${BASE}/podcasts/dqs-data-quality-score.m4a`,
       },
       {
         title: "Referentiearchitectuur Zorgsector",
@@ -54,7 +56,7 @@ const data = {
         episodes: "1 aflevering",
         language: "Nederlands",
         button: "Beluister nu →",
-        audio: "/podcasts/referentiearchitectuur-zorgsector.m4a",
+        audio: `${BASE}/podcasts/referentiearchitectuur-zorgsector.m4a`,
       },
     ],
     items: [
@@ -268,7 +270,7 @@ const data = {
         episodes: "1 episode",
         language: "Dutch",
         button: "Listen now →",
-        audio: "/podcasts/tqa-f-onafhankelijke-kwaliteitsborging.m4a",
+        audio: `${BASE}/podcasts/tqa-f-onafhankelijke-kwaliteitsborging.m4a`,
       },
       {
         title: "Data Quality Score (DQS)",
@@ -276,7 +278,7 @@ const data = {
         episodes: "1 episode",
         language: "Dutch",
         button: "Listen now →",
-        audio: "/podcasts/dqs-data-quality-score.m4a",
+        audio: `${BASE}/podcasts/dqs-data-quality-score.m4a`,
       },
       {
         title: "Hospital Reference Architecture",
@@ -284,7 +286,7 @@ const data = {
         episodes: "1 episode",
         language: "Dutch",
         button: "Listen now →",
-        audio: "/podcasts/referentiearchitectuur-zorgsector.m4a",
+        audio: `${BASE}/podcasts/referentiearchitectuur-zorgsector.m4a`,
       },
     ],
     items: [
