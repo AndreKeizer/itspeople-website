@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { asset } from "@/lib/basePath";
 
 const data = {
   nl: {
@@ -11,7 +12,7 @@ const data = {
       {
         name: "André Keizer",
         role: "Founder & Programmadirecteur Transformaties",
-        image: "/images/team/andre-keizer.jpg",
+        image: asset("/images/team/andre-keizer.jpg"),
         quote: "Duurzame verandering loopt altijd over de as van de mens.",
         specialties: ["Strategie", "Transformatie", "Leiderschap"],
         bio: "André is de drijvende kracht achter ITsPeople. Met meer dan 15 jaar ervaring in het begeleiden van complexe transformaties combineert hij strategisch inzicht met een diepgewortelde overtuiging dat mensen het verschil maken. Zijn expertise ligt op het snijvlak van organisatiestrategie, verandermanagement en leiderschap.",
@@ -19,35 +20,35 @@ const data = {
       {
         name: "Mario Kornuijt",
         role: "Co-Founder & Programmadirecteur Transformaties",
-        image: "/images/team/mario-kornuijt.jpg",
+        image: asset("/images/team/mario-kornuijt.jpg"),
         quote: "Complexe transformaties vragen om eenvoudige oplossingen.",
         specialties: ["Business Consultancy", "Governance", "Klantrelaties"],
         bio: "Mario brengt jarenlange ervaring mee in business consultancy en governance. Hij gelooft in de kracht van eenvoud, zelfs bij de meest complexe vraagstukken. Zijn talent voor het opbouwen van vertrouwensrelaties met klanten maakt hem een onmisbare schakel in het succes van ITsPeople.",
       },
     ],
     team: [
-      { name: "André Keizer", role: "Founder & Programmadirecteur Transformaties", image: "/images/team/andre-keizer.jpg", specialties: ["Strategie", "Transformatie", "Leiderschap"] },
-      { name: "Mario Kornuijt", role: "Co-Founder & Programmadirecteur Transformaties", image: "/images/team/mario-kornuijt.jpg", specialties: ["Business Consultancy", "Governance", "Klantrelaties"] },
-      { name: "Geert Eikelboom", role: "Lid Raad van Advies · CEO (gepensioneerd)", image: "/images/team/geert-eikelboom.jpg", specialties: ["Strategie", "Leiderschap", "Governance"] },
-      { name: "Melissa Crijns", role: "Head of Talent Acquisition & HR", image: "/images/team/melissa-crijns.png", specialties: ["Talent Acquisition", "HR", "Employer Branding"] },
-      { name: "Olav Bleijenberg", role: "Principal Business Consultant", image: "/images/team/olav-bleijenberg.jpg", specialties: ["Strategie", "Business Consultancy", "Transformatie"] },
-      { name: "Angelina den Besten", role: "Senior Project & Process Manager", image: "/images/team/angelina-den-besten.jpg", specialties: ["Projectmanagement", "Procesoptimalisatie", "Governance"] },
-      { name: "Pieter Pannekeet", role: "Senior Projectmanager", image: "/images/team/pieter-pannekeet.jpg", specialties: ["Projectmanagement", "Stakeholder Management", "Planning & Control"] },
-      { name: "Werner Smeenk", role: "Senior Projectmanager", image: "/images/team/werner-smeenk.jpg", specialties: ["Projectmanagement", "Risicomanagement", "Governance"] },
-      { name: "Alev Kokus", role: "Projectmanager", image: "/images/team/alev-kokus.jpg", specialties: ["Projectmanagement", "Stakeholder Management", "Governance"] },
-      { name: "Manon de Bont", role: "Projectmanager", image: "/images/team/manon-de-bont.jpg", specialties: ["Projectmanagement", "Verandermanagement", "Communicatie"] },
-      { name: "Daniel Mulder", role: "Senior Business Consultant", image: "/images/team/daniel-mulder.jpg", specialties: ["Business Analyse", "Transformatie", "Stakeholder Management"] },
-      { name: "Ali Mokarram", role: "Business Consultant", image: "/images/team/ali-mokarram.jpg", specialties: ["Business Analyse", "Procesinrichting", "Digitale Transformatie"] },
-      { name: "Jordy van der Velde", role: "Business Consultant", image: "/images/team/jordy-van-der-velde.jpg", specialties: ["Business Analyse", "Transformatie", "Ketenregie"] },
-      { name: "Loris Cornelissen", role: "Business Consultant", image: "/images/team/loris-cornelissen.jpg", specialties: ["Business Analyse", "Data-analyse", "Implementatie"] },
-      { name: "Pip Horsman", role: "Business Consultant", image: "/images/team/pip-horsman.jpg", specialties: ["Business Analyse", "Stakeholder Management", "Agile"] },
-      { name: "Rico van Leeuwen", role: "Business Consultant", image: "/images/team/rico-van-leeuwen.jpg", specialties: ["Business Analyse", "Transformatie", "Risicomanagement"] },
-      { name: "Stephanie Solingen", role: "Business Consultant", image: "/images/team/stephanie-solingen.jpg", specialties: ["Business Analyse", "Verandermanagement", "Communicatie"] },
-      { name: "Jerry de Jong", role: "Junior Business Consultant", image: "/images/team/jerry-de-jong.jpg", specialties: ["Business Analyse", "Data-analyse", "Onderzoek"] },
-      { name: "Matthijs Oosterbeek", role: "Data Consultant", image: "/images/team/matthijs-oosterbeek.jpg", specialties: ["Data-architectuur", "Analytics", "BI & Rapportage"] },
-      { name: "Mandy van Es", role: "Testmanager", image: "/images/team/mandy-van-es.jpg", specialties: ["Testmanagement", "Kwaliteitsborging", "Agile Testing"] },
-      { name: "Sven Visser", role: "Inside Sales Representative", image: "/images/team/sven-visser.jpg", specialties: ["Sales", "Klantrelaties", "Business Development"] },
-      { name: "Diana Jane Acuna", role: "Office Manager", image: "/images/team/diana-jane-acuna.jpg", specialties: ["Office Management", "Organisatie", "Facilitair"] },
+      { name: "André Keizer", role: "Founder & Programmadirecteur Transformaties", image: asset("/images/team/andre-keizer.jpg"), specialties: ["Strategie", "Transformatie", "Leiderschap"] },
+      { name: "Mario Kornuijt", role: "Co-Founder & Programmadirecteur Transformaties", image: asset("/images/team/mario-kornuijt.jpg"), specialties: ["Business Consultancy", "Governance", "Klantrelaties"] },
+      { name: "Geert Eikelboom", role: "Lid Raad van Advies · CEO (gepensioneerd)", image: asset("/images/team/geert-eikelboom.jpg"), specialties: ["Strategie", "Leiderschap", "Governance"] },
+      { name: "Melissa Crijns", role: "Head of Talent Acquisition & HR", image: asset("/images/team/melissa-crijns.png"), specialties: ["Talent Acquisition", "HR", "Employer Branding"] },
+      { name: "Olav Bleijenberg", role: "Principal Business Consultant", image: asset("/images/team/olav-bleijenberg.jpg"), specialties: ["Strategie", "Business Consultancy", "Transformatie"] },
+      { name: "Angelina den Besten", role: "Senior Project & Process Manager", image: asset("/images/team/angelina-den-besten.jpg"), specialties: ["Projectmanagement", "Procesoptimalisatie", "Governance"] },
+      { name: "Pieter Pannekeet", role: "Senior Projectmanager", image: asset("/images/team/pieter-pannekeet.jpg"), specialties: ["Projectmanagement", "Stakeholder Management", "Planning & Control"] },
+      { name: "Werner Smeenk", role: "Senior Projectmanager", image: asset("/images/team/werner-smeenk.jpg"), specialties: ["Projectmanagement", "Risicomanagement", "Governance"] },
+      { name: "Alev Kokus", role: "Projectmanager", image: asset("/images/team/alev-kokus.jpg"), specialties: ["Projectmanagement", "Stakeholder Management", "Governance"] },
+      { name: "Manon de Bont", role: "Projectmanager", image: asset("/images/team/manon-de-bont.jpg"), specialties: ["Projectmanagement", "Verandermanagement", "Communicatie"] },
+      { name: "Daniel Mulder", role: "Senior Business Consultant", image: asset("/images/team/daniel-mulder.jpg"), specialties: ["Business Analyse", "Transformatie", "Stakeholder Management"] },
+      { name: "Ali Mokarram", role: "Business Consultant", image: asset("/images/team/ali-mokarram.jpg"), specialties: ["Business Analyse", "Procesinrichting", "Digitale Transformatie"] },
+      { name: "Jordy van der Velde", role: "Business Consultant", image: asset("/images/team/jordy-van-der-velde.jpg"), specialties: ["Business Analyse", "Transformatie", "Ketenregie"] },
+      { name: "Loris Cornelissen", role: "Business Consultant", image: asset("/images/team/loris-cornelissen.jpg"), specialties: ["Business Analyse", "Data-analyse", "Implementatie"] },
+      { name: "Pip Horsman", role: "Business Consultant", image: asset("/images/team/pip-horsman.jpg"), specialties: ["Business Analyse", "Stakeholder Management", "Agile"] },
+      { name: "Rico van Leeuwen", role: "Business Consultant", image: asset("/images/team/rico-van-leeuwen.jpg"), specialties: ["Business Analyse", "Transformatie", "Risicomanagement"] },
+      { name: "Stephanie Solingen", role: "Business Consultant", image: asset("/images/team/stephanie-solingen.jpg"), specialties: ["Business Analyse", "Verandermanagement", "Communicatie"] },
+      { name: "Jerry de Jong", role: "Junior Business Consultant", image: asset("/images/team/jerry-de-jong.jpg"), specialties: ["Business Analyse", "Data-analyse", "Onderzoek"] },
+      { name: "Matthijs Oosterbeek", role: "Data Consultant", image: asset("/images/team/matthijs-oosterbeek.jpg"), specialties: ["Data-architectuur", "Analytics", "BI & Rapportage"] },
+      { name: "Mandy van Es", role: "Testmanager", image: asset("/images/team/mandy-van-es.jpg"), specialties: ["Testmanagement", "Kwaliteitsborging", "Agile Testing"] },
+      { name: "Sven Visser", role: "Inside Sales Representative", image: asset("/images/team/sven-visser.jpg"), specialties: ["Sales", "Klantrelaties", "Business Development"] },
+      { name: "Diana Jane Acuna", role: "Office Manager", image: asset("/images/team/diana-jane-acuna.jpg"), specialties: ["Office Management", "Organisatie", "Facilitair"] },
     ],
     values: [
       { title: "Persoonlijk", description: "Samenwerken door mensen te verbinden vanuit authenticiteit.", icon: "🤝" },
@@ -84,9 +85,9 @@ const data = {
         tag: "Make-A-Wish",
         description: "Met het hele team hebben wij deelgenomen aan de Make-A-Wish Business Challenge, een fondswervingsactie waarbij bedrijven hun ondernemerschap inzetten om zoveel mogelijk geld op te halen voor ernstig zieke kinderen. Onder het motto 'Time to shine' bedachten wij creatieve acties, zetten we ons netwerk in en werkten we intensief samen. Het resultaat: een cheque van € 10.116, goed voor de op één na hoogste score van alle deelnemende bedrijven. Een prestatie waar wij met recht trots op zijn.",
         images: [
-          { src: "/images/events/make-a-wish-cheque.jpg", alt: "Het ITsPeople team met de cheque van € 10.116 voor Make-A-Wish" },
-          { src: "/images/events/make-a-wish-kickoff.jpg", alt: "Kick-off van de Make-A-Wish Business Challenge onder het motto Time to shine" },
-          { src: "/images/events/make-a-wish-workshop.jpg", alt: "ITsPeople team aan het werk tijdens de Business Challenge werksessie" },
+          { src: asset("/images/events/make-a-wish-cheque.jpg"), alt: "Het ITsPeople team met de cheque van € 10.116 voor Make-A-Wish" },
+          { src: asset("/images/events/make-a-wish-kickoff.jpg"), alt: "Kick-off van de Make-A-Wish Business Challenge onder het motto Time to shine" },
+          { src: asset("/images/events/make-a-wish-workshop.jpg"), alt: "ITsPeople team aan het werk tijdens de Business Challenge werksessie" },
         ],
       },
       {
@@ -96,9 +97,9 @@ const data = {
         tag: "Make-A-Wish",
         description: "Onze collega Rico is bij de Make-A-Wish Rope for Hope-actie van de gevel van het World Trade Center in Amsterdam afgedaald en heeft daarmee € 1.000 opgehaald voor Make-A-Wish. Samen met de andere deelnemers kon Make-A-Wish dankzij deze actie opnieuw een aantal wensen van ernstig zieke kinderen vervullen. Een moedige uitdaging voor een doel dat écht telt.",
         images: [
-          { src: "/images/events/rope-for-hope-check.jpg", alt: "Rico met de cheque van € 1.000 voor Make-A-Wish na de Rope for Hope-actie" },
-          { src: "/images/events/rope-for-hope-descent.jpg", alt: "Rico tijdens de afdaling langs de gevel van het World Trade Center Amsterdam" },
-          { src: "/images/events/rope-for-hope-geared-up.jpg", alt: "Rico klaar voor de afdaling, in uitrusting met helm en harnas" },
+          { src: asset("/images/events/rope-for-hope-check.jpg"), alt: "Rico met de cheque van € 1.000 voor Make-A-Wish na de Rope for Hope-actie" },
+          { src: asset("/images/events/rope-for-hope-descent.jpg"), alt: "Rico tijdens de afdaling langs de gevel van het World Trade Center Amsterdam" },
+          { src: asset("/images/events/rope-for-hope-geared-up.jpg"), alt: "Rico klaar voor de afdaling, in uitrusting met helm en harnas" },
         ],
       },
     ],
@@ -110,7 +111,7 @@ const data = {
       {
         name: "André Keizer",
         role: "Founder & Programme Director Transformations",
-        image: "/images/team/andre-keizer.jpg",
+        image: asset("/images/team/andre-keizer.jpg"),
         quote: "Sustainable change always runs through the heart of people.",
         specialties: ["Strategy", "Transformation", "Leadership"],
         bio: "André is the driving force behind ITsPeople. With more than 15 years' experience guiding complex transformations, he combines strategic insight with a deep-rooted conviction that people make the difference. His expertise lies at the intersection of organisational strategy, change management and leadership.",
@@ -118,35 +119,35 @@ const data = {
       {
         name: "Mario Kornuijt",
         role: "Co-Founder & Programme Director Transformations",
-        image: "/images/team/mario-kornuijt.jpg",
+        image: asset("/images/team/mario-kornuijt.jpg"),
         quote: "Complex transformations require simple solutions.",
         specialties: ["Business Consultancy", "Governance", "Client Relations"],
         bio: "Mario brings years of experience in business consultancy and governance. He believes in the power of simplicity, even with the most complex issues. His talent for building trusting relationships with clients makes him an indispensable key to ITsPeople's success.",
       },
     ],
     team: [
-      { name: "André Keizer", role: "Founder & Programme Director Transformations", image: "/images/team/andre-keizer.jpg", specialties: ["Strategy", "Transformation", "Leadership"] },
-      { name: "Mario Kornuijt", role: "Co-Founder & Programme Director Transformations", image: "/images/team/mario-kornuijt.jpg", specialties: ["Business Consultancy", "Governance", "Client Relations"] },
-      { name: "Geert Eikelboom", role: "Advisory Board Member · CEO (retired)", image: "/images/team/geert-eikelboom.jpg", specialties: ["Strategy", "Leadership", "Governance"] },
-      { name: "Melissa Crijns", role: "Head of Talent Acquisition & HR", image: "/images/team/melissa-crijns.png", specialties: ["Talent Acquisition", "HR", "Employer Branding"] },
-      { name: "Olav Bleijenberg", role: "Principal Business Consultant", image: "/images/team/olav-bleijenberg.jpg", specialties: ["Strategy", "Business Consultancy", "Transformation"] },
-      { name: "Angelina den Besten", role: "Senior Project & Process Manager", image: "/images/team/angelina-den-besten.jpg", specialties: ["Project Management", "Process Optimisation", "Governance"] },
-      { name: "Pieter Pannekeet", role: "Senior Project Manager", image: "/images/team/pieter-pannekeet.jpg", specialties: ["Project Management", "Stakeholder Management", "Planning & Control"] },
-      { name: "Werner Smeenk", role: "Senior Project Manager", image: "/images/team/werner-smeenk.jpg", specialties: ["Project Management", "Risk Management", "Governance"] },
-      { name: "Alev Kokus", role: "Project Manager", image: "/images/team/alev-kokus.jpg", specialties: ["Project Management", "Stakeholder Management", "Governance"] },
-      { name: "Manon de Bont", role: "Project Manager", image: "/images/team/manon-de-bont.jpg", specialties: ["Project Management", "Change Management", "Communication"] },
-      { name: "Daniel Mulder", role: "Senior Business Consultant", image: "/images/team/daniel-mulder.jpg", specialties: ["Business Analysis", "Transformation", "Stakeholder Management"] },
-      { name: "Ali Mokarram", role: "Business Consultant", image: "/images/team/ali-mokarram.jpg", specialties: ["Business Analysis", "Process Design", "Digital Transformation"] },
-      { name: "Jordy van der Velde", role: "Business Consultant", image: "/images/team/jordy-van-der-velde.jpg", specialties: ["Business Analysis", "Transformation", "Chain Orchestration"] },
-      { name: "Loris Cornelissen", role: "Business Consultant", image: "/images/team/loris-cornelissen.jpg", specialties: ["Business Analysis", "Data Analysis", "Implementation"] },
-      { name: "Pip Horsman", role: "Business Consultant", image: "/images/team/pip-horsman.jpg", specialties: ["Business Analysis", "Stakeholder Management", "Agile"] },
-      { name: "Rico van Leeuwen", role: "Business Consultant", image: "/images/team/rico-van-leeuwen.jpg", specialties: ["Business Analysis", "Transformation", "Risk Management"] },
-      { name: "Stephanie Solingen", role: "Business Consultant", image: "/images/team/stephanie-solingen.jpg", specialties: ["Business Analysis", "Change Management", "Communication"] },
-      { name: "Jerry de Jong", role: "Junior Business Consultant", image: "/images/team/jerry-de-jong.jpg", specialties: ["Business Analysis", "Data Analysis", "Research"] },
-      { name: "Matthijs Oosterbeek", role: "Data Consultant", image: "/images/team/matthijs-oosterbeek.jpg", specialties: ["Data Architecture", "Analytics", "BI & Reporting"] },
-      { name: "Mandy van Es", role: "Test Manager", image: "/images/team/mandy-van-es.jpg", specialties: ["Test Management", "Quality Assurance", "Agile Testing"] },
-      { name: "Sven Visser", role: "Inside Sales Representative", image: "/images/team/sven-visser.jpg", specialties: ["Sales", "Client Relations", "Business Development"] },
-      { name: "Diana Jane Acuna", role: "Office Manager", image: "/images/team/diana-jane-acuna.jpg", specialties: ["Office Management", "Organisation", "Facilities"] },
+      { name: "André Keizer", role: "Founder & Programme Director Transformations", image: asset("/images/team/andre-keizer.jpg"), specialties: ["Strategy", "Transformation", "Leadership"] },
+      { name: "Mario Kornuijt", role: "Co-Founder & Programme Director Transformations", image: asset("/images/team/mario-kornuijt.jpg"), specialties: ["Business Consultancy", "Governance", "Client Relations"] },
+      { name: "Geert Eikelboom", role: "Advisory Board Member · CEO (retired)", image: asset("/images/team/geert-eikelboom.jpg"), specialties: ["Strategy", "Leadership", "Governance"] },
+      { name: "Melissa Crijns", role: "Head of Talent Acquisition & HR", image: asset("/images/team/melissa-crijns.png"), specialties: ["Talent Acquisition", "HR", "Employer Branding"] },
+      { name: "Olav Bleijenberg", role: "Principal Business Consultant", image: asset("/images/team/olav-bleijenberg.jpg"), specialties: ["Strategy", "Business Consultancy", "Transformation"] },
+      { name: "Angelina den Besten", role: "Senior Project & Process Manager", image: asset("/images/team/angelina-den-besten.jpg"), specialties: ["Project Management", "Process Optimisation", "Governance"] },
+      { name: "Pieter Pannekeet", role: "Senior Project Manager", image: asset("/images/team/pieter-pannekeet.jpg"), specialties: ["Project Management", "Stakeholder Management", "Planning & Control"] },
+      { name: "Werner Smeenk", role: "Senior Project Manager", image: asset("/images/team/werner-smeenk.jpg"), specialties: ["Project Management", "Risk Management", "Governance"] },
+      { name: "Alev Kokus", role: "Project Manager", image: asset("/images/team/alev-kokus.jpg"), specialties: ["Project Management", "Stakeholder Management", "Governance"] },
+      { name: "Manon de Bont", role: "Project Manager", image: asset("/images/team/manon-de-bont.jpg"), specialties: ["Project Management", "Change Management", "Communication"] },
+      { name: "Daniel Mulder", role: "Senior Business Consultant", image: asset("/images/team/daniel-mulder.jpg"), specialties: ["Business Analysis", "Transformation", "Stakeholder Management"] },
+      { name: "Ali Mokarram", role: "Business Consultant", image: asset("/images/team/ali-mokarram.jpg"), specialties: ["Business Analysis", "Process Design", "Digital Transformation"] },
+      { name: "Jordy van der Velde", role: "Business Consultant", image: asset("/images/team/jordy-van-der-velde.jpg"), specialties: ["Business Analysis", "Transformation", "Chain Orchestration"] },
+      { name: "Loris Cornelissen", role: "Business Consultant", image: asset("/images/team/loris-cornelissen.jpg"), specialties: ["Business Analysis", "Data Analysis", "Implementation"] },
+      { name: "Pip Horsman", role: "Business Consultant", image: asset("/images/team/pip-horsman.jpg"), specialties: ["Business Analysis", "Stakeholder Management", "Agile"] },
+      { name: "Rico van Leeuwen", role: "Business Consultant", image: asset("/images/team/rico-van-leeuwen.jpg"), specialties: ["Business Analysis", "Transformation", "Risk Management"] },
+      { name: "Stephanie Solingen", role: "Business Consultant", image: asset("/images/team/stephanie-solingen.jpg"), specialties: ["Business Analysis", "Change Management", "Communication"] },
+      { name: "Jerry de Jong", role: "Junior Business Consultant", image: asset("/images/team/jerry-de-jong.jpg"), specialties: ["Business Analysis", "Data Analysis", "Research"] },
+      { name: "Matthijs Oosterbeek", role: "Data Consultant", image: asset("/images/team/matthijs-oosterbeek.jpg"), specialties: ["Data Architecture", "Analytics", "BI & Reporting"] },
+      { name: "Mandy van Es", role: "Test Manager", image: asset("/images/team/mandy-van-es.jpg"), specialties: ["Test Management", "Quality Assurance", "Agile Testing"] },
+      { name: "Sven Visser", role: "Inside Sales Representative", image: asset("/images/team/sven-visser.jpg"), specialties: ["Sales", "Client Relations", "Business Development"] },
+      { name: "Diana Jane Acuna", role: "Office Manager", image: asset("/images/team/diana-jane-acuna.jpg"), specialties: ["Office Management", "Organisation", "Facilities"] },
     ],
     values: [
       { title: "Personal", description: "Collaborate by connecting people with authenticity.", icon: "🤝" },
@@ -183,9 +184,9 @@ const data = {
         tag: "Make-A-Wish",
         description: "With the entire team, we took part in the Make-A-Wish Business Challenge, a fundraising initiative in which companies use their entrepreneurial skills to raise as much money as possible for seriously ill children. Under the motto 'Time to shine', we developed creative campaigns, activated our network and collaborated intensively. The result: a cheque of € 10,116, good for the second-highest score among all participating companies. A performance we are genuinely proud of.",
         images: [
-          { src: "/images/events/make-a-wish-cheque.jpg", alt: "The ITsPeople team holding the € 10,116 cheque for Make-A-Wish" },
-          { src: "/images/events/make-a-wish-kickoff.jpg", alt: "Kick-off of the Make-A-Wish Business Challenge under the motto Time to shine" },
-          { src: "/images/events/make-a-wish-workshop.jpg", alt: "ITsPeople team at work during the Business Challenge workshop" },
+          { src: asset("/images/events/make-a-wish-cheque.jpg"), alt: "The ITsPeople team holding the € 10,116 cheque for Make-A-Wish" },
+          { src: asset("/images/events/make-a-wish-kickoff.jpg"), alt: "Kick-off of the Make-A-Wish Business Challenge under the motto Time to shine" },
+          { src: asset("/images/events/make-a-wish-workshop.jpg"), alt: "ITsPeople team at work during the Business Challenge workshop" },
         ],
       },
       {
@@ -195,9 +196,9 @@ const data = {
         tag: "Make-A-Wish",
         description: "Our colleague Rico took part in the Make-A-Wish Rope for Hope challenge and abseiled down the façade of the World Trade Center in Amsterdam, raising € 1,000 for Make-A-Wish. Together with the other participants, this effort allowed Make-A-Wish to grant several wishes for seriously ill children. A courageous challenge for a cause that truly matters.",
         images: [
-          { src: "/images/events/rope-for-hope-check.jpg", alt: "Rico holding the € 1,000 cheque for Make-A-Wish after the Rope for Hope challenge" },
-          { src: "/images/events/rope-for-hope-descent.jpg", alt: "Rico abseiling down the façade of the World Trade Center Amsterdam" },
-          { src: "/images/events/rope-for-hope-geared-up.jpg", alt: "Rico geared up with helmet and harness, ready for the descent" },
+          { src: asset("/images/events/rope-for-hope-check.jpg"), alt: "Rico holding the € 1,000 cheque for Make-A-Wish after the Rope for Hope challenge" },
+          { src: asset("/images/events/rope-for-hope-descent.jpg"), alt: "Rico abseiling down the façade of the World Trade Center Amsterdam" },
+          { src: asset("/images/events/rope-for-hope-geared-up.jpg"), alt: "Rico geared up with helmet and harness, ready for the descent" },
         ],
       },
     ],
@@ -246,7 +247,7 @@ export default function OverOnsPage() {
 
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-                <Image src="/images/building.jpg" alt={locale === "nl" ? "ITsPeople kantoor" : "ITsPeople office"} fill className="object-cover" />
+                <Image src={asset("/images/building.jpg")} alt={locale === "nl" ? "ITsPeople kantoor" : "ITsPeople office"} fill className="object-cover" />
               </div>
             </motion.div>
           </div>
@@ -279,7 +280,7 @@ export default function OverOnsPage() {
 
           {/* Together photo */}
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative rounded-2xl overflow-hidden aspect-[21/9] mb-16">
-            <Image src="/images/founders-together.jpg" alt="André Keizer & Mario Kornuijt" fill className="object-cover object-top" />
+            <Image src={asset("/images/founders-together.jpg")} alt="André Keizer & Mario Kornuijt" fill className="object-cover object-top" />
             <div className="absolute inset-0 bg-gradient-to-t from-its-dark/70 via-its-dark/10 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-8 flex items-end justify-between">
               <div>
@@ -304,7 +305,7 @@ export default function OverOnsPage() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative rounded-2xl overflow-hidden aspect-[21/9] mb-12">
-            <Image src="/images/team-women.jpg" alt={locale === "nl" ? "Team ITsPeople" : "ITsPeople Team"} fill className="object-cover object-top" />
+            <Image src={asset("/images/team-women.jpg")} alt={locale === "nl" ? "Team ITsPeople" : "ITsPeople Team"} fill className="object-cover object-top" />
             <div className="absolute inset-0 bg-gradient-to-t from-its-dark/50 to-transparent" />
             <div className="absolute bottom-6 left-6">
               <p className="text-white font-bold text-lg">{locale === "nl" ? "Het Team" : "The Team"}</p>

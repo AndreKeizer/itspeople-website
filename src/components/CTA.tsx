@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLocale } from "next-intl";
+import { asset } from "@/lib/basePath";
 
 const t = {
   h1a: { nl: "Klaar voor de ", en: "Ready for the " },
@@ -20,7 +21,7 @@ export default function CTA() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/building.jpg"
+          src={asset("/images/building.jpg")}
           alt="ITsPeople kantoor"
           fill
           className="object-cover"

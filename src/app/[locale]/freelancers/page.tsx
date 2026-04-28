@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLocale } from "next-intl";
+import { asset } from "@/lib/basePath";
 
 const data = {
   nl: {
@@ -236,7 +237,7 @@ export default function FreelancersPage() {
       <section className="relative pt-32 pb-24 overflow-hidden bg-gradient-to-br from-its-dark via-its-deep to-its-dark">
         <div className="absolute inset-0">
           <Image
-            src="/images/team-collab.jpg"
+            src={asset("/images/team-collab.jpg")}
             alt=""
             fill
             priority
@@ -270,7 +271,7 @@ export default function FreelancersPage() {
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-xl shadow-its-dark/10">
-                <Image src="/images/team-discussion.jpg" alt={d.introTitle} fill className="object-cover" />
+                <Image src={asset("/images/team-discussion.jpg")} alt={d.introTitle} fill className="object-cover" />
               </div>
             </motion.div>
           </div>
@@ -307,7 +308,7 @@ export default function FreelancersPage() {
       {/* Quote */}
       <section className="relative py-24 overflow-hidden bg-its-dark">
         <div className="absolute inset-0">
-          <Image src="/images/founders-together.jpg" alt="" fill className="object-cover object-top opacity-25" />
+          <Image src={asset("/images/founders-together.jpg")} alt="" fill className="object-cover object-top opacity-25" />
           <div className="absolute inset-0 bg-gradient-to-br from-its-dark via-its-deep/90 to-its-dark" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">

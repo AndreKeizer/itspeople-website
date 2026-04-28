@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { asset } from "@/lib/basePath";
 
 const t = {
   badge: { nl: "Make the Difference", en: "Make the Difference" },
@@ -24,7 +25,7 @@ export default function Hero() {
       {/* Background image with overlay */}
       <div className="absolute inset-0">
         <Image
-          src="/images/team-collab.jpg"
+          src={asset("/images/team-collab.jpg")}
           alt="ITsPeople team"
           fill
           className="object-cover"

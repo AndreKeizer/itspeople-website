@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { asset } from "@/lib/basePath";
 
 const data = {
   nl: {
@@ -14,12 +15,12 @@ const data = {
       { title: "NIS2 Compliance Specialist", type: "Fulltime", location: "Zaltbommel / Hybride", description: "Als NIS2 Compliance Specialist help je organisaties om te voldoen aan de NIS2-richtlijn. Je voert gap-analyses uit, ontwerpt compliance frameworks en begeleidt implementatietrajecten.", requirements: ["Ervaring met compliance en informatiebeveiliging", "Kennis van NIS2, BIO of ISO 27001", "In staat om complexe materie toegankelijk te maken", "Ervaring met governance en risicomanagement"] },
     ],
     benefits: [
-      { image: "/images/benefits/academy.jpg", title: "ITs Academy", description: "Structurele investering in jouw ontwikkeling via onze eigen academy." },
-      { image: "/images/benefits/hybrid.jpg", title: "Hybride werken", description: "Flexibiliteit in waar en wanneer je werkt, afgestemd op het project." },
-      { image: "/images/benefits/mobility.jpg", title: "Mobiliteit", description: "Leaseauto of mobiliteitsbudget naar keuze." },
-      { image: "/images/benefits/salary.jpg", title: "Competitief salaris", description: "Marktconform salaris met bonus en pensioenregeling." },
-      { image: "/images/benefits/events.jpg", title: "Samen Events", description: "Zes keer per jaar samen vieren, van nieuwjaar tot kerst." },
-      { image: "/images/benefits/make-a-wish-logo.jpg", title: "Make-A-Wish", description: "Samen het verschil maken, ook buiten projecten." },
+      { image: asset("/images/benefits/academy.jpg"), title: "ITs Academy", description: "Structurele investering in jouw ontwikkeling via onze eigen academy." },
+      { image: asset("/images/benefits/hybrid.jpg"), title: "Hybride werken", description: "Flexibiliteit in waar en wanneer je werkt, afgestemd op het project." },
+      { image: asset("/images/benefits/mobility.jpg"), title: "Mobiliteit", description: "Leaseauto of mobiliteitsbudget naar keuze." },
+      { image: asset("/images/benefits/salary.jpg"), title: "Competitief salaris", description: "Marktconform salaris met bonus en pensioenregeling." },
+      { image: asset("/images/benefits/events.jpg"), title: "Samen Events", description: "Zes keer per jaar samen vieren, van nieuwjaar tot kerst." },
+      { image: asset("/images/benefits/make-a-wish-logo.jpg"), title: "Make-A-Wish", description: "Samen het verschil maken, ook buiten projecten." },
     ],
     heroLabel: "Werken bij ITsPeople",
     heroTitle: "Maak het",
@@ -48,12 +49,12 @@ const data = {
       { title: "NIS2 Compliance Specialist", type: "Fulltime", location: "Zaltbommel / Hybrid", description: "As a NIS2 Compliance Specialist, you help organisations comply with the NIS2 Directive. You conduct gap analyses, design compliance frameworks and guide implementation programmes.", requirements: ["Experience with compliance and information security", "Knowledge of NIS2, BIO or ISO 27001", "Able to make complex matters accessible", "Experience with governance and risk management"] },
     ],
     benefits: [
-      { image: "/images/benefits/academy.jpg", title: "ITs Academy", description: "Structural investment in your development through our own academy." },
-      { image: "/images/benefits/hybrid.jpg", title: "Hybrid working", description: "Flexibility in where and when you work, tailored to the project." },
-      { image: "/images/benefits/mobility.jpg", title: "Mobility", description: "Company car or mobility budget of your choice." },
-      { image: "/images/benefits/salary.jpg", title: "Competitive salary", description: "Market-competitive salary with bonus and pension scheme." },
-      { image: "/images/benefits/events.jpg", title: "Together Events", description: "Celebrate together six times a year, from New Year to Christmas." },
-      { image: "/images/benefits/make-a-wish-logo.jpg", title: "Make-A-Wish", description: "Making a difference together, also beyond projects." },
+      { image: asset("/images/benefits/academy.jpg"), title: "ITs Academy", description: "Structural investment in your development through our own academy." },
+      { image: asset("/images/benefits/hybrid.jpg"), title: "Hybrid working", description: "Flexibility in where and when you work, tailored to the project." },
+      { image: asset("/images/benefits/mobility.jpg"), title: "Mobility", description: "Company car or mobility budget of your choice." },
+      { image: asset("/images/benefits/salary.jpg"), title: "Competitive salary", description: "Market-competitive salary with bonus and pension scheme." },
+      { image: asset("/images/benefits/events.jpg"), title: "Together Events", description: "Celebrate together six times a year, from New Year to Christmas." },
+      { image: asset("/images/benefits/make-a-wish-logo.jpg"), title: "Make-A-Wish", description: "Making a difference together, also beyond projects." },
     ],
     heroLabel: "Work at ITsPeople",
     heroTitle: "Make the",
@@ -115,7 +116,7 @@ export default function WerkenBijPage() {
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-                <Image src="/images/team-collab.jpg" alt={locale === "nl" ? "Werken bij ITsPeople" : "Working at ITsPeople"} fill className="object-cover" />
+                <Image src={asset("/images/team-collab.jpg")} alt={locale === "nl" ? "Werken bij ITsPeople" : "Working at ITsPeople"} fill className="object-cover" />
               </div>
             </motion.div>
           </div>

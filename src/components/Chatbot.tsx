@@ -4,6 +4,7 @@ import { useLocale } from "next-intl";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { asset } from "@/lib/basePath";
 
 const data = {
   nl: {
@@ -116,7 +117,7 @@ export default function Chatbot() {
             {/* Header */}
             <div className="bg-its-dark p-4 flex items-center gap-3">
               <div className="w-10 h-10 rounded-full overflow-hidden relative">
-                <Image src="/images/nikki-avatar.jpg" alt="Nikki" fill className="object-cover" />
+                <Image src={asset("/images/nikki-avatar.jpg")} alt="Nikki" fill className="object-cover" />
               </div>
               <div>
                 <p className="text-white font-bold text-sm">{d.botName}</p>

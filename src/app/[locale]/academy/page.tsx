@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { asset } from "@/lib/basePath";
 
 /* ───────── Training Data ───────── */
 
@@ -365,7 +366,7 @@ export default function AcademyPage() {
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-                <Image src="/images/team-work.jpg" alt="ITs Academy training" fill className="object-cover" />
+                <Image src={asset("/images/team-work.jpg")} alt="ITs Academy training" fill className="object-cover" />
               </div>
             </motion.div>
           </div>
@@ -564,7 +565,7 @@ export default function AcademyPage() {
           <div className="grid md:grid-cols-3 gap-4">
             {["/images/team-sept-1.jpg", "/images/team-sept-2.jpg", "/images/team-sept-3.jpg"].map((img, i) => (
               <motion.div key={img} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-                <Image src={img} alt={locale === "nl" ? "Samen Event" : "Together Event"} fill className="object-cover" />
+                <Image src={asset(img)} alt={locale === "nl" ? "Samen Event" : "Together Event"} fill className="object-cover" />
               </motion.div>
             ))}
           </div>

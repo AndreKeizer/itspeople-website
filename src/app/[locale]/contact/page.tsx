@@ -4,6 +4,7 @@ import { useLocale } from "next-intl";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { asset } from "@/lib/basePath";
 
 const data = {
   nl: {
@@ -206,7 +207,7 @@ export default function ContactPage() {
 
               {/* Image */}
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-                <Image src="/images/building.jpg" alt="ITsPeople office Zaltbommel" fill className="object-cover" />
+                <Image src={asset("/images/building.jpg")} alt="ITsPeople office Zaltbommel" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-its-dark/50 to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <p className="text-white font-bold">{d.contact.office}</p>

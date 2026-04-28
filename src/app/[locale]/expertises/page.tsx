@@ -5,48 +5,49 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { asset } from "@/lib/basePath";
 
 const data = {
   nl: {
     expertises: [
       {
         title: "Digitale Strategie",
-        image: "/images/tools/digital-transformation.jpg",
+        image: asset("/images/tools/digital-transformation.jpg"),
         description: "Van visie naar executie. Wij helpen organisaties hun digitale strategie te vertalen naar concrete roadmaps en meetbare resultaten.",
         detail: "Een digitale strategie is meer dan een IT-plan. Het is de blauwdruk voor hoe uw organisatie technologie inzet om waarde te creëren. Wij combineren strategisch inzicht met praktische ervaring om roadmaps te ontwikkelen die niet alleen ambitieus zijn, maar ook haalbaar. Van digitale volwassenheidsanalyses tot concrete implementatieplannen, wij begeleiden het hele traject.",
         topics: ["Digitale volwassenheidsanalyse", "Strategische roadmaps", "Business-IT alignment", "Digitale innovatie"],
       },
       {
         title: "NIS2 & Compliance",
-        image: "/images/insights/cybersecurity.jpg",
+        image: asset("/images/insights/cybersecurity.jpg"),
         description: "Integrale compliance-aanpak die wetgeving vertaalt naar werkbare processen, rollen en beheersingskaders.",
         detail: "De NIS2-richtlijn stelt organisaties voor nieuwe uitdagingen op het gebied van cybersecurity en compliance. Onze experts helpen u bij het vertalen van deze wetgeving naar concrete maatregelen die passen bij uw organisatie. Van gap-analyses tot implementatie en borging, wij zorgen dat compliance geen papieren tijger wordt maar een integraal onderdeel van uw bedrijfsvoering.",
         topics: ["NIS2 gap-analyse", "Compliance frameworks", "Bestuurlijke aansprakelijkheid", "Security governance"],
       },
       {
         title: "Innovatief Werkgedrag",
-        image: "/images/team-collab.jpg",
+        image: asset("/images/team-collab.jpg"),
         description: "Organisaties helpen een cultuur van innovatie te creëren door middel van gedragsverandering en leiderschap.",
         detail: "Innovatie begint bij mensen. Wij helpen organisaties om een cultuur te creëren waarin innovatief werkgedrag wordt gestimuleerd en beloond. Door middel van leiderschapsontwikkeling, teaminterventies en gedragsveranderingsprogramma's zorgen wij dat innovatie niet alleen een ambitie is, maar dagelijkse praktijk wordt.",
         topics: ["Innovatiecultuur", "Leiderschapsontwikkeling", "Gedragsverandering", "Design thinking"],
       },
       {
         title: "Datakwaliteit & Governance",
-        image: "/images/services/data-management.jpg",
+        image: asset("/images/services/data-management.jpg"),
         description: "Structuur, kwaliteit en governance van data als fundament voor data-gedreven besluitvorming.",
         detail: "Data-gedreven werken begint bij betrouwbare data. Onze experts helpen organisaties om hun datalandschap te structureren, datakwaliteit te waarborgen en governance in te richten die ervoor zorgt dat data een strategisch asset wordt. Van data-inventarisaties tot kwaliteitsdashboards en governance frameworks.",
         topics: ["Data-inventarisatie", "Kwaliteitsdashboards", "Data governance framework", "Master data management"],
       },
       {
         title: "IT-Governance",
-        image: "/images/tools/compliance-security.jpg",
+        image: asset("/images/tools/compliance-security.jpg"),
         description: "De juiste governance-structuren inrichten voor effectieve IT-besturing en waardecreatie.",
         detail: "Effectieve IT-governance zorgt ervoor dat technologie-investeringen waarde opleveren en risico's beheersbaar blijven. Wij helpen organisaties om governance-structuren in te richten die passen bij hun volwassenheid en ambities. Van portfolio management tot decision-making frameworks en performance dashboards.",
         topics: ["Portfolio management", "Decision frameworks", "Performance dashboards", "Risk management"],
       },
       {
         title: "AI & Transformatie",
-        image: "/images/services/ai-governance.jpg",
+        image: asset("/images/services/ai-governance.jpg"),
         description: "AI Act classificatie, risicobeoordeling en governance van AI-toepassingen binnen uw organisatie.",
         detail: "Artificial Intelligence biedt enorme kansen, maar vraagt ook om verantwoord gebruik. Wij helpen organisaties om AI-toepassingen te classificeren volgens de AI Act, risico's te beoordelen en governance in te richten die innovatie stimuleert binnen verantwoorde kaders. Van AI-readiness assessments tot implementatie en monitoring.",
         topics: ["AI Act classificatie", "Risicobeoordeling", "AI governance", "Responsible AI"],
@@ -105,35 +106,35 @@ const data = {
       },
       {
         title: "NIS2 & Compliance",
-        image: "/images/insights/cybersecurity.jpg",
+        image: asset("/images/insights/cybersecurity.jpg"),
         description: "Comprehensive compliance approach that translates legislation into workable processes, roles and governance frameworks.",
         detail: "The NIS2 Directive presents organisations with new challenges in cybersecurity and compliance. Our experts help you translate this legislation into concrete measures that fit your organisation. From gap analyses to implementation and embedding, we ensure compliance is not just a paper tiger but an integral part of your operations.",
         topics: ["NIS2 gap analysis", "Compliance frameworks", "Executive accountability", "Security governance"],
       },
       {
         title: "Innovative Work Behaviour",
-        image: "/images/team-collab.jpg",
+        image: asset("/images/team-collab.jpg"),
         description: "Help organisations create a culture of innovation through behaviour change and leadership.",
         detail: "Innovation starts with people. We help organisations create a culture where innovative work behaviour is stimulated and rewarded. Through leadership development, team interventions and behaviour change programmes, we ensure that innovation is not just an ambition, but becomes daily practice.",
         topics: ["Innovation culture", "Leadership development", "Behaviour change", "Design thinking"],
       },
       {
         title: "Data Quality & Governance",
-        image: "/images/services/data-management.jpg",
+        image: asset("/images/services/data-management.jpg"),
         description: "Structure, quality and governance of data as the foundation for data-driven decision-making.",
         detail: "Data-driven working starts with reliable data. Our experts help organisations structure their data landscape, ensure data quality and implement governance that makes data a strategic asset. From data inventories to quality dashboards and governance frameworks.",
         topics: ["Data inventory", "Quality dashboards", "Data governance framework", "Master data management"],
       },
       {
         title: "IT Governance",
-        image: "/images/tools/compliance-security.jpg",
+        image: asset("/images/tools/compliance-security.jpg"),
         description: "Implementing the right governance structures for effective IT management and value creation.",
         detail: "Effective IT governance ensures that technology investments deliver value and risks remain manageable. We help organisations implement governance structures that fit their maturity and ambitions. From portfolio management to decision-making frameworks and performance dashboards.",
         topics: ["Portfolio management", "Decision frameworks", "Performance dashboards", "Risk management"],
       },
       {
         title: "AI & Transformation",
-        image: "/images/services/ai-governance.jpg",
+        image: asset("/images/services/ai-governance.jpg"),
         description: "AI Act classification, risk assessment and governance of AI applications within your organisation.",
         detail: "Artificial Intelligence offers enormous opportunities, but also requires responsible use. We help organisations classify AI applications according to the AI Act, assess risks and implement governance that encourages innovation within responsible frameworks. From AI readiness assessments to implementation and monitoring.",
         topics: ["AI Act classification", "Risk assessment", "AI governance", "Responsible AI"],
@@ -228,7 +229,7 @@ export default function ExpertisesPage() {
               <div className="grid lg:grid-cols-3">
                 <div className="relative lg:col-span-1 aspect-[4/3] lg:aspect-auto lg:min-h-[320px]">
                   <Image
-                    src={exp.image ?? "/images/team-meeting.jpg"}
+                    src={exp.image ?? asset("/images/team-meeting.jpg")}
                     alt={exp.title}
                     fill
                     sizes="(max-width: 1024px) 100vw, 33vw"

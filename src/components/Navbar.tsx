@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
 import { copy, type Locale } from "@/lib/copy";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { asset } from "@/lib/basePath";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -72,7 +73,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <Link href={`/${locale}`} className="flex items-center">
             <Image
-              src={showTransparent ? "/images/logo-dark.png" : "/images/logo-light.png"}
+              src={showTransparent ? asset("/images/logo-dark.png") : asset("/images/logo-light.png")}
               alt="ITsPeople"
               width={160}
               height={48}

@@ -4,40 +4,41 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { asset } from "@/lib/basePath";
 
 const data = {
   nl: {
     services: [
       {
-        image: "/images/services/business-consultancy.jpg",
+        image: asset("/images/services/business-consultancy.jpg"),
         title: "Business Consultancy",
         description: "Van strategie naar beheersing. Strategisch advies dat direct vertaalt naar concrete besturing, onafhankelijke audits en toekomstvaste architectuur.",
         features: ["Target Operating Model", "Business case ontwikkeling", "Programma governance", "Executive advisory", "IT-audits", "Cybersecurity audits", "Architectuur dienstverlening"],
         detail: "Onze Business Consultants werken nauw samen met directie en management om strategische doelen te vertalen naar concrete plannen. Wij ontwerpen Target Operating Models, bouwen business cases en richten governance in die ervoor zorgt dat transformaties op koers blijven. Daarnaast leveren wij onafhankelijke IT-audits en cybersecurity-audits die bestuurders inzicht geven in risico's, beheersing en compliance, en ondersteunen wij organisaties met architectuur­dienstverlening: van enterprise- en solution-architectuur tot integratie en cloud-landschappen. Met een bewezen aanpak die strategie, audit en architectuur verbindt met uitvoering, helpen wij organisaties om grip te krijgen op complexe veranderingen.",
       },
       {
-        image: "/images/services/project-management.jpg",
+        image: asset("/images/services/project-management.jpg"),
         title: "Project Management",
         description: "Complexe verandertrajecten van begin tot eind realiseren. Voor en samen met de klant.",
         features: ["Programmamanagement", "Agile & Waterval", "Transition Support Office", "Risicomanagement", "IPMA-gecertificeerde programma- en projectmanagers", "SAFe-gecertificeerde Scrum Masters", "Program Execution Framework inclusief tooling en dashboards"],
         detail: "Onze projectmanagers zijn ervaren professionals die complexe transformaties leiden. Of het nu gaat om een Agile transitie, een ERP-implementatie of een organisatiebrede verandering, wij zorgen voor structuur, voortgang en resultaat. Met ons Transition Support Office bieden wij een integraal ondersteuningskader dat programma's succesvol over de finish brengt.",
       },
       {
-        image: "/images/services/process-management.jpg",
+        image: asset("/images/services/process-management.jpg"),
         title: "Proces Management",
         description: "Het ITsPeople Target Operating Model: services, processen, governance en IT in kaart brengen en optimaliseren.",
         features: ["Procesarchitectuur", "Waardestroomanalyse", "Ketenintegratie", "Business Control Framework", "Target Operating Model Design", "Procesorchestratie & governance-inrichting", "Volwassenheidsassessment bedrijfsprocessen"],
         detail: "Processen vormen het zenuwstelsel van elke organisatie. Onze procesmanagers brengen de huidige en gewenste situatie in kaart, identificeren verbeterkansen en begeleiden de implementatie langs alle lagen van het Target Operating Model. Daarbij gaat het niet alleen om de optimalisatie van individuele processen, maar om de orchestratie van processen in onderlinge samenhang, geborgd via een integraal Business Control Framework. Van waardestroomanalyses tot ketenintegraties, wij zorgen dat uw organisatie effectief, efficiënt en toekomstbestendig opereert.",
       },
       {
-        image: "/images/services/data-management.jpg",
+        image: asset("/images/services/data-management.jpg"),
         title: "Data Management",
         description: "Het ITs Productivity Center: structuur, kwaliteit, visualisatie en data-gedreven inzichten.",
         features: ["Data governance", "Datakwaliteit & DQS Framework", "Data-migratie & -validatie", "Visualisatie & dashboards", "AI & Analytics", "Master data management", "Data-architectuur & -modellering"],
         detail: "Data is de brandstof voor moderne organisaties. Ons ITs Productivity Center helpt organisaties om hun data te structureren, de kwaliteit te waarborgen en inzichten te genereren die besluitvorming verbeteren. Voor complexe datamigraties zetten wij het Data Quality Score (DQS) Framework in: een gestructureerde methode om datakwaliteit objectief en meetbaar vast te stellen door subjectieve begrippen om te zetten in geautomatiseerde validatieregels. Van data governance frameworks tot geavanceerde dashboards en AI-toepassingen, wij maken data werkend voor uw organisatie.",
       },
       {
-        image: "/images/services/quality-assurance.jpg",
+        image: asset("/images/services/quality-assurance.jpg"),
         title: "Testen & Quality Assurance",
         description: "Onafhankelijke kwaliteitsborging met het Transformation Quality Assurance Framework (TQA-F) voor complexe transformatieprogramma's.",
         features: ["TQA-F implementatie", "Teststrategie & -beleid", "Test coördinatie", "Testautomatisering", "DevOps & CI/CD testing", "Performance & security testing", "Regressietesten & impactanalyse", "Onafhankelijke programma-assurance"],
@@ -57,35 +58,35 @@ const data = {
   en: {
     services: [
       {
-        image: "/images/services/business-consultancy.jpg",
+        image: asset("/images/services/business-consultancy.jpg"),
         title: "Business Consultancy",
         description: "From strategy to control. Strategic advice that translates directly into concrete steering, independent audits and future-proof architecture.",
         features: ["Target Operating Model", "Business case development", "Programme governance", "Executive advisory", "IT audits", "Cybersecurity audits", "Architecture services"],
         detail: "Our Business Consultants work closely with executives and management to translate strategic goals into concrete plans. We design Target Operating Models, build business cases and establish governance that keeps transformations on track. In addition, we deliver independent IT audits and cybersecurity audits that give boards clear insight into risk, control and compliance, and we support organisations with architecture services: from enterprise and solution architecture to integration and cloud landscapes. With a proven approach that links strategy, audit and architecture to execution, we help organisations gain control of complex changes.",
       },
       {
-        image: "/images/services/project-management.jpg",
+        image: asset("/images/services/project-management.jpg"),
         title: "Project Management",
         description: "Delivering complex transformation programmes from start to finish. With and for the client.",
         features: ["Programme management", "Agile & Waterfall", "Transition Support Office", "Risk management", "IPMA-certified programme and project managers", "SAFe-certified Scrum Masters", "Program Execution Framework including tooling and dashboards"],
         detail: "Our project managers are experienced professionals who lead complex transformations. Whether it's an Agile transition, an ERP implementation or an organisation-wide change, we provide structure, progress and results. With our Transition Support Office, we offer a comprehensive support framework that brings programmes successfully to completion.",
       },
       {
-        image: "/images/services/process-management.jpg",
+        image: asset("/images/services/process-management.jpg"),
         title: "Process Management",
         description: "The ITsPeople Target Operating Model: mapping and optimising services, processes, governance and IT.",
         features: ["Process architecture", "Value stream analysis", "Supply chain integration", "Business Control Framework", "Target Operating Model Design", "Process orchestration & governance design", "Business process maturity assessment"],
         detail: "Processes are the nervous system of every organisation. Our process managers map the current and desired situation, identify improvement opportunities and guide implementation across all layers of the Target Operating Model. This is not just about optimising individual processes, but about orchestrating processes in their interrelationships, embedded through an integrated Business Control Framework. From value stream analyses to supply chain integrations, we ensure your organisation operates effectively, efficiently and future-proof.",
       },
       {
-        image: "/images/services/data-management.jpg",
+        image: asset("/images/services/data-management.jpg"),
         title: "Data Management",
         description: "The ITs Productivity Centre: structure, quality, visualisation and data-driven insights.",
         features: ["Data governance", "Data quality & DQS Framework", "Data migration & validation", "Visualisation & dashboards", "AI & Analytics", "Master data management", "Data architecture & modelling"],
         detail: "Data is the fuel for modern organisations. Our ITs Productivity Centre helps organisations structure their data, guarantee quality and generate insights that improve decision-making. For complex data migrations, we deploy the Data Quality Score (DQS) Framework: a structured method to objectively and measurably determine data quality by converting subjective concepts into automated validation rules. From data governance frameworks to advanced dashboards and AI applications, we make data work for your organisation.",
       },
       {
-        image: "/images/services/quality-assurance.jpg",
+        image: asset("/images/services/quality-assurance.jpg"),
         title: "Testing & Quality Assurance",
         description: "Independent quality assurance with the Transformation Quality Assurance Framework (TQA-F) for complex transformation programmes.",
         features: ["TQA-F implementation", "Test strategy & policy", "Test coordination", "Test automation", "DevOps & CI/CD testing", "Performance & security testing", "Regression testing & impact analysis", "Independent programme assurance"],

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLocale } from "next-intl";
+import { asset } from "@/lib/basePath";
 
 const data = {
   nl: {
@@ -48,7 +49,7 @@ export default function About() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] mb-8">
-              <Image src="/images/andre-casual.jpg" alt="André Keizer - Founder & Managing Partner" fill className="object-cover object-top" />
+              <Image src={asset("/images/andre-casual.jpg")} alt="André Keizer - Founder & Managing Partner" fill className="object-cover object-top" />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-its-dark/80 to-transparent">
                 <p className="text-white font-bold text-lg">André Keizer</p>
                 <p className="text-white/70 text-sm">Founder & Managing Partner</p>

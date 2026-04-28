@@ -3,6 +3,7 @@
 import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { asset } from "@/lib/basePath";
 
 const data = {
   nl: {
@@ -11,7 +12,7 @@ const data = {
     viewAll: "Alle artikelen →",
     articles: [
       {
-        image: "/images/team-sept-1.jpg",
+        image: asset("/images/team-sept-1.jpg"),
         tag: "Compliance",
         title: "NIS2 compliance: wat betekent het voor uw organisatie?",
         excerpt: "Van bestuurlijke aansprakelijkheid tot integrale compliance-aanpak: een praktische gids.",
@@ -19,7 +20,7 @@ const data = {
         readTime: "8 min",
       },
       {
-        image: "/images/team-sept-2.jpg",
+        image: asset("/images/team-sept-2.jpg"),
         tag: "Digitale Strategie",
         title: "De 5 pijlers van een succesvolle digitale transformatie",
         excerpt: "Hoe organisaties hun transformatie versnellen met een mensgerichte aanpak.",
@@ -27,7 +28,7 @@ const data = {
         readTime: "5 min",
       },
       {
-        image: "/images/team-sept-3.jpg",
+        image: asset("/images/team-sept-3.jpg"),
         tag: "Data Management",
         title: "Data-gedreven werken: van buzzword naar resultaat",
         excerpt: "Het ITs Productivity Center als motor voor data-gedreven inzichten.",
@@ -42,7 +43,7 @@ const data = {
     viewAll: "View all articles →",
     articles: [
       {
-        image: "/images/team-sept-1.jpg",
+        image: asset("/images/team-sept-1.jpg"),
         tag: "Compliance",
         title: "NIS2 compliance: what it means for your organisation",
         excerpt: "From board-level accountability to integrated compliance approach: a practical guide.",
@@ -50,7 +51,7 @@ const data = {
         readTime: "8 min",
       },
       {
-        image: "/images/team-sept-2.jpg",
+        image: asset("/images/team-sept-2.jpg"),
         tag: "Digital Strategy",
         title: "The 5 pillars of successful digital transformation",
         excerpt: "How organisations accelerate transformation with a human-centred approach.",
@@ -58,7 +59,7 @@ const data = {
         readTime: "5 min",
       },
       {
-        image: "/images/team-sept-3.jpg",
+        image: asset("/images/team-sept-3.jpg"),
         tag: "Data Management",
         title: "Data-driven working: from buzzword to results",
         excerpt: "The ITs Productivity Center as engine for data-driven insights.",

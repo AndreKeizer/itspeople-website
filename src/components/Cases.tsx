@@ -3,6 +3,7 @@
 import { useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { asset } from "@/lib/basePath";
 
 const data = {
   nl: {
@@ -17,7 +18,7 @@ const data = {
         challenge: "Versnipperde processen en gebrek aan grip op een €20M transformatieprogramma.",
         approach: "Target Operating Model, Business Control Framework, en Transition Support Office ingericht.",
         results: ["40% snellere doorlooptijd", "98% compliance score", "€3.2M besparing gerealiseerd"],
-        image: "/images/team-discussion.jpg",
+        image: asset("/images/team-discussion.jpg"),
         color: "its-green-dark",
       },
       {
@@ -26,7 +27,7 @@ const data = {
         challenge: "Complexe regelgeving vertalen naar werkbare processen binnen strikte deadlines.",
         approach: "Integrale compliance-aanpak: gap-analyse, procesherontwerp, governance en training.",
         results: ["100% NIS2 compliant", "Audit-ready in 4 maanden", "Bestuurlijke borging gerealiseerd"],
-        image: "/images/team-office.jpg",
+        image: asset("/images/team-office.jpg"),
         color: "its-green",
       },
       {
@@ -35,7 +36,7 @@ const data = {
         challenge: "Informatiebeveiligingsbeleid dat niet aansloot bij de dagelijkse praktijk van zorgprofessionals.",
         approach: "BIO/NEN 7510 compliance gecombineerd met security awareness programma.",
         results: ["90% awareness score", "ISO 27001 certificering", "Cultuurverandering gerealiseerd"],
-        image: "/images/team-sept-1.jpg",
+        image: asset("/images/team-sept-1.jpg"),
         color: "its-lime",
       },
     ],
@@ -56,7 +57,7 @@ const data = {
         challenge: "Fragmented processes and lack of control over a €20M transformation programme.",
         approach: "Designed Target Operating Model, Business Control Framework, and Transition Support Office.",
         results: ["40% faster turnaround", "98% compliance score", "€3.2M savings realised"],
-        image: "/images/team-discussion.jpg",
+        image: asset("/images/team-discussion.jpg"),
         color: "its-green-dark",
       },
       {
@@ -65,7 +66,7 @@ const data = {
         challenge: "Translating complex regulation into workable processes within strict deadlines.",
         approach: "Integrated compliance approach: gap analysis, process redesign, governance and training.",
         results: ["100% NIS2 compliant", "Audit-ready in 4 months", "Board-level assurance established"],
-        image: "/images/team-office.jpg",
+        image: asset("/images/team-office.jpg"),
         color: "its-green",
       },
       {
@@ -74,7 +75,7 @@ const data = {
         challenge: "Information security policy misaligned with healthcare professionals' daily practice.",
         approach: "BIO/NEN 7510 compliance combined with security awareness programme.",
         results: ["90% awareness score", "ISO 27001 certification", "Cultural transformation achieved"],
-        image: "/images/team-sept-1.jpg",
+        image: asset("/images/team-sept-1.jpg"),
         color: "its-lime",
       },
     ],

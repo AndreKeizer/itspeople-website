@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLocale } from "next-intl";
+import { asset } from "@/lib/basePath";
 
 const data = {
   nl: {
@@ -65,7 +66,7 @@ export default function Expertises() {
             {/* Image */}
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
               <Image
-                src="/images/team-meeting.jpg"
+                src={asset("/images/team-meeting.jpg")}
                 alt="ITsPeople team in meeting"
                 fill
                 className="object-cover"

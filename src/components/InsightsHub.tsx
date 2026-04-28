@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { asset } from "@/lib/basePath";
 
 const categories = [
   { label: "Alle", active: true },
@@ -22,7 +23,7 @@ const featured = {
 const items = [
   {
     type: "Artikel",
-    image: "/images/team-sept-1.jpg",
+    image: asset("/images/team-sept-1.jpg"),
     title: "NIS2 compliance: wat betekent het voor uw organisatie?",
     excerpt: "Een praktische gids voor het implementeren van de NIS2-richtlijn.",
     date: "Feb 2026",
@@ -30,7 +31,7 @@ const items = [
   },
   {
     type: "Whitepaper",
-    image: "/images/team-sept-2.jpg",
+    image: asset("/images/team-sept-2.jpg"),
     title: "Business Control Framework: Het complete handboek",
     excerpt: "Download ons whitepaper over integrale beheersing van strategie, processen en compliance.",
     date: "Jan 2026",
@@ -38,7 +39,7 @@ const items = [
   },
   {
     type: "Video",
-    image: "/images/team-sept-3.jpg",
+    image: asset("/images/team-sept-3.jpg"),
     title: "André Keizer over de toekomst van digitale transformatie",
     excerpt: "Keynote van André op het Transformation Summit 2025.",
     date: "Dec 2025",
@@ -46,7 +47,7 @@ const items = [
   },
   {
     type: "Artikel",
-    image: "/images/team-meeting.jpg",
+    image: asset("/images/team-meeting.jpg"),
     title: "De 5 pijlers van een succesvolle digitale transformatie",
     excerpt: "Hoe organisaties hun transformatie versnellen met een mensgerichte aanpak.",
     date: "Feb 2026",
@@ -54,7 +55,7 @@ const items = [
   },
   {
     type: "Artikel",
-    image: "/images/team-work.jpg",
+    image: asset("/images/team-work.jpg"),
     title: "Data-gedreven werken: van buzzword naar resultaat",
     excerpt: "Het ITs Productivity Center als motor voor data-gedreven inzichten.",
     date: "Jan 2026",
@@ -62,7 +63,7 @@ const items = [
   },
   {
     type: "Whitepaper",
-    image: "/images/team-collab.jpg",
+    image: asset("/images/team-collab.jpg"),
     title: "Target Operating Model: Uw blauwdruk voor transformatie",
     excerpt: "Stap-voor-stap handleiding voor het ontwerpen en implementeren van een TOM.",
     date: "Nov 2025",

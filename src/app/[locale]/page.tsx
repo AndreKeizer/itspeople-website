@@ -7,21 +7,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLocale } from "next-intl";
+import { asset } from "@/lib/basePath";
 
 const data = {
   nl: {
     services: [
-      { image: "/images/services/business-consultancy.jpg", title: "Business Consultancy", desc: "Van strategie naar beheersing en meetbare resultaten." },
-      { image: "/images/services/project-management.jpg", title: "Project Management", desc: "Complexe verandertrajecten van begin tot eind realiseren." },
-      { image: "/images/services/process-management.jpg", title: "Proces Management", desc: "Services, processen, governance en IT optimaliseren." },
-      { image: "/images/services/data-management.jpg", title: "Data Management", desc: "Structuur, kwaliteit, visualisatie en data-gedreven inzichten." },
-      { image: "/images/services/quality-assurance.jpg", title: "Testen & Quality Assurance", desc: "Risicobeheersing door professionele quality assurance." },
-      { image: "/images/services/ai-governance.jpg", title: "AI Governance & Strategy", desc: "Enterprise AI transformatie met compliance-first approach voor regulated industries." },
+      { image: asset("/images/services/business-consultancy.jpg"), title: "Business Consultancy", desc: "Van strategie naar beheersing en meetbare resultaten." },
+      { image: asset("/images/services/project-management.jpg"), title: "Project Management", desc: "Complexe verandertrajecten van begin tot eind realiseren." },
+      { image: asset("/images/services/process-management.jpg"), title: "Proces Management", desc: "Services, processen, governance en IT optimaliseren." },
+      { image: asset("/images/services/data-management.jpg"), title: "Data Management", desc: "Structuur, kwaliteit, visualisatie en data-gedreven inzichten." },
+      { image: asset("/images/services/quality-assurance.jpg"), title: "Testen & Quality Assurance", desc: "Risicobeheersing door professionele quality assurance." },
+      { image: asset("/images/services/ai-governance.jpg"), title: "AI Governance & Strategy", desc: "Enterprise AI transformatie met compliance-first approach voor regulated industries." },
     ],
     cases: [
-      { sector: "Financiële Sector", title: "AI-enhanced digitale transformatie", result: "40% efficiency door intelligente processen", image: "/images/team-discussion.jpg" },
-      { sector: "Overheid", title: "AI Act + NIS2 compliance framework", result: "100% regulatory compliant AI governance", image: "/images/team-office.jpg" },
-      { sector: "Zorg", title: "AI governance & data intelligence UMC", result: "€27M programme met AI-driven insights", image: "/images/team-sept-1.jpg" },
+      { sector: "Financiële Sector", title: "AI-enhanced digitale transformatie", result: "40% efficiency door intelligente processen", image: asset("/images/team-discussion.jpg") },
+      { sector: "Overheid", title: "AI Act + NIS2 compliance framework", result: "100% regulatory compliant AI governance", image: asset("/images/team-office.jpg") },
+      { sector: "Zorg", title: "AI governance & data intelligence UMC", result: "€27M programme met AI-driven insights", image: asset("/images/team-sept-1.jpg") },
     ],
     indicators: [
       { stat: "150+", label: "Succesvolle projecten" },
@@ -106,17 +107,17 @@ const data = {
   },
   en: {
     services: [
-      { image: "/images/services/business-consultancy.jpg", title: "Business Consultancy", desc: "From strategy to control and measurable results." },
-      { image: "/images/services/project-management.jpg", title: "Project Management", desc: "Deliver complex transformation programmes from start to finish." },
-      { image: "/images/services/process-management.jpg", title: "Process Management", desc: "Optimise services, processes, governance and IT." },
-      { image: "/images/services/data-management.jpg", title: "Data Management", desc: "Structure, quality, visualisation and data-driven insights." },
-      { image: "/images/services/quality-assurance.jpg", title: "Testing & Quality Assurance", desc: "Risk management through professional quality assurance." },
-      { image: "/images/services/ai-governance.jpg", title: "AI Governance & Strategy", desc: "Enterprise AI transformation with compliance-first approach for regulated industries." },
+      { image: asset("/images/services/business-consultancy.jpg"), title: "Business Consultancy", desc: "From strategy to control and measurable results." },
+      { image: asset("/images/services/project-management.jpg"), title: "Project Management", desc: "Deliver complex transformation programmes from start to finish." },
+      { image: asset("/images/services/process-management.jpg"), title: "Process Management", desc: "Optimise services, processes, governance and IT." },
+      { image: asset("/images/services/data-management.jpg"), title: "Data Management", desc: "Structure, quality, visualisation and data-driven insights." },
+      { image: asset("/images/services/quality-assurance.jpg"), title: "Testing & Quality Assurance", desc: "Risk management through professional quality assurance." },
+      { image: asset("/images/services/ai-governance.jpg"), title: "AI Governance & Strategy", desc: "Enterprise AI transformation with compliance-first approach for regulated industries." },
     ],
     cases: [
-      { sector: "Financial Sector", title: "AI-enhanced digital transformation", result: "40% efficiency through intelligent processes", image: "/images/team-discussion.jpg" },
-      { sector: "Public Sector", title: "AI Act + NIS2 compliance framework", result: "100% regulatory compliant AI governance", image: "/images/team-office.jpg" },
-      { sector: "Healthcare", title: "AI governance & data intelligence UMC", result: "€27M programme with AI-driven insights", image: "/images/team-sept-1.jpg" },
+      { sector: "Financial Sector", title: "AI-enhanced digital transformation", result: "40% efficiency through intelligent processes", image: asset("/images/team-discussion.jpg") },
+      { sector: "Public Sector", title: "AI Act + NIS2 compliance framework", result: "100% regulatory compliant AI governance", image: asset("/images/team-office.jpg") },
+      { sector: "Healthcare", title: "AI governance & data intelligence UMC", result: "€27M programme with AI-driven insights", image: asset("/images/team-sept-1.jpg") },
     ],
     indicators: [
       { stat: "150+", label: "Successful projects" },
@@ -378,7 +379,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-                <Image src="/images/founders-together.jpg" alt="André Keizer & Mario Kornuijt" fill className="object-cover object-top" />
+                <Image src={asset("/images/founders-together.jpg")} alt="André Keizer & Mario Kornuijt" fill className="object-cover object-top" />
                 <div className="absolute inset-0 bg-gradient-to-t from-its-dark/60 to-transparent" />
                 <div className="absolute bottom-6 left-6">
                   <p className="text-white font-bold text-lg">André Keizer & Mario Kornuijt</p>
@@ -424,7 +425,7 @@ export default function Home() {
             <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <Link href={locale === "nl" ? "/insights" : "/en/insights"} className="block group cursor-pointer">
                 <div className="aspect-[16/10] rounded-2xl mb-4 overflow-hidden relative border border-its-green/10">
-                  <Image src="/images/insights/ai-technology.jpg" alt="AI & Enterprise Architecture" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={asset("/images/insights/ai-technology.jpg")} alt="AI & Enterprise Architecture" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-its-dark/60 to-transparent" />
                 </div>
                 <div className="flex items-center gap-3 mb-3">
@@ -442,7 +443,7 @@ export default function Home() {
             <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
               <Link href={locale === "nl" ? "/insights" : "/en/insights"} className="block group cursor-pointer">
                 <div className="aspect-[16/10] rounded-2xl mb-4 overflow-hidden relative border border-its-green/10">
-                  <Image src="/images/insights/cybersecurity.jpg" alt="NIS2 Compliance" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={asset("/images/insights/cybersecurity.jpg")} alt="NIS2 Compliance" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-its-dark/60 to-transparent" />
                 </div>
                 <div className="flex items-center gap-3 mb-3">
@@ -460,7 +461,7 @@ export default function Home() {
             <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
               <Link href={locale === "nl" ? "/insights" : "/en/insights"} className="block group cursor-pointer">
                 <div className="aspect-[16/10] rounded-2xl mb-4 overflow-hidden relative border border-its-green/10">
-                  <Image src="/images/insights/data-strategy.jpg" alt="Data-Driven Decision Making" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <Image src={asset("/images/insights/data-strategy.jpg")} alt="Data-Driven Decision Making" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-its-dark/60 to-transparent" />
                 </div>
                 <div className="flex items-center gap-3 mb-3">
@@ -497,7 +498,7 @@ export default function Home() {
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-white p-8 rounded-2xl border border-its-gray-light/30 hover:border-its-green/30 hover:shadow-lg hover:shadow-its-green/5 transition-all duration-500 group">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-2xl overflow-hidden relative">
-                  <Image src="/images/tools/digital-transformation.jpg" alt="Digital Transformation" fill className="object-cover" />
+                  <Image src={asset("/images/tools/digital-transformation.jpg")} alt="Digital Transformation" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-br from-its-green/80 to-its-green-dark/80" />
                 </div>
                 <div>
@@ -514,7 +515,7 @@ export default function Home() {
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-white p-8 rounded-2xl border border-its-gray-light/30 hover:border-its-green/30 hover:shadow-lg hover:shadow-its-green/5 transition-all duration-500 group">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-2xl overflow-hidden relative">
-                  <Image src="/images/tools/compliance-security.jpg" alt="NIS2 Compliance" fill className="object-cover" />
+                  <Image src={asset("/images/tools/compliance-security.jpg")} alt="NIS2 Compliance" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-br from-its-green/80 to-its-green-dark/80" />
                 </div>
                 <div>
@@ -561,7 +562,7 @@ export default function Home() {
       {/* Premium CTA */}
       <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/images/building.jpg" alt={locale === "nl" ? "ITsPeople kantoor" : "ITsPeople office"} fill className="object-cover" />
+          <Image src={asset("/images/building.jpg")} alt={locale === "nl" ? "ITsPeople kantoor" : "ITsPeople office"} fill className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-its-dark/95 via-its-dark/90 to-its-dark/95" />
         </div>
         <div className="relative z-10 max-w-6xl mx-auto px-6">

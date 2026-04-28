@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLocale } from "next-intl";
+import { asset } from "@/lib/basePath";
 
 const data = {
   nl: {
@@ -18,30 +19,30 @@ const data = {
     joinLine: "Wil jij ook het verschil maken?",
     joinCta: "Bekijk onze vacatures",
     founders: [
-      { name: "André Keizer", role: "Founder & Programmadirecteur Transformaties", image: "/images/andre-casual.jpg", quote: "Duurzame verandering loopt altijd over de as van de mens.", specialties: ["Strategie", "Transformatie", "Leiderschap"] },
-      { name: "Mario Kornuijt", role: "Co-Founder & Programmadirecteur Transformaties", image: "/images/mario-casual.jpg", quote: "Complexe transformaties vragen om eenvoudige oplossingen.", specialties: ["Business Consultancy", "Governance", "Klantrelaties"] },
+      { name: "André Keizer", role: "Founder & Programmadirecteur Transformaties", image: asset("/images/andre-casual.jpg"), quote: "Duurzame verandering loopt altijd over de as van de mens.", specialties: ["Strategie", "Transformatie", "Leiderschap"] },
+      { name: "Mario Kornuijt", role: "Co-Founder & Programmadirecteur Transformaties", image: asset("/images/mario-casual.jpg"), quote: "Complexe transformaties vragen om eenvoudige oplossingen.", specialties: ["Business Consultancy", "Governance", "Klantrelaties"] },
     ],
     team: [
-      { name: "Geert Eikelboom", role: "Lid Raad van Advies", image: "/images/team/geert-eikelboom.jpg" },
-      { name: "Melissa Crijns", role: "Head of Talent Acquisition & HR", image: "/images/team/melissa-crijns.png" },
-      { name: "Olav Bleijenberg", role: "Principal Business Consultant", image: "/images/team/olav-bleijenberg.jpg" },
-      { name: "Angelina den Besten", role: "Senior Project & Process Manager", image: "/images/team/angelina-den-besten.jpg" },
-      { name: "Pieter Pannekeet", role: "Senior Projectmanager", image: "/images/team/pieter-pannekeet.jpg" },
-      { name: "Werner Smeenk", role: "Senior Projectmanager", image: "/images/team/werner-smeenk.jpg" },
-      { name: "Alev Kokus", role: "Projectmanager", image: "/images/team/alev-kokus.jpg" },
-      { name: "Manon de Bont", role: "Projectmanager", image: "/images/team/manon-de-bont.jpg" },
-      { name: "Daniel Mulder", role: "Senior Business Consultant", image: "/images/team/daniel-mulder.jpg" },
-      { name: "Ali Mokarram", role: "Business Consultant", image: "/images/team/ali-mokarram.jpg" },
-      { name: "Jordy van der Velde", role: "Business Consultant", image: "/images/team/jordy-van-der-velde.jpg" },
-      { name: "Loris Cornelissen", role: "Business Consultant", image: "/images/team/loris-cornelissen.jpg" },
-      { name: "Pip Horsman", role: "Business Consultant", image: "/images/team/pip-horsman.jpg" },
-      { name: "Rico van Leeuwen", role: "Business Consultant", image: "/images/team/rico-van-leeuwen.jpg" },
-      { name: "Stephanie Solingen", role: "Business Consultant", image: "/images/team/stephanie-solingen.jpg" },
-      { name: "Jerry de Jong", role: "Junior Business Consultant", image: "/images/team/jerry-de-jong.jpg" },
-      { name: "Matthijs Oosterbeek", role: "Data Consultant", image: "/images/team/matthijs-oosterbeek.jpg" },
-      { name: "Mandy van Es", role: "Testmanager", image: "/images/team/mandy-van-es.jpg" },
-      { name: "Sven Visser", role: "Inside Sales Representative", image: "/images/team/sven-visser.jpg" },
-      { name: "Diana Jane Acuna", role: "Office Manager", image: "/images/team/diana-jane-acuna.jpg" },
+      { name: "Geert Eikelboom", role: "Lid Raad van Advies", image: asset("/images/team/geert-eikelboom.jpg") },
+      { name: "Melissa Crijns", role: "Head of Talent Acquisition & HR", image: asset("/images/team/melissa-crijns.png") },
+      { name: "Olav Bleijenberg", role: "Principal Business Consultant", image: asset("/images/team/olav-bleijenberg.jpg") },
+      { name: "Angelina den Besten", role: "Senior Project & Process Manager", image: asset("/images/team/angelina-den-besten.jpg") },
+      { name: "Pieter Pannekeet", role: "Senior Projectmanager", image: asset("/images/team/pieter-pannekeet.jpg") },
+      { name: "Werner Smeenk", role: "Senior Projectmanager", image: asset("/images/team/werner-smeenk.jpg") },
+      { name: "Alev Kokus", role: "Projectmanager", image: asset("/images/team/alev-kokus.jpg") },
+      { name: "Manon de Bont", role: "Projectmanager", image: asset("/images/team/manon-de-bont.jpg") },
+      { name: "Daniel Mulder", role: "Senior Business Consultant", image: asset("/images/team/daniel-mulder.jpg") },
+      { name: "Ali Mokarram", role: "Business Consultant", image: asset("/images/team/ali-mokarram.jpg") },
+      { name: "Jordy van der Velde", role: "Business Consultant", image: asset("/images/team/jordy-van-der-velde.jpg") },
+      { name: "Loris Cornelissen", role: "Business Consultant", image: asset("/images/team/loris-cornelissen.jpg") },
+      { name: "Pip Horsman", role: "Business Consultant", image: asset("/images/team/pip-horsman.jpg") },
+      { name: "Rico van Leeuwen", role: "Business Consultant", image: asset("/images/team/rico-van-leeuwen.jpg") },
+      { name: "Stephanie Solingen", role: "Business Consultant", image: asset("/images/team/stephanie-solingen.jpg") },
+      { name: "Jerry de Jong", role: "Junior Business Consultant", image: asset("/images/team/jerry-de-jong.jpg") },
+      { name: "Matthijs Oosterbeek", role: "Data Consultant", image: asset("/images/team/matthijs-oosterbeek.jpg") },
+      { name: "Mandy van Es", role: "Testmanager", image: asset("/images/team/mandy-van-es.jpg") },
+      { name: "Sven Visser", role: "Inside Sales Representative", image: asset("/images/team/sven-visser.jpg") },
+      { name: "Diana Jane Acuna", role: "Office Manager", image: asset("/images/team/diana-jane-acuna.jpg") },
     ],
   },
   en: {
@@ -57,30 +58,30 @@ const data = {
     joinLine: "Want to make a difference too?",
     joinCta: "View our vacancies",
     founders: [
-      { name: "André Keizer", role: "Founder & Programme Director Transformations", image: "/images/andre-casual.jpg", quote: "Sustainable change always runs through people.", specialties: ["Strategy", "Transformation", "Leadership"] },
-      { name: "Mario Kornuijt", role: "Co-Founder & Programme Director Transformations", image: "/images/mario-casual.jpg", quote: "Complex transformations call for simple solutions.", specialties: ["Business Consultancy", "Governance", "Client Relations"] },
+      { name: "André Keizer", role: "Founder & Programme Director Transformations", image: asset("/images/andre-casual.jpg"), quote: "Sustainable change always runs through people.", specialties: ["Strategy", "Transformation", "Leadership"] },
+      { name: "Mario Kornuijt", role: "Co-Founder & Programme Director Transformations", image: asset("/images/mario-casual.jpg"), quote: "Complex transformations call for simple solutions.", specialties: ["Business Consultancy", "Governance", "Client Relations"] },
     ],
     team: [
-      { name: "Geert Eikelboom", role: "Lid Raad van Advies", image: "/images/team/geert-eikelboom.jpg" },
-      { name: "Melissa Crijns", role: "Head of Talent Acquisition & HR", image: "/images/team/melissa-crijns.png" },
-      { name: "Olav Bleijenberg", role: "Principal Business Consultant", image: "/images/team/olav-bleijenberg.jpg" },
-      { name: "Angelina den Besten", role: "Senior Project & Process Manager", image: "/images/team/angelina-den-besten.jpg" },
-      { name: "Pieter Pannekeet", role: "Senior Project Manager", image: "/images/team/pieter-pannekeet.jpg" },
-      { name: "Werner Smeenk", role: "Senior Project Manager", image: "/images/team/werner-smeenk.jpg" },
-      { name: "Alev Kokus", role: "Project Manager", image: "/images/team/alev-kokus.jpg" },
-      { name: "Manon de Bont", role: "Project Manager", image: "/images/team/manon-de-bont.jpg" },
-      { name: "Daniel Mulder", role: "Senior Business Consultant", image: "/images/team/daniel-mulder.jpg" },
-      { name: "Ali Mokarram", role: "Business Consultant", image: "/images/team/ali-mokarram.jpg" },
-      { name: "Jordy van der Velde", role: "Business Consultant", image: "/images/team/jordy-van-der-velde.jpg" },
-      { name: "Loris Cornelissen", role: "Business Consultant", image: "/images/team/loris-cornelissen.jpg" },
-      { name: "Pip Horsman", role: "Business Consultant", image: "/images/team/pip-horsman.jpg" },
-      { name: "Rico van Leeuwen", role: "Business Consultant", image: "/images/team/rico-van-leeuwen.jpg" },
-      { name: "Stephanie Solingen", role: "Business Consultant", image: "/images/team/stephanie-solingen.jpg" },
-      { name: "Jerry de Jong", role: "Junior Business Consultant", image: "/images/team/jerry-de-jong.jpg" },
-      { name: "Matthijs Oosterbeek", role: "Data Consultant", image: "/images/team/matthijs-oosterbeek.jpg" },
-      { name: "Mandy van Es", role: "Test Manager", image: "/images/team/mandy-van-es.jpg" },
-      { name: "Sven Visser", role: "Inside Sales Representative", image: "/images/team/sven-visser.jpg" },
-      { name: "Diana Jane Acuna", role: "Office Manager", image: "/images/team/diana-jane-acuna.jpg" },
+      { name: "Geert Eikelboom", role: "Lid Raad van Advies", image: asset("/images/team/geert-eikelboom.jpg") },
+      { name: "Melissa Crijns", role: "Head of Talent Acquisition & HR", image: asset("/images/team/melissa-crijns.png") },
+      { name: "Olav Bleijenberg", role: "Principal Business Consultant", image: asset("/images/team/olav-bleijenberg.jpg") },
+      { name: "Angelina den Besten", role: "Senior Project & Process Manager", image: asset("/images/team/angelina-den-besten.jpg") },
+      { name: "Pieter Pannekeet", role: "Senior Project Manager", image: asset("/images/team/pieter-pannekeet.jpg") },
+      { name: "Werner Smeenk", role: "Senior Project Manager", image: asset("/images/team/werner-smeenk.jpg") },
+      { name: "Alev Kokus", role: "Project Manager", image: asset("/images/team/alev-kokus.jpg") },
+      { name: "Manon de Bont", role: "Project Manager", image: asset("/images/team/manon-de-bont.jpg") },
+      { name: "Daniel Mulder", role: "Senior Business Consultant", image: asset("/images/team/daniel-mulder.jpg") },
+      { name: "Ali Mokarram", role: "Business Consultant", image: asset("/images/team/ali-mokarram.jpg") },
+      { name: "Jordy van der Velde", role: "Business Consultant", image: asset("/images/team/jordy-van-der-velde.jpg") },
+      { name: "Loris Cornelissen", role: "Business Consultant", image: asset("/images/team/loris-cornelissen.jpg") },
+      { name: "Pip Horsman", role: "Business Consultant", image: asset("/images/team/pip-horsman.jpg") },
+      { name: "Rico van Leeuwen", role: "Business Consultant", image: asset("/images/team/rico-van-leeuwen.jpg") },
+      { name: "Stephanie Solingen", role: "Business Consultant", image: asset("/images/team/stephanie-solingen.jpg") },
+      { name: "Jerry de Jong", role: "Junior Business Consultant", image: asset("/images/team/jerry-de-jong.jpg") },
+      { name: "Matthijs Oosterbeek", role: "Data Consultant", image: asset("/images/team/matthijs-oosterbeek.jpg") },
+      { name: "Mandy van Es", role: "Test Manager", image: asset("/images/team/mandy-van-es.jpg") },
+      { name: "Sven Visser", role: "Inside Sales Representative", image: asset("/images/team/sven-visser.jpg") },
+      { name: "Diana Jane Acuna", role: "Office Manager", image: asset("/images/team/diana-jane-acuna.jpg") },
     ],
   },
 };
@@ -101,7 +102,7 @@ export default function Team() {
 
         {/* Founders banner */}
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative rounded-2xl overflow-hidden aspect-[21/9] mb-16">
-          <Image src="/images/founders-together.jpg" alt="André Keizer & Mario Kornuijt — Founders ITsPeople" fill className="object-cover object-top" />
+          <Image src={asset("/images/founders-together.jpg")} alt="André Keizer & Mario Kornuijt — Founders ITsPeople" fill className="object-cover object-top" />
           <div className="absolute inset-0 bg-gradient-to-t from-its-dark/70 via-its-dark/10 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8 flex items-end justify-between">
             <div>
@@ -138,7 +139,7 @@ export default function Team() {
 
         {/* Team banner */}
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative rounded-2xl overflow-hidden aspect-[21/9] mb-12">
-          <Image src="/images/team-women.jpg" alt="Team ITsPeople" fill className="object-cover object-top" />
+          <Image src={asset("/images/team-women.jpg")} alt="Team ITsPeople" fill className="object-cover object-top" />
           <div className="absolute inset-0 bg-gradient-to-t from-its-dark/50 to-transparent" />
           <div className="absolute bottom-6 left-6">
             <p className="text-white font-bold text-lg">{d.teamLabel}</p>
