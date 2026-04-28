@@ -46,3 +46,5 @@ logs/
 
 # Large binary assets (host separately, e.g. on Vimeo / CDN)
 public/videos/
+out.zip
+out/
