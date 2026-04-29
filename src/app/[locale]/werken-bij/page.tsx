@@ -169,7 +169,7 @@ export default function WerkenBijPage() {
                       ))}
                     </div>
                   </div>
-                  <Link href={locale === "nl" ? "/contact" : "/en/contact"} className="flex-shrink-0 px-6 py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all whitespace-nowrap">
+                  <Link href={`/${locale}/contact`} className="flex-shrink-0 px-6 py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all whitespace-nowrap">
                     {d.apply}
                   </Link>
                 </div>

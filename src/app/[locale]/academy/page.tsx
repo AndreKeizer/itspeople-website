@@ -440,7 +440,7 @@ export default function AcademyPage() {
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-its-gray-light/30">
                   <span className="text-2xl font-bold text-[#4A7729]">{t.price}</span>
                   <Link
-                    href={locale === "nl" ? `/contact?training=${encodeURIComponent(t.name)}` : `/en/contact?training=${encodeURIComponent(t.name)}`}
+                    href={`/${locale}/contact?training=${encodeURIComponent(t.name)}`}
                     className="px-5 py-2.5 rounded-lg bg-[#4A7729] hover:bg-[#3d6422] text-white text-sm font-semibold transition-colors duration-300"
                   >
                     {d.enrollButton}
@@ -469,7 +469,7 @@ export default function AcademyPage() {
                 <li className="flex items-center gap-2"><span className="text-[#78BE20]">✓</span> {d.incompanyBullet4}</li>
               </ul>
               <Link
-                href={locale === "nl" ? "/contact?type=incompany" : "/en/contact?type=incompany"}
+                href={`/${locale}/contact?type=incompany`}
                 className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-white text-[#4A7729] font-semibold hover:bg-[#78BE20] hover:text-white transition-all duration-300"
               >
                 {d.incompanyButton}
@@ -591,7 +591,7 @@ export default function AcademyPage() {
           <p className="text-its-gray-mid text-lg mb-8">
             {d.ctaDesc}
           </p>
-          <Link href={locale === "nl" ? "/werken-bij" : "/en/careers"} className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300">
+          <Link href={`/${locale}/werken-bij`} className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300">
             {d.ctaButton}
           </Link>
         </div>

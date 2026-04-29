@@ -92,7 +92,7 @@ export default function Footer() {
           <p>&copy; 2026 ITsPeople. {t.rights[locale]}</p>
           <div className="flex gap-6">
             <Link href={`${L}/contact`} className="hover:text-its-green transition-colors">{t.contact[locale]}</Link>
-            <a href="#" className="hover:text-its-green transition-colors">{t.privacy[locale]}</a>
+            <Link href={`${L}/privacy`} className="hover:text-its-green transition-colors">{t.privacy[locale]}</Link>
           </div>
         </div>
       </div>

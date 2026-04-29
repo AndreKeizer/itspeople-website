@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useLocale } from "next-intl";
 import { asset, BASE } from "@/lib/basePath";
 
@@ -513,16 +514,12 @@ export default function InsightsPage() {
     if (!leadItem) return;
     setFormState("submitting");
     try {
-      const res = await fetch("/api/whitepaper-request", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          whitepaper: leadItem.whitepaperId ?? leadItem.title,
-          ...form,
-          locale,
-        }),
-      });
-      if (!res.ok) throw new Error("Request failed");
+      const whitepaper = leadItem.whitepaperId ?? leadItem.title;
+      const subject = encodeURIComponent(`Whitepaper aanvraag — ${whitepaper}`);
+      const body = encodeURIComponent(
+        `Naam: ${form.name}\nBedrijf: ${form.company}\nE-mail: ${form.email}\nTelefoon: ${form.phone || "-"}\n\nBericht:\n${form.message || "(geen)"}\n\nWhitepaper: ${whitepaper}\nTaal: ${locale}`
+      );
+      window.location.href = `mailto:info@itspeople.nl?subject=${subject}&body=${body}`;
       setFormState("success");
     } catch {
       setFormState("error");
@@ -587,9 +584,9 @@ export default function InsightsPage() {
                       )}
                     </div>
                     {!podcast.audio && (
-                      <button className="flex-shrink-0 px-6 py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all">
+                      <Link href={`/${locale}/contact`} className="flex-shrink-0 px-6 py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all text-center">
                         {podcast.button}
-                      </button>
+                      </Link>
                     )}
                   </div>
                 </motion.div>
@@ -849,16 +846,15 @@ export default function InsightsPage() {
             >
               <div className={`relative ${selected.audio ? "aspect-[21/9]" : "aspect-[16/9]"} bg-its-dark`}>
                 {selected.video ? (
-                  <video
-                    src={selected.video}
-                    controls
-                    autoPlay
-                    playsInline
-                    poster={selected.image}
-                    className="absolute inset-0 w-full h-full object-contain bg-black"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
+                  <div className="absolute inset-0">
+                    <Image src={selected.image} alt={selected.title} fill className="object-cover opacity-60" />
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+                      <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3">
+                        <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                      </div>
+                      <p className="text-sm font-medium opacity-80">{locale === "nl" ? "Video binnenkort beschikbaar" : "Video coming soon"}</p>
+                    </div>
+                  </div>
                 ) : (
                   <>
                     <Image src={selected.image} alt={selected.title} fill className="object-cover" />

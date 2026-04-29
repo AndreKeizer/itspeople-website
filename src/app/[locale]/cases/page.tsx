@@ -347,15 +347,16 @@ export default function CasesPage() {
               </div>
 
               {"video" in c && typeof (c as { video?: string }).video === "string" && (
-                <div className="relative aspect-[16/9] bg-its-dark">
-                  <video
-                    src={(c as { video: string }).video}
-                    poster={(c as { videoPoster?: string }).videoPoster}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    className="w-full h-full object-contain bg-black"
-                  />
+                <div className="relative aspect-[16/9] bg-its-dark overflow-hidden">
+                  {(c as { videoPoster?: string }).videoPoster && (
+                    <Image src={(c as { videoPoster: string }).videoPoster} alt={(c as { videoLabel?: string }).videoLabel ?? ""} fill className="object-cover opacity-60" />
+                  )}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+                    <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3">
+                      <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                    </div>
+                    <p className="text-sm font-medium opacity-80">{locale === "nl" ? "Video binnenkort beschikbaar" : "Video coming soon"}</p>
+                  </div>
                   {(c as { videoLabel?: string }).videoLabel && (
                     <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-black/60 text-white text-xs font-medium backdrop-blur-sm">
                       {(c as { videoLabel: string }).videoLabel}
@@ -419,7 +420,7 @@ export default function CasesPage() {
           <p className="text-its-gray-mid text-lg mb-8">
             {d.ctaSubheading}
           </p>
-          <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300">
+          <Link href={`/${locale}/contact`} className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300">
             {d.ctaButton}
           </Link>
         </div>

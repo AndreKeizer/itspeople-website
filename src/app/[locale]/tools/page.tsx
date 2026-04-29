@@ -219,7 +219,7 @@ function ToolScan({ tool, locale, d }: { tool: Tool; locale: string; d: any }) {
           {percentage < 25 && d.scoreMessages.veryLow}
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Link href={locale === "nl" ? "/contact" : "/en/contact"} className="px-6 py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all">
+          <Link href={`/${locale}/contact`} className="px-6 py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all">
             {d.discuss}
           </Link>
           <button onClick={reset} className="px-6 py-3 rounded-lg border border-its-gray-light/30 text-its-gray-mid font-semibold text-sm hover:border-its-green/30 transition-all">

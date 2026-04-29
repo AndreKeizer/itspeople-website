@@ -6,6 +6,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Chatbot from "@/components/Chatbot";
+import CookieConsent from "@/components/CookieConsent";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -169,7 +170,9 @@ export default async function LocaleLayout({
           <Navbar />
           <main className="overflow-hidden">{children}</main>
           <Footer />
-          <Chatbot />
+          {/* Chatbot temporarily disabled – re-enable when fully functional */}
+          {/* <Chatbot /> */}
+          <CookieConsent />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -218,12 +218,11 @@ export default function FreelancersPage() {
     e.preventDefault();
     setState("submitting");
     try {
-      const res = await fetch("/api/freelancer-request", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, locale }),
-      });
-      if (!res.ok) throw new Error("request_failed");
+      const subject = encodeURIComponent(`Freelancer aanmelding — ${form.name}`);
+      const body = encodeURIComponent(
+        `Naam: ${form.name}\nE-mail: ${form.email}\nTelefoon: ${form.phone || "-"}\nExpertise: ${form.expertise}\nBeschikbaarheid: ${form.availability}\n\nBericht:\n${form.message || "(geen)"}`
+      );
+      window.location.href = `mailto:info@itspeople.nl?subject=${subject}&body=${body}`;
       setState("success");
       setForm({ name: "", email: "", phone: "", expertise: "", availability: "", message: "" });
     } catch {

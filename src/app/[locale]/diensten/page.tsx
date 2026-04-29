@@ -164,7 +164,7 @@ export default function DienstenPage() {
                     ))}
                   </ul>
                   <div className="mt-8">
-                    <Link href={locale === "nl" ? "/contact" : "/en/contact"} className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all duration-300">
+                    <Link href={`/${locale}/contact`} className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all duration-300">
                       {d.learnMore}
                     </Link>
                   </div>
@@ -190,7 +190,7 @@ export default function DienstenPage() {
           <p className="text-its-gray-mid text-lg mb-8">
             {d.ctaDesc}
           </p>
-          <Link href={locale === "nl" ? "/contact" : "/en/contact"} className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-its-green/25">
+          <Link href={`/${locale}/contact`} className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-its-green/25">
             {d.ctaButton}
           </Link>
         </div>

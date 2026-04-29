@@ -390,7 +390,7 @@ export default function OverOnsPage() {
           {/* Join CTA */}
           <div className="text-center mt-16">
             <p className="text-its-gray-mid mb-4">{d.joinCTA}</p>
-            <Link href={locale === "nl" ? "/werken-bij" : "/en/careers"} className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-its-charcoal hover:bg-its-dark text-white font-semibold transition-all duration-300">
+            <Link href={`/${locale}/werken-bij`} className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-its-charcoal hover:bg-its-dark text-white font-semibold transition-all duration-300">
               {d.joinButton}
             </Link>
           </div>

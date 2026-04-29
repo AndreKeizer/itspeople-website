@@ -259,7 +259,7 @@ export default function ExpertisesPage() {
                           {d.learnMore}
                         </button>
                       ) : (
-                        <Link href={locale === "nl" ? "/contact" : "/en/contact"} className="text-its-green-dark text-sm font-semibold hover:text-its-green transition-colors">
+                        <Link href={`/${locale}/contact`} className="text-its-green-dark text-sm font-semibold hover:text-its-green transition-colors">
                           {d.learnMore}
                         </Link>
                       )}
@@ -374,7 +374,7 @@ export default function ExpertisesPage() {
                   <h3 className="text-2xl font-bold text-its-charcoal mb-3">{openModal.ctaTitle}</h3>
                   <p className="text-its-gray-mid mb-6 max-w-lg mx-auto">{openModal.ctaBody}</p>
                   <Link
-                    href={locale === "nl" ? "/contact" : "/en/contact"}
+                    href={`/${locale}/contact`}
                     onClick={() => setOpenModal(null)}
                     className="inline-flex items-center gap-2 px-8 py-4 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-xl hover:shadow-its-green/25"
                   >

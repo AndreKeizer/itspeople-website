@@ -238,7 +238,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             {d.services.map((s, i) => (
               <motion.div key={s.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Link href={locale === "nl" ? "/diensten" : "/en/services"} className="block rounded-2xl bg-white border border-its-gray-light/30 hover:border-its-green/30 hover:shadow-lg hover:shadow-its-green/5 transition-all duration-500 cursor-pointer overflow-hidden">
+                <Link href={`/${locale}/diensten`} className="block rounded-2xl bg-white border border-its-gray-light/30 hover:border-its-green/30 hover:shadow-lg hover:shadow-its-green/5 transition-all duration-500 cursor-pointer overflow-hidden">
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image src={s.image} alt={s.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-its-dark/60 to-transparent" />
@@ -255,7 +255,7 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <Link href={locale === "nl" ? "/diensten" : "/en/services"} className="inline-flex items-center gap-2 text-its-green-dark font-semibold hover:text-its-green transition-colors">
+            <Link href={`/${locale}/diensten`} className="inline-flex items-center gap-2 text-its-green-dark font-semibold hover:text-its-green transition-colors">
               {d.servicesLink}
             </Link>
           </div>
@@ -273,7 +273,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6 mb-10">
             {d.cases.map((c, i) => (
               <motion.div key={c.title} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-                <Link href={locale === "nl" ? "/cases" : "/en/cases"} className="block group rounded-2xl overflow-hidden bg-its-warm border border-its-gray-light/20 hover:shadow-lg transition-all duration-500 cursor-pointer">
+                <Link href={`/${locale}/cases`} className="block group rounded-2xl overflow-hidden bg-its-warm border border-its-gray-light/20 hover:shadow-lg transition-all duration-500 cursor-pointer">
                   <div className="relative aspect-[16/10] overflow-hidden">
                     <Image src={c.image} alt={c.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                     <div className="absolute top-3 left-3">
@@ -290,7 +290,7 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <Link href={locale === "nl" ? "/cases" : "/en/cases"} className="inline-flex items-center gap-2 text-its-green-dark font-semibold hover:text-its-green transition-colors">
+            <Link href={`/${locale}/cases`} className="inline-flex items-center gap-2 text-its-green-dark font-semibold hover:text-its-green transition-colors">
               {d.casesLink}
             </Link>
           </div>
@@ -343,13 +343,13 @@ export default function Home() {
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{d.aiReadinessHeading}</h3>
               <p className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto">{d.aiReadinessDescription}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href={locale === "nl" ? "/tools" : "/en/tools"} className="inline-flex items-center gap-2 bg-its-green text-white px-8 py-4 rounded-xl font-semibold hover:bg-its-green-dark transition-all duration-300 hover:shadow-lg hover:shadow-its-green/25">
+                <Link href={`/${locale}/tools`} className="inline-flex items-center gap-2 bg-its-green text-white px-8 py-4 rounded-xl font-semibold hover:bg-its-green-dark transition-all duration-300 hover:shadow-lg hover:shadow-its-green/25">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                   {d.aiAssessmentButton}
                 </Link>
-                <Link href={locale === "nl" ? "/contact" : "/en/contact"} className="inline-flex items-center gap-2 bg-white/10 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300 border border-white/20 backdrop-blur-sm">
+                <Link href={`/${locale}/contact`} className="inline-flex items-center gap-2 bg-white/10 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all duration-300 border border-white/20 backdrop-blur-sm">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
@@ -404,7 +404,7 @@ export default function Home() {
                 <p className="text-its-gray-mid text-sm mt-3">{d.aboutQuoteAuthor}</p>
               </div>
 
-              <Link href={locale === "nl" ? "/over-ons" : "/en/about"} className="inline-flex items-center gap-2 text-its-green-dark font-semibold hover:text-its-green transition-colors">
+              <Link href={`/${locale}/over-ons`} className="inline-flex items-center gap-2 text-its-green-dark font-semibold hover:text-its-green transition-colors">
                 {d.aboutLink}
               </Link>
             </motion.div>
@@ -423,7 +423,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8 mb-10">
             <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <Link href={locale === "nl" ? "/insights" : "/en/insights"} className="block group cursor-pointer">
+              <Link href={`/${locale}/insights`} className="block group cursor-pointer">
                 <div className="aspect-[16/10] rounded-2xl mb-4 overflow-hidden relative border border-its-green/10">
                   <Image src={asset("/images/insights/ai-technology.jpg")} alt="AI & Enterprise Architecture" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-its-dark/60 to-transparent" />
@@ -441,7 +441,7 @@ export default function Home() {
             </motion.article>
 
             <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-              <Link href={locale === "nl" ? "/insights" : "/en/insights"} className="block group cursor-pointer">
+              <Link href={`/${locale}/insights`} className="block group cursor-pointer">
                 <div className="aspect-[16/10] rounded-2xl mb-4 overflow-hidden relative border border-its-green/10">
                   <Image src={asset("/images/insights/cybersecurity.jpg")} alt="NIS2 Compliance" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-its-dark/60 to-transparent" />
@@ -459,7 +459,7 @@ export default function Home() {
             </motion.article>
 
             <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-              <Link href={locale === "nl" ? "/insights" : "/en/insights"} className="block group cursor-pointer">
+              <Link href={`/${locale}/insights`} className="block group cursor-pointer">
                 <div className="aspect-[16/10] rounded-2xl mb-4 overflow-hidden relative border border-its-green/10">
                   <Image src={asset("/images/insights/data-strategy.jpg")} alt="Data-Driven Decision Making" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-its-dark/60 to-transparent" />
@@ -478,7 +478,7 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <Link href={locale === "nl" ? "/insights" : "/en/insights"} className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-its-green/5 border border-its-green/20 text-its-green-dark font-semibold hover:bg-its-green/10 hover:border-its-green/30 transition-all">
+            <Link href={`/${locale}/insights`} className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-its-green/5 border border-its-green/20 text-its-green-dark font-semibold hover:bg-its-green/10 hover:border-its-green/30 transition-all">
               {d.insightsLink}
             </Link>
           </div>
@@ -507,7 +507,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-its-gray-mid leading-relaxed mb-6">{d.digitalTransformationDesc}</p>
-              <Link href={locale === "nl" ? "/tools" : "/en/tools"} className="block w-full py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-its-green/25 group-hover:scale-[1.02] text-center">
+              <Link href={`/${locale}/tools`} className="block w-full py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-its-green/25 group-hover:scale-[1.02] text-center">
                 {d.startAssessment}
               </Link>
             </motion.div>
@@ -524,7 +524,7 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-its-gray-mid leading-relaxed mb-6">{d.nis2ComplianceDesc}</p>
-              <Link href={locale === "nl" ? "/tools" : "/en/tools"} className="block w-full py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-its-green/25 group-hover:scale-[1.02] text-center">
+              <Link href={`/${locale}/tools`} className="block w-full py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-its-green/25 group-hover:scale-[1.02] text-center">
                 {d.checkCompliance}
               </Link>
             </motion.div>
@@ -544,7 +544,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-gray-300 leading-relaxed mb-6">{d.aiReadinessToolDesc}</p>
-                <Link href={locale === "nl" ? "/tools" : "/en/tools"} className="block w-full py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-its-green/25 group-hover:scale-[1.02] text-center">
+                <Link href={`/${locale}/tools`} className="block w-full py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-its-green/25 group-hover:scale-[1.02] text-center">
                   {d.startAIAssessment}
                 </Link>
               </div>
@@ -552,7 +552,7 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <Link href={locale === "nl" ? "/tools" : "/en/tools"} className="inline-flex items-center gap-2 text-its-green-dark font-semibold hover:text-its-green transition-colors">
+            <Link href={`/${locale}/tools`} className="inline-flex items-center gap-2 text-its-green-dark font-semibold hover:text-its-green transition-colors">
               {d.toolsLink}
             </Link>
           </div>
@@ -583,7 +583,7 @@ export default function Home() {
               <div className="text-3xl mb-3">📞</div>
               <h3 className="text-white font-bold mb-2">{d.freeConsultation}</h3>
               <p className="text-white/60 text-sm mb-4">{d.freeConsultationDesc}</p>
-              <Link href={locale === "nl" ? "/contact" : "/en/contact"} className="inline-flex items-center justify-center w-full py-2 rounded-lg bg-white/20 hover:bg-white/30 text-white font-semibold transition-all">
+              <Link href={`/${locale}/contact`} className="inline-flex items-center justify-center w-full py-2 rounded-lg bg-white/20 hover:bg-white/30 text-white font-semibold transition-all">
                 {d.planTalk}
               </Link>
             </div>
@@ -592,7 +592,7 @@ export default function Home() {
               <div className="text-3xl mb-3">🚀</div>
               <h3 className="text-white font-bold mb-2">{d.quickAssessment}</h3>
               <p className="text-white/60 text-sm mb-4">{d.quickAssessmentDesc}</p>
-              <Link href={locale === "nl" ? "/tools" : "/en/tools"} className="inline-flex items-center justify-center w-full py-2 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all">
+              <Link href={`/${locale}/tools`} className="inline-flex items-center justify-center w-full py-2 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all">
                 {d.startNow}
               </Link>
             </div>
@@ -601,7 +601,7 @@ export default function Home() {
               <div className="text-3xl mb-3">📊</div>
               <h3 className="text-white font-bold mb-2">{d.caseStudies}</h3>
               <p className="text-white/60 text-sm mb-4">{d.caseStudiesDesc}</p>
-              <Link href={locale === "nl" ? "/cases" : "/en/cases"} className="inline-flex items-center justify-center w-full py-2 rounded-lg bg-white/20 hover:bg-white/30 text-white font-semibold transition-all">
+              <Link href={`/${locale}/cases`} className="inline-flex items-center justify-center w-full py-2 rounded-lg bg-white/20 hover:bg-white/30 text-white font-semibold transition-all">
                 {d.viewCases}
               </Link>
             </div>

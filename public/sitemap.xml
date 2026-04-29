@@ -178,4 +178,20 @@
     <priority>0.6</priority>
   </url>
 
+  <!-- Privacy / Privacyverklaring -->
+  <url>
+    <loc>https://www.itspeople.nl/nl/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/privacy" />
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.itspeople.nl/en/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.itspeople.nl/nl/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.itspeople.nl/en/privacy" />
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
 </urlset>
