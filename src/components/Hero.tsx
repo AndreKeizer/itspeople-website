@@ -11,8 +11,8 @@ const t = {
   h1a: { nl: "Transformaties die ", en: "Transformations that " },
   h1b: { nl: "mensen bewegen", en: "move people" },
   sub: {
-    nl: "Wij begeleiden organisaties bij het realiseren van complexe digitale transformaties. Gecentreerd rondom mensen, gedreven door data en technologie.",
-    en: "We guide organisations through complex digital transformations. Centred around people, driven by data and technology.",
+    nl: "Wij begeleiden organisaties bij het realiseren van complexe digitale transformaties. Gecentreerd rondom mensen, gedreven door data, AI en technologie.",
+    en: "We guide organisations through complex digital transformations. Centred around people, driven by data, AI and technology.",
   },
   cta1: { nl: "Laten we praten", en: "Let's talk" },
   cta2: { nl: "Onze diensten", en: "Our services" },

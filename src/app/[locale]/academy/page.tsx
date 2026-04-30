@@ -366,7 +366,7 @@ export default function AcademyPage() {
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
-                <Image src={asset("/images/team-work.jpg")} alt="ITs Academy training" fill className="object-cover" />
+                <Image src={asset("/images/academy-philosophy.jpg")} alt="ITs Academy training" fill className="object-cover" />
               </div>
             </motion.div>
           </div>

@@ -127,6 +127,25 @@ export default function DienstenPage() {
         </div>
       </section>
 
+      {/* AI Vision */}
+      <section className="py-16 bg-white border-b border-its-gray-light/20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-4xl">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-2xl">🤖</span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-its-charcoal">
+                {locale === "nl" ? "AI versnelt alles wat wij doen" : "AI accelerates everything we do"}
+              </h2>
+            </div>
+            <p className="text-its-gray-mid leading-relaxed text-lg">
+              {locale === "nl"
+                ? "Artificial Intelligence verandert de spelregels van elke sector. Bij ITsPeople is AI geen losstaande dienst, maar een integraal onderdeel van al onze domeinen — van procesoptimalisatie met intelligent automation tot data-gedreven besluitvorming met predictive analytics, en van AI-governance conform de EU AI Act tot kwaliteitsborging met AI-ondersteunde assurance. Wij helpen organisaties om AI verantwoord, compliant en met meetbare impact in te zetten. Niet als technologie om de technologie, maar als versneller van transformaties die ertoe doen."
+                : "Artificial Intelligence is changing the rules of every sector. At ITsPeople, AI is not a standalone service but an integral part of all our domains — from process optimisation with intelligent automation to data-driven decision making with predictive analytics, and from AI governance compliant with the EU AI Act to quality assurance with AI-supported assurance. We help organisations deploy AI responsibly, compliantly and with measurable impact. Not technology for technology's sake, but as an accelerator of transformations that matter."}
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Services detail */}
       <section className="py-20 bg-its-warm">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-16">
