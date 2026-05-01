@@ -26,7 +26,7 @@ const data = {
     ],
     indicators: [
       { stat: "150+", label: "Succesvolle projecten" },
-      { stat: "95%", label: "Client satisfaction" },
+      { stat: "95%", label: "Medewerkerstevredenheid" },
       { stat: "€80M+", label: "Programme value delivered" },
       { stat: "10+", label: "Years expertise" },
     ],
@@ -121,7 +121,7 @@ const data = {
     ],
     indicators: [
       { stat: "150+", label: "Successful projects" },
-      { stat: "95%", label: "Client satisfaction" },
+      { stat: "95%", label: "Employee satisfaction" },
       { stat: "€80M+", label: "Programme value delivered" },
       { stat: "10+", label: "Years of expertise" },
     ],
