@@ -29,15 +29,15 @@ function AnimatedNumber({ value, suffix = "" }: { value: number; suffix?: string
 
 const statsByLocale = {
   nl: [
-    { value: 50, suffix: "+", label: "Transformaties begeleid" },
     { value: 98, suffix: "%", label: "Klanttevredenheid" },
-    { value: 15, suffix: "+", label: "Jaar ervaring" },
+    { value: 95, suffix: "%", label: "Medewerkerstevredenheid" },
+    { value: 100, suffix: "%", label: "Geslaagde go-lives" },
     { value: 4, suffix: "", label: "Sectoren" },
   ],
   en: [
-    { value: 50, suffix: "+", label: "Transformations delivered" },
     { value: 98, suffix: "%", label: "Client satisfaction" },
-    { value: 15, suffix: "+", label: "Years of experience" },
+    { value: 95, suffix: "%", label: "Employee satisfaction" },
+    { value: 100, suffix: "%", label: "Successful go-lives" },
     { value: 4, suffix: "", label: "Sectors" },
   ],
 };
