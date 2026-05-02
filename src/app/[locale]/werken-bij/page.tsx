@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
@@ -30,6 +31,12 @@ const data = {
     whyP1: "Bij ITsPeople ben je geen nummer. Je bent een professional die het verschil maakt. Wij investeren in jouw ontwikkeling, geven je de ruimte om te groeien en bieden uitdagende projecten waar je echt impact hebt.",
     whyP2: "Onze consultants werken bij organisaties als Rabobank, Rijksoverheid, UMC Utrecht en Aegon. Projecten waarbij complexiteit, menselijkheid en resultaat hand in hand gaan.",
     whyP3: "En tussendoor vieren we samen. Zes keer per jaar komen we bij elkaar voor onze Samen Events. Omdat het verschil maken ook samen mag zijn.",
+    heroVacancyCta: "We zoeken nu",
+    heroVacancyCtaSuffix: "collega's",
+    heroVacancyCtaLink: "bekijk vacatures →",
+    sidebarTitle: "Open posities",
+    sidebarSubtitle: "Direct solliciteren",
+    sidebarViewAll: "Alle vacatures →",
     benefitsTitle: "Wat wij bieden",
     eventsTitle: "Recente Samen Events",
     eventsIntro: "Een kijkje achter de schermen: van maandelijkse ITsMonthly tot gezamenlijke workshops en goede doelen-acties. Dit is hoe wij samen werken aan ons vak — én aan elkaar.",
@@ -83,6 +90,12 @@ const data = {
     whyP1: "At ITsPeople, you're not a number. You're a professional who makes a difference. We invest in your development, give you room to grow and offer challenging projects where you have real impact.",
     whyP2: "Our consultants work for organisations like Rabobank, Government, UMC Utrecht and Aegon. Projects where complexity, humanity and results go hand in hand.",
     whyP3: "And along the way we celebrate together. Six times a year we get together for our Together Events. Because making a difference can also be together.",
+    heroVacancyCta: "We're hiring for",
+    heroVacancyCtaSuffix: "roles",
+    heroVacancyCtaLink: "view vacancies →",
+    sidebarTitle: "Open positions",
+    sidebarSubtitle: "Apply directly",
+    sidebarViewAll: "View all vacancies →",
     benefitsTitle: "What we offer",
     eventsTitle: "Recent Together Events",
     eventsIntro: "A look behind the scenes: from our monthly ITsMonthly to joint workshops and charity initiatives. This is how we work on our craft together — and on each other.",
@@ -118,10 +131,33 @@ const data = {
 export default function WerkenBijPage() {
   const locale = useLocale() as "nl" | "en";
   const d = data[locale];
+  const heroRef = useRef<HTMLElement | null>(null);
+  const vacaturesRef = useRef<HTMLElement | null>(null);
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const heroEl = heroRef.current;
+    const vacaturesEl = vacaturesRef.current;
+    let heroVisible = true;
+    let vacaturesVisible = false;
+    const update = () => setShowSidebar(!heroVisible && !vacaturesVisible);
+
+    const heroObs = new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; update(); }, { threshold: 0.1 });
+    const vacObs = new IntersectionObserver(([e]) => { vacaturesVisible = e.isIntersecting; update(); }, { threshold: 0.05 });
+    if (heroEl) heroObs.observe(heroEl);
+    if (vacaturesEl) vacObs.observe(vacaturesEl);
+    return () => { heroObs.disconnect(); vacObs.disconnect(); };
+  }, []);
+
+  const scrollToVacatures = (e: React.MouseEvent) => {
+    e.preventDefault();
+    vacaturesRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <>
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-its-dark via-its-deep to-its-dark">
+      <section ref={heroRef} className="relative pt-32 pb-20 bg-gradient-to-br from-its-dark via-its-deep to-its-dark">
         <div className="absolute inset-0 grid-pattern opacity-20" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
@@ -132,9 +168,60 @@ export default function WerkenBijPage() {
             <p className="text-white/60 text-lg leading-relaxed max-w-2xl">
               {d.heroDesc}
             </p>
+            <a
+              href="#vacatures"
+              onClick={scrollToVacatures}
+              className="mt-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-its-green/10 hover:bg-its-green/20 border border-its-green/30 text-its-green text-sm font-semibold transition-all"
+            >
+              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-its-green text-its-dark text-xs font-bold">{d.vacatures.length}</span>
+              <span>{d.heroVacancyCta} {d.vacatures.length} {d.heroVacancyCtaSuffix} — {d.heroVacancyCtaLink}</span>
+            </a>
           </motion.div>
         </div>
       </section>
+
+      {/* Sticky sidebar (desktop only) */}
+      <AnimatePresence>
+        {showSidebar && (
+          <motion.aside
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.3 }}
+            className="hidden lg:block fixed right-6 top-28 z-30 w-72"
+          >
+            <div className="bg-white rounded-2xl shadow-xl border border-its-gray-light/30 overflow-hidden">
+              <div className="bg-gradient-to-br from-its-dark to-its-deep px-5 py-4">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="flex items-center justify-center w-6 h-6 rounded-full bg-its-green text-its-dark text-xs font-bold">{d.vacatures.length}</span>
+                  <h4 className="text-white font-bold text-sm">{d.sidebarTitle}</h4>
+                </div>
+                <p className="text-white/60 text-xs">{d.sidebarSubtitle}</p>
+              </div>
+              <div className="divide-y divide-its-gray-light/20">
+                {d.vacatures.map((v) => (
+                  <a
+                    key={v.title}
+                    href="#vacatures"
+                    onClick={scrollToVacatures}
+                    className="block px-5 py-3 hover:bg-its-warm transition-colors group"
+                  >
+                    <div className="text-sm font-semibold text-its-charcoal group-hover:text-its-green-dark transition-colors leading-snug">{v.title}</div>
+                    <div className="text-[11px] text-its-gray-mid mt-0.5">{v.location}</div>
+                  </a>
+                ))}
+              </div>
+              <a
+                href="#vacatures"
+                onClick={scrollToVacatures}
+                className="block px-5 py-3 bg-its-warm text-center text-xs font-semibold text-its-green-dark hover:bg-its-green/10 transition-colors"
+              >
+                {d.sidebarViewAll}
+              </a>
+            </div>
+          </motion.aside>
+        )}
+      </AnimatePresence>
 
       {/* Why ITsPeople */}
       <section className="py-20 bg-white">
@@ -241,7 +328,7 @@ export default function WerkenBijPage() {
       </section>
 
       {/* Vacatures */}
-      <section className="py-20 bg-white">
+      <section ref={vacaturesRef} id="vacatures" className="py-20 bg-white scroll-mt-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="text-3xl font-bold text-its-charcoal">{d.vacanciesTitle}</h2>
