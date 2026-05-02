@@ -170,8 +170,7 @@ export default async function LocaleLayout({
           <Navbar />
           <main className="overflow-hidden">{children}</main>
           <Footer />
-          {/* Chatbot temporarily disabled – re-enable when fully functional */}
-          {/* <Chatbot /> */}
+          <Chatbot />
           <CookieConsent />
         </NextIntlClientProvider>
       </body>
