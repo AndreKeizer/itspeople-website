@@ -31,6 +31,25 @@ const data = {
     whyP2: "Onze consultants werken bij organisaties als Rabobank, Rijksoverheid, UMC Utrecht en Aegon. Projecten waarbij complexiteit, menselijkheid en resultaat hand in hand gaan.",
     whyP3: "En tussendoor vieren we samen. Zes keer per jaar komen we bij elkaar voor onze Samen Events. Omdat het verschil maken ook samen mag zijn.",
     benefitsTitle: "Wat wij bieden",
+    eventsTitle: "Recente Samen Events",
+    eventsIntro: "Een kijkje achter de schermen: van maandelijkse ITsMonthly tot gezamenlijke workshops en goede doelen-acties. Dit is hoe wij samen werken aan ons vak — én aan elkaar.",
+    events: [
+      {
+        image: asset("/images/events/itsmonthly-mei-2026-tafel.jpg"),
+        secondaryImage: asset("/images/events/itsmonthly-mei-2026-workshop.jpg"),
+        date: "Mei 2026",
+        eventType: "ITsMonthly",
+        title: "ITsMonthly: kennis delen, mensen vieren en samen genieten",
+        lead: "Onze maandelijkse ITsMonthly stond afgelopen vrijdag weer in het teken van waar we als ITsPeople voor staan: scherp blijven op onze koers, blijven leren én tijd maken voor elkaar.",
+        sections: [
+          { heading: "Update: waar staan we?", body: "We trapten af met een gezamenlijke stand van zaken. Hoe staan we ervoor op onze strategische speerpunten, wat speelt er bij onze opdrachtgevers in de zorg en bij de Rijksoverheid, en welke ontwikkelingen vragen de komende periode onze aandacht? Een open en eerlijk gesprek dat ons als team weer scherp op één lijn zet." },
+          { heading: "Workshop Portfoliomanagement", body: "Vervolgens dook de groep in een interactieve workshop portfoliomanagement. Met een fysieke spelopstelling werd inzichtelijk hoe je keuzes maakt tussen projecten, capaciteit verdeelt en strategische waarde stuurt — precies de uitdagingen waar onze klanten dagelijks mee worstelen. Door het zelf te doen in plaats van erover te praten, kwamen de principes van prioritering, schaarste en governance heel tastbaar binnen. Een mooie aanvulling op het advieswerk dat we voor programma's en directies leveren." },
+          { heading: "Verjaardagen en jubilea", body: "Geen ITsMonthly zonder de mensen die ITsPeople maken tot wat het is. We hebben een aantal collega's in het zonnetje gezet die de afgelopen periode jarig waren of een jubileum vierden. Dank voor jullie inzet, plezier en betrokkenheid — jullie zijn het verschil." },
+          { heading: "Samen aan tafel", body: "We sloten af zoals het hoort: met z'n allen aan een lange tafel, een goed glas en nog betere gesprekken. Want naast de inhoud is het juist de onderlinge band die ons als ITsPeople sterk maakt. Daar investeren we graag in." },
+        ],
+        closing: "Op naar de volgende ITsMonthly, en de volgende stap voor onze klanten, ons team en onze ambitie.",
+      },
+    ],
     vacanciesTitle: "Openstaande vacatures",
     vacanciesDesc: "Staat jouw droombaan er niet bij? Stuur een open sollicitatie naar hr@itspeople.nl.",
     apply: "Solliciteer →",
@@ -65,6 +84,25 @@ const data = {
     whyP2: "Our consultants work for organisations like Rabobank, Government, UMC Utrecht and Aegon. Projects where complexity, humanity and results go hand in hand.",
     whyP3: "And along the way we celebrate together. Six times a year we get together for our Together Events. Because making a difference can also be together.",
     benefitsTitle: "What we offer",
+    eventsTitle: "Recent Together Events",
+    eventsIntro: "A look behind the scenes: from our monthly ITsMonthly to joint workshops and charity initiatives. This is how we work on our craft together — and on each other.",
+    events: [
+      {
+        image: asset("/images/events/itsmonthly-mei-2026-tafel.jpg"),
+        secondaryImage: asset("/images/events/itsmonthly-mei-2026-workshop.jpg"),
+        date: "May 2026",
+        eventType: "ITsMonthly",
+        title: "ITsMonthly: sharing knowledge, celebrating people and enjoying time together",
+        lead: "Our monthly ITsMonthly last Friday was once again all about what we stand for as ITsPeople: staying sharp on our direction, continuing to learn, and making time for each other.",
+        sections: [
+          { heading: "Update: where do we stand?", body: "We kicked off with a shared update on progress. Where we stand on our strategic priorities, what's happening at our clients in healthcare and central government, and which developments require our attention in the coming period. An open and honest conversation that aligns us as a team." },
+          { heading: "Portfolio Management Workshop", body: "Next, the group dove into an interactive portfolio management workshop. With a physical game setup, we explored how to make choices between projects, allocate capacity and steer on strategic value — exactly the challenges our clients face every day. By doing it ourselves rather than just talking about it, the principles of prioritisation, scarcity and governance landed tangibly. A valuable complement to the advisory work we deliver to programmes and executive teams." },
+          { heading: "Birthdays and anniversaries", body: "No ITsMonthly without celebrating the people who make ITsPeople what it is. We put a number of colleagues in the spotlight who recently celebrated a birthday or anniversary. Thank you for your dedication, energy and commitment — you make the difference." },
+          { heading: "Together at the table", body: "We closed the evening as it should be: all together at one long table, with a good drink and even better conversations. Because alongside the substance, it is the bond between us that makes ITsPeople strong. We are happy to invest in that." },
+        ],
+        closing: "On to the next ITsMonthly, and the next step for our clients, our team and our ambition.",
+      },
+    ],
     vacanciesTitle: "Open vacancies",
     vacanciesDesc: "Not seeing your dream job? Send an open application to hr@itspeople.nl.",
     apply: "Apply →",
@@ -139,6 +177,64 @@ export default function WerkenBijPage() {
                   <p className="text-its-gray-mid text-sm leading-relaxed">{b.description}</p>
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recente Samen Events */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-its-charcoal">{d.eventsTitle}</h2>
+            <p className="text-its-gray-mid mt-4 leading-relaxed">{d.eventsIntro}</p>
+          </motion.div>
+
+          <div className="space-y-12">
+            {d.events.map((event, i) => (
+              <motion.article
+                key={event.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-its-warm rounded-2xl overflow-hidden border border-its-gray-light/30"
+              >
+                <div className="relative aspect-[21/9] overflow-hidden">
+                  <Image src={event.image} alt={event.title} fill className="object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-its-dark/70 via-its-dark/10 to-transparent" />
+                  <div className="absolute bottom-5 left-6 right-6">
+                    <div className="flex items-center gap-3 mb-2">
+                      <span className="px-2.5 py-1 rounded-full text-[10px] font-bold text-white uppercase tracking-wider bg-its-green">{event.eventType}</span>
+                      <span className="text-white/80 text-xs font-medium">{event.date}</span>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl font-bold text-white leading-tight">{event.title}</h3>
+                  </div>
+                </div>
+                <div className="p-8 lg:p-10 space-y-5">
+                  <p className="text-its-gray-mid text-lg leading-relaxed">{event.lead}</p>
+                  {event.sections.slice(0, 2).map((s) => (
+                    <div key={s.heading}>
+                      <h4 className="text-sm font-bold text-its-green-dark uppercase tracking-wider mb-2">{s.heading}</h4>
+                      <p className="text-its-gray-mid leading-relaxed">{s.body}</p>
+                    </div>
+                  ))}
+                  {event.secondaryImage && (
+                    <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-6">
+                      <Image src={event.secondaryImage} alt={`${event.title} — workshop`} fill className="object-cover" />
+                    </div>
+                  )}
+                  {event.sections.slice(2).map((s) => (
+                    <div key={s.heading}>
+                      <h4 className="text-sm font-bold text-its-green-dark uppercase tracking-wider mb-2">{s.heading}</h4>
+                      <p className="text-its-gray-mid leading-relaxed">{s.body}</p>
+                    </div>
+                  ))}
+                  {event.closing && (
+                    <p className="text-its-charcoal font-semibold leading-relaxed pt-2 border-t border-its-gray-light/30">{event.closing}</p>
+                  )}
+                </div>
+              </motion.article>
             ))}
           </div>
         </div>
