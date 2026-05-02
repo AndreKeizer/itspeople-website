@@ -253,6 +253,10 @@ const data = {
     readMore: "Lees verder →",
     requestWhitepaper: "Whitepaper aanvragen →",
     closeLabel: "Sluiten",
+    shareLabel: "Stuur door",
+    shareSubjectPrefix: "Interessant van ITsPeople: ",
+    shareBodyIntro: "Hoi,\n\nIk dacht dat je dit interessant zou vinden:",
+    shareBodyOutro: "Lees verder of ontdek meer kennis & inzichten op:",
     form: {
       title: "Whitepaper aanvragen",
       intro: "Laat uw gegevens achter en wij zenden u het whitepaper persoonlijk toe.",
@@ -499,6 +503,10 @@ const data = {
     readMore: "Read more →",
     requestWhitepaper: "Request whitepaper →",
     closeLabel: "Close",
+    shareLabel: "Forward",
+    shareSubjectPrefix: "Interesting from ITsPeople: ",
+    shareBodyIntro: "Hi,\n\nI thought you would find this interesting:",
+    shareBodyOutro: "Read more or discover further knowledge & insights at:",
     form: {
       title: "Request whitepaper",
       intro: "Leave your details and we will send the whitepaper to you personally.",
@@ -539,6 +547,17 @@ export default function InsightsPage() {
     } else {
       setSelected(item);
     }
+  };
+
+  const forwardItem = (title: string, description: string) => {
+    const origin = typeof window !== "undefined" ? window.location.origin : "https://www.itspeople.nl";
+    const utm = "utm_source=email&utm_medium=share&utm_campaign=insights";
+    const url = `${origin}/${locale}/insights?${utm}`;
+    const subject = encodeURIComponent(`${d.shareSubjectPrefix}${title}`);
+    const body = encodeURIComponent(
+      `${d.shareBodyIntro}\n\n"${title}"\n\n${description}\n\n${d.shareBodyOutro}\n${url}\n\n— ITsPeople | Make the Difference`
+    );
+    window.location.href = `mailto:?subject=${subject}&body=${body}`;
   };
 
   const submitLead = async (e: FormEvent) => {
@@ -614,6 +633,16 @@ export default function InsightsPage() {
                           <source src={podcast.audio} type="audio/mp4" />
                         </audio>
                       )}
+                      <button
+                        onClick={() => forwardItem(podcast.title, podcast.description)}
+                        className="mt-4 inline-flex items-center gap-1.5 text-xs font-medium text-white/60 hover:text-its-green transition-colors"
+                        aria-label={d.shareLabel}
+                      >
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        {d.shareLabel}
+                      </button>
                     </div>
                     {!podcast.audio && (
                       <Link href={`/${locale}/contact`} className="flex-shrink-0 px-6 py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all text-center">
@@ -716,6 +745,16 @@ export default function InsightsPage() {
                         {item.gated ? d.requestWhitepaper : d.readMore}
                       </p>
                     )}
+                    <button
+                      onClick={(e) => { e.stopPropagation(); forwardItem(item.title, item.content); }}
+                      className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-its-gray-mid hover:text-its-green-dark transition-colors"
+                      aria-label={d.shareLabel}
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                      {d.shareLabel}
+                    </button>
                   </div>
                 </motion.article>
               );
@@ -948,6 +987,17 @@ export default function InsightsPage() {
                     <p className="text-its-gray-mid leading-relaxed">{s.body}</p>
                   </div>
                 ))}
+                <div className="pt-4 border-t border-its-gray-light/30">
+                  <button
+                    onClick={() => forwardItem(selected.title, selected.content)}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all"
+                  >
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    {d.shareLabel}
+                  </button>
+                </div>
               </div>
             </motion.div>
           </motion.div>
