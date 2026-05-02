@@ -154,7 +154,7 @@ const data = {
       },
       {
         type: "Whitepapers",
-        image: asset("/images/insights/business-control-framework.jpg"),
+        image: asset("/images/insights/data-strategy.jpg"),
         title: "Business Control Framework: het complete handboek",
         content: `Een Business Control Framework (BCF) biedt organisaties integraal inzicht in de voortgang, risico's en resultaten van hun transformatieprogramma's.`,
         date: "Jan 2026",
@@ -400,7 +400,7 @@ const data = {
       },
       {
         type: "Whitepapers",
-        image: asset("/images/insights/business-control-framework.jpg"),
+        image: asset("/images/insights/data-strategy.jpg"),
         title: "Business Control Framework: the complete handbook",
         content: `A Business Control Framework (BCF) provides organisations with integrated insight into the progress, risks and results of their transformation programmes.`,
         date: "Jan 2026",
