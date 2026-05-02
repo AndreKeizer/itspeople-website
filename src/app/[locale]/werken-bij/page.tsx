@@ -44,7 +44,7 @@ const data = {
       {
         image: asset("/images/events/itsmonthly-mei-2026-tafel.jpg"),
         secondaryImage: asset("/images/events/itsmonthly-mei-2026-workshop.jpg"),
-        date: "Mei 2026",
+        date: "April 2026",
         eventType: "ITsMonthly",
         title: "ITsMonthly: kennis delen, mensen vieren en samen genieten",
         lead: "Onze maandelijkse ITsMonthly stond afgelopen vrijdag weer in het teken van waar we als ITsPeople voor staan: scherp blijven op onze koers, blijven leren én tijd maken voor elkaar.",
@@ -103,7 +103,7 @@ const data = {
       {
         image: asset("/images/events/itsmonthly-mei-2026-tafel.jpg"),
         secondaryImage: asset("/images/events/itsmonthly-mei-2026-workshop.jpg"),
-        date: "May 2026",
+        date: "April 2026",
         eventType: "ITsMonthly",
         title: "ITsMonthly: sharing knowledge, celebrating people and enjoying time together",
         lead: "Our monthly ITsMonthly last Friday was once again all about what we stand for as ITsPeople: staying sharp on our direction, continuing to learn, and making time for each other.",
