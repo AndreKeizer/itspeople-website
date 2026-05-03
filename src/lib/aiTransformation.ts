@@ -142,7 +142,7 @@ const NL: AIPillarContent = {
       name: "Zorg & Ziekenhuizen",
       statement: "Elke minuut die een zorgprofessional besteedt aan administratie, is een minuut die niet naar de patiënt gaat. Wij geven die minuten terug.",
       items: [
-        "ERP-integratie met AI: slimme koppeling van Oracle Fusion, AFAS en planningsystemen",
+        "Implementatie van ERP-systemen die met AI worden ondersteund over de gehele procesgang",
         "Patiëntveiligheid versterken via predictive monitoring en vroegsignalering",
         "Zorglogistiek optimaliseren: OK-planning, opnameplanning, personele bezetting",
         "Administratieve last verlagen via automatische documentverwerking en codering",
@@ -422,7 +422,7 @@ const EN: AIPillarContent = {
       name: "Healthcare & Hospitals",
       statement: "Every minute a healthcare professional spends on administration is a minute not spent on the patient. We give those minutes back.",
       items: [
-        "AI-enabled ERP integration: smart linking of Oracle Fusion, AFAS and planning systems",
+        "Implementation of ERP systems supported by AI across the full process chain",
         "Strengthen patient safety through predictive monitoring and early signals",
         "Optimise care logistics: OR planning, admission planning, staffing",
         "Reduce administrative load through automated document processing and coding",
