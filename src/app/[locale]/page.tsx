@@ -22,7 +22,7 @@ const data = {
     cases: [
       { sector: "Financiële Sector", title: "AI-enhanced digitale transformatie", result: "40% efficiency door intelligente processen", image: asset("/images/team-discussion.jpg") },
       { sector: "Overheid", title: "AI Act + NIS2 compliance framework", result: "100% regulatory compliant AI governance", image: asset("/images/team-office.jpg") },
-      { sector: "Zorg", title: "AI governance & data intelligence UMC", result: "€27M programme met AI-driven insights", image: asset("/images/team-sept-1.jpg") },
+      { sector: "Zorg", title: "AI governance & data intelligence", result: "€27M programme met AI-driven insights", image: asset("/images/team-sept-1.jpg") },
     ],
     indicators: [
       { stat: "150+", label: "Succesvolle projecten en programma's" },
@@ -117,7 +117,7 @@ const data = {
     cases: [
       { sector: "Financial Sector", title: "AI-enhanced digital transformation", result: "40% efficiency through intelligent processes", image: asset("/images/team-discussion.jpg") },
       { sector: "Public Sector", title: "AI Act + NIS2 compliance framework", result: "100% regulatory compliant AI governance", image: asset("/images/team-office.jpg") },
-      { sector: "Healthcare", title: "AI governance & data intelligence UMC", result: "€27M programme with AI-driven insights", image: asset("/images/team-sept-1.jpg") },
+      { sector: "Healthcare", title: "AI governance & data intelligence", result: "€27M programme with AI-driven insights", image: asset("/images/team-sept-1.jpg") },
     ],
     indicators: [
       { stat: "150+", label: "Successful projects & programmes" },
