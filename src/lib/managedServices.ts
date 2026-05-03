@@ -18,8 +18,10 @@ export type ManagedService = {
   shortDesc: string;
   comingSoon?: boolean;
   problem?: string;
+  problemImage?: string;
   approach?: string;
-  pillars?: { number: number; title: string; body: string }[];
+  approachImage?: string;
+  pillars?: { number: number; title: string; body: string; image?: string }[];
   benefits?: { title: string; body: string }[];
   audience?: string[];
   workMode?: { title: string; body: string }[];
@@ -98,15 +100,17 @@ const NL: ManagedServicesContent = {
         "Volledig remote programmabeheersingsservice als maandelijks abonnement. Geïntegreerde planning, besluitvorming, financiële control, IT- en security-audits en live portfoliomonitoring, in één hand.",
       problem:
         "Organisaties die middelgrote tot grote programma's uitvoeren lopen structureel tegen dezelfde uitdagingen aan. Planning en voortgang zijn verspreid over meerdere systemen, geïntegreerd overzicht ontbreekt. Besluitvorming en gespreksverslagen worden ad hoc vastgelegd. Financiële rapportages zijn reactief. De opdrachtgever is afhankelijk van informatie van uitvoerende partijen, onafhankelijk tegenwicht ontbreekt. IT- en security-audits worden te laat of onvolledig uitgevoerd. Het gevolg: programma's lopen uit, escalaties worden te laat gesignaleerd en opdrachtgevers missen de grip die zij nodig hebben om tijdig bij te sturen.",
+      problemImage: "/images/team-meeting.jpg",
       approach:
         "Het TSO is ITsPeople's geïntegreerde, remote programmabeheersingsservice, beschikbaar als maandelijks abonnement. Onafhankelijk, data-gedreven en sector-agnostisch. Wij ondersteunen opdrachtgevers en hun programma's op alle kritieke beheersaspecten via één samenhangend model. Tegelijkertijd maken onze eigen programmadirecteuren, programmamanagers en projectmanagers actief gebruik van het TSO, wat de praktijkwaarde aantoonbaar maakt.",
+      approachImage: "/images/team-office.jpg",
       pillars: [
-        { number: 1, title: "Geïntegreerde Planning", body: "Live bijhouden van planningsacties, mijlpalen, afhankelijkheden en voortgang. Altijd actueel, altijd inzichtelijk." },
-        { number: 2, title: "Besluit- en Actiemanagement", body: "Gespreksverslagen, besluitenlijsten en actiebewaking. Eenduidig vastgelegd en doorzoekbaar voor alle betrokkenen." },
-        { number: 3, title: "Financiële Rapportage en Control", body: "Remote business controls, budgetbewaking en periodieke financiële rapportages. Altijd inzicht in waar het programma financieel staat." },
-        { number: 4, title: "IT- en Security Audit", body: "Gestructureerde IT-audits op meerdere momenten door het programma heen, aangevuld met security audits. Tijdig signaleren van risico's en kwetsbaarheden." },
-        { number: 5, title: "Live Programma Dashboard", body: "Real-time inzicht via beveiligde toegang voor opdrachtgever, stuurgroep en externe toezichthouders. Altijd live, altijd auditeerbaar." },
-        { number: 6, title: "Portfolio Management", body: "Geïntegreerde ondersteuning van het volledige projectportfolio: overzicht, prioritering, onderlinge afhankelijkheden en besturing over alle projecten en programma's heen. Eén helder beeld voor C-level en Raad van Bestuur." },
+        { number: 1, title: "Geïntegreerde Planning", body: "Live bijhouden van planningsacties, mijlpalen, afhankelijkheden en voortgang. Altijd actueel, altijd inzichtelijk.", image: "/images/services/process-management.jpg" },
+        { number: 2, title: "Besluit- en Actiemanagement", body: "Gespreksverslagen, besluitenlijsten en actiebewaking. Eenduidig vastgelegd en doorzoekbaar voor alle betrokkenen.", image: "/images/team-discussion.jpg" },
+        { number: 3, title: "Financiële Rapportage en Control", body: "Remote business controls, budgetbewaking en periodieke financiële rapportages. Altijd inzicht in waar het programma financieel staat.", image: "/images/insights/data-strategy.jpg" },
+        { number: 4, title: "IT- en Security Audit", body: "Gestructureerde IT-audits op meerdere momenten door het programma heen, aangevuld met security audits. Tijdig signaleren van risico's en kwetsbaarheden.", image: "/images/insights/cybersecurity.jpg" },
+        { number: 5, title: "Live Programma Dashboard", body: "Real-time inzicht via beveiligde toegang voor opdrachtgever, stuurgroep en externe toezichthouders. Altijd live, altijd auditeerbaar.", image: "/images/services/data-management.jpg" },
+        { number: 6, title: "Portfolio Management", body: "Geïntegreerde ondersteuning van het volledige projectportfolio: overzicht, prioritering, onderlinge afhankelijkheden en besturing over alle projecten en programma's heen. Eén helder beeld voor C-level en Raad van Bestuur.", image: "/images/services/business-consultancy.jpg" },
       ],
       benefits: [
         {
@@ -319,15 +323,17 @@ const EN: ManagedServicesContent = {
         "Fully remote programme control service available as a monthly subscription. Integrated planning, decision management, financial control, IT and security audits and live portfolio monitoring, all in one hand.",
       problem:
         "Organisations executing mid-size to large programmes face the same structural challenges. Planning and progress are spread across multiple systems, integrated overview is missing. Decision-making and meeting minutes are captured ad hoc. Financial reporting is reactive. The client depends on information from delivery parties, with no independent counterweight. IT and security audits are conducted too late or incompletely. The result: programmes overrun, escalations are noticed too late, and clients lack the grip they need to steer in time.",
+      problemImage: "/images/team-meeting.jpg",
       approach:
         "The TSO is ITsPeople's integrated, remote programme control service available as a monthly subscription. Independent, data-driven and sector-agnostic. We support clients on all critical control aspects through one coherent model. At the same time, our own programme directors and managers actively use the TSO, which makes the practical value demonstrable.",
+      approachImage: "/images/team-office.jpg",
       pillars: [
-        { number: 1, title: "Integrated Planning", body: "Live tracking of planning actions, milestones, dependencies and progress. Always current, always visible." },
-        { number: 2, title: "Decision and Action Management", body: "Meeting minutes, decision lists and action tracking. Captured consistently and searchable for all stakeholders." },
-        { number: 3, title: "Financial Reporting and Control", body: "Remote business controls, budget monitoring and periodic financial reports. Always insight into where the programme stands financially." },
-        { number: 4, title: "IT and Security Audit", body: "Structured IT audits at multiple moments, complemented by security audits. Risks and vulnerabilities surfaced in time." },
-        { number: 5, title: "Live Programme Dashboard", body: "Real-time insight via secure access for client, steering committee and external regulators. Always live, always auditable." },
-        { number: 6, title: "Portfolio Management", body: "Integrated support for the full project portfolio: overview, prioritisation, dependencies and steering across all projects and programmes. One clear view for C-level and the executive board." },
+        { number: 1, title: "Integrated Planning", body: "Live tracking of planning actions, milestones, dependencies and progress. Always current, always visible.", image: "/images/services/process-management.jpg" },
+        { number: 2, title: "Decision and Action Management", body: "Meeting minutes, decision lists and action tracking. Captured consistently and searchable for all stakeholders.", image: "/images/team-discussion.jpg" },
+        { number: 3, title: "Financial Reporting and Control", body: "Remote business controls, budget monitoring and periodic financial reports. Always insight into where the programme stands financially.", image: "/images/insights/data-strategy.jpg" },
+        { number: 4, title: "IT and Security Audit", body: "Structured IT audits at multiple moments, complemented by security audits. Risks and vulnerabilities surfaced in time.", image: "/images/insights/cybersecurity.jpg" },
+        { number: 5, title: "Live Programme Dashboard", body: "Real-time insight via secure access for client, steering committee and external regulators. Always live, always auditable.", image: "/images/services/data-management.jpg" },
+        { number: 6, title: "Portfolio Management", body: "Integrated support for the full project portfolio: overview, prioritisation, dependencies and steering across all projects and programmes. One clear view for C-level and the executive board.", image: "/images/services/business-consultancy.jpg" },
       ],
       benefits: [
         {

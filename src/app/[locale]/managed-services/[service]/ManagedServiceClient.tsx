@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { managedServicesContent } from "@/lib/managedServices";
+import { asset } from "@/lib/basePath";
 
 type Props = {
   slug: string;
@@ -44,11 +46,23 @@ export default function ManagedServiceClient({ slug }: Props) {
       {/* Problem */}
       {service.problem && (
         <section className="py-16 bg-white">
-          <div className="max-w-5xl mx-auto px-6 lg:px-8">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid lg:grid-cols-3 gap-8">
-              <h2 className="text-2xl font-bold text-its-charcoal lg:col-span-1">{d.servicePageProblem}</h2>
-              <p className="text-its-gray-mid text-lg leading-relaxed lg:col-span-2">{service.problem}</p>
-            </motion.div>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            {service.problemImage ? (
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-its-charcoal mb-6">{d.servicePageProblem}</h2>
+                  <p className="text-its-gray-mid text-lg leading-relaxed">{service.problem}</p>
+                </div>
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden lg:order-last">
+                  <Image src={asset(service.problemImage)} alt={d.servicePageProblem} fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
+                </div>
+              </motion.div>
+            ) : (
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid lg:grid-cols-3 gap-8">
+                <h2 className="text-2xl font-bold text-its-charcoal lg:col-span-1">{d.servicePageProblem}</h2>
+                <p className="text-its-gray-mid text-lg leading-relaxed lg:col-span-2">{service.problem}</p>
+              </motion.div>
+            )}
           </div>
         </section>
       )}
@@ -56,11 +70,23 @@ export default function ManagedServiceClient({ slug }: Props) {
       {/* Approach */}
       {service.approach && (
         <section className="py-16 bg-its-warm">
-          <div className="max-w-5xl mx-auto px-6 lg:px-8">
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid lg:grid-cols-3 gap-8">
-              <h2 className="text-2xl font-bold text-its-charcoal lg:col-span-1">{d.servicePageApproach}</h2>
-              <p className="text-its-gray-mid text-lg leading-relaxed lg:col-span-2">{service.approach}</p>
-            </motion.div>
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            {service.approachImage ? (
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                  <Image src={asset(service.approachImage)} alt={d.servicePageApproach} fill className="object-cover" sizes="(min-width: 1024px) 50vw, 100vw" />
+                </div>
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-its-charcoal mb-6">{d.servicePageApproach}</h2>
+                  <p className="text-its-gray-mid text-lg leading-relaxed">{service.approach}</p>
+                </div>
+              </motion.div>
+            ) : (
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="grid lg:grid-cols-3 gap-8">
+                <h2 className="text-2xl font-bold text-its-charcoal lg:col-span-1">{d.servicePageApproach}</h2>
+                <p className="text-its-gray-mid text-lg leading-relaxed lg:col-span-2">{service.approach}</p>
+              </motion.div>
+            )}
           </div>
         </section>
       )}
@@ -75,10 +101,21 @@ export default function ManagedServiceClient({ slug }: Props) {
             </motion.div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
               {service.pillars.map((p, i) => (
-                <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="bg-its-warm rounded-2xl p-6 border border-its-gray-light/30 hover:shadow-lg transition-all duration-300">
-                  <div className="w-9 h-9 rounded-full bg-its-green/10 border border-its-green/20 flex items-center justify-center text-its-green-dark text-sm font-bold mb-4">{p.number}</div>
-                  <h3 className="font-bold text-its-charcoal mb-2 leading-snug">{p.title}</h3>
-                  <p className="text-its-gray-mid text-sm leading-relaxed">{p.body}</p>
+                <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="group bg-its-warm rounded-2xl border border-its-gray-light/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                  {p.image && (
+                    <div className="relative aspect-[16/9] overflow-hidden">
+                      <Image src={asset(p.image)} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-its-dark/55 via-its-dark/15 to-transparent" />
+                      <span className="absolute top-3 left-3 w-8 h-8 rounded-full bg-white/95 text-its-green-dark text-sm font-bold flex items-center justify-center shadow-md">{p.number}</span>
+                    </div>
+                  )}
+                  <div className="p-6">
+                    {!p.image && (
+                      <div className="w-9 h-9 rounded-full bg-its-green/10 border border-its-green/20 flex items-center justify-center text-its-green-dark text-sm font-bold mb-4">{p.number}</div>
+                    )}
+                    <h3 className="font-bold text-its-charcoal mb-2 leading-snug">{p.title}</h3>
+                    <p className="text-its-gray-mid text-sm leading-relaxed">{p.body}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
