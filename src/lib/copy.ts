@@ -17,6 +17,11 @@ export const copy = {
       nl: "AI-strategie en implementatie voor Rijksoverheid en Zorg. Van AI Act Quickscan tot schaalbare impact.",
       en: "AI strategy and implementation for government and healthcare. From AI Act Quickscan to scalable impact.",
     },
+    managedServices: { nl: "Managed Services", en: "Managed Services" },
+    managedServicesTeaser: {
+      nl: "Doorlopende programmabeheersing, security en applicatiebeheer. Vaste maandtarieven, onafhankelijke rapportage.",
+      en: "Continuous programme control, security and application management. Fixed monthly fees, independent reporting.",
+    },
     learnMore: { nl: "Meer weten", en: "Learn more" },
     expertises: { nl: "Expertises", en: "Expertises" },
     cases: { nl: "Cases", en: "Cases" },

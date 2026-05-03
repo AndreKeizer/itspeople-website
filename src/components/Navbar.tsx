@@ -41,6 +41,16 @@ export default function Navbar() {
         </svg>
       ),
     },
+    {
+      label: copy.nav.managedServices[locale],
+      teaser: copy.nav.managedServicesTeaser[locale],
+      href: `/${locale}/managed-services`,
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.7}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+        </svg>
+      ),
+    },
   ];
 
   const kennisItems = [
@@ -147,9 +157,9 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-3 w-[640px] max-w-[calc(100vw-3rem)] rounded-2xl bg-white border border-its-gray-light/40 shadow-xl shadow-its-dark/10 overflow-hidden"
+                    className="absolute top-full left-0 mt-3 w-[920px] max-w-[calc(100vw-3rem)] rounded-2xl bg-white border border-its-gray-light/40 shadow-xl shadow-its-dark/10 overflow-hidden"
                   >
-                    <div className="grid grid-cols-2 divide-x divide-its-gray-light/30">
+                    <div className="grid grid-cols-3 divide-x divide-its-gray-light/30">
                       {dienstenItems.map((item) => {
                         const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
                         return (
