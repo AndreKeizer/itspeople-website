@@ -100,7 +100,7 @@ const NL: ManagedServicesContent = {
         "Volledig remote programmabeheersingsservice als maandelijks abonnement. Geïntegreerde planning, besluitvorming, financiële control, IT- en security-audits en live portfoliomonitoring, in één hand.",
       problem:
         "Organisaties die middelgrote tot grote programma's uitvoeren lopen structureel tegen dezelfde uitdagingen aan. Planning en voortgang zijn verspreid over meerdere systemen, geïntegreerd overzicht ontbreekt. Besluitvorming en gespreksverslagen worden ad hoc vastgelegd. Financiële rapportages zijn reactief. De opdrachtgever is afhankelijk van informatie van uitvoerende partijen, onafhankelijk tegenwicht ontbreekt. IT- en security-audits worden te laat of onvolledig uitgevoerd. Het gevolg: programma's lopen uit, escalaties worden te laat gesignaleerd en opdrachtgevers missen de grip die zij nodig hebben om tijdig bij te sturen.",
-      problemImage: "/images/tso-probleem.png",
+      problemImage: "/images/team-meeting.jpg",
       approach:
         "Het TSO is ITsPeople's geïntegreerde, remote programmabeheersingsservice, beschikbaar als maandelijks abonnement. Onafhankelijk, data-gedreven en sector-agnostisch. Wij ondersteunen opdrachtgevers en hun programma's op alle kritieke beheersaspecten via één samenhangend model. Tegelijkertijd maken onze eigen programmadirecteuren, programmamanagers en projectmanagers actief gebruik van het TSO, wat de praktijkwaarde aantoonbaar maakt.",
       approachImage: "/images/academy-philosophy.jpg",
@@ -323,7 +323,7 @@ const EN: ManagedServicesContent = {
         "Fully remote programme control service available as a monthly subscription. Integrated planning, decision management, financial control, IT and security audits and live portfolio monitoring, all in one hand.",
       problem:
         "Organisations executing mid-size to large programmes face the same structural challenges. Planning and progress are spread across multiple systems, integrated overview is missing. Decision-making and meeting minutes are captured ad hoc. Financial reporting is reactive. The client depends on information from delivery parties, with no independent counterweight. IT and security audits are conducted too late or incompletely. The result: programmes overrun, escalations are noticed too late, and clients lack the grip they need to steer in time.",
-      problemImage: "/images/tso-probleem.png",
+      problemImage: "/images/team-meeting.jpg",
       approach:
         "The TSO is ITsPeople's integrated, remote programme control service available as a monthly subscription. Independent, data-driven and sector-agnostic. We support clients on all critical control aspects through one coherent model. At the same time, our own programme directors and managers actively use the TSO, which makes the practical value demonstrable.",
       approachImage: "/images/academy-philosophy.jpg",
