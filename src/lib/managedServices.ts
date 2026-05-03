@@ -61,7 +61,7 @@ export type ManagedServicesContent = {
 const NL: ManagedServicesContent = {
   heroLabel: "Managed Services",
   heroTitle: "Wij blijven na de go-live.",
-  heroTitleHighlight: "Daar begint ITs pas",
+  heroTitleHighlight: "Daar levert ITs pas waarde",
   heroSubline: "Doorlopende programmabeheersing, security en applicatiebeheer voor Rijksoverheid, Zorg en de financiële sector.",
   heroIntro:
     "Een transformatie eindigt niet bij de oplevering. Daar begint de operatie. Onze Managed Services geven u doorlopende grip op programma's, security en applicaties via voorspelbare maandtarieven, onafhankelijke rapportage en bewezen partnerships.",
@@ -282,7 +282,7 @@ const NL: ManagedServicesContent = {
 const EN: ManagedServicesContent = {
   heroLabel: "Managed Services",
   heroTitle: "We stay after go-live.",
-  heroTitleHighlight: "That's where ITs begins",
+  heroTitleHighlight: "That's where ITs delivers value",
   heroSubline: "Continuous programme control, security and application management for government, healthcare and financial services.",
   heroIntro:
     "A transformation does not end at delivery. That is where the operation starts. Our Managed Services give you continuous grip on programmes, security and applications through predictable monthly fees, independent reporting and proven partnerships.",
