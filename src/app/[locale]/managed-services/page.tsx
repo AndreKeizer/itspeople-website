@@ -20,7 +20,23 @@ export default function ManagedServicesPage() {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
             <span className="text-its-green text-sm font-semibold tracking-wider uppercase">{d.heroLabel}</span>
             <h1 className="text-4xl sm:text-6xl font-bold mt-4 mb-6 tracking-tight text-white leading-tight">
-              {d.heroTitle} <span className="gradient-text">{d.heroTitleHighlight}</span>.
+              {d.heroTitle}{" "}
+              {(() => {
+                const highlight = d.heroTitleHighlight;
+                // Split the highlight on the lowercase 's' that immediately follows 'IT'
+                // (the brand wink). Render the 's' in white, the rest in the green gradient.
+                const parts = highlight.split(/(?<=IT)(s)(?=\b|\s|$)/);
+                return parts.length === 3 ? (
+                  <>
+                    <span className="gradient-text">{parts[0]}</span>
+                    <span className="text-white">{parts[1]}</span>
+                    <span className="gradient-text">{parts[2]}</span>
+                  </>
+                ) : (
+                  <span className="gradient-text">{highlight}</span>
+                );
+              })()}
+              .
             </h1>
             <p className="text-its-green text-lg font-semibold mb-6 max-w-3xl">{d.heroSubline}</p>
             <p className="text-white/70 text-lg leading-relaxed max-w-3xl">{d.heroIntro}</p>
