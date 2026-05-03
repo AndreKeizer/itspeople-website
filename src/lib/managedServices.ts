@@ -103,7 +103,7 @@ const NL: ManagedServicesContent = {
       problemImage: "/images/team-meeting.jpg",
       approach:
         "Het TSO is ITsPeople's geïntegreerde, remote programmabeheersingsservice, beschikbaar als maandelijks abonnement. Onafhankelijk, data-gedreven en sector-agnostisch. Wij ondersteunen opdrachtgevers en hun programma's op alle kritieke beheersaspecten via één samenhangend model. Tegelijkertijd maken onze eigen programmadirecteuren, programmamanagers en projectmanagers actief gebruik van het TSO, wat de praktijkwaarde aantoonbaar maakt.",
-      approachImage: "/images/team-office.jpg",
+      approachImage: "/images/academy-philosophy.jpg",
       pillars: [
         { number: 1, title: "Geïntegreerde Planning", body: "Live bijhouden van planningsacties, mijlpalen, afhankelijkheden en voortgang. Altijd actueel, altijd inzichtelijk.", image: "/images/services/process-management.jpg" },
         { number: 2, title: "Besluit- en Actiemanagement", body: "Gespreksverslagen, besluitenlijsten en actiebewaking. Eenduidig vastgelegd en doorzoekbaar voor alle betrokkenen.", image: "/images/team-discussion.jpg" },
@@ -326,7 +326,7 @@ const EN: ManagedServicesContent = {
       problemImage: "/images/team-meeting.jpg",
       approach:
         "The TSO is ITsPeople's integrated, remote programme control service available as a monthly subscription. Independent, data-driven and sector-agnostic. We support clients on all critical control aspects through one coherent model. At the same time, our own programme directors and managers actively use the TSO, which makes the practical value demonstrable.",
-      approachImage: "/images/team-office.jpg",
+      approachImage: "/images/academy-philosophy.jpg",
       pillars: [
         { number: 1, title: "Integrated Planning", body: "Live tracking of planning actions, milestones, dependencies and progress. Always current, always visible.", image: "/images/services/process-management.jpg" },
         { number: 2, title: "Decision and Action Management", body: "Meeting minutes, decision lists and action tracking. Captured consistently and searchable for all stakeholders.", image: "/images/team-discussion.jpg" },
