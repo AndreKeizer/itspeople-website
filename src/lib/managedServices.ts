@@ -169,7 +169,7 @@ const NL: ManagedServicesContent = {
       pillars: [
         { number: 1, title: "24/7 SOC-monitoring", body: "Continue dreigingsdetectie via Beam's STAP-platform met geautomatiseerde correlatie en escalatie. Geen blinde vlekken, geen weekend-gat." },
         { number: 2, title: "AI-gestuurde anomaliedetectie", body: "LogTrace SIEM combineert machine learning met sectorale dreigingsintelligentie. Afwijkingen worden vroeger zichtbaar en valse positieven blijven beheersbaar." },
-        { number: 3, title: "Microsoft-stack integratie", body: "Naadloze koppeling met Microsoft Sentinel, Defender en Azure Lighthouse. Geen parallelle infrastructuur naast uw bestaande beheerde omgeving." },
+        { number: 3, title: "Integratie met uw bestaande infrastructuur", body: "Naadloze koppeling met uw bestaande beveiligings- en monitoringinfrastructuur. Geen parallelle stack naast wat u al beheert." },
         { number: 4, title: "Incident response", body: "Add-on incident response retainer beschikbaar. Bij escalatie staat een gespecialiseerd team binnen contractueel vastgelegde responstijden klaar." },
         { number: 5, title: "Sector-specifieke detectieregels", body: "Zorg-specifieke scenario's voor EPD-toegang, medische IoT en patiëntgegevens. Overheid-specifieke patronen voor uitvoeringsprocessen en burgerdata. Z-CERT en ZDN-integratie waar relevant." },
         { number: 6, title: "Compliance-rapportage", body: "Kwartaalrapportage en jaarlijkse pentest inbegrepen. Aantoonbaar bewijs voor RDI, IGJ en andere toezichthouders, vertaald naar bestuurlijk leesbare stuurinformatie." },
@@ -188,7 +188,7 @@ const NL: ManagedServicesContent = {
         "Rijksoverheid en uitvoeringsorganisaties die NIS2- en BIO-compliance moeten aantonen",
         "Universitair medische centra en grote zorginstellingen onder NEN 7510- en NIS2-verplichtingen",
         "Financiële instellingen onder DORA-verplichtingen voor ICT-resilience en derde-partijenbeheer",
-        "Organisaties met Microsoft-stack die geen parallelle SOC-infrastructuur willen opbouwen",
+        "Organisaties die geen parallelle SOC-infrastructuur willen opbouwen naast hun bestaande beheerde omgeving",
         "Organisaties die een eerste stap willen zetten via een nulmeting voordat zij een volledig SOC-contract aangaan",
       ],
       workMode: [
@@ -207,7 +207,7 @@ const NL: ManagedServicesContent = {
         { strength: "Eén contractpartij in Nederland", benefit: "Geen complexiteit van buitenlandse contracten of meertalige escalatieprotocollen. Eén aanspreekpunt, één verantwoordelijke." },
         { strength: "Gecertificeerde technische diepgang", benefit: "ISO/IEC 17025, ISO 27001, ISO 9001 en NATO Secret Facility Security Certificate via Beam Teknoloji." },
         { strength: "Sector-specifieke detectieregels", benefit: "Specifieke scenario's voor zorg en overheid, niet generieke detectie die in elke sector hetzelfde is." },
-        { strength: "Microsoft-stack native", benefit: "Sentinel, Defender en Azure Lighthouse-integratie. Geen tweede infrastructuur naast wat u al beheert." },
+        { strength: "Vendor-onafhankelijke integratie", benefit: "Naadloze koppeling met uw bestaande beveiligings- en monitoringinfrastructuur. Geen tweede stack naast wat u al beheert." },
         { strength: "EU- en NL-jurisdictie", benefit: "AVG-verwerkersovereenkomst loopt via ITsPeople. On-premises leveringsmodel beschikbaar voor maximale datasoevereiniteit." },
         { strength: "Compliance-bewijs voor toezichthouders", benefit: "Kwartaalrapportage en CISO-dashboard leveren aantoonbaar bewijs voor RDI, IGJ, DNB en andere toezichthouders." },
         { strength: "Schaalbaar van pilot tot organisatiebreed", benefit: "Begin met een gecontroleerde nulmeting, schaal op naar een volledig managed contract zodra de waarde is bewezen." },
@@ -390,7 +390,7 @@ const EN: ManagedServicesContent = {
       pillars: [
         { number: 1, title: "24/7 SOC monitoring", body: "Continuous threat detection on Beam's STAP platform with automated correlation and escalation. No blind spots, no weekend gap." },
         { number: 2, title: "AI-driven anomaly detection", body: "LogTrace SIEM combines machine learning with sector threat intelligence. Anomalies surface earlier and false positives stay manageable." },
-        { number: 3, title: "Microsoft stack integration", body: "Native integration with Microsoft Sentinel, Defender and Azure Lighthouse. No parallel infrastructure next to your existing managed environment." },
+        { number: 3, title: "Integration with your existing infrastructure", body: "Native integration with your existing security and monitoring infrastructure. No parallel stack next to what you already manage." },
         { number: 4, title: "Incident response", body: "Add-on incident response retainer available. On escalation a specialist team responds within contractually defined response times." },
         { number: 5, title: "Sector-specific detection rules", body: "Healthcare-specific scenarios for EHR access, medical IoT and patient data. Government-specific patterns for execution processes and citizen data. Z-CERT and ZDN integration where relevant." },
         { number: 6, title: "Compliance reporting", body: "Quarterly reports and an annual penetration test included. Demonstrable evidence for RDI, IGJ and other regulators, translated into board-ready steering information." },
@@ -409,7 +409,7 @@ const EN: ManagedServicesContent = {
         "Central government and executive agencies that must demonstrate NIS2 and BIO compliance",
         "University medical centres and large healthcare institutions under NEN 7510 and NIS2 obligations",
         "Financial institutions under DORA obligations for ICT resilience and third-party oversight",
-        "Organisations with a Microsoft stack that prefer not to build a parallel SOC infrastructure",
+        "Organisations that prefer not to build a parallel SOC infrastructure next to their existing managed environment",
         "Organisations that want a controlled baseline assessment before entering a full SOC contract",
       ],
       workMode: [
@@ -428,7 +428,7 @@ const EN: ManagedServicesContent = {
         { strength: "One contract party in the Netherlands", benefit: "No complexity of foreign contracts or multilingual escalation. One point of contact, one accountable party." },
         { strength: "Certified technical depth", benefit: "ISO/IEC 17025, ISO 27001, ISO 9001 and NATO Secret Facility Security Certificate via Beam Teknoloji." },
         { strength: "Sector-specific detection rules", benefit: "Specific scenarios for healthcare and government, not generic detection that is the same in every sector." },
-        { strength: "Microsoft stack native", benefit: "Sentinel, Defender and Azure Lighthouse integration. No second infrastructure next to what you already manage." },
+        { strength: "Vendor-independent integration", benefit: "Native integration with your existing security and monitoring infrastructure. No second stack next to what you already manage." },
         { strength: "EU and NL jurisdiction", benefit: "GDPR data processing agreement runs through ITsPeople. On-premises delivery available for maximum data sovereignty." },
         { strength: "Compliance evidence for regulators", benefit: "Quarterly reports and a CISO dashboard provide demonstrable evidence for RDI, IGJ, DNB and other regulators." },
         { strength: "Scalable from pilot to enterprise", benefit: "Start with a controlled baseline, scale up to a full managed contract once the value is proven." },

@@ -76,7 +76,7 @@ const data = {
           ],
           whyTitle: "Waarom ITsPeople?",
           whyItems: [
-            { title: "Wij kennen uw wereld", body: "Meer dan 20 jaar ervaring in de Nederlandse publieke sector — van het Gemeenschappelijk Landbouwbeleid bij RVO tot Oracle Fusion Cloud bij Het CAK." },
+            { title: "Wij kennen uw wereld", body: "Meer dan 20 jaar ervaring in de Nederlandse publieke sector — van complexe beleidsuitvoering tot grote ERP-transformaties bij toonaangevende uitvoerings- en zorginstellingen." },
             { title: "Wij bouwen, wij adviseren niet alleen", body: "Waar andere consultants stoppen bij het rapport, begint ITsPeople pas. Wij ontwerpen AI-oplossingen én implementeren ze." },
             { title: "Wij zijn model-onafhankelijk", body: "Geen vendor lock-in. Wij werken met de beste AI-modellen voor elke specifieke taak — met AVG-compliance als standaard." },
             { title: "Wij zijn gebouwd op vertrouwen", body: "Onze klanten zijn organisaties waar fouten maatschappelijke consequenties hebben. Dat vraagt om een partner die kwaliteit boven snelheid stelt." },
@@ -163,7 +163,7 @@ const data = {
           ],
           whyTitle: "Why ITsPeople?",
           whyItems: [
-            { title: "We know your world", body: "20+ years of experience in the Dutch public sector — from agricultural policy at RVO to Oracle Fusion Cloud at Het CAK." },
+            { title: "We know your world", body: "20+ years of experience in the Dutch public sector — from complex policy execution to large ERP transformations at leading executive agencies and healthcare institutions." },
             { title: "We build, not just advise", body: "Where other consultants stop at the report, ITsPeople is just getting started. We design AI solutions and implement them." },
             { title: "We are model-independent", body: "No vendor lock-in. We work with the best AI models for each specific task — with GDPR compliance as standard." },
             { title: "We are built on trust", body: "Our clients are organisations where mistakes have societal consequences. That demands a partner who prioritises quality over speed." },

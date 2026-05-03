@@ -334,7 +334,7 @@ const NL: AIPillarContent = {
       deliverables: [
         "Maatwerkapplicaties voor zorg- en overheidsprocessen, van idee tot productie in weken",
         "Burger- en patiëntportalen met intelligente self-service en realtime data-koppelingen",
-        "Workflow- en procesapplicaties die naadloos integreren met Oracle Fusion, AFAS en SAP",
+        "Workflow- en procesapplicaties die naadloos integreren met uw bestaande ERP- en bedrijfssystemen",
         "Proof of Value-applicaties: van concept naar werkende demo binnen 10 werkdagen",
         "Low-code en pro-code hybride aanpak, afgestemd op uw IT-landschap",
       ],
@@ -354,7 +354,7 @@ const NL: AIPillarContent = {
       approach: "Wij zetten AI in om elk migratierisico te elimineren. Van automatische codeanalyse en documentatie van legacy-systemen, tot AI-gedreven hertaling van code, tot intelligent migratietesten dat onverwachte impact direct in beeld brengt. Wij brengen u in beweging, zonder downtime, zonder paniek.",
       deliverables: [
         "Mainframe-naar-cloud migraties (COBOL, AS/400, Tandem) met AI-codeanalyse",
-        "ERP-platformwissels: van legacy naar Oracle Fusion Cloud, SAP S/4HANA of AFAS",
+        "ERP-platformwissels: van legacy naar moderne cloud-based ERP-platformen",
         "On-premise naar cloud-native (Azure, AWS, GCP) met behoud van compliance",
         "Database-migraties met AI-gedreven schema-mapping en data-kwaliteitsborging",
         "Applicatieportfolio-rationalisatie: AI bepaalt wat blijft, vervangt of integreert",
@@ -362,7 +362,7 @@ const NL: AIPillarContent = {
       audience: "Organisaties met verouderde kernsystemen, end-of-life software, hoge beheerkosten of cloud-transformatie-ambitie.",
       duration: "Migratietijd typisch 30 tot 50 procent korter dan traditionele aanpakken",
       related: ["ai-accelerated-development", "data-governance-architecture", "ai-readiness-strategie"],
-      primaryKeyword: "AI-driven migration Oracle Fusion",
+      primaryKeyword: "AI-driven legacy migration",
     },
   ],
 };
@@ -614,7 +614,7 @@ const EN: AIPillarContent = {
       deliverables: [
         "Custom applications for healthcare and government processes, from idea to production in weeks",
         "Citizen and patient portals with intelligent self-service and real-time data integrations",
-        "Workflow and process applications integrating with Oracle Fusion, AFAS and SAP",
+        "Workflow and process applications integrating with your existing ERP and business systems",
         "Proof of Value applications: from concept to working demo within 10 working days",
         "Hybrid low-code and pro-code approach, tailored to your IT landscape",
       ],
@@ -634,7 +634,7 @@ const EN: AIPillarContent = {
       approach: "We use AI to eliminate every migration risk. From automated code analysis and documentation of legacy systems, to AI-driven code rewriting, to intelligent migration testing that surfaces unexpected impact instantly. We move you forward, without downtime, without panic.",
       deliverables: [
         "Mainframe-to-cloud migrations (COBOL, AS/400, Tandem) with AI code analysis",
-        "ERP platform shifts: from legacy to Oracle Fusion Cloud, SAP S/4HANA or AFAS",
+        "ERP platform shifts: from legacy to modern cloud-based ERP platforms",
         "On-premise to cloud-native (Azure, AWS, GCP) with compliance preserved",
         "Database migrations with AI-driven schema mapping and data quality assurance",
         "Application portfolio rationalisation: AI determines what stays, replaces or integrates",
@@ -642,7 +642,7 @@ const EN: AIPillarContent = {
       audience: "Organisations with outdated core systems, end-of-life software, high run costs or cloud transformation ambition.",
       duration: "Migration time typically 30 to 50 percent shorter than traditional approaches",
       related: ["ai-accelerated-development", "data-governance-architecture", "ai-readiness-strategie"],
-      primaryKeyword: "AI-driven migration Oracle Fusion",
+      primaryKeyword: "AI-driven legacy migration",
     },
   ],
 };
