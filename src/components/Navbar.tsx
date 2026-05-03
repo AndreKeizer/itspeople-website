@@ -14,9 +14,16 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [kennisOpen, setKennisOpen] = useState(false);
+  const [dienstenOpen, setDienstenOpen] = useState(false);
   const kennisRef = useRef<HTMLDivElement | null>(null);
+  const dienstenRef = useRef<HTMLDivElement | null>(null);
   const pathname = usePathname();
   const locale = useLocale() as Locale;
+
+  const dienstenItems = [
+    { label: copy.nav.services[locale], href: `/${locale}/diensten` },
+    { label: copy.nav.aiTransformation[locale], href: `/${locale}/ai-transformation` },
+  ];
 
   const kennisItems = [
     { label: copy.nav.academy[locale], href: `/${locale}/academy` },
@@ -25,7 +32,6 @@ export default function Navbar() {
   ];
 
   const navLinks = [
-    { label: copy.nav.services[locale], href: `/${locale}/diensten` },
     { label: copy.nav.expertises[locale], href: `/${locale}/expertises` },
     { label: copy.nav.cases[locale], href: `/${locale}/cases` },
     { label: copy.nav.about[locale], href: `/${locale}/over-ons` },
@@ -33,6 +39,7 @@ export default function Navbar() {
     { label: copy.nav.freelancers[locale], href: `/${locale}/freelancers` },
   ];
 
+  const dienstenActive = dienstenItems.some((i) => pathname === i.href || pathname.startsWith(`${i.href}/`));
   const kennisActive = kennisItems.some((i) => pathname === i.href);
 
   useEffect(() => {
@@ -46,6 +53,9 @@ export default function Navbar() {
       if (kennisRef.current && !kennisRef.current.contains(e.target as Node)) {
         setKennisOpen(false);
       }
+      if (dienstenRef.current && !dienstenRef.current.contains(e.target as Node)) {
+        setDienstenOpen(false);
+      }
     };
     document.addEventListener("mousedown", onClickOutside);
     return () => document.removeEventListener("mousedown", onClickOutside);
@@ -53,6 +63,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setKennisOpen(false);
+    setDienstenOpen(false);
   }, [pathname]);
 
   const isHome = pathname === `/${locale}` || pathname === "/";
@@ -82,7 +93,67 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden xl:flex items-center gap-5 ml-12">
-            {navLinks.slice(0, 4).map((link) => {
+            {/* Diensten dropdown */}
+            <div ref={dienstenRef} className="relative">
+              <button
+                onClick={() => setDienstenOpen((o) => !o)}
+                className={`flex items-center gap-1 text-sm font-medium whitespace-nowrap transition-colors duration-300 relative group ${
+                  showTransparent
+                    ? dienstenActive
+                      ? "text-white"
+                      : "text-white/70 hover:text-white"
+                    : dienstenActive
+                      ? "text-its-green-dark"
+                      : "text-its-gray-mid hover:text-its-charcoal"
+                }`}
+              >
+                {copy.nav.services[locale]}
+                <svg
+                  className={`w-3 h-3 transition-transform duration-300 ${dienstenOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                </svg>
+                <span
+                  className={`absolute -bottom-1 left-0 h-0.5 bg-its-green transition-all duration-300 ${
+                    dienstenActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </button>
+              <AnimatePresence>
+                {dienstenOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3 min-w-[220px] rounded-xl bg-white border border-its-gray-light/40 shadow-xl shadow-its-dark/10 overflow-hidden"
+                  >
+                    {dienstenItems.map((item) => {
+                      const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
+                      return (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => setDienstenOpen(false)}
+                          className={`block px-5 py-3 text-sm font-medium transition-colors ${
+                            isActive
+                              ? "bg-its-green/5 text-its-green-dark"
+                              : "text-its-gray-mid hover:bg-its-warm hover:text-its-charcoal"
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      );
+                    })}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {navLinks.slice(0, 3).map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
@@ -168,7 +239,7 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
-            {navLinks.slice(4).map((link) => {
+            {navLinks.slice(3).map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
@@ -235,7 +306,28 @@ export default function Navbar() {
             className="xl:hidden bg-white/95 backdrop-blur-xl border-t border-its-gray-light/30"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
-              {navLinks.slice(0, 4).map((link) => (
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-its-gray-mid/70 mb-3">
+                  {copy.nav.services[locale]}
+                </p>
+                <div className="flex flex-col gap-3 pl-3 border-l-2 border-its-green/30">
+                  {dienstenItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setMenuOpen(false)}
+                      className={`text-base font-medium transition-colors ${
+                        pathname === item.href || pathname.startsWith(`${item.href}/`)
+                          ? "text-its-green-dark"
+                          : "text-its-gray-mid hover:text-its-charcoal"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              {navLinks.slice(0, 3).map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -270,7 +362,7 @@ export default function Navbar() {
                   ))}
                 </div>
               </div>
-              {navLinks.slice(4).map((link) => (
+              {navLinks.slice(3).map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}

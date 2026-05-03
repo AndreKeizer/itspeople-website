@@ -7,6 +7,7 @@ export const copy = {
   nav: {
     home: { nl: "Home", en: "Home" },
     services: { nl: "Diensten", en: "Services" },
+    aiTransformation: { nl: "AI Transformation", en: "AI Transformation" },
     expertises: { nl: "Expertises", en: "Expertises" },
     cases: { nl: "Cases", en: "Cases" },
     academy: { nl: "Academy", en: "Academy" },
