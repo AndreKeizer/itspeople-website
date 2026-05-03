@@ -7,7 +7,17 @@ export const copy = {
   nav: {
     home: { nl: "Home", en: "Home" },
     services: { nl: "Diensten", en: "Services" },
+    businessServices: { nl: "Bedrijfsdiensten", en: "Business Services" },
+    businessServicesTeaser: {
+      nl: "Consultancy, projectmanagement, proces, data en quality assurance. Bewezen aanpak voor complexe transformaties.",
+      en: "Consultancy, project management, process, data and quality assurance. Proven approach for complex transformations.",
+    },
     aiTransformation: { nl: "AI Transformation", en: "AI Transformation" },
+    aiTransformationTeaser: {
+      nl: "AI-strategie en implementatie voor Rijksoverheid en Zorg. Van AI Act Quickscan tot schaalbare impact.",
+      en: "AI strategy and implementation for government and healthcare. From AI Act Quickscan to scalable impact.",
+    },
+    learnMore: { nl: "Meer weten", en: "Learn more" },
     expertises: { nl: "Expertises", en: "Expertises" },
     cases: { nl: "Cases", en: "Cases" },
     academy: { nl: "Academy", en: "Academy" },

@@ -21,8 +21,26 @@ export default function Navbar() {
   const locale = useLocale() as Locale;
 
   const dienstenItems = [
-    { label: copy.nav.services[locale], href: `/${locale}/diensten` },
-    { label: copy.nav.aiTransformation[locale], href: `/${locale}/ai-transformation` },
+    {
+      label: copy.nav.businessServices[locale],
+      teaser: copy.nav.businessServicesTeaser[locale],
+      href: `/${locale}/diensten`,
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.7}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v1m8 0H8m12 0a2 2 0 012 2v9a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h16z" />
+        </svg>
+      ),
+    },
+    {
+      label: copy.nav.aiTransformation[locale],
+      teaser: copy.nav.aiTransformationTeaser[locale],
+      href: `/${locale}/ai-transformation`,
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.7}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z" />
+        </svg>
+      ),
+    },
   ];
 
   const kennisItems = [
@@ -129,25 +147,49 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 8 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-1/2 -translate-x-1/2 mt-3 min-w-[220px] rounded-xl bg-white border border-its-gray-light/40 shadow-xl shadow-its-dark/10 overflow-hidden"
+                    className="absolute top-full left-0 mt-3 w-[640px] max-w-[calc(100vw-3rem)] rounded-2xl bg-white border border-its-gray-light/40 shadow-xl shadow-its-dark/10 overflow-hidden"
                   >
-                    {dienstenItems.map((item) => {
-                      const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
-                      return (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          onClick={() => setDienstenOpen(false)}
-                          className={`block px-5 py-3 text-sm font-medium transition-colors ${
-                            isActive
-                              ? "bg-its-green/5 text-its-green-dark"
-                              : "text-its-gray-mid hover:bg-its-warm hover:text-its-charcoal"
-                          }`}
-                        >
-                          {item.label}
-                        </Link>
-                      );
-                    })}
+                    <div className="grid grid-cols-2 divide-x divide-its-gray-light/30">
+                      {dienstenItems.map((item) => {
+                        const isActive = pathname === item.href || pathname.startsWith(`${item.href}/`);
+                        return (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            onClick={() => setDienstenOpen(false)}
+                            className={`group block p-6 transition-colors ${
+                              isActive ? "bg-its-green/5" : "hover:bg-its-warm"
+                            }`}
+                          >
+                            <div className="flex items-start gap-3 mb-3">
+                              <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
+                                isActive
+                                  ? "bg-its-green text-white"
+                                  : "bg-its-green/10 text-its-green-dark group-hover:bg-its-green group-hover:text-white"
+                              }`}>
+                                {item.icon}
+                              </div>
+                              <div className="pt-1">
+                                <h4 className={`font-bold text-base leading-tight transition-colors ${
+                                  isActive ? "text-its-green-dark" : "text-its-charcoal group-hover:text-its-green-dark"
+                                }`}>
+                                  {item.label}
+                                </h4>
+                              </div>
+                            </div>
+                            <p className="text-its-gray-mid text-sm leading-relaxed mb-3">
+                              {item.teaser}
+                            </p>
+                            <span className="inline-flex items-center gap-1 text-xs font-semibold text-its-green-dark group-hover:translate-x-0.5 transition-transform">
+                              {copy.nav.learnMore[locale]}
+                              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                              </svg>
+                            </span>
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>

@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { aiTransformationContent } from "@/lib/aiTransformation";
+import { asset } from "@/lib/basePath";
 
 export default function AITransformationPage() {
   const locale = useLocale() as "nl" | "en";
@@ -80,10 +82,16 @@ export default function AITransformationPage() {
           <h3 className="text-xl font-bold text-its-charcoal text-center mb-8 mt-16">{d.principlesTitle}</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-5">
             {d.principles.map((p, i) => (
-              <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="bg-white rounded-2xl p-6 border border-its-gray-light/30 hover:shadow-lg transition-all duration-300">
-                <div className="w-10 h-10 rounded-full bg-its-green/10 border border-its-green/20 flex items-center justify-center text-its-green-dark font-bold mb-4">{i + 1}</div>
-                <h4 className="font-bold text-its-charcoal mb-2 leading-snug">{p.title}</h4>
-                <p className="text-its-gray-mid text-sm leading-relaxed">{p.body}</p>
+              <motion.div key={p.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="group bg-white rounded-2xl border border-its-gray-light/30 hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="relative aspect-[5/4] overflow-hidden">
+                  <Image src={asset(p.image)} alt={p.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(min-width: 1024px) 20vw, (min-width: 768px) 50vw, 100vw" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-its-dark/60 via-its-dark/15 to-transparent" />
+                  <div className="absolute top-3 left-3 w-8 h-8 rounded-full bg-white/95 text-its-green-dark text-sm font-bold flex items-center justify-center shadow-md">{i + 1}</div>
+                </div>
+                <div className="p-5">
+                  <h4 className="font-bold text-its-charcoal mb-2 leading-snug">{p.title}</h4>
+                  <p className="text-its-gray-mid text-sm leading-relaxed">{p.body}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -101,16 +109,20 @@ export default function AITransformationPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {d.services.map((s, i) => (
               <motion.div key={s.slug} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}>
-                <Link href={`/${locale}/ai-transformation/${s.slug}`} className="group block h-full bg-its-warm rounded-2xl p-6 border border-its-gray-light/30 hover:shadow-lg hover:shadow-its-green/5 hover:border-its-green/30 transition-all duration-300">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-xs font-bold text-its-green-dark bg-its-green/10 px-2.5 py-1 rounded-full">{String(s.number).padStart(2, "0")}</span>
+                <Link href={`/${locale}/ai-transformation/${s.slug}`} className="group flex flex-col h-full bg-its-warm rounded-2xl border border-its-gray-light/30 hover:shadow-lg hover:shadow-its-green/5 hover:border-its-green/30 transition-all duration-300 overflow-hidden">
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <Image src={asset(s.image)} alt={s.title} fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-its-dark/55 via-its-dark/15 to-transparent" />
+                    <span className="absolute top-3 left-3 text-xs font-bold text-its-dark bg-white/95 px-2.5 py-1 rounded-full shadow-sm">{String(s.number).padStart(2, "0")}</span>
                   </div>
-                  <p className="text-its-green-dark italic font-semibold leading-snug mb-4">&ldquo;{s.statement}&rdquo;</p>
-                  <h3 className="text-lg font-bold text-its-charcoal mb-2 group-hover:text-its-green-dark transition-colors leading-snug">{s.title}</h3>
-                  <p className="text-its-gray-mid text-sm leading-relaxed mb-4">{s.shortDesc}</p>
-                  <p className="text-its-green-dark text-sm font-semibold group-hover:translate-x-1 transition-transform">
-                    {locale === "nl" ? "Lees meer →" : "Read more →"}
-                  </p>
+                  <div className="flex flex-col flex-grow p-6">
+                    <p className="text-its-green-dark italic font-semibold leading-snug mb-4">&ldquo;{s.statement}&rdquo;</p>
+                    <h3 className="text-lg font-bold text-its-charcoal mb-2 group-hover:text-its-green-dark transition-colors leading-snug">{s.title}</h3>
+                    <p className="text-its-gray-mid text-sm leading-relaxed mb-4 flex-grow">{s.shortDesc}</p>
+                    <p className="text-its-green-dark text-sm font-semibold group-hover:translate-x-1 transition-transform mt-auto">
+                      {locale === "nl" ? "Lees meer →" : "Read more →"}
+                    </p>
+                  </div>
                 </Link>
               </motion.div>
             ))}

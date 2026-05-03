@@ -8,6 +8,7 @@
 export type AIService = {
   slug: string;
   number: number;
+  image: string; // path under /public, e.g. "/images/services/...".
   statement: string;
   title: string;
   shortDesc: string;
@@ -18,6 +19,12 @@ export type AIService = {
   duration: string;
   related: string[]; // slugs of related services
   primaryKeyword: string; // SEO target
+};
+
+export type AIPrinciple = {
+  title: string;
+  body: string;
+  image: string;
 };
 
 export type AIPillarContent = {
@@ -37,7 +44,7 @@ export type AIPillarContent = {
   propositionLead: string;
   propositionBody: string;
   principlesTitle: string;
-  principles: { title: string; body: string }[];
+  principles: AIPrinciple[];
   servicesTitle: string;
   servicesIntro: string;
   sectorTitle: string;
@@ -107,11 +114,11 @@ const NL: AIPillarContent = {
     "ITsPeople biedt een geïntegreerde AI-dienstverlening die vertrekt vanuit uw strategische doelen en eindigt met aantoonbare bedrijfswaarde. Geen losse pilots die stranden, geen technologische oplossingen op zoek naar een probleem. Wij bouwen AI die uw mensen omarmen en uw organisatie versterkt. Wij zijn het enige adviesbureau in Nederland dat AI-strategie combineert met 20 jaar domeinkennis in Rijksoverheid, Zorg en grote ERP-transformaties. Dat maakt ons fundamenteel anders.",
   principlesTitle: "Onze vijf kernprincipes",
   principles: [
-    { title: "Strategie vóór technologie", body: "Elk AI-initiatief start bij uw organisatiedoelen, niet bij een tool." },
-    { title: "Data als fundament", body: "Zonder betrouwbare data, geen betrouwbare AI. Wij beginnen altijd met data governance." },
-    { title: "Transparantie by design", body: "Geen black boxes. Uw medewerkers en toezichthouders begrijpen wat de AI doet en waarom." },
-    { title: "Adoptie als succesfactor", body: "AI-implementatie is verandermanagement. Wij begeleiden uw mensen, niet alleen uw systemen." },
-    { title: "Resultaat, niet rapport", body: "Wij blijven betrokken tot de waarde aantoonbaar is gerealiseerd." },
+    { title: "Strategie vóór technologie", body: "Elk AI-initiatief start bij uw organisatiedoelen, niet bij een tool.", image: "/images/team-discussion.jpg" },
+    { title: "Data als fundament", body: "Zonder betrouwbare data, geen betrouwbare AI. Wij beginnen altijd met data governance.", image: "/images/insights/data-strategy.jpg" },
+    { title: "Transparantie by design", body: "Geen black boxes. Uw medewerkers en toezichthouders begrijpen wat de AI doet en waarom.", image: "/images/insights/ai-technology.jpg" },
+    { title: "Adoptie als succesfactor", body: "AI-implementatie is verandermanagement. Wij begeleiden uw mensen, niet alleen uw systemen.", image: "/images/team-collab.jpg" },
+    { title: "Resultaat, niet rapport", body: "Wij blijven betrokken tot de waarde aantoonbaar is gerealiseerd.", image: "/images/team-meeting.jpg" },
   ],
   servicesTitle: "Acht AI-diensten, één coherente aanpak",
   servicesIntro:
@@ -198,6 +205,7 @@ const NL: AIPillarContent = {
     {
       slug: "ai-readiness-strategie",
       number: 1,
+      image: "/images/services/business-consultancy.jpg",
       statement: "Weet waar u staat voordat u bepaalt waar u naartoe wilt.",
       title: "AI Readiness & Strategie",
       shortDesc: "AI Maturity Assessment plus concrete, gefaseerde roadmap, verankerd in uw strategie.",
@@ -217,6 +225,7 @@ const NL: AIPillarContent = {
     {
       slug: "data-governance-architecture",
       number: 2,
+      image: "/images/services/data-management.jpg",
       statement: "AI is zo betrouwbaar als uw data. En uw data is zo betrouwbaar als uw governance.",
       title: "Data Governance & AI-Ready Architecture",
       shortDesc: "Datafundament op Azure, AWS of GCP, schaalbaar, beheersbaar en auditeerbaar.",
@@ -236,6 +245,7 @@ const NL: AIPillarContent = {
     {
       slug: "intelligente-procesautomatisering",
       number: 3,
+      image: "/images/services/process-management.jpg",
       statement: "Uw medewerkers zijn te waardevol voor werk dat een machine beter en sneller kan doen.",
       title: "Intelligente Procesautomatisering",
       shortDesc: "Agentic AI, intelligente documentverwerking en compliance-monitoring die continu draait.",
@@ -255,6 +265,7 @@ const NL: AIPillarContent = {
     {
       slug: "predictive-analytics",
       number: 4,
+      image: "/images/insights/data-strategy.jpg",
       statement: "Uw data vertelt u al wat er gaat gebeuren. U hoeft alleen te leren luisteren.",
       title: "Predictive Analytics & Beslisondersteuning",
       shortDesc: "Transparante voorspellingsmodellen voor risico, planning, vraag en beleidseffect.",
@@ -274,6 +285,7 @@ const NL: AIPillarContent = {
     {
       slug: "ai-governance-compliance",
       number: 5,
+      image: "/images/services/ai-governance.jpg",
       statement: "De organisatie die AI verantwoord inzet, wint het vertrouwen van burgers, toezichthouders én medewerkers.",
       title: "AI Governance, Ethics & Compliance",
       shortDesc: "EU AI Act, AVG en IAMA-conform AI governance dat innovatie mogelijk maakt.",
@@ -293,6 +305,7 @@ const NL: AIPillarContent = {
     {
       slug: "ai-talent-enablement",
       number: 6,
+      image: "/images/team-collab.jpg",
       statement: "De beste AI-tool is waardeloos als uw mensen er niet mee willen of kunnen werken.",
       title: "AI Talent & Organisatie-Enablement",
       shortDesc: "AI-adoptie, in-company trainingen en het opbouwen van een AI Center of Excellence.",
@@ -312,6 +325,7 @@ const NL: AIPillarContent = {
     {
       slug: "ai-accelerated-development",
       number: 7,
+      image: "/images/insights/ai-technology.jpg",
       statement: "Wat vroeger zes maanden kostte, leveren wij in zes weken. Niet door minder kwaliteit. Door meer intelligentie.",
       title: "AI-Accelerated Application Development",
       shortDesc: "40 tot 70 procent sneller bouwen via AI-coding, AI-testen en architecture-as-code.",
@@ -332,6 +346,7 @@ const NL: AIPillarContent = {
     {
       slug: "ai-driven-migration",
       number: 8,
+      image: "/images/services/quality-assurance.jpg",
       statement: "Legacy is niet uw probleem. Stilstaan op legacy is uw probleem.",
       title: "AI-Driven Platform Migration & Modernisering",
       shortDesc: "Legacy-naar-cloud met AI-versnelde codeanalyse, hertaling en migratietesten.",
@@ -379,11 +394,11 @@ const EN: AIPillarContent = {
     "ITsPeople offers integrated AI services that start from your strategic goals and end with demonstrable business value. No isolated pilots that stall, no technology in search of a problem. We build AI that your people embrace and that strengthens your organisation. We are the only consultancy in the Netherlands that combines AI strategy with 20 years of domain expertise in central government, healthcare and large ERP transformations. That makes us fundamentally different.",
   principlesTitle: "Our five core principles",
   principles: [
-    { title: "Strategy before technology", body: "Every AI initiative starts from your organisational goals, not from a tool." },
-    { title: "Data as the foundation", body: "No reliable AI without reliable data. We always start with data governance." },
-    { title: "Transparency by design", body: "No black boxes. Your employees and regulators understand what the AI does and why." },
-    { title: "Adoption as success factor", body: "AI implementation is change management. We guide your people, not just your systems." },
-    { title: "Results, not reports", body: "We stay engaged until value is demonstrably realised." },
+    { title: "Strategy before technology", body: "Every AI initiative starts from your organisational goals, not from a tool.", image: "/images/team-discussion.jpg" },
+    { title: "Data as the foundation", body: "No reliable AI without reliable data. We always start with data governance.", image: "/images/insights/data-strategy.jpg" },
+    { title: "Transparency by design", body: "No black boxes. Your employees and regulators understand what the AI does and why.", image: "/images/insights/ai-technology.jpg" },
+    { title: "Adoption as success factor", body: "AI implementation is change management. We guide your people, not just your systems.", image: "/images/team-collab.jpg" },
+    { title: "Results, not reports", body: "We stay engaged until value is demonstrably realised.", image: "/images/team-meeting.jpg" },
   ],
   servicesTitle: "Eight AI services, one coherent approach",
   servicesIntro:
@@ -470,6 +485,7 @@ const EN: AIPillarContent = {
     {
       slug: "ai-readiness-strategie",
       number: 1,
+      image: "/images/services/business-consultancy.jpg",
       statement: "Know where you stand before deciding where you want to go.",
       title: "AI Readiness & Strategy",
       shortDesc: "AI Maturity Assessment and a concrete, phased roadmap, anchored in your strategy.",
@@ -489,6 +505,7 @@ const EN: AIPillarContent = {
     {
       slug: "data-governance-architecture",
       number: 2,
+      image: "/images/services/data-management.jpg",
       statement: "AI is only as reliable as your data. And your data is only as reliable as your governance.",
       title: "Data Governance & AI-Ready Architecture",
       shortDesc: "Data foundation on Azure, AWS or GCP, scalable, manageable and auditable.",
@@ -508,6 +525,7 @@ const EN: AIPillarContent = {
     {
       slug: "intelligente-procesautomatisering",
       number: 3,
+      image: "/images/services/process-management.jpg",
       statement: "Your people are too valuable for work a machine can do better and faster.",
       title: "Intelligent Process Automation",
       shortDesc: "Agentic AI, intelligent document processing and continuous compliance monitoring.",
@@ -527,6 +545,7 @@ const EN: AIPillarContent = {
     {
       slug: "predictive-analytics",
       number: 4,
+      image: "/images/insights/data-strategy.jpg",
       statement: "Your data is already telling you what will happen. You only need to learn to listen.",
       title: "Predictive Analytics & Decision Support",
       shortDesc: "Transparent predictive models for risk, planning, demand and policy effect.",
@@ -546,6 +565,7 @@ const EN: AIPillarContent = {
     {
       slug: "ai-governance-compliance",
       number: 5,
+      image: "/images/services/ai-governance.jpg",
       statement: "The organisation that uses AI responsibly wins the trust of citizens, regulators and employees.",
       title: "AI Governance, Ethics & Compliance",
       shortDesc: "EU AI Act, GDPR and IAMA-compliant AI governance that enables innovation.",
@@ -565,6 +585,7 @@ const EN: AIPillarContent = {
     {
       slug: "ai-talent-enablement",
       number: 6,
+      image: "/images/team-collab.jpg",
       statement: "The best AI tool is worthless if your people will not or cannot use it.",
       title: "AI Talent & Organisation Enablement",
       shortDesc: "AI adoption, in-company training and building an AI Center of Excellence.",
@@ -584,6 +605,7 @@ const EN: AIPillarContent = {
     {
       slug: "ai-accelerated-development",
       number: 7,
+      image: "/images/insights/ai-technology.jpg",
       statement: "What used to take six months we deliver in six weeks. Not by reducing quality. By adding intelligence.",
       title: "AI-Accelerated Application Development",
       shortDesc: "40 to 70 percent faster development through AI coding, AI testing and architecture-as-code.",
@@ -604,6 +626,7 @@ const EN: AIPillarContent = {
     {
       slug: "ai-driven-migration",
       number: 8,
+      image: "/images/services/quality-assurance.jpg",
       statement: "Legacy is not your problem. Standing still on legacy is your problem.",
       title: "AI-Driven Platform Migration & Modernisation",
       shortDesc: "Legacy-to-cloud with AI-accelerated code analysis, code rewrite and migration testing.",
