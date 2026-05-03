@@ -26,15 +26,21 @@ export default function ManagedServicesPage() {
                 // Split the highlight on the lowercase 's' that immediately follows 'IT'
                 // (the brand wink). Render the 's' in white, the rest in the green gradient.
                 const parts = highlight.split(/(?<=IT)(s)(?=\b|\s|$)/);
-                return parts.length === 3 ? (
-                  <>
-                    <span className="gradient-text">{parts[0]}</span>
-                    <span className="text-white">{parts[1]}</span>
-                    <span className="gradient-text">{parts[2]}</span>
-                  </>
-                ) : (
-                  <span className="gradient-text">{highlight}</span>
-                );
+                // parts[0] ends with "IT" and parts[1] is "s" (the brand wink).
+                // Render the trailing "IT" + "s" in italic, leave the rest upright.
+                if (parts.length === 3) {
+                  const beforeIT = parts[0].slice(0, -2);
+                  const itLetters = parts[0].slice(-2);
+                  return (
+                    <>
+                      <span className="gradient-text">{beforeIT}</span>
+                      <span className="gradient-text italic">{itLetters}</span>
+                      <span className="text-white italic">{parts[1]}</span>
+                      <span className="gradient-text">{parts[2]}</span>
+                    </>
+                  );
+                }
+                return <span className="gradient-text">{highlight}</span>;
               })()}
               .
             </h1>
