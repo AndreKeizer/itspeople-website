@@ -39,7 +39,7 @@ const data = {
     sidebarViewAll: "Alle vacatures →",
     benefitsTitle: "Wat wij bieden",
     eventsTitle: "Recente Samen Events",
-    eventsIntro: "Een kijkje achter de schermen: van maandelijkse ITsMonthly tot gezamenlijke workshops en goede doelen-acties. Dit is hoe wij samen werken aan ons vak — én aan elkaar.",
+    eventsIntro: "Een kijkje achter de schermen: van maandelijkse ITsMonthly tot gezamenlijke workshops en goede doelen-acties. Dit is hoe wij samen werken aan ons vak, én aan elkaar.",
     events: [
       {
         image: asset("/images/events/itsmonthly-mei-2026-tafel.jpg"),
@@ -50,8 +50,8 @@ const data = {
         lead: "Onze maandelijkse ITsMonthly stond afgelopen vrijdag weer in het teken van waar we als ITsPeople voor staan: scherp blijven op onze koers, blijven leren én tijd maken voor elkaar.",
         sections: [
           { heading: "Update: waar staan we?", body: "We trapten af met een gezamenlijke stand van zaken. Hoe staan we ervoor op onze strategische speerpunten, wat speelt er bij onze opdrachtgevers in de zorg en bij de Rijksoverheid, en welke ontwikkelingen vragen de komende periode onze aandacht? Een open en eerlijk gesprek dat ons als team weer scherp op één lijn zet." },
-          { heading: "Workshop Portfoliomanagement", body: "Vervolgens dook de groep in een interactieve workshop portfoliomanagement. Met een fysieke spelopstelling werd inzichtelijk hoe je keuzes maakt tussen projecten, capaciteit verdeelt en strategische waarde stuurt — precies de uitdagingen waar onze klanten dagelijks mee worstelen. Door het zelf te doen in plaats van erover te praten, kwamen de principes van prioritering, schaarste en governance heel tastbaar binnen. Een mooie aanvulling op het advieswerk dat we voor programma's en directies leveren." },
-          { heading: "Verjaardagen en jubilea", body: "Geen ITsMonthly zonder de mensen die ITsPeople maken tot wat het is. We hebben een aantal collega's in het zonnetje gezet die de afgelopen periode jarig waren of een jubileum vierden. Dank voor jullie inzet, plezier en betrokkenheid — jullie zijn het verschil." },
+          { heading: "Workshop Portfoliomanagement", body: "Vervolgens dook de groep in een interactieve workshop portfoliomanagement. Met een fysieke spelopstelling werd inzichtelijk hoe je keuzes maakt tussen projecten, capaciteit verdeelt en strategische waarde stuurt, precies de uitdagingen waar onze klanten dagelijks mee worstelen. Door het zelf te doen in plaats van erover te praten, kwamen de principes van prioritering, schaarste en governance heel tastbaar binnen. Een mooie aanvulling op het advieswerk dat we voor programma's en directies leveren." },
+          { heading: "Verjaardagen en jubilea", body: "Geen ITsMonthly zonder de mensen die ITsPeople maken tot wat het is. We hebben een aantal collega's in het zonnetje gezet die de afgelopen periode jarig waren of een jubileum vierden. Dank voor jullie inzet, plezier en betrokkenheid, jullie zijn het verschil." },
           { heading: "Samen aan tafel", body: "We sloten af zoals het hoort: met z'n allen aan een lange tafel, een goed glas en nog betere gesprekken. Want naast de inhoud is het juist de onderlinge band die ons als ITsPeople sterk maakt. Daar investeren we graag in." },
         ],
         closing: "Op naar de volgende ITsMonthly, en de volgende stap voor onze klanten, ons team en onze ambitie.",
@@ -98,7 +98,7 @@ const data = {
     sidebarViewAll: "View all vacancies →",
     benefitsTitle: "What we offer",
     eventsTitle: "Recent Together Events",
-    eventsIntro: "A look behind the scenes: from our monthly ITsMonthly to joint workshops and charity initiatives. This is how we work on our craft together — and on each other.",
+    eventsIntro: "A look behind the scenes: from our monthly ITsMonthly to joint workshops and charity initiatives. This is how we work on our craft together, and on each other.",
     events: [
       {
         image: asset("/images/events/itsmonthly-mei-2026-tafel.jpg"),
@@ -109,8 +109,8 @@ const data = {
         lead: "Our monthly ITsMonthly last Friday was once again all about what we stand for as ITsPeople: staying sharp on our direction, continuing to learn, and making time for each other.",
         sections: [
           { heading: "Update: where do we stand?", body: "We kicked off with a shared update on progress. Where we stand on our strategic priorities, what's happening at our clients in healthcare and central government, and which developments require our attention in the coming period. An open and honest conversation that aligns us as a team." },
-          { heading: "Portfolio Management Workshop", body: "Next, the group dove into an interactive portfolio management workshop. With a physical game setup, we explored how to make choices between projects, allocate capacity and steer on strategic value — exactly the challenges our clients face every day. By doing it ourselves rather than just talking about it, the principles of prioritisation, scarcity and governance landed tangibly. A valuable complement to the advisory work we deliver to programmes and executive teams." },
-          { heading: "Birthdays and anniversaries", body: "No ITsMonthly without celebrating the people who make ITsPeople what it is. We put a number of colleagues in the spotlight who recently celebrated a birthday or anniversary. Thank you for your dedication, energy and commitment — you make the difference." },
+          { heading: "Portfolio Management Workshop", body: "Next, the group dove into an interactive portfolio management workshop. With a physical game setup, we explored how to make choices between projects, allocate capacity and steer on strategic value, exactly the challenges our clients face every day. By doing it ourselves rather than just talking about it, the principles of prioritisation, scarcity and governance landed tangibly. A valuable complement to the advisory work we deliver to programmes and executive teams." },
+          { heading: "Birthdays and anniversaries", body: "No ITsMonthly without celebrating the people who make ITsPeople what it is. We put a number of colleagues in the spotlight who recently celebrated a birthday or anniversary. Thank you for your dedication, energy and commitment, you make the difference." },
           { heading: "Together at the table", body: "We closed the evening as it should be: all together at one long table, with a good drink and even better conversations. Because alongside the substance, it is the bond between us that makes ITsPeople strong. We are happy to invest in that." },
         ],
         closing: "On to the next ITsMonthly, and the next step for our clients, our team and our ambition.",
@@ -174,7 +174,7 @@ export default function WerkenBijPage() {
               className="mt-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-its-green/10 hover:bg-its-green/20 border border-its-green/30 text-its-green text-sm font-semibold transition-all"
             >
               <span className="flex items-center justify-center w-6 h-6 rounded-full bg-its-green text-its-dark text-xs font-bold">{d.vacatures.length}</span>
-              <span>{d.heroVacancyCta} {d.vacatures.length} {d.heroVacancyCtaSuffix} — {d.heroVacancyCtaLink}</span>
+              <span>{d.heroVacancyCta} {d.vacatures.length} {d.heroVacancyCtaSuffix}, {d.heroVacancyCtaLink}</span>
             </a>
           </motion.div>
         </div>
@@ -308,7 +308,7 @@ export default function WerkenBijPage() {
                   ))}
                   {event.secondaryImage && (
                     <div className="relative aspect-[16/9] rounded-xl overflow-hidden my-6">
-                      <Image src={event.secondaryImage} alt={`${event.title} — workshop`} fill className="object-cover" />
+                      <Image src={event.secondaryImage} alt={`${event.title}, workshop`} fill className="object-cover" />
                     </div>
                   )}
                   {event.sections.slice(2).map((s) => (

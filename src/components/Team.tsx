@@ -102,7 +102,7 @@ export default function Team() {
 
         {/* Founders banner */}
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="relative rounded-2xl overflow-hidden aspect-[21/9] mb-16">
-          <Image src={asset("/images/founders-together.jpg")} alt="André Keizer & Mario Kornuijt — Founders ITsPeople" fill className="object-cover object-top" />
+          <Image src={asset("/images/founders-together.jpg")} alt="André Keizer & Mario Kornuijt, Founders ITsPeople" fill className="object-cover object-top" />
           <div className="absolute inset-0 bg-gradient-to-t from-its-dark/70 via-its-dark/10 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-8 flex items-end justify-between">
             <div>
@@ -147,7 +147,7 @@ export default function Team() {
           </div>
         </motion.div>
 
-        {/* Full team grid — circular avatars */}
+        {/* Full team grid, circular avatars */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
           {d.team.map((member, i) => (
             <motion.div key={member.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: Math.min(i * 0.05, 0.4) }} className="group text-center">

@@ -218,7 +218,7 @@ export default function FreelancersPage() {
     e.preventDefault();
     setState("submitting");
     try {
-      const subject = encodeURIComponent(`Freelancer aanmelding — ${form.name}`);
+      const subject = encodeURIComponent(`Freelancer aanmelding, ${form.name}`);
       const body = encodeURIComponent(
         `Naam: ${form.name}\nE-mail: ${form.email}\nTelefoon: ${form.phone || "-"}\nExpertise: ${form.expertise}\nBeschikbaarheid: ${form.availability}\n\nBericht:\n${form.message || "(geen)"}`
       );

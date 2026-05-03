@@ -22,7 +22,7 @@ import { NextResponse } from "next/server";
 //     from: "ITsPeople Website <noreply@itspeople.nl>",
 //     to: process.env.ITSPEOPLE_LEAD_INBOX ?? "info@itspeople.nl",
 //     replyTo: payload.email,
-//     subject: `Whitepaper aanvraag — ${payload.whitepaper}`,
+//     subject: `Whitepaper aanvraag, ${payload.whitepaper}`,
 //     text: `Naam: ${payload.name}\nBedrijf: ${payload.company}\n` +
 //           `E-mail: ${payload.email}\nTelefoon: ${payload.phone ?? "-"}\n\n` +
 //           `Bericht:\n${payload.message ?? "(geen)"}\n\n` +
