@@ -99,7 +99,7 @@ const data = {
     expertises: [
       {
         title: "Digital Strategy",
-        icon: "🎯",
+        image: asset("/images/tools/digital-transformation.jpg"),
         description: "From vision to execution. We help organisations translate their digital strategy into concrete roadmaps and measurable results.",
         detail: "A digital strategy is more than an IT plan. It is the blueprint for how your organisation uses technology to create value. We combine strategic insight with practical experience to develop roadmaps that are not only ambitious but also achievable. From digital maturity analyses to concrete implementation plans, we guide the entire journey.",
         topics: ["Digital maturity analysis", "Strategic roadmaps", "Business-IT alignment", "Digital innovation"],
