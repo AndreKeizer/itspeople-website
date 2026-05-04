@@ -423,7 +423,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8 mb-10">
             <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-              <Link href={`/${locale}/insights`} className="block group cursor-pointer">
+              <Link href={`/${locale}/insights#oneindige-transformatie`} className="block group cursor-pointer">
                 <div className="aspect-[16/10] rounded-2xl mb-4 overflow-hidden relative border border-its-green/10">
                   <Image src={asset("/images/insights/ai-technology.jpg")} alt="AI & Enterprise Architecture" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-its-dark/60 to-transparent" />
@@ -441,7 +441,7 @@ export default function Home() {
             </motion.article>
 
             <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
-              <Link href={`/${locale}/insights`} className="block group cursor-pointer">
+              <Link href={`/${locale}/insights#nis2-compliance`} className="block group cursor-pointer">
                 <div className="aspect-[16/10] rounded-2xl mb-4 overflow-hidden relative border border-its-green/10">
                   <Image src={asset("/images/insights/cybersecurity.jpg")} alt="NIS2 Compliance" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-its-dark/60 to-transparent" />
@@ -459,7 +459,7 @@ export default function Home() {
             </motion.article>
 
             <motion.article initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-              <Link href={`/${locale}/insights`} className="block group cursor-pointer">
+              <Link href={`/${locale}/insights#data-gedreven-werken`} className="block group cursor-pointer">
                 <div className="aspect-[16/10] rounded-2xl mb-4 overflow-hidden relative border border-its-green/10">
                   <Image src={asset("/images/insights/data-strategy.jpg")} alt="Data-Driven Decision Making" fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-its-dark/60 to-transparent" />

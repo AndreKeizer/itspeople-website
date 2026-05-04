@@ -352,9 +352,14 @@ export default function WerkenBijPage() {
                       ))}
                     </div>
                   </div>
-                  <Link href={`/${locale}/contact`} className="flex-shrink-0 px-6 py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all whitespace-nowrap">
+                  <a
+                    href="https://www.joinitspeople.nl/#jobs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-shrink-0 px-6 py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold text-sm transition-all whitespace-nowrap"
+                  >
                     {d.apply}
-                  </Link>
+                  </a>
                 </div>
               </motion.div>
             ))}

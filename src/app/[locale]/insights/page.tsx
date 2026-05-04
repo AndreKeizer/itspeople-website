@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,6 +17,12 @@ type InsightItem = {
   sections?: { heading: string; body: string }[];
   gated?: boolean;
   whitepaperId?: string;
+  /**
+   * URL-friendly identifier used for deep-linking from elsewhere on the site
+   * (e.g. /nl/insights#nis2-compliance opens this article's modal directly).
+   * Should be identical across NL and EN so a single hash works in both locales.
+   */
+  slug?: string;
   video?: string;
   audio?: string;
   link?: string;
@@ -76,6 +82,7 @@ const data = {
       },
       {
         type: "Artikelen",
+        slug: "oneindige-transformatie",
         image: asset("/images/andre-portret.jpg"),
         title: "Waarom de meeste transformaties slagen op de go-live en sterven anderhalf jaar later",
         content: `Door Andre Keizer, CEO & oprichter ITsPeople. Bestuurders sturen op mijlpalen, scope en go-live. En toch zakt anderhalf jaar later de helft van de programma's terug naar het oude gedrag. Wat ruim twintig jaar transformatiewerk leert over het verschil tussen winnen en blijven spelen.`,
@@ -92,6 +99,7 @@ const data = {
       },
       {
         type: "Artikelen",
+        slug: "nis2-compliance",
         image: asset("/images/insights/cybersecurity.jpg"),
         title: "NIS2 compliance: wat betekent het voor uw organisatie?",
         content: `De NIS2-richtlijn is de opvolger van de oorspronkelijke NIS-richtlijn en breidt de scope aanzienlijk uit. Waar de eerste richtlijn vooral gericht was op essentiële diensten, raakt NIS2 een veel breder scala aan organisaties.`,
@@ -122,6 +130,7 @@ const data = {
       },
       {
         type: "Artikelen",
+        slug: "data-gedreven-werken",
         image: asset("/images/services/data-management.jpg"),
         title: "Data-gedreven werken: van buzzword naar resultaat",
         content: `Vrijwel elke organisatie wil data-gedreven werken. Maar in de praktijk blijkt de weg van ambitie naar resultaat vaak langer dan verwacht.`,
@@ -326,6 +335,7 @@ const data = {
       },
       {
         type: "Articles",
+        slug: "oneindige-transformatie",
         image: asset("/images/andre-portret.jpg"),
         title: "Why most transformations succeed at go-live and die eighteen months later",
         content: `By Andre Keizer, CEO & founder of ITsPeople. Executives manage on milestones, scope and go-live dates. Yet eighteen months later, half of all programmes regress to old behaviour. What over twenty years of transformation work teach us about the difference between winning and continuing to play.`,
@@ -342,6 +352,7 @@ const data = {
       },
       {
         type: "Articles",
+        slug: "nis2-compliance",
         image: asset("/images/insights/cybersecurity.jpg"),
         title: "NIS2 compliance: what does it mean for your organisation?",
         content: `The NIS2 Directive is the successor to the original NIS Directive and significantly expands the scope. Where the first directive was mainly aimed at essential services, NIS2 affects a much broader range of organisations.`,
@@ -372,6 +383,7 @@ const data = {
       },
       {
         type: "Articles",
+        slug: "data-gedreven-werken",
         image: asset("/images/services/data-management.jpg"),
         title: "Data-driven working: from buzzword to results",
         content: `Almost every organisation wants to work data-driven. But in practice, the path from ambition to results often takes longer than expected.`,
@@ -548,6 +560,23 @@ export default function InsightsPage() {
       setSelected(item);
     }
   };
+
+  // Open the matching insight automatically when the page is loaded with a
+  // hash like #nis2-compliance, so deep links from the homepage drop the
+  // visitor straight into the article modal.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const slug = window.location.hash.replace(/^#/, "").trim();
+    if (!slug) return;
+    const match = d.items.find((it) => it.slug === slug);
+    if (match) {
+      openItem(match);
+    }
+    // We intentionally only react to the initial mount; subsequent hash
+    // changes inside the page (such as anchor scrolling) should not retrigger
+    // the modal.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const forwardItem = (title: string, description: string) => {
     const origin = typeof window !== "undefined" ? window.location.origin : "https://www.itspeople.nl";
