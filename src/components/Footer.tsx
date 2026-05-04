@@ -19,7 +19,7 @@ const t = {
   rights: { nl: "Alle rechten voorbehouden.", en: "All rights reserved." },
   privacy: { nl: "Privacyverklaring", en: "Privacy policy" },
   svcBusiness: { nl: "Business Consultancy", en: "Business Consultancy" },
-  svcProject: { nl: "Project Management", en: "Project Management" },
+  svcProject: { nl: "Programma- en projectmanagement", en: "Programme & Project Management" },
   svcProcess: { nl: "Proces Management", en: "Process Management" },
   svcData: { nl: "Data Management", en: "Data Management" },
   svcTest: { nl: "Testen & QA", en: "Testing & QA" },

@@ -18,7 +18,7 @@ const data = {
       },
       {
         image: asset("/images/services/project-management.jpg"),
-        title: "Project Management",
+        title: "Programma- en projectmanagement",
         description: "Complexe verandertrajecten van begin tot eind realiseren. Voor en samen met de klant.",
         features: ["Programmamanagement", "Agile & Waterval", "Transition Support Office", "Risicomanagement", "IPMA-gecertificeerde programma- en projectmanagers", "SAFe-gecertificeerde Scrum Masters", "Program Execution Framework inclusief tooling en dashboards"],
         detail: "Onze projectmanagers zijn ervaren professionals die complexe transformaties leiden. Of het nu gaat om een Agile transitie, een ERP-implementatie of een organisatiebrede verandering, wij zorgen voor structuur, voortgang en resultaat. Met ons Transition Support Office bieden wij een integraal ondersteuningskader dat programma's succesvol over de finish brengt.",
@@ -66,7 +66,7 @@ const data = {
       },
       {
         image: asset("/images/services/project-management.jpg"),
-        title: "Project Management",
+        title: "Programme & Project Management",
         description: "Delivering complex transformation programmes from start to finish. With and for the client.",
         features: ["Programme management", "Agile & Waterfall", "Transition Support Office", "Risk management", "IPMA-certified programme and project managers", "SAFe-certified Scrum Masters", "Program Execution Framework including tooling and dashboards"],
         detail: "Our project managers are experienced professionals who lead complex transformations. Whether it's an Agile transition, an ERP implementation or an organisation-wide change, we provide structure, progress and results. With our Transition Support Office, we offer a comprehensive support framework that brings programmes successfully to completion.",

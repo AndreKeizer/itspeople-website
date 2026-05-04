@@ -17,7 +17,7 @@ const data = {
     ],
     defaultResponse: "Bedankt voor uw vraag! Ik verbind u graag met één van onze experts. U kunt ons bereiken op info@itspeople.nl of +31 (0) 30 22 70 954.",
     responses: {
-      diensten: "Wij bieden 5 kerndiensten: Business Consultancy, Project Management, Proces Management, Data Management en Testen & QA. Wilt u meer weten over een specifieke dienst?",
+      diensten: "Wij bieden 5 kerndiensten: Business Consultancy, Programma- en projectmanagement, Proces Management, Data Management en Testen & QA. Wilt u meer weten over een specifieke dienst?",
       assessment: "Goed idee! Wij hebben drie gratis self-assessments: de Innovation Readiness Scan, IT-Governance Scan en NIS2 Readiness Check. Welke past het beste bij uw vraag?",
       baan: "Geweldig dat je interesse hebt! Bij ITsPeople werk je aan uitdagende transformatieprojecten met een team van experts. Bekijk onze vacatures op itspeople.nl/werken-bij of stuur je CV naar hr@itspeople.nl.",
       contact: "U kunt ons bereiken via:\n📧 info@itspeople.nl\n📞 +31 (0) 30 22 70 954\n📍 Hogeweg 105, Zaltbommel\n\nOf plan direct een vrijblijvend gesprek in!",
@@ -36,7 +36,7 @@ const data = {
     ],
     defaultResponse: "Thank you for your question! I'd be happy to connect you with one of our experts. You can reach us at info@itspeople.nl or +31 (0) 30 22 70 954.",
     responses: {
-      diensten: "We offer 5 core services: Business Consultancy, Project Management, Process Management, Data Management and Testing & QA. Would you like to know more about a specific service?",
+      diensten: "We offer 5 core services: Business Consultancy, Programme & Project Management, Process Management, Data Management and Testing & QA. Would you like to know more about a specific service?",
       assessment: "Great idea! We have three free self-assessments: the Innovation Readiness Scan, IT-Governance Scan and NIS2 Readiness Check. Which one best fits your needs?",
       baan: "Wonderful that you're interested! At ITsPeople you work on challenging transformation projects with a team of experts. Check our vacancies at itspeople.nl/werken-bij or send your CV to hr@itspeople.nl.",
       contact: "You can reach us via:\n📧 info@itspeople.nl\n📞 +31 (0) 30 22 70 954\n📍 Hogeweg 105, Zaltbommel\n\nOr schedule a no-obligation conversation!",

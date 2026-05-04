@@ -13,7 +13,7 @@ const data = {
   nl: {
     services: [
       { image: asset("/images/services/business-consultancy.jpg"), title: "Business Consultancy", desc: "Van strategie naar beheersing en meetbare resultaten." },
-      { image: asset("/images/services/project-management.jpg"), title: "Project Management", desc: "Complexe verandertrajecten van begin tot eind realiseren." },
+      { image: asset("/images/services/project-management.jpg"), title: "Programma- en projectmanagement", desc: "Complexe verandertrajecten van begin tot eind realiseren." },
       { image: asset("/images/services/process-management.jpg"), title: "Proces Management", desc: "Services, processen, governance en IT optimaliseren." },
       { image: asset("/images/services/data-management.jpg"), title: "Data Management", desc: "Structuur, kwaliteit, visualisatie en data-gedreven inzichten." },
       { image: asset("/images/services/quality-assurance.jpg"), title: "Testen & Quality Assurance", desc: "Risicobeheersing door professionele quality assurance." },
@@ -108,7 +108,7 @@ const data = {
   en: {
     services: [
       { image: asset("/images/services/business-consultancy.jpg"), title: "Business Consultancy", desc: "From strategy to control and measurable results." },
-      { image: asset("/images/services/project-management.jpg"), title: "Project Management", desc: "Deliver complex transformation programmes from start to finish." },
+      { image: asset("/images/services/project-management.jpg"), title: "Programme & Project Management", desc: "Deliver complex transformation programmes from start to finish." },
       { image: asset("/images/services/process-management.jpg"), title: "Process Management", desc: "Optimise services, processes, governance and IT." },
       { image: asset("/images/services/data-management.jpg"), title: "Data Management", desc: "Structure, quality, visualisation and data-driven insights." },
       { image: asset("/images/services/quality-assurance.jpg"), title: "Testing & Quality Assurance", desc: "Risk management through professional quality assurance." },
@@ -494,10 +494,10 @@ export default function Home() {
             <p className="text-its-gray-mid text-xl leading-relaxed">{d.toolsDescription}</p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-white p-8 rounded-2xl border border-its-gray-light/30 hover:border-its-green/30 hover:shadow-lg hover:shadow-its-green/5 transition-all duration-500 group">
+          <div className="grid md:grid-cols-3 gap-8 mb-12 items-stretch">
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="flex flex-col h-full bg-white p-8 rounded-2xl border border-its-gray-light/30 hover:border-its-green/30 hover:shadow-lg hover:shadow-its-green/5 transition-all duration-500 group">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl overflow-hidden relative">
+                <div className="w-16 h-16 rounded-2xl overflow-hidden relative flex-shrink-0">
                   <Image src={asset("/images/tools/digital-transformation.jpg")} alt="Digital Transformation" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-br from-its-green/80 to-its-green-dark/80" />
                 </div>
@@ -506,15 +506,15 @@ export default function Home() {
                   <p className="text-its-gray-mid text-sm">{locale === "nl" ? "5 minuten • Gepersonaliseerd rapport" : "5 minutes • Personalised report"}</p>
                 </div>
               </div>
-              <p className="text-its-gray-mid leading-relaxed mb-6">{d.digitalTransformationDesc}</p>
-              <Link href={`/${locale}/tools`} className="block w-full py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-its-green/25 group-hover:scale-[1.02] text-center">
+              <p className="text-its-gray-mid leading-relaxed mb-6 flex-grow">{d.digitalTransformationDesc}</p>
+              <Link href={`/${locale}/tools`} className="block w-full py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-its-green/25 group-hover:scale-[1.02] text-center mt-auto">
                 {d.startAssessment}
               </Link>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="bg-white p-8 rounded-2xl border border-its-gray-light/30 hover:border-its-green/30 hover:shadow-lg hover:shadow-its-green/5 transition-all duration-500 group">
+            <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="flex flex-col h-full bg-white p-8 rounded-2xl border border-its-gray-light/30 hover:border-its-green/30 hover:shadow-lg hover:shadow-its-green/5 transition-all duration-500 group">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl overflow-hidden relative">
+                <div className="w-16 h-16 rounded-2xl overflow-hidden relative flex-shrink-0">
                   <Image src={asset("/images/tools/compliance-security.jpg")} alt="NIS2 Compliance" fill className="object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-br from-its-green/80 to-its-green-dark/80" />
                 </div>
@@ -523,17 +523,17 @@ export default function Home() {
                   <p className="text-its-gray-mid text-sm">{locale === "nl" ? "3 minuten • Direct resultaat" : "3 minutes • Instant results"}</p>
                 </div>
               </div>
-              <p className="text-its-gray-mid leading-relaxed mb-6">{d.nis2ComplianceDesc}</p>
-              <Link href={`/${locale}/tools`} className="block w-full py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-its-green/25 group-hover:scale-[1.02] text-center">
+              <p className="text-its-gray-mid leading-relaxed mb-6 flex-grow">{d.nis2ComplianceDesc}</p>
+              <Link href={`/${locale}/tools`} className="block w-full py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-its-green/25 group-hover:scale-[1.02] text-center mt-auto">
                 {d.checkCompliance}
               </Link>
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-gradient-to-br from-its-charcoal to-its-dark p-8 rounded-2xl border border-its-green/20 hover:border-its-green/40 hover:shadow-lg hover:shadow-its-green/5 transition-all duration-500 group relative overflow-hidden">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="flex flex-col h-full bg-gradient-to-br from-its-charcoal to-its-dark p-8 rounded-2xl border border-its-green/20 hover:border-its-green/40 hover:shadow-lg hover:shadow-its-green/5 transition-all duration-500 group relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-its-green/5 to-its-green/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative z-10">
+              <div className="relative z-10 flex flex-col flex-grow">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-its-green/20 flex items-center justify-center backdrop-blur-sm border border-its-green/30">
+                  <div className="w-16 h-16 rounded-2xl bg-its-green/20 flex items-center justify-center backdrop-blur-sm border border-its-green/30 flex-shrink-0">
                     <svg className="w-8 h-8 text-its-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
@@ -543,8 +543,8 @@ export default function Home() {
                     <p className="text-gray-300 text-sm">{locale === "nl" ? "7 minuten • AI strategy rapport" : "7 minutes • AI strategy report"}</p>
                   </div>
                 </div>
-                <p className="text-gray-300 leading-relaxed mb-6">{d.aiReadinessToolDesc}</p>
-                <Link href={`/${locale}/tools`} className="block w-full py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-its-green/25 group-hover:scale-[1.02] text-center">
+                <p className="text-gray-300 leading-relaxed mb-6 flex-grow">{d.aiReadinessToolDesc}</p>
+                <Link href={`/${locale}/tools`} className="block w-full py-3 rounded-lg bg-its-green hover:bg-its-green-dark text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-its-green/25 group-hover:scale-[1.02] text-center mt-auto">
                   {d.startAIAssessment}
                 </Link>
               </div>

@@ -52,7 +52,7 @@ const jsonLd = {
         "AI Governance",
         "NIS2 Compliance",
         "Data Management",
-        "Project Management",
+        "Programme & Project Management",
         "Quality Assurance",
         "Business Consultancy",
         "Healthcare IT",
@@ -94,7 +94,7 @@ const jsonLd = {
             "@type": "Offer",
             itemOffered: {
               "@type": "Service",
-              name: "Project Management",
+              name: "Programma- en projectmanagement",
               description: "Complexe verandertrajecten van begin tot eind realiseren.",
             },
           },
