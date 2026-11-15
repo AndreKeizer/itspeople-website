@@ -6,6 +6,12 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { asset } from "@/lib/basePath";
 
+/** Initials for team members without a photo: first letter of first and last name. */
+function initials(name: string): string {
+  const parts = name.trim().split(/\s+/);
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
 const data = {
   nl: {
     founders: [
@@ -37,17 +43,19 @@ const data = {
       { name: "Werner Smeenk", role: "Senior Projectmanager", image: asset("/images/team/werner-smeenk.jpg"), specialties: ["Projectmanagement", "Risicomanagement", "Governance"] },
       { name: "Alev Kokus", role: "Projectmanager", image: asset("/images/team/alev-kokus.jpg"), specialties: ["Projectmanagement", "Stakeholder Management", "Governance"] },
       { name: "Manon de Bont", role: "Projectmanager", image: asset("/images/team/manon-de-bont.jpg"), specialties: ["Projectmanagement", "Verandermanagement", "Communicatie"] },
+      { name: "Mark van der Ploeg", role: "Senior PMO-er", image: "", specialties: ["PMO", "Planning & Control", "Rapportage"] },
+      { name: "Liesbeth Tangerman", role: "PMO-er", image: "", specialties: ["PMO", "Planning & Control", "Rapportage"] },
+      { name: "Maya Nieuwenhuis", role: "PMO-er", image: "", specialties: ["PMO", "Planning & Control", "Rapportage"] },
       { name: "Daniel Mulder", role: "Senior Business Consultant", image: asset("/images/team/daniel-mulder.jpg"), specialties: ["Business Analyse", "Transformatie", "Stakeholder Management"] },
       { name: "Ali Mokarram", role: "Business Consultant", image: asset("/images/team/ali-mokarram.jpg"), specialties: ["Business Analyse", "Procesinrichting", "Digitale Transformatie"] },
-      { name: "Jordy van der Velde", role: "Business Consultant", image: asset("/images/team/jordy-van-der-velde.jpg"), specialties: ["Business Analyse", "Transformatie", "Ketenregie"] },
+      { name: "Jordy van der Velde", role: "Senior Business Consultant", image: asset("/images/team/jordy-van-der-velde.jpg"), specialties: ["Business Analyse", "Transformatie", "Ketenregie"] },
       { name: "Loris Cornelissen", role: "Business Consultant", image: asset("/images/team/loris-cornelissen.jpg"), specialties: ["Business Analyse", "Data-analyse", "Implementatie"] },
       { name: "Pip Horsman", role: "Business Consultant", image: asset("/images/team/pip-horsman.jpg"), specialties: ["Business Analyse", "Stakeholder Management", "Agile"] },
       { name: "Rico van Leeuwen", role: "Business Consultant", image: asset("/images/team/rico-van-leeuwen.jpg"), specialties: ["Business Analyse", "Transformatie", "Risicomanagement"] },
-      { name: "Stephanie Solingen", role: "Business Consultant", image: asset("/images/team/stephanie-solingen.jpg"), specialties: ["Business Analyse", "Verandermanagement", "Communicatie"] },
-      { name: "Jerry de Jong", role: "Junior Business Consultant", image: asset("/images/team/jerry-de-jong.jpg"), specialties: ["Business Analyse", "Data-analyse", "Onderzoek"] },
+      { name: "Stephanie Solingen", role: "Senior Business Consultant", image: asset("/images/team/stephanie-solingen.jpg"), specialties: ["Business Analyse", "Verandermanagement", "Communicatie"] },
+      { name: "Jerry de Jong", role: "Business Consultant", image: asset("/images/team/jerry-de-jong.jpg"), specialties: ["Business Analyse", "Data-analyse", "Onderzoek"] },
       { name: "Matthijs Oosterbeek", role: "Data Consultant", image: asset("/images/team/matthijs-oosterbeek.jpg"), specialties: ["Data-architectuur", "Analytics", "BI & Rapportage"] },
       { name: "Mandy van Es", role: "Testmanager", image: asset("/images/team/mandy-van-es.jpg"), specialties: ["Testmanagement", "Kwaliteitsborging", "Agile Testing"] },
-      { name: "Sven Visser", role: "Inside Sales Representative", image: asset("/images/team/sven-visser.jpg"), specialties: ["Sales", "Klantrelaties", "Business Development"] },
       { name: "Diana Jane Acuna", role: "Office Manager", image: asset("/images/team/diana-jane-acuna.jpg"), specialties: ["Office Management", "Organisatie", "Facilitair"] },
     ],
     values: [
@@ -136,17 +144,19 @@ const data = {
       { name: "Werner Smeenk", role: "Senior Project Manager", image: asset("/images/team/werner-smeenk.jpg"), specialties: ["Project Management", "Risk Management", "Governance"] },
       { name: "Alev Kokus", role: "Project Manager", image: asset("/images/team/alev-kokus.jpg"), specialties: ["Project Management", "Stakeholder Management", "Governance"] },
       { name: "Manon de Bont", role: "Project Manager", image: asset("/images/team/manon-de-bont.jpg"), specialties: ["Project Management", "Change Management", "Communication"] },
+      { name: "Mark van der Ploeg", role: "Senior PMO Officer", image: "", specialties: ["PMO", "Planning & Control", "Reporting"] },
+      { name: "Liesbeth Tangerman", role: "PMO Officer", image: "", specialties: ["PMO", "Planning & Control", "Reporting"] },
+      { name: "Maya Nieuwenhuis", role: "PMO Officer", image: "", specialties: ["PMO", "Planning & Control", "Reporting"] },
       { name: "Daniel Mulder", role: "Senior Business Consultant", image: asset("/images/team/daniel-mulder.jpg"), specialties: ["Business Analysis", "Transformation", "Stakeholder Management"] },
       { name: "Ali Mokarram", role: "Business Consultant", image: asset("/images/team/ali-mokarram.jpg"), specialties: ["Business Analysis", "Process Design", "Digital Transformation"] },
-      { name: "Jordy van der Velde", role: "Business Consultant", image: asset("/images/team/jordy-van-der-velde.jpg"), specialties: ["Business Analysis", "Transformation", "Chain Orchestration"] },
+      { name: "Jordy van der Velde", role: "Senior Business Consultant", image: asset("/images/team/jordy-van-der-velde.jpg"), specialties: ["Business Analysis", "Transformation", "Chain Orchestration"] },
       { name: "Loris Cornelissen", role: "Business Consultant", image: asset("/images/team/loris-cornelissen.jpg"), specialties: ["Business Analysis", "Data Analysis", "Implementation"] },
       { name: "Pip Horsman", role: "Business Consultant", image: asset("/images/team/pip-horsman.jpg"), specialties: ["Business Analysis", "Stakeholder Management", "Agile"] },
       { name: "Rico van Leeuwen", role: "Business Consultant", image: asset("/images/team/rico-van-leeuwen.jpg"), specialties: ["Business Analysis", "Transformation", "Risk Management"] },
-      { name: "Stephanie Solingen", role: "Business Consultant", image: asset("/images/team/stephanie-solingen.jpg"), specialties: ["Business Analysis", "Change Management", "Communication"] },
-      { name: "Jerry de Jong", role: "Junior Business Consultant", image: asset("/images/team/jerry-de-jong.jpg"), specialties: ["Business Analysis", "Data Analysis", "Research"] },
+      { name: "Stephanie Solingen", role: "Senior Business Consultant", image: asset("/images/team/stephanie-solingen.jpg"), specialties: ["Business Analysis", "Change Management", "Communication"] },
+      { name: "Jerry de Jong", role: "Business Consultant", image: asset("/images/team/jerry-de-jong.jpg"), specialties: ["Business Analysis", "Data Analysis", "Research"] },
       { name: "Matthijs Oosterbeek", role: "Data Consultant", image: asset("/images/team/matthijs-oosterbeek.jpg"), specialties: ["Data Architecture", "Analytics", "BI & Reporting"] },
       { name: "Mandy van Es", role: "Test Manager", image: asset("/images/team/mandy-van-es.jpg"), specialties: ["Test Management", "Quality Assurance", "Agile Testing"] },
-      { name: "Sven Visser", role: "Inside Sales Representative", image: asset("/images/team/sven-visser.jpg"), specialties: ["Sales", "Client Relations", "Business Development"] },
       { name: "Diana Jane Acuna", role: "Office Manager", image: asset("/images/team/diana-jane-acuna.jpg"), specialties: ["Office Management", "Organisation", "Facilities"] },
     ],
     values: [
@@ -317,7 +327,13 @@ export default function OverOnsPage() {
             {d.team.map((m, i) => (
               <motion.div key={m.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: Math.min(i * 0.05, 0.4) }} className="group text-center">
                 <div className="relative w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden ring-4 ring-white shadow-lg group-hover:ring-its-green/30 transition-all duration-300">
-                  <Image src={m.image} alt={m.name} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+                  {m.image ? (
+                    <Image src={m.image} alt={m.name} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+                  ) : (
+                    <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center bg-its-green/10 text-its-green-dark text-4xl font-bold tracking-wide">
+                      {initials(m.name)}
+                    </div>
+                  )}
                 </div>
                 <h3 className="font-bold text-lg text-its-charcoal mb-1">{m.name}</h3>
                 <p className="text-its-green-dark font-medium text-sm mb-3">{m.role}</p>
