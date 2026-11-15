@@ -13,15 +13,15 @@ function initials(name: string): string {
 }
 
 /** Associates: shown in their own section below the team. Leave image empty to show initials. */
-const associates: { name: string; role?: string; image: string }[] = [
+const associates: { name: string; role?: string; roleEn?: string; image: string }[] = [
   { name: "Darryl Smith", image: "" },
-  { name: "Erwin Barany", image: asset("/images/team/erwin-barany.jpg") },
-  { name: "Michael Exel", image: asset("/images/team/michael-exel.jpg") },
-  { name: "Peter Ewoldt", image: asset("/images/team/peter-ewoldt.jpg") },
-  { name: "David Max", image: asset("/images/team/david-marx.jpg") },
+  { name: "Erwin Barany", role: "Senior Enterprise Architect", image: asset("/images/team/erwin-barany.jpg") },
+  { name: "Michael Exel", role: "Senior Consultant Oracle", image: asset("/images/team/michael-exel.jpg") },
+  { name: "Peter Ewoldt", role: "Senior Consultant", image: asset("/images/team/peter-ewoldt.jpg") },
+  { name: "David Max", role: "Principal AFAS Expert", image: asset("/images/team/david-marx.jpg") },
   { name: "Lawrence te Vruchte", image: asset("/images/team/lawrence-te-vruchte.jpg") },
   { name: "Vincent de Ligny", image: asset("/images/team/vincent-de-wilde-de-ligny.jpg") },
-  { name: "Adnan Rashid", image: asset("/images/team/adnan-rashid.jpg") },
+  { name: "Adnan Rashid", role: "Testmanager", roleEn: "Test Manager", image: asset("/images/team/adnan-rashid.jpg") },
   { name: "Coen Rebel", role: "Senior Consultant", image: asset("/images/team/coen-rebel.jpg") },
 ];
 
@@ -381,7 +381,7 @@ export default function OverOnsPage() {
                     )}
                   </div>
                   <h3 className="font-bold text-lg text-its-charcoal">{m.name}</h3>
-                  {m.role && <p className="text-its-green-dark font-medium text-sm mt-1">{m.role}</p>}
+                  {m.role && <p className="text-its-green-dark font-medium text-sm mt-1">{locale === "en" && m.roleEn ? m.roleEn : m.role}</p>}
                 </motion.div>
               ))}
             </div>
