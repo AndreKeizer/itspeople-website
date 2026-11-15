@@ -23,6 +23,7 @@ const associates: { name: string; role?: string; roleEn?: string; image: string 
   { name: "Vincent de Ligny", image: asset("/images/team/vincent-de-wilde-de-ligny.jpg") },
   { name: "Adnan Rashid", role: "Testmanager", roleEn: "Test Manager", image: asset("/images/team/adnan-rashid.jpg") },
   { name: "Coen Rebel", role: "Senior Consultant", image: asset("/images/team/coen-rebel.jpg") },
+  { name: "Wiebe Woudstra", role: "Senior Consultant", image: asset("/images/team/wiebe-woudstra.jpg") },
 ];
 
 const data = {
