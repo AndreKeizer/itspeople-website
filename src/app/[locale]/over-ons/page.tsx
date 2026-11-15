@@ -18,9 +18,9 @@ const associates: { name: string; role?: string; image: string }[] = [
   { name: "Erwin Barany", image: asset("/images/team/erwin-barany.jpg") },
   { name: "Michael Exel", image: asset("/images/team/michael-exel.jpg") },
   { name: "Peter Ewoldt", image: asset("/images/team/peter-ewoldt.jpg") },
-  { name: "David Marx", image: asset("/images/team/david-marx.jpg") },
+  { name: "David Max", image: asset("/images/team/david-marx.jpg") },
   { name: "Lawrence te Vruchte", image: asset("/images/team/lawrence-te-vruchte.jpg") },
-  { name: "Vincent de Wilde de Ligny", image: asset("/images/team/vincent-de-wilde-de-ligny.jpg") },
+  { name: "Vincent de Ligny", image: asset("/images/team/vincent-de-wilde-de-ligny.jpg") },
   { name: "Adnan Rashid", image: asset("/images/team/adnan-rashid.jpg") },
   { name: "Coen Rebel", role: "Senior Consultant", image: asset("/images/team/coen-rebel.jpg") },
 ];
@@ -48,7 +48,7 @@ const data = {
     team: [
       { name: "André Keizer", role: "Founder & Programmadirecteur Transformaties", image: asset("/images/team/andre-keizer.jpg"), specialties: ["Strategie", "Transformatie", "Leiderschap"] },
       { name: "Mario Kornuijt", role: "Co-Founder & Programmadirecteur Transformaties", image: asset("/images/team/mario-kornuijt.jpg"), specialties: ["Business Consultancy", "Governance", "Klantrelaties"] },
-      { name: "Rene Massaut", role: "Chief Commercial Officer (CCO)", image: asset("/images/team/rene-massaut.jpg"), specialties: ["Commercie", "Business Development", "Klantrelaties"] },
+      { name: "Rene Massaut", role: "CCO", image: asset("/images/team/rene-massaut.jpg"), specialties: ["Commercie", "Business Development", "Klantrelaties"] },
       { name: "Geert Eikelboom", role: "Lid Raad van Advies · CEO (gepensioneerd)", image: asset("/images/team/geert-eikelboom.jpg"), specialties: ["Strategie", "Leiderschap", "Governance"] },
       { name: "Melissa Crijns", role: "Head of Talent Acquisition & HR", image: asset("/images/team/melissa-crijns.png"), specialties: ["Talent Acquisition", "HR", "Employer Branding"] },
       { name: "Olav Bleijenberg", role: "Principal Business Consultant", image: asset("/images/team/olav-bleijenberg.jpg"), specialties: ["Strategie", "Business Consultancy", "Transformatie"] },
@@ -150,7 +150,7 @@ const data = {
     team: [
       { name: "André Keizer", role: "Founder & Programme Director Transformations", image: asset("/images/team/andre-keizer.jpg"), specialties: ["Strategy", "Transformation", "Leadership"] },
       { name: "Mario Kornuijt", role: "Co-Founder & Programme Director Transformations", image: asset("/images/team/mario-kornuijt.jpg"), specialties: ["Business Consultancy", "Governance", "Client Relations"] },
-      { name: "Rene Massaut", role: "Chief Commercial Officer (CCO)", image: asset("/images/team/rene-massaut.jpg"), specialties: ["Commercial Strategy", "Business Development", "Client Relations"] },
+      { name: "Rene Massaut", role: "CCO", image: asset("/images/team/rene-massaut.jpg"), specialties: ["Commercial Strategy", "Business Development", "Client Relations"] },
       { name: "Geert Eikelboom", role: "Advisory Board Member · CEO (retired)", image: asset("/images/team/geert-eikelboom.jpg"), specialties: ["Strategy", "Leadership", "Governance"] },
       { name: "Melissa Crijns", role: "Head of Talent Acquisition & HR", image: asset("/images/team/melissa-crijns.png"), specialties: ["Talent Acquisition", "HR", "Employer Branding"] },
       { name: "Olav Bleijenberg", role: "Principal Business Consultant", image: asset("/images/team/olav-bleijenberg.jpg"), specialties: ["Strategy", "Business Consultancy", "Transformation"] },
