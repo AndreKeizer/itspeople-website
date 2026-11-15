@@ -210,8 +210,9 @@ export default function WerkenBijPage() {
                 {d.vacatures.map((v) => (
                   <a
                     key={v.title}
-                    href="#vacatures"
-                    onClick={scrollToVacatures}
+                    href={v.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block px-5 py-3 hover:bg-its-warm transition-colors group"
                   >
                     <div className="text-sm font-semibold text-its-charcoal group-hover:text-its-green-dark transition-colors leading-snug">{v.title}</div>
@@ -349,7 +350,7 @@ export default function WerkenBijPage() {
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                   <div className="flex-grow">
                     <div className="flex flex-wrap items-center gap-3 mb-3">
-                      <h3 className="text-xl font-bold text-its-charcoal">{v.title}</h3>
+                      <h3 className="text-xl font-bold text-its-charcoal"><a href={v.url} target="_blank" rel="noopener noreferrer" className="hover:text-its-green-dark transition-colors">{v.title}</a></h3>
                       <span className="px-3 py-1 rounded-full text-xs font-medium bg-its-green/10 text-its-green-dark">{v.type}</span>
                       <span className="px-3 py-1 rounded-full text-xs font-medium bg-its-charcoal/5 text-its-gray-mid">{v.location}</span>
                     </div>

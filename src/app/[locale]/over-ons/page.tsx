@@ -13,16 +13,17 @@ function initials(name: string): string {
 }
 
 /** Associates: shown in their own section below the team. Leave image empty to show initials. */
-const associates: { name: string; image: string }[] = [
+const associates: { name: string; role?: string; roleEn?: string; image: string }[] = [
   { name: "Darryl Smith", image: "" },
-  { name: "Erwin Barany", image: "" },
-  { name: "Michael Exel", image: "" },
-  { name: "Peter Ewoldt", image: "" },
-  { name: "David Max", image: "" },
-  { name: "Jacco Peters", image: "" },
-  { name: "Lawrence te Vruchte", image: "" },
-  { name: "Vincent de Wilde de Ligny", image: "" },
-  { name: "Adnan Rashid", image: "" },
+  { name: "Erwin Barany", role: "Senior Enterprise Architect", image: asset("/images/team/erwin-barany.jpg") },
+  { name: "Michael Exel", role: "Senior Consultant Oracle", image: asset("/images/team/michael-exel.jpg") },
+  { name: "Peter Ewoldt", role: "Senior Consultant", image: asset("/images/team/peter-ewoldt.jpg") },
+  { name: "David Max", role: "Principal AFAS Expert", image: asset("/images/team/david-marx.jpg") },
+  { name: "Lawrence te Vruchte", image: asset("/images/team/lawrence-te-vruchte.jpg") },
+  { name: "Vincent de Ligny", image: asset("/images/team/vincent-de-wilde-de-ligny.jpg") },
+  { name: "Adnan Rashid", role: "Testmanager", roleEn: "Test Manager", image: asset("/images/team/adnan-rashid.jpg") },
+  { name: "Coen Rebel", role: "Senior Consultant", image: asset("/images/team/coen-rebel.jpg") },
+  { name: "Wiebe Woudstra", role: "Senior Consultant", image: asset("/images/team/wiebe-woudstra.jpg") },
 ];
 
 const data = {
@@ -48,6 +49,7 @@ const data = {
     team: [
       { name: "André Keizer", role: "Founder & Programmadirecteur Transformaties", image: asset("/images/team/andre-keizer.jpg"), specialties: ["Strategie", "Transformatie", "Leiderschap"] },
       { name: "Mario Kornuijt", role: "Co-Founder & Programmadirecteur Transformaties", image: asset("/images/team/mario-kornuijt.jpg"), specialties: ["Business Consultancy", "Governance", "Klantrelaties"] },
+      { name: "Rene Massaut", role: "CCO", image: asset("/images/team/rene-massaut.jpg"), specialties: ["Commercie", "Business Development", "Klantrelaties"] },
       { name: "Geert Eikelboom", role: "Lid Raad van Advies · CEO (gepensioneerd)", image: asset("/images/team/geert-eikelboom.jpg"), specialties: ["Strategie", "Leiderschap", "Governance"] },
       { name: "Melissa Crijns", role: "Head of Talent Acquisition & HR", image: asset("/images/team/melissa-crijns.png"), specialties: ["Talent Acquisition", "HR", "Employer Branding"] },
       { name: "Olav Bleijenberg", role: "Principal Business Consultant", image: asset("/images/team/olav-bleijenberg.jpg"), specialties: ["Strategie", "Business Consultancy", "Transformatie"] },
@@ -149,6 +151,7 @@ const data = {
     team: [
       { name: "André Keizer", role: "Founder & Programme Director Transformations", image: asset("/images/team/andre-keizer.jpg"), specialties: ["Strategy", "Transformation", "Leadership"] },
       { name: "Mario Kornuijt", role: "Co-Founder & Programme Director Transformations", image: asset("/images/team/mario-kornuijt.jpg"), specialties: ["Business Consultancy", "Governance", "Client Relations"] },
+      { name: "Rene Massaut", role: "CCO", image: asset("/images/team/rene-massaut.jpg"), specialties: ["Commercial Strategy", "Business Development", "Client Relations"] },
       { name: "Geert Eikelboom", role: "Advisory Board Member · CEO (retired)", image: asset("/images/team/geert-eikelboom.jpg"), specialties: ["Strategy", "Leadership", "Governance"] },
       { name: "Melissa Crijns", role: "Head of Talent Acquisition & HR", image: asset("/images/team/melissa-crijns.png"), specialties: ["Talent Acquisition", "HR", "Employer Branding"] },
       { name: "Olav Bleijenberg", role: "Principal Business Consultant", image: asset("/images/team/olav-bleijenberg.jpg"), specialties: ["Strategy", "Business Consultancy", "Transformation"] },
@@ -379,6 +382,7 @@ export default function OverOnsPage() {
                     )}
                   </div>
                   <h3 className="font-bold text-lg text-its-charcoal">{m.name}</h3>
+                  {m.role && <p className="text-its-green-dark font-medium text-sm mt-1">{locale === "en" && m.roleEn ? m.roleEn : m.role}</p>}
                 </motion.div>
               ))}
             </div>
