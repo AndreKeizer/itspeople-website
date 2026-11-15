@@ -5,6 +5,12 @@ import Image from "next/image";
 import { useLocale } from "next-intl";
 import { asset } from "@/lib/basePath";
 
+/** Initials for team members without a photo: first letter of first and last name. */
+function initials(name: string): string {
+  const parts = name.trim().split(/\s+/);
+  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+}
+
 const data = {
   nl: {
     eyebrow: "Ons Team",
@@ -31,17 +37,19 @@ const data = {
       { name: "Werner Smeenk", role: "Senior Projectmanager", image: asset("/images/team/werner-smeenk.jpg") },
       { name: "Alev Kokus", role: "Projectmanager", image: asset("/images/team/alev-kokus.jpg") },
       { name: "Manon de Bont", role: "Projectmanager", image: asset("/images/team/manon-de-bont.jpg") },
+      { name: "Mark van der Ploeg", role: "Senior PMO-er", image: "" },
+      { name: "Liesbeth Tangerman", role: "PMO-er", image: "" },
+      { name: "Maya Nieuwenhuis", role: "PMO-er", image: "" },
       { name: "Daniel Mulder", role: "Senior Business Consultant", image: asset("/images/team/daniel-mulder.jpg") },
       { name: "Ali Mokarram", role: "Business Consultant", image: asset("/images/team/ali-mokarram.jpg") },
-      { name: "Jordy van der Velde", role: "Business Consultant", image: asset("/images/team/jordy-van-der-velde.jpg") },
+      { name: "Jordy van der Velde", role: "Senior Business Consultant", image: asset("/images/team/jordy-van-der-velde.jpg") },
       { name: "Loris Cornelissen", role: "Business Consultant", image: asset("/images/team/loris-cornelissen.jpg") },
       { name: "Pip Horsman", role: "Business Consultant", image: asset("/images/team/pip-horsman.jpg") },
       { name: "Rico van Leeuwen", role: "Business Consultant", image: asset("/images/team/rico-van-leeuwen.jpg") },
-      { name: "Stephanie Solingen", role: "Business Consultant", image: asset("/images/team/stephanie-solingen.jpg") },
-      { name: "Jerry de Jong", role: "Junior Business Consultant", image: asset("/images/team/jerry-de-jong.jpg") },
+      { name: "Stephanie Solingen", role: "Senior Business Consultant", image: asset("/images/team/stephanie-solingen.jpg") },
+      { name: "Jerry de Jong", role: "Business Consultant", image: asset("/images/team/jerry-de-jong.jpg") },
       { name: "Matthijs Oosterbeek", role: "Data Consultant", image: asset("/images/team/matthijs-oosterbeek.jpg") },
       { name: "Mandy van Es", role: "Testmanager", image: asset("/images/team/mandy-van-es.jpg") },
-      { name: "Sven Visser", role: "Inside Sales Representative", image: asset("/images/team/sven-visser.jpg") },
       { name: "Diana Jane Acuna", role: "Office Manager", image: asset("/images/team/diana-jane-acuna.jpg") },
     ],
   },
@@ -70,17 +78,19 @@ const data = {
       { name: "Werner Smeenk", role: "Senior Project Manager", image: asset("/images/team/werner-smeenk.jpg") },
       { name: "Alev Kokus", role: "Project Manager", image: asset("/images/team/alev-kokus.jpg") },
       { name: "Manon de Bont", role: "Project Manager", image: asset("/images/team/manon-de-bont.jpg") },
+      { name: "Mark van der Ploeg", role: "Senior PMO Officer", image: "" },
+      { name: "Liesbeth Tangerman", role: "PMO Officer", image: "" },
+      { name: "Maya Nieuwenhuis", role: "PMO Officer", image: "" },
       { name: "Daniel Mulder", role: "Senior Business Consultant", image: asset("/images/team/daniel-mulder.jpg") },
       { name: "Ali Mokarram", role: "Business Consultant", image: asset("/images/team/ali-mokarram.jpg") },
-      { name: "Jordy van der Velde", role: "Business Consultant", image: asset("/images/team/jordy-van-der-velde.jpg") },
+      { name: "Jordy van der Velde", role: "Senior Business Consultant", image: asset("/images/team/jordy-van-der-velde.jpg") },
       { name: "Loris Cornelissen", role: "Business Consultant", image: asset("/images/team/loris-cornelissen.jpg") },
       { name: "Pip Horsman", role: "Business Consultant", image: asset("/images/team/pip-horsman.jpg") },
       { name: "Rico van Leeuwen", role: "Business Consultant", image: asset("/images/team/rico-van-leeuwen.jpg") },
-      { name: "Stephanie Solingen", role: "Business Consultant", image: asset("/images/team/stephanie-solingen.jpg") },
-      { name: "Jerry de Jong", role: "Junior Business Consultant", image: asset("/images/team/jerry-de-jong.jpg") },
+      { name: "Stephanie Solingen", role: "Senior Business Consultant", image: asset("/images/team/stephanie-solingen.jpg") },
+      { name: "Jerry de Jong", role: "Business Consultant", image: asset("/images/team/jerry-de-jong.jpg") },
       { name: "Matthijs Oosterbeek", role: "Data Consultant", image: asset("/images/team/matthijs-oosterbeek.jpg") },
       { name: "Mandy van Es", role: "Test Manager", image: asset("/images/team/mandy-van-es.jpg") },
-      { name: "Sven Visser", role: "Inside Sales Representative", image: asset("/images/team/sven-visser.jpg") },
       { name: "Diana Jane Acuna", role: "Office Manager", image: asset("/images/team/diana-jane-acuna.jpg") },
     ],
   },
@@ -152,7 +162,13 @@ export default function Team() {
           {d.team.map((member, i) => (
             <motion.div key={member.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: Math.min(i * 0.05, 0.4) }} className="group text-center">
               <div className="relative w-32 h-32 sm:w-36 sm:h-36 mx-auto mb-4 rounded-full overflow-hidden ring-4 ring-white shadow-lg group-hover:ring-its-green/30 transition-all duration-300">
-                <Image src={member.image} alt={member.name} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+                {member.image ? (
+                  <Image src={member.image} alt={member.name} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+                ) : (
+                  <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center bg-its-green/10 text-its-green-dark text-3xl font-bold tracking-wide">
+                    {initials(member.name)}
+                  </div>
+                )}
               </div>
               <h3 className="font-bold text-sm sm:text-base text-its-charcoal mb-0.5">{member.name}</h3>
               <p className="text-its-green-dark font-medium text-xs sm:text-sm">{member.role}</p>
