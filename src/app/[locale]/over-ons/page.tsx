@@ -12,6 +12,19 @@ function initials(name: string): string {
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
 
+/** Associates: shown in their own section below the team. Leave image empty to show initials. */
+const associates: { name: string; image: string }[] = [
+  { name: "Darryl Smith", image: "" },
+  { name: "Erwin Barany", image: "" },
+  { name: "Michael Exel", image: "" },
+  { name: "Peter Ewoldt", image: "" },
+  { name: "David Max", image: "" },
+  { name: "Jacco Peters", image: "" },
+  { name: "Lawrence te Vruchte", image: "" },
+  { name: "Vincent de Wilde de Ligny", image: "" },
+  { name: "Adnan Rashid", image: "" },
+];
+
 const data = {
   nl: {
     founders: [
@@ -344,6 +357,31 @@ export default function OverOnsPage() {
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* Associates */}
+          <div className="mt-20">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
+              <span className="text-its-green text-sm font-semibold tracking-wider uppercase">Associates</span>
+              <h2 className="text-3xl sm:text-4xl font-bold mt-4 text-its-charcoal">{locale === "nl" ? "Onze" : "Our"} <span className="gradient-text">Associates</span></h2>
+            </motion.div>
+
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+              {associates.map((m, i) => (
+                <motion.div key={m.name} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: Math.min(i * 0.05, 0.4) }} className="group text-center">
+                  <div className="relative w-40 h-40 mx-auto mb-4 rounded-full overflow-hidden ring-4 ring-white shadow-lg group-hover:ring-its-green/30 transition-all duration-300">
+                    {m.image ? (
+                      <Image src={m.image} alt={m.name} fill className="object-cover object-top group-hover:scale-110 transition-transform duration-500" />
+                    ) : (
+                      <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center bg-its-green/10 text-its-green-dark text-4xl font-bold tracking-wide">
+                        {initials(m.name)}
+                      </div>
+                    )}
+                  </div>
+                  <h3 className="font-bold text-lg text-its-charcoal">{m.name}</h3>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
           {/* Events & Initiatives */}
