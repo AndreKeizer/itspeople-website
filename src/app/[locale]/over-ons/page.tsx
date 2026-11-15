@@ -15,14 +15,13 @@ function initials(name: string): string {
 /** Associates: shown in their own section below the team. Leave image empty to show initials. */
 const associates: { name: string; image: string }[] = [
   { name: "Darryl Smith", image: "" },
-  { name: "Erwin Barany", image: "" },
-  { name: "Michael Exel", image: "" },
-  { name: "Peter Ewoldt", image: "" },
-  { name: "David Max", image: "" },
-  { name: "Jacco Peters", image: "" },
-  { name: "Lawrence te Vruchte", image: "" },
-  { name: "Vincent de Wilde de Ligny", image: "" },
-  { name: "Adnan Rashid", image: "" },
+  { name: "Erwin Barany", image: asset("/images/team/erwin-barany.jpg") },
+  { name: "Michael Exel", image: asset("/images/team/michael-exel.jpg") },
+  { name: "Peter Ewoldt", image: asset("/images/team/peter-ewoldt.jpg") },
+  { name: "David Marx", image: asset("/images/team/david-marx.jpg") },
+  { name: "Lawrence te Vruchte", image: asset("/images/team/lawrence-te-vruchte.jpg") },
+  { name: "Vincent de Wilde de Ligny", image: asset("/images/team/vincent-de-wilde-de-ligny.jpg") },
+  { name: "Adnan Rashid", image: asset("/images/team/adnan-rashid.jpg") },
 ];
 
 const data = {
